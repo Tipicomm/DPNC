@@ -31,8 +31,8 @@ jobs:
 
       - name: Commit du fichier généré
         run: |
-          git add ressources_csv_culture.csv
-          git commit -m "📄 Mise à jour automatique du fichier CSV [skip ci]" || echo "Aucun changement à commiter"
+          git add data/ressources_csv_culture.csv
+          git commit -m "📄 Mise à jour automatique du fichier CSV dans /data [skip ci]" || echo "Aucun changement à commiter"
 
       - name: Pousser les modifications
         env:
