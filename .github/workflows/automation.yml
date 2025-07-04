@@ -2,8 +2,8 @@ name: Exécution planifiée de dataAutomation.py
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # Tous les jours à 7h (UTC)
-  workflow_dispatch:  # Permet de le lancer manuellement
+    - cron: '0 7 * * *'  # Tous les jours à 7h UTC
+  workflow_dispatch:  # Exécution manuelle possible
 
 jobs:
   run-script:
@@ -23,3 +23,11 @@ jobs:
 
       - name: Exécuter le script Python
         run: python dataAutomation.py
+
+      - name: Commit du fichier généré
+        run: |
+          git config --global user.name 'Bot Culture Data'
+          git config --global user.email 'donnees@culture.gouv.fr'
+          git add ressources_csv_culture.csv
+          git commit -m "📄 Mise à jour automatique du fichier CSV [skip ci]" || echo "Aucun changement à commiter"
+          git push
