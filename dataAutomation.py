@@ -23,6 +23,6 @@ colonnes_souhaitees = ["dataset.id", "dataset.title", "id"]
 df_csv = df_csv[colonnes_souhaitees]
 
 # Enregistrer dans un nouveau fichier
-df_csv.to_csv("ressources_csv_culture.csv", index=False)
+df_csv.to_csv("data/ressources_csv_culture.csv", index=False)
 
 print("✅ Fichier 'ressources_csv_culture.csv' généré avec succès (colonnes filtrées).")
