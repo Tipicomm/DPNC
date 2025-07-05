@@ -10,7 +10,7 @@ OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 # Clé API OpenAI depuis la variable d'environnement (cf. GitHub Secrets)
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-df = pd.read_csv(INPUT, sep=";").head(100)
+df = pd.read_csv(INPUT, sep=";").head(20)
 
 # Préparation du contexte riche pour chaque propriété
 rows_context = []
