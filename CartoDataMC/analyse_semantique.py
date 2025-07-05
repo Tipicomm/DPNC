@@ -36,7 +36,7 @@ prompt = (
 )
 
 response = client.chat.completions.create(
-    model="gpt-4-1106-preview",  # modèle gpt-4.1 (OpenAI, juin 2024+)
+    model="gpt-4o",   # <= modèle universel, moderne, accessible
     messages=[{"role": "user", "content": prompt}],
     temperature=0.2,
     max_tokens=1800
