@@ -4,19 +4,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  extract:
+  extraction:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
 
-    - name: Installer Python
+    steps:
+    - name: 🧾 Cloner le dépôt
+      uses: actions/checkout@v3
+
+    - name: 📦 Installer Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
 
-    - name: Installer les dépendances
+    - name: 🛠️ Installer les dépendances
       run: |
         pip install pandas requests pyyaml
 
-    - name: Exécuter le script
+    - name: ▶️ Exécuter extraction_properties.py
       run: python CartoDataMC/extraction_properties.py
