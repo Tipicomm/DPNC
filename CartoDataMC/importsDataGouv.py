@@ -1,33 +1,36 @@
 # -*- coding: utf-8 -*-
-
 import pandas as pd
 import requests
-import io  # requis pour lire les CSV depuis la mémoire
+import io
 
-### 1️⃣ Télécharger les ressources CSV du ministère
+### 1️⃣ Télécharger les ressources (datasets-resources.csv)
 
 url_ressources = "https://www.data.gouv.fr/api/1/organizations/ministere-de-la-culture-et-de-la-communication/datasets-resources.csv"
 response_ressources = requests.get(url_ressources)
 response_ressources.encoding = "utf-8"
 
+# Lecture du CSV en mémoire
 try:
     df_ressources = pd.read_csv(io.StringIO(response_ressources.text), sep=";")
 except Exception:
     df_ressources = pd.read_csv(io.StringIO(response_ressources.text), sep=",")
 
-# Garder uniquement les ressources au format CSV
+df_ressources.columns = df_ressources.columns.str.strip()
 df_ressources = df_ressources[df_ressources["format"].str.lower() == "csv"]
 
-# Sélectionner les colonnes utiles si elles existent
-colonnes_ressources = ["dataset.id", "dataset.title", "id"]
-df_ressources = df_ressources[[col for col in colonnes_ressources if col in df_ressources.columns]]
-
-# Enregistrer le fichier final
+# Sélectionner les colonnes utiles
+df_ressources = df_ressources[["id", "dataset.id", "dataset.title"]].copy()
+df_ressources.rename(columns={
+    "id": "id.ressource",
+    "dataset.id": "id.dataset",
+    "dataset.title": "title.dataset"
+}, inplace=True)
+df_ressources["id.dataset"] = df_ressources["id.dataset"].astype(str)
 df_ressources.to_csv("ressources_culture.csv", index=False)
-print("✅ Fichier 'ressources_culture.csv' généré avec succès.")
+print("✅ ressources_culture.csv sauvegardé")
 
 
-### 2️⃣ Télécharger les jeux de données du ministère
+### 2️⃣ Télécharger les jeux de données (datasets.csv)
 
 url_datasets = "https://www.data.gouv.fr/api/1/organizations/ministere-de-la-culture-et-de-la-communication/datasets.csv"
 response_datasets = requests.get(url_datasets)
@@ -38,22 +41,28 @@ try:
 except Exception:
     df_datasets = pd.read_csv(io.StringIO(response_datasets.text), sep=",")
 
-# Garder uniquement certaines colonnes si elles existent
-colonnes_datasets = ["id", "title", "description", "tag"]
-df_datasets = df_datasets[[col for col in colonnes_datasets if col in df_datasets.columns]]
-
-# Enregistrer le fichier final
+df_datasets.columns = df_datasets.columns.str.strip()
+df_datasets = df_datasets[["id", "title", "description", "tags"]].copy()
+df_datasets.rename(columns={
+    "id": "id.dataset",
+    "title": "title.dataset",
+    "description": "description.dataset",
+    "tags": "tags.dataset"
+}, inplace=True)
+df_datasets["id.dataset"] = df_datasets["id.dataset"].astype(str)
 df_datasets.to_csv("datasets_culture.csv", index=False)
-print("✅ Fichier 'datasets_culture.csv' généré avec succès.")
+print("✅ datasets_culture.csv sauvegardé")
 
-# 🔄 Fusion des ressources avec les jeux de données
-df_jointure = pd.merge(
-    df_ressources, df_datasets, how="left",
-    left_on="dataset.id", right_on="id",
-    suffixes=("_ressource", "_dataset")
-)
 
-# Export du fichier final
+### 3️⃣ Fusion des deux fichiers
+
+df_jointure = pd.merge(df_ressources, df_datasets, on="id.dataset", how="left")
+
+# Nettoyage des doublons de colonnes
+if "title.dataset_x" in df_jointure.columns and "title.dataset_y" in df_jointure.columns:
+    df_jointure.drop(columns=["title.dataset_x"], inplace=True)
+    df_jointure.rename(columns={"title.dataset_y": "title.dataset"}, inplace=True)
+
+# ✅ Export final
 df_jointure.to_csv("cartographie_ressources_datasets.csv", index=False, sep=";")
-print("✅ Fichier 'cartographie_ressources_datasets.csv' généré avec succès.")
-
+print("✅ cartographie_ressources_datasets.csv généré avec succès")
