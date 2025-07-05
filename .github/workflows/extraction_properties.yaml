@@ -1,33 +1,31 @@
-name: 🔎 Extraction des propriétés - CartoDataMC
+name: 🧩 Extraction des propriétés - CartoDataMC
 
 on:
   workflow_dispatch:
 
 jobs:
-  extraction:
+  extract-properties:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔄 Cloner le dépôt
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: 🐍 Installer Python
+      - name: Installer Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
-      - name: 📦 Installer les dépendances
+      - name: Installer les dépendances
         run: |
           pip install pandas requests pyyaml
 
-      - name: 🚀 Exécuter le script d’extraction
+      - name: Lancer le script d'extraction
         run: python CartoDataMC/extraction_properties.py
 
-      - name: 💾 Commit du fichier généré
+      - name: Commit des résultats
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add CartoDataMC/Cartographie_Culture_properties.csv
-          git commit -m "🧩 Mise à jour des propriétés extraites"
+          git commit -m "🧩 Extraction des propriétés CSV"
           git push
-        continue-on-error: true
