@@ -53,10 +53,6 @@ df_jointure = pd.merge(
     suffixes=("_ressource", "_dataset")
 )
 
-# Vérification rapide
-print("🧩 Nombre de ressources associées à un dataset :", len(df_jointure))
-print(df_jointure[["dataset.id", "dataset.title", "title", "description"]].head())
-
 # Export du fichier final
 df_jointure.to_csv("cartographie_ressources_datasets.csv", index=False, sep=";")
 print("✅ Fichier 'cartographie_ressources_datasets.csv' généré avec succès.")
