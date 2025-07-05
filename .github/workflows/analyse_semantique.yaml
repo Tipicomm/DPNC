@@ -1,17 +1,13 @@
-name: 🧠 Analyse sémantique - CartoDataMC
+name: 🔎 Analyse sémantique CSV - CartoDataMC
 
 on:
   workflow_dispatch:
 
 jobs:
-  analyse:
+  semantic-analysis:
     runs-on: ubuntu-latest
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
     steps:
-      - name: 📥 Cloner le dépôt
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: 🐍 Installer Python
         uses: actions/setup-python@v4
@@ -20,12 +16,18 @@ jobs:
 
       - name: 📦 Installer les dépendances
         run: |
-          pip install pandas openai tqdm
+          pip install pandas openai
 
-      - name: ▶️ Exécuter le script d’analyse
+      - name: 🔎 Exécuter le script d’analyse sémantique
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python CartoDataMC/analyse_semantique.py
 
-      - name: 📁 Vérifier les résultats
+      - name: 💾 Ajouter le fichier généré au dépôt
         run: |
-          echo "📄 Contenu de CartoDataMC/"
-          ls -lh CartoDataMC/
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add CartoDataMC/cartographie_culture_semantique.csv
+          git commit -m "🔎 Mise à jour analyse sémantique"
+          git push
+        continue-on-error: true
