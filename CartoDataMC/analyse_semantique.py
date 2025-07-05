@@ -1,56 +1,49 @@
 # -*- coding: utf-8 -*-
 
-import os
 import pandas as pd
 import openai
+import os
 from tqdm import tqdm
 
-# 📁 Dossier des données
-DOSSIER = "CartoDataMC"
-FICHIER_ENTREE = f"{DOSSIER}/Cartographie_Culture_properties.csv"
-FICHIER_SORTIE = f"{DOSSIER}/Cartographie_Culture_clusters.csv"
-
-# 🔑 Récupération de la clé API (à définir dans GitHub Secrets : OPENAI_API_KEY)
+# 🗝️ Charger la clé API OpenAI depuis les variables d’environnement
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# 📥 Charger les données
-df = pd.read_csv(FICHIER_ENTREE).head(100)  # Analyse sur les 100 premières lignes
+# 📂 Charger le fichier contenant les propriétés
+df = pd.read_csv("CartoDataMC/cartographie_properties.csv").head(100)
 
-# 🧠 Requête GPT pour chaque propriété
-descriptions = []
+# 🧠 Préparer les propriétés à analyser
+property_descriptions = [
+    f"- {row['property_name']} (type: {row['property_type']})"
+    for _, row in df.iterrows()
+]
 
-for _, row in tqdm(df.iterrows(), total=len(df), desc="🔍 Analyse sémantique"):
-    context = f"""
-    La propriété suivante est issue d’un jeu de données culturels publics :
-    
-    - Nom de la propriété : {row['property_name']}
-    - Type : {row['property_type']}
-    - Titre du jeu de données : {row.get('dataset_title', '')}
-    - Description : {row.get('description', '')}
-    - Tags : {row.get('tags', '')}
-    
-    Donne une catégorie sémantique simple et compréhensible pour regrouper cette propriété (ex : "informations administratives", "localisation", "données temporelles", "identifiants", "relations", etc.).
-    """
+prompt = f"""
+Tu es un expert en modélisation de données dans le domaine culturel. 
+Voici une liste de propriétés issues de jeux de données publics :
 
-    try:
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": "Tu es un assistant qui classe les propriétés de jeux de données culturels selon leur nature sémantique."},
-                {"role": "user", "content": context}
-            ],
-            temperature=0.2,
-            max_tokens=100
-        )
-        category = response["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        category = f"Erreur : {str(e)}"
+{chr(10).join(property_descriptions)}
 
-    descriptions.append(category)
+Ta mission :
+1. Regrouper ces propriétés en grandes **classes sémantiques** (ex : identifiants, dates, géolocalisation, œuvres, institutions, personnes, statistiques...).
+2. Pour chaque classe, lister les noms de propriétés correspondants.
+3. Être concis et structuré : réponse en Markdown avec titres pour chaque classe.
 
-# ➕ Ajouter les résultats à la table
-df["semantic_category"] = descriptions
+Merci.
+"""
 
-# 💾 Sauvegarder
-df.to_csv(FICHIER_SORTIE, index=False)
-print(f"✅ Catégorisation sémantique enregistrée dans : {FICHIER_SORTIE}")
+# ✨ Appel à l’API OpenAI (GPT-4-turbo ou 3.5-turbo selon ton plan)
+response = openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": "Tu es un assistant expert en ontologies de données culturelles."},
+        {"role": "user", "content": prompt}
+    ],
+    temperature=0.4,
+    max_tokens=1500
+)
+
+# 💾 Sauvegarder la réponse dans un fichier Markdown
+with open("CartoDataMC/semantic_grouping.md", "w", encoding="utf-8") as f:
+    f.write(response["choices"][0]["message"]["content"])
+
+print("✅ Analyse sémantique terminée. Résultat enregistré dans CartoDataMC/semantic_grouping.md")
