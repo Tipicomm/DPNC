@@ -27,7 +27,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add CartoDataMC/Cartographie_Culture_properties.csv
+          git add CartoDataMC/cartographie_culture_properties.csv
           git commit -m "🧩 Mise à jour des propriétés extraites"
           git push
         continue-on-error: true  # Évite l’échec si aucun changement
