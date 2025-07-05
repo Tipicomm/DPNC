@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  import-data:
+  import:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔄 Cloner le dépôt
+      - name: ⬇️ Cloner le dépôt
         uses: actions/checkout@v3
 
       - name: 🐍 Installer Python
@@ -20,13 +20,10 @@ jobs:
         run: |
           pip install pandas requests
 
-      - name: 🚀 Exécuter le script d’import
+      - name: 🚀 Exécuter le script d'import
         run: python CartoDataMC/importsDataGouv.py
 
-      - name: ✅ Lister les fichiers générés
-        run: ls -lh CartoDataMC/
-
-      - name: 💾 Commit & push des fichiers CSV
+      - name: 💾 Commit des fichiers CSV générés
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
