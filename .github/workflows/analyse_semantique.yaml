@@ -7,21 +7,31 @@ jobs:
   analyse:
     runs-on: ubuntu-latest
 
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-
     steps:
-    - name: 🧾 Cloner le dépôt
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: 📦 Installer Python
+    - name: Installer Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
 
-    - name: 🛠️ Installer les dépendances
-      run: |
-        pip install pandas openai
+    - name: Installer les dépendances
+      run: pip install pandas openai tqdm
 
-    - name: ▶️ Exécuter analyse_semantique.py
+    - name: Définir la clé API OpenAI
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: echo "Clé API chargée"
+
+    - name: Exécuter le script d’analyse sémantique
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: python CartoDataMC/analyse_semantique.py
+
+    - name: ✅ Commit et push de l’analyse sémantique
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'actions@github.com'
+        git add CartoDataMC/Cartographie_Culture_clusters.csv
+        git commit -m "🧠 [auto] Résultats de l’analyse sémantique des propriétés"
+        git push
