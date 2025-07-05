@@ -1,4 +1,4 @@
-name: 🔍 Extraction des propriétés - CartoDataMc
+name: 🔍 Extraction des propriétés - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -19,4 +19,4 @@ jobs:
         pip install pandas requests pyyaml
 
     - name: Exécuter le script
-      run: python CartoDataMc/extraction_properties.py
+      run: python CartoDataMC/extraction_properties.py
