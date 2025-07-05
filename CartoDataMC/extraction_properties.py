@@ -1,23 +1,28 @@
 # -*- coding: utf-8 -*-
-
 import pandas as pd
 import requests
 import yaml
-import ast  # pour décoder proprement les chaînes JSON (tags)
+import ast
 
-# 📥 Charger les 200 premières lignes du fichier fusionné
+# 📥 Charger le fichier fusionné (généré par importsDataGouv.py)
 df_csv = pd.read_csv("CartoDataMC/cartographie_ressources_datasets.csv", sep=";").head(200)
 
-# 📦 Stocker les résultats ligne par ligne
+# 🧱 Vérification des colonnes disponibles
+expected_columns = ["id.ressource", "id.dataset", "title.dataset", "description.dataset", "tags.dataset"]
+missing = [col for col in expected_columns if col not in df_csv.columns]
+if missing:
+    raise ValueError(f"Les colonnes suivantes sont manquantes dans le fichier : {missing}")
+
+# 📦 Stockage ligne par ligne
 rows = []
 
 for _, row in df_csv.iterrows():
     resource_id = row["id.ressource"]
     dataset_id = row["id.dataset"]
-    dataset_title = row.get("title.dataset", "")
-    dataset_description = row.get("description.dataset", "")
+    dataset_title = row["title.dataset"]
+    dataset_description = row["description.dataset"]
 
-    # 🏷️ Extraction et nettoyage des tags (au format JSON)
+    # 🏷️ Traitement des tags (chaîne JSON)
     tags_raw = row.get("tags.dataset", "")
     if isinstance(tags_raw, str):
         try:
@@ -32,16 +37,14 @@ for _, row in df_csv.iterrows():
     else:
         dataset_tags = ""
 
-    # 📡 Appel à l’API Swagger de la ressource
+    # 📡 Requête Swagger
     url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/swagger/"
-
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             try:
                 data = yaml.safe_load(response.text)
                 props = data.get("components", {}).get("schemas", {}).get("Resource", {}).get("properties", {})
-
                 if props:
                     for prop_name, prop_info in props.items():
                         rows.append({
@@ -94,8 +97,7 @@ for _, row in df_csv.iterrows():
             "property_type": ""
         })
 
-# 💾 Convertir en DataFrame et sauvegarder
+# 💾 Sauvegarde du fichier
 df_properties = pd.DataFrame(rows)
 df_properties.to_csv("CartoDataMC/Cartographie_Culture_properties.csv", index=False)
-
-print("✅ Propriétés extraites avec description et tags nettoyés.")
+print("✅ Données enrichies avec titres et tags. Fichier enregistré dans CartoDataMC/Cartographie_Culture_properties.csv")
