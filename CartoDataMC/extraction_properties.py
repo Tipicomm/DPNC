@@ -1,50 +1,54 @@
 # -*- coding: utf-8 -*-
-
 import pandas as pd
 import requests
 import yaml
 import ast
-import csv  # ✅ nécessaire pour gérer correctement les quotes
+import os
+import csv
 
-# 📁 Chemin du fichier source
-INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
-OUTPUT = "CartoDataMC/Cartographie_Culture_properties.csv"
+# 📁 Constantes
+DOSSIER = "CartoDataMC"
+INPUT = f"{DOSSIER}/cartographie_ressources_datasets.csv"
+OUTPUT = f"{DOSSIER}/Cartographie_Culture_properties.csv"
 
-# 📥 Lecture du fichier d'entrée avec bon séparateur et quoting
-df_csv = pd.read_csv(INPUT, sep=";", quoting=csv.QUOTE_ALL).head(200)
+# 📥 Chargement du fichier d’entrée avec fallback
+try:
+    df_csv = pd.read_csv(INPUT, sep=";", encoding="utf-8")
+except Exception:
+    df_csv = pd.read_csv(INPUT, sep=",", encoding="utf-8")
+
+df_csv = df_csv.head(200)
 
 # ✅ Vérification des colonnes nécessaires
-colonnes_attendues = ["id.ressource", "id.dataset", "title.dataset", "description.dataset", "tags.dataset"]
-missing = [col for col in colonnes_attendues if col not in df_csv.columns]
+colonnes_requises = ["id.ressource", "id.dataset", "title.dataset", "description.dataset", "tags.dataset"]
+missing = [col for col in colonnes_requises if col not in df_csv.columns]
 if missing:
     raise ValueError(f"Les colonnes suivantes sont manquantes dans le fichier : {missing}")
 
-# 📦 Stockage des résultats
+# 📦 Extraction ligne par ligne
 rows = []
 
 for _, row in df_csv.iterrows():
     resource_id = row["id.ressource"]
     dataset_id = row["id.dataset"]
-    dataset_title = row["title.dataset"]
-    dataset_description = row["description.dataset"]
+    dataset_title = row.get("title.dataset", "")
+    dataset_description = row.get("description.dataset", "")
 
-    # 🏷️ Traitement des tags
-    tags_raw = row["tags.dataset"]
-    if isinstance(tags_raw, str):
-        try:
-            tags_list = [
-                tag["name"]
-                for tag in ast.literal_eval(tags_raw)
-                if isinstance(tag, dict) and "name" in tag
-            ]
-            dataset_tags = ", ".join(tags_list)
-        except Exception:
-            dataset_tags = ""
-    else:
+    # 🔖 Extraction des tags
+    tags_raw = row.get("tags.dataset", "")
+    try:
+        tags_list = [
+            tag["name"]
+            for tag in ast.literal_eval(tags_raw)
+            if isinstance(tag, dict) and "name" in tag
+        ]
+        dataset_tags = ", ".join(tags_list)
+    except Exception:
         dataset_tags = ""
 
-    # 📡 Récupération du schéma de la ressource via Swagger
+    # 📡 Appel Swagger
     url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/swagger/"
+
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
@@ -104,8 +108,8 @@ for _, row in df_csv.iterrows():
             "property_type": ""
         })
 
-# 💾 Enregistrement des résultats
+# 💾 Sauvegarde du fichier final
 df_properties = pd.DataFrame(rows)
-df_properties.to_csv(OUTPUT, index=False, quoting=csv.QUOTE_ALL, sep=";")
+df_properties.to_csv(OUTPUT, index=False, encoding="utf-8", sep=";", quoting=csv.QUOTE_MINIMAL)
 
-print(f"✅ Fichier généré : {OUTPUT}")
+print(f"✅ Fichier sauvegardé dans {OUTPUT}")
