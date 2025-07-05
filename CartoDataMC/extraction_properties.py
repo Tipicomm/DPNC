@@ -11,8 +11,19 @@ import csv
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
 OUTPUT = "CartoDataMC/Cartographie_Culture_properties.csv"
 
-# 📥 Chargement du fichier d’entrée
-df_csv = pd.read_csv(INPUT, sep=";").head(200)
+# 📥 Fonction robuste de lecture du CSV
+def robust_read_csv(path):
+    try:
+        return pd.read_csv(path, sep=";", encoding="utf-8")
+    except Exception as e1:
+        print("Échec avec le séparateur ';' :", e1)
+        try:
+            return pd.read_csv(path, sep=",", encoding="utf-8")
+        except Exception as e2:
+            print("Échec avec le séparateur ',' :", e2)
+            raise ValueError(f"Echec de lecture du CSV {path} :\n- {e1}\n- {e2}")
+
+df_csv = robust_read_csv(INPUT).head(200)
 
 # 🔧 Normalisation dynamique des colonnes
 if "title.dataset" not in df_csv.columns:
