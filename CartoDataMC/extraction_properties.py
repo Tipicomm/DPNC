@@ -8,9 +8,8 @@ import csv
 
 # 📁 Chemins
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
-OUTPUT = "CartoDataMC/Cartographie_Culture_properties.csv"
+OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-# 📥 Fonction robuste de lecture du CSV
 def robust_read_csv(path):
     try:
         return pd.read_csv(path, sep=";", encoding="utf-8")
@@ -37,23 +36,18 @@ missing = [col for col in colonnes_requises if col not in df_csv.columns]
 if missing:
     raise ValueError(f"Les colonnes suivantes sont manquantes dans le fichier : {missing}")
 
-# 📦 Extraire les propriétés
 rows = []
-
 for _, row in df_csv.iterrows():
     resource_id = row["id.ressource"]
     dataset_id = row["id.dataset"]
     dataset_title = row.get("title.dataset", "")
     dataset_description = row.get("description.dataset", "")
-    
-    # Traitement simple des tags (séparés par des virgules)
     tags_raw = row.get("tags.dataset", "")
     if isinstance(tags_raw, str):
         dataset_tags = tags_raw.strip()
     else:
         dataset_tags = ""
 
-    # Appel Swagger
     url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/swagger/"
     try:
         response = requests.get(url, timeout=10)
