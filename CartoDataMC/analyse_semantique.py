@@ -1,61 +1,41 @@
-# analyse_semantique.py
-
 import pandas as pd
 import openai
 import os
-import time
 
-# 🔑 Clé API depuis la variable d’environnement
+# 📥 Charger le fichier des propriétés
+df = pd.read_csv("CartoDataMC/Cartographie_Culture_properties.csv").dropna(subset=["property_name"]).head(100)
+
+# 🧠 Regrouper les noms uniques
+proprietes_uniques = sorted(df["property_name"].unique().tolist())
+
+# 🔑 Clé API (assurez-vous qu'elle est bien disponible comme secret GitHub)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# 📥 Charger les 100 premières lignes du fichier
-INPUT_CSV = "CartoDataMc/Cartographie_Culture_properties.csv"
-df = pd.read_csv(INPUT_CSV).head(100)
+# ✉️ Préparer le prompt
+prompt = (
+    "Tu es expert en gouvernance des données pour le ministère de la Culture.\n"
+    "Voici une liste de noms de colonnes extraites de fichiers CSV. "
+    "Regroupe-les en grandes familles de propriétés sémantiquement proches, "
+    "comme par exemple 'identité', 'date', 'localisation', 'typologie', 'culture', etc.\n\n"
+    f"Liste des propriétés : {', '.join(proprietes_uniques)}\n\n"
+    "Retourne une liste de catégories, chacune accompagnée des propriétés qui s’y rattachent."
+)
 
-# 🧠 Préparer les requêtes vers l’API
-def generer_prompt(property_name, description, tags):
-    return f"""
-Tu es un expert des données culturelles publiques. À partir du nom de propriété suivant :
+# 🔍 Appel à l’API
+response = openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": "Tu aides à classer des colonnes de données culturelles par grandes familles sémantiques."},
+        {"role": "user", "content": prompt}
+    ],
+    temperature=0.2
+)
 
-- Propriété : {property_name}
-- Description du jeu de données : {description}
-- Mots-clés : {tags}
+# 💾 Résultat brut
+reponse_texte = response.choices[0].message.content
 
-Propose une **catégorie générique** (classe) à laquelle cette propriété appartient (exemple : date, localisation, personne, type de structure, œuvre, événement, usage, budget, etc.).
-Ta réponse doit être une seule **classe** courte, sans phrase explicative.
-"""
+# Sauvegarde
+with open("CartoDataMC/analyse_semantique_resultat.txt", "w", encoding="utf-8") as f:
+    f.write(reponse_texte)
 
-# 🗂 Stocker les résultats
-classes = []
-
-for _, row in df.iterrows():
-    prop = row.get("property_name", "")
-    desc = row.get("description", "")
-    tags = row.get("tags", "")
-    
-    prompt = generer_prompt(prop, desc, tags)
-    
-    try:
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": "Tu es un expert en science des données culturelles."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.2,
-        )
-        classe = response["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        classe = f"❌ {str(e)}"
-
-    classes.append(classe)
-    time.sleep(1)  # ⚠️ Pause pour éviter les limites d'usage API
-
-# ✅ Ajout des classes au DataFrame
-df["classe_semantique"] = classes
-
-# 💾 Export du fichier enrichi
-OUTPUT_CSV = "CartoDataMc/Cartographie_Culture_classes.csv"
-df.to_csv(OUTPUT_CSV, index=False)
-
-print(f"✅ Analyse sémantique terminée. Résultat enregistré dans : {OUTPUT_CSV}")
+print("✅ Analyse sémantique enregistrée dans CartoDataMC/analyse_semantique_resultat.txt")
