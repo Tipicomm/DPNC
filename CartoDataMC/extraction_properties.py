@@ -24,6 +24,7 @@ def robust_read_csv(path):
             raise ValueError(f"Echec de lecture du CSV {path} :\n- {e1}\n- {e2}")
 
 df_csv = robust_read_csv(INPUT).head(200)
+print(df_csv["tags.dataset"].head(3).tolist())
 
 # 🔧 Normalisation dynamique des colonnes
 if "title.dataset" not in df_csv.columns:
