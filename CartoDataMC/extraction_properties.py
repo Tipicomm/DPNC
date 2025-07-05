@@ -3,7 +3,6 @@
 import pandas as pd
 import requests
 import yaml
-import ast
 import os
 import csv
 
@@ -24,7 +23,6 @@ def robust_read_csv(path):
             raise ValueError(f"Echec de lecture du CSV {path} :\n- {e1}\n- {e2}")
 
 df_csv = robust_read_csv(INPUT).head(200)
-print(df_csv["tags.dataset"].head(3).tolist())
 
 # 🔧 Normalisation dynamique des colonnes
 if "title.dataset" not in df_csv.columns:
@@ -48,18 +46,10 @@ for _, row in df_csv.iterrows():
     dataset_title = row.get("title.dataset", "")
     dataset_description = row.get("description.dataset", "")
     
-    # Nettoyage des tags
+    # Traitement simple des tags (séparés par des virgules)
     tags_raw = row.get("tags.dataset", "")
     if isinstance(tags_raw, str):
-        try:
-            tags_list = [
-                tag["name"]
-                for tag in ast.literal_eval(tags_raw)
-                if isinstance(tag, dict) and "name" in tag
-            ]
-            dataset_tags = ", ".join(tags_list)
-        except Exception:
-            dataset_tags = ""
+        dataset_tags = tags_raw.strip()
     else:
         dataset_tags = ""
 
