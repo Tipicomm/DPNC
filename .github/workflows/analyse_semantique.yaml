@@ -1,4 +1,4 @@
-name: 🧠 Analyse sémantique - CartoDataMc
+name: 🧠 Analyse sémantique - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -19,6 +19,6 @@ jobs:
         pip install pandas openai
 
     - name: Exécuter le script
-      run: python CartoDataMc/analyse_semantique.py
+      run: python CartoDataMC/analyse_semantique.py
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
