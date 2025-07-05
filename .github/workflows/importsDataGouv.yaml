@@ -1,10 +1,10 @@
-name: 📥 Imports DataGouv - CartoDataMC
+name: 📥 Importation des données - CartoDataMC
 
 on:
   workflow_dispatch:
 
 jobs:
-  import-datagouv:
+  import-data:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,18 +16,21 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 📦 Installer les dépendances Python
+      - name: 📦 Installer les dépendances
         run: |
           pip install pandas requests
 
-      - name: ▶️ Lancer le script d’import
+      - name: 🚀 Exécuter le script d’import
         run: python CartoDataMC/importsDataGouv.py
 
-      - name: 💾 Commit et push des fichiers CSV
+      - name: ✅ Lister les fichiers générés
+        run: ls -lh CartoDataMC/
+
+      - name: 💾 Commit & push des fichiers CSV
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add CartoDataMC/*.csv
-          git commit -m "📥 MàJ CSV depuis importsDataGouv.py"
+          git commit -m "📊 Mise à jour des fichiers CSV de cartographie"
           git push
         continue-on-error: true
