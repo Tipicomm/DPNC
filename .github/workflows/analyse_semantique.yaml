@@ -1,4 +1,4 @@
-name: 🧠 Analyse sémantique - CartoDataMc
+name: 🧠 Analyse sémantique - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
       - name: ▶️ Exécuter le script d’analyse
         run: python CartoDataMC/analyse_semantique.py
 
-      - name: 📁 Vérifier le fichier généré
+      - name: 📁 Vérifier les résultats
         run: |
           echo "📄 Contenu de CartoDataMC/"
           ls -lh CartoDataMC/
