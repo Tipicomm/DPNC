@@ -1,0 +1,22 @@
+name: 🔍 Extraction des propriétés - CartoDataMc
+
+on:
+  workflow_dispatch:
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Installer Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Installer les dépendances
+      run: |
+        pip install pandas requests pyyaml
+
+    - name: Exécuter le script
+      run: python CartoDataMc/extraction_properties.py
