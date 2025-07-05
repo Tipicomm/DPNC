@@ -3,12 +3,12 @@
 import pandas as pd
 import requests
 import io
-import csv  # nécessaire pour le quoting
+import csv  # Pour gérer le quoting
 
 # 📁 Dossier de destination
 DOSSIER = "CartoDataMC"
 
-### 1️⃣ Télécharger les ressources du ministère
+### 1️⃣ Télécharger les ressources (datasets-resources.csv)
 
 url_ressources = "https://www.data.gouv.fr/api/1/organizations/ministere-de-la-culture-et-de-la-communication/datasets-resources.csv"
 response_ressources = requests.get(url_ressources)
@@ -32,14 +32,12 @@ df_ressources = df_ressources.rename(columns={
 
 df_ressources.to_csv(
     f"{DOSSIER}/ressources_culture.csv",
-    index=False,
-    sep=";",
-    quoting=csv.QUOTE_ALL
+    index=False, sep=";",
+    quoting=csv.QUOTE_ALL, escapechar="\\"
 )
 print("✅ ressources_culture.csv sauvegardé")
 
-
-### 2️⃣ Télécharger les jeux de données du ministère
+### 2️⃣ Télécharger les jeux de données (datasets.csv)
 
 url_datasets = "https://www.data.gouv.fr/api/1/organizations/ministere-de-la-culture-et-de-la-communication/datasets.csv"
 response_datasets = requests.get(url_datasets)
@@ -62,24 +60,21 @@ df_datasets = df_datasets.rename(columns={
 
 df_datasets.to_csv(
     f"{DOSSIER}/datasets_culture.csv",
-    index=False,
-    sep=";",
-    quoting=csv.QUOTE_ALL
+    index=False, sep=";",
+    quoting=csv.QUOTE_ALL, escapechar="\\"
 )
 print("✅ datasets_culture.csv sauvegardé")
-
 
 ### 3️⃣ Fusionner les deux
 
 df_jointure = pd.merge(df_ressources, df_datasets, on="id.dataset", how="left")
 
-print(f"🔍 Colonnes fusionnées : {df_jointure.columns.tolist()}")
+print(f"🔍 Colonnes du fichier fusionné : {df_jointure.columns.tolist()}")
 print(f"🔢 Nombre total de lignes : {len(df_jointure)}")
 
 df_jointure.to_csv(
     f"{DOSSIER}/cartographie_ressources_datasets.csv",
-    index=False,
-    sep=";",
-    quoting=csv.QUOTE_ALL
+    index=False, sep=";",
+    quoting=csv.QUOTE_ALL, escapechar="\\"
 )
 print("✅ cartographie_ressources_datasets.csv généré avec succès")
