@@ -1,12 +1,14 @@
 import pandas as pd
 import requests
 import yaml
-import ast  # pour décoder proprement les chaînes JSON (tags)
+import ast  # pour décoder les listes JSON (tags)
+import os
 
-# 📥 Charger le fichier agrégé avec colonnes normalisées
-df_csv = pd.read_csv("cartographie_ressources_datasets.csv", sep=";").head(200)
+# 📥 Charger le fichier fusionné
+input_path = "CartoDataMC/cartographie_ressources_datasets.csv"
+df_csv = pd.read_csv(input_path, sep=";").head(200)
 
-# 📦 Stocker les résultats ligne par ligne
+# 📦 Stocker les résultats
 rows = []
 
 for _, row in df_csv.iterrows():
@@ -15,7 +17,7 @@ for _, row in df_csv.iterrows():
     dataset_title = row.get("title.dataset", "")
     dataset_description = row.get("description.dataset", "")
 
-    # 🏷️ Extraction et nettoyage des tags (au format JSON)
+    # 🏷️ Extraction et nettoyage des tags
     tags_raw = row.get("tags.dataset", "")
     if isinstance(tags_raw, str):
         try:
@@ -30,9 +32,8 @@ for _, row in df_csv.iterrows():
     else:
         dataset_tags = ""
 
-    # 📡 Appel à l’API Swagger
+    # 🔍 Appel à l’API Swagger
     url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/swagger/"
-
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
@@ -92,8 +93,9 @@ for _, row in df_csv.iterrows():
             "property_type": ""
         })
 
-# 💾 Convertir en DataFrame et sauvegarder
+# 💾 Sauvegarde du résultat
 df_properties = pd.DataFrame(rows)
-df_properties.to_csv("Cartographie_Culture_properties.csv", index=False)
+output_path = "CartoDataMC/Cartographie_Culture_properties.csv"
+df_properties.to_csv(output_path, index=False)
 
-print("✅ Propriétés extraites avec description et tags nettoyés, enregistrées dans 'Cartographie_Culture_properties.csv'")
+print(f"✅ Propriétés extraites avec succès dans {output_path}")
