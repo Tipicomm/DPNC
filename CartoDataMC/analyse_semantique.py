@@ -3,47 +3,38 @@
 import pandas as pd
 import openai
 import os
-from tqdm import tqdm
 
-# 🗝️ Charger la clé API OpenAI depuis les variables d’environnement
+# Assure-toi d’avoir défini OPENAI_API_KEY dans les secrets ou les variables d’environnement GitHub Actions
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# 📂 Charger le fichier contenant les propriétés
-df = pd.read_csv("CartoDataMC/cartographie_properties.csv").head(100)
+INPUT = "CartoDataMC/cartographie_culture_properties.csv"
+OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
-# 🧠 Préparer les propriétés à analyser
-property_descriptions = [
-    f"- {row['property_name']} (type: {row['property_type']})"
-    for _, row in df.iterrows()
-]
+df = pd.read_csv(INPUT, sep=";").head(100)
 
-prompt = f"""
-Tu es un expert en modélisation de données dans le domaine culturel. 
-Voici une liste de propriétés issues de jeux de données publics :
+# Pour l’exemple, on ne traite que les noms de propriété
+property_names = df["property_name"].dropna().unique().tolist()
 
-{chr(10).join(property_descriptions)}
+# Préparer la requête (prompt) pour l’API OpenAI
+prompt = (
+    "Voici une liste de noms de propriétés issues de jeux de données culturels publics français :\n"
+    + "\n".join(property_names)
+    + "\n\nPropose 8 à 12 grandes classes (types/concepts) pour regrouper ces propriétés, avec un intitulé pour chaque classe, et liste les propriétés associées à chaque classe.\n"
+    + "Présente la réponse au format CSV avec deux colonnes : classe, property_name."
+)
 
-Ta mission :
-1. Regrouper ces propriétés en grandes **classes sémantiques** (ex : identifiants, dates, géolocalisation, œuvres, institutions, personnes, statistiques...).
-2. Pour chaque classe, lister les noms de propriétés correspondants.
-3. Être concis et structuré : réponse en Markdown avec titres pour chaque classe.
-
-Merci.
-"""
-
-# ✨ Appel à l’API OpenAI (GPT-4-turbo ou 3.5-turbo selon ton plan)
 response = openai.ChatCompletion.create(
-    model="gpt-4",
-    messages=[
-        {"role": "system", "content": "Tu es un assistant expert en ontologies de données culturelles."},
-        {"role": "user", "content": prompt}
-    ],
-    temperature=0.4,
+    model="gpt-3.5-turbo",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.2,
     max_tokens=1500
 )
 
-# 💾 Sauvegarder la réponse dans un fichier Markdown
-with open("CartoDataMC/semantic_grouping.md", "w", encoding="utf-8") as f:
-    f.write(response["choices"][0]["message"]["content"])
+# Extraire le texte CSV de la réponse
+csv_result = response["choices"][0]["message"]["content"]
 
-print("✅ Analyse sémantique terminée. Résultat enregistré dans CartoDataMC/semantic_grouping.md")
+# Sauvegarder tel quel (pour contrôle)
+with open(OUTPUT, "w", encoding="utf-8") as f:
+    f.write(csv_result)
+
+print("✅ Analyse sémantique terminée et exportée dans", OUTPUT)
