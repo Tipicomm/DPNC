@@ -1,21 +1,23 @@
+# -*- coding: utf-8 -*-
+
 import pandas as pd
 import requests
 import yaml
-import ast
-from tqdm import tqdm
+import ast  # pour décoder proprement les chaînes JSON (tags)
 
-# 📥 Charger le fichier fusionné contenant ressources + datasets
-df_csv = pd.read_csv("CartoDataMC/cartographie_ressources_datasets.csv", sep=";").head(100)
+# 📥 Charger les 200 premières lignes du fichier fusionné
+df_csv = pd.read_csv("CartoDataMC/cartographie_ressources_datasets.csv", sep=";").head(200)
 
+# 📦 Stocker les résultats ligne par ligne
 rows = []
 
-for _, row in tqdm(df_csv.iterrows(), total=len(df_csv), desc="🔍 Extraction des propriétés"):
+for _, row in df_csv.iterrows():
     resource_id = row["id.ressource"]
     dataset_id = row["id.dataset"]
     dataset_title = row.get("title.dataset", "")
     dataset_description = row.get("description.dataset", "")
 
-    # 🔎 Nettoyage des tags
+    # 🏷️ Extraction et nettoyage des tags (au format JSON)
     tags_raw = row.get("tags.dataset", "")
     if isinstance(tags_raw, str):
         try:
@@ -30,7 +32,7 @@ for _, row in tqdm(df_csv.iterrows(), total=len(df_csv), desc="🔍 Extraction d
     else:
         dataset_tags = ""
 
-    # 📡 Récupérer les propriétés via Swagger
+    # 📡 Appel à l’API Swagger de la ressource
     url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/swagger/"
 
     try:
@@ -92,8 +94,8 @@ for _, row in tqdm(df_csv.iterrows(), total=len(df_csv), desc="🔍 Extraction d
             "property_type": ""
         })
 
-# 💾 Sauvegarde du fichier
+# 💾 Convertir en DataFrame et sauvegarder
 df_properties = pd.DataFrame(rows)
 df_properties.to_csv("CartoDataMC/Cartographie_Culture_properties.csv", index=False)
 
-print("✅ Fichier 'Cartographie_Culture_properties.csv' généré avec les titles et tags.")
+print("✅ Propriétés extraites avec description et tags nettoyés.")
