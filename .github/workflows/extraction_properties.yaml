@@ -1,4 +1,4 @@
-name: 🧩 Extraction des propriétés - CartoDataMc
+name: 🧾 Extraction des propriétés - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
 jobs:
   extraction:
     runs-on: ubuntu-latest
+
     steps:
       - name: 📥 Cloner le dépôt
         uses: actions/checkout@v3
@@ -17,10 +18,18 @@ jobs:
 
       - name: 📦 Installer les dépendances
         run: |
-          pip install pandas requests pyyaml tqdm
+          pip install pandas requests pyyaml
 
-      - name: ▶️ Exécuter le script d'extraction
+      - name: ▶️ Exécuter le script d’extraction
         run: python CartoDataMC/extraction_properties.py
 
-      - name: 📁 Lister les fichiers générés
+      - name: 📁 Vérifier les fichiers générés
         run: ls -lh CartoDataMC/
+
+      - name: ✅ Commit & Push des fichiers (si modifiés)
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add CartoDataMC/*.csv || true
+          git diff --cached --quiet || git commit -m "🧾 Propriétés extraites automatiquement"
+          git push
