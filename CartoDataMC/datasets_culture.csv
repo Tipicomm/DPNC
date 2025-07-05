@@ -18,27 +18,27 @@ Pour la définition des statuts (valide, invalide, invalidé, en instruction), v
 Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
 
 Pour chaque déclaration, le tableau comporte les données suivantes :  
-\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
-\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
-\- date de dépôt de déclaration ;  
-\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
-\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
-\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
-\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
-\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
-\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
-\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
-\- type de déclaration (première demande; renouvellement) ;  
-\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+\\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\\- date de dépôt de déclaration ;  
+\\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\\- type de déclaration (première demande; renouvellement) ;  
+\\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
   
 DEFINITION DES STATUTS :  
-\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+\\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
 Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
-\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
-\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
-\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+\\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
 L'exercice de la profession au titre de cette déclaration est interdit.  
-**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+**\\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
   
 **Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
 Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
@@ -156,8 +156,8 @@ Dès la première session en 2022, 79 territoires, répartis dans toutes les ré
 A l'issue des deux premiers appels à candidature, **157 territoires sont labellisés 100% EAC.**
 
 **NB :**  
-\- La carte indique les surfaces des départements, ceux-ci peuvent inclure une ou plusieurs collectivités labellisées, dans ce cas les flèches permettent de toutes les visualiser**.**  
-\- Les données concernant les partenariats et les dispositifs ne sont valables que l’année de labellisation, puisqu’ils peuvent évoluer dans le temps****.****  
+\\- La carte indique les surfaces des départements, ceux-ci peuvent inclure une ou plusieurs collectivités labellisées, dans ce cas les flèches permettent de toutes les visualiser**.**  
+\\- Les données concernant les partenariats et les dispositifs ne sont valables que l’année de labellisation, puisqu’ils peuvent évoluer dans le temps****.****  
   
 Pour en savoir plus : <https://www.culture.gouv.fr/catalogue-des-demarches-et-subventions/appels-a-projets-candidatures/Label-100-EAC>
 
@@ -203,7 +203,7 @@ Le jeu de données mis à disposition liste les quelque 44 600 individus mention
 Voir aussi :
 
   * [Fiche d'aide ""Rechercher un émigré de la Révolution française""](https://www.siv.archives-nationales.culture.gouv.fr/siv/cms/content/helpGuide.action?uuid=f0b515ff-8ad7-4549-b59e-19e95ab1b4f0&version=5&preview=&typeSearch=AideRechercheType&searchString=%26amp%3Beacute%3Bmigr%26amp%3Beacute%3B&echotest=%26eacute%3Bmigr%26eacute%3B)
-  * [Papiers à en-tête de la période révolutionnaire extraits de ces dossiers (Wikimédia Commons)](https://commons.wikimedia.org/wiki/Category:Letterheads_in_the_Archives_Nationales_\(France\))";"18e-siecle,19e-siecle,archives,femme,histoire,individu,prosopographie,revolution"
+  * [Papiers à en-tête de la période révolutionnaire extraits de ces dossiers (Wikimédia Commons)](https://commons.wikimedia.org/wiki/Category:Letterheads_in_the_Archives_Nationales_\\(France\\))";"18e-siecle,19e-siecle,archives,femme,histoire,individu,prosopographie,revolution"
 "66063d22592637d8f57263d5";"Nuit européenne des musées 2024";"La 20e Nuit européenne des musées se tient cette année, le samedi 19 mai 2024 dans toute l'Europe.  
 Pour [plus d'informations](https://nuitdesmusees.culture.gouv.fr/) sur cette manifestation.  
   
@@ -211,9 +211,9 @@ Ce jeu de données est alimenté au fil de l'eau, et mis à jour quotidiennement
 "65ea8dae877eed738c924b51";"La circulation des archives en Europe et hors Europe : suivi mensuel des ventes aux enchères";"Tête de réseau des services publics d’archives en France (nationales, départementales, municipales, régionales), le Service interministériel des Archives de France, et plus particulièrement le Bureau de la protection du patrimoine archivistique, reçoit et collecte les intentions d‘achats de ces différents services à l’occasion des ventes aux enchères publiques, mais aussi auprès de libraires et autres types de vendeurs.
 
 Ces informations sont partagées avec l’ensemble des services patrimoniaux des ministères de la Culture, des Affaires européennes et étrangères et des Armées (via le Service du livre et de la lecture), avec pour objectifs :  
-\- de repérer les éventuelles concurrences entre services sur les mêmes lots ;  
-\- d’assurer en tant que de besoin la représentation de services d’archives à ces ventes, y compris pour des services autres que les Archives ;  
-\- d’organiser le cas échéant l’exercice du droit de préemption pour ou par les services.  
+\\- de repérer les éventuelles concurrences entre services sur les mêmes lots ;  
+\\- d’assurer en tant que de besoin la représentation de services d’archives à ces ventes, y compris pour des services autres que les Archives ;  
+\\- d’organiser le cas échéant l’exercice du droit de préemption pour ou par les services.  
 Le tableau synthétise les intentions d’achat des services signalées au SIAF, l’opérateur et la date de la vente, l’usage du droit de préemption ou non, le résultat de la vente, le numéro du lot et/ou sa description.  
 Les données figurant dans ce tableau correspondent aux informations transmises par les services, et ne sont donc pas exhaustives.
 
@@ -314,16 +314,16 @@ Note : une même autorité lieu (LocationAuthority) peut se trouver dans le fich
 
 
 **Descriptif des libellés :  
-** \- Typologie générale : domaine d’activité, type de dossier ou type d’information  
-\- Typologie fine : subdivision du domaine d’activité, type de document et/ou complément d’information  
-\- Délai : position du document par rapport au délai de libre communicabilité déterminé par le code du patrimoine, par rapport à un délai déterminé par d’autres textes ou au regard d’autres critères, ou absence de délai (communicabilité dès la création du document)  
-\- Identité du demandeur : qualité du demandeur au regard des documents sollicités lorsque les documents ne sont pas librement communicables à toute personne qui en fait la demande  
-\- Consultation : consultation du document dans une administration, une collectivité, un établissement public, un service public d’archives, etc.  
-\- Possibilité d’obtenir une copie : possibilité d’obtenir une copie en application de l’article L. 311-9 du code des relations entre le public et l’administration ou d’autres dispositions législatives ou réglementaires  
-\- Recours : possibilité et nature du recours en cas de refus de communication et/ou de copie  
-\- Possibilité de faire appel à la CADA : possibilité de faire appel à la Commission d’accès aux documents administratifs en application des articles L. 342-1 et L. 342-2 du code des relations entre le public et l’administration   
-\- Textes applicables : dispositions législatives et réglementaires régissant l’accès aux documents  
-\- Remarques : complément d’informations";"archives,commission-dacces-aux-documents-administratifs"
+** \\- Typologie générale : domaine d’activité, type de dossier ou type d’information  
+\\- Typologie fine : subdivision du domaine d’activité, type de document et/ou complément d’information  
+\\- Délai : position du document par rapport au délai de libre communicabilité déterminé par le code du patrimoine, par rapport à un délai déterminé par d’autres textes ou au regard d’autres critères, ou absence de délai (communicabilité dès la création du document)  
+\\- Identité du demandeur : qualité du demandeur au regard des documents sollicités lorsque les documents ne sont pas librement communicables à toute personne qui en fait la demande  
+\\- Consultation : consultation du document dans une administration, une collectivité, un établissement public, un service public d’archives, etc.  
+\\- Possibilité d’obtenir une copie : possibilité d’obtenir une copie en application de l’article L. 311-9 du code des relations entre le public et l’administration ou d’autres dispositions législatives ou réglementaires  
+\\- Recours : possibilité et nature du recours en cas de refus de communication et/ou de copie  
+\\- Possibilité de faire appel à la CADA : possibilité de faire appel à la Commission d’accès aux documents administratifs en application des articles L. 342-1 et L. 342-2 du code des relations entre le public et l’administration   
+\\- Textes applicables : dispositions législatives et réglementaires régissant l’accès aux documents  
+\\- Remarques : complément d’informations";"archives,commission-dacces-aux-documents-administratifs"
 "65962d7b574fe6e46fac1833";"Les aides déconcentrées pour l’Eté Culturel";"Afin de favoriser la participation à la vie culturelle, le ministère de la Culture apporte son soutien à des projets culturels et artistiques organisés pendant l’été. 
 
 Lancé en 2020, l'Été culturel est une opération nationale visant à soutenir des propositions artistiques et culturelles (concerts, représentations, ateliers, projets participatifs, etc.), toutes disciplines confondues, ayant lieu en juillet et août. Ces projets accessibles et gratuits, peuvent être proposés par une association, un artiste, une collectivité (territoriale, régionale, départementale, communale) ou un établissement public.  
@@ -336,16 +336,16 @@ Ce jeu de données présente les aides déconcentrées par région pour les ann�
 Ces plans du début du XIXe siècle sont en cours de numérisation, description et mise en ligne sur le portail documentaire des Archives nationales ([voir l'inventaire en ligne](https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_059652)). Au mois de juin 2025, 17747 plans sont consultables sur Internet.   
   
 Le jeu de données mis à disposition ici a été constitué à partir des inventaires d’archives. Il en reprend les informations suivantes :  
-\- Adresse : nom de rue, n°  
-\- Année  
-\- Indexation : rue, arrondissement ancien, arrondissement nouveau  
-\- Détails : nom de division ou de quartier, numéro d’îlot, nom de propriétaire  
-\- Échelle  
-\- Dimensions  
-\- Techniques et matériaux  
-\- Cote  
-\- URL de la notice sur le portail documentaire des Archives nationales   
-\- URL des images sur le portail documentaire des Archives nationales
+\\- Adresse : nom de rue, n°  
+\\- Année  
+\\- Indexation : rue, arrondissement ancien, arrondissement nouveau  
+\\- Détails : nom de division ou de quartier, numéro d’îlot, nom de propriétaire  
+\\- Échelle  
+\\- Dimensions  
+\\- Techniques et matériaux  
+\\- Cote  
+\\- URL de la notice sur le portail documentaire des Archives nationales   
+\\- URL des images sur le portail documentaire des Archives nationales
 
 Mise à jour le 14 avril 2025, ajout de 1753 plans (id 11384 à 13137). Mise à jour le 23 juin 2025, ajout de 4609 plans (id 13138 à 17747).";"19e-siecle,architecture,archives,histoire,paris,plan"
 "6573e67f05ed2c02b4d630ac";"Aides nationales à la création pour les arts du cirque et pour les arts de la rue";"L'aide nationale à la création concerne les projets de création d’envergure dans le domaine des arts du cirque et des arts de la rue d’une part, et ceux qui, toutes disciplines du spectacle vivant confondues, prennent en considération l'espace public, d’autre part.   
@@ -748,26 +748,26 @@ Données 2018";"atlas-culture,organisations"
 La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. 
 
 Au sein de la nomenclature des professions et des catégories socioprofessionnelles de l'Insee, sont retenues comme professions culturelles :  
-\- architectes  
-\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
-\- professions des arts visuels et des métiers d'art  
-\- professions du spectacle  
-\- professions littéraires  
-\- professeurs d'art (hors établissements scolaires)
+\\- architectes  
+\\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
+\\- professions des arts visuels et des métiers d'art  
+\\- professions du spectacle  
+\\- professions littéraires  
+\\- professeurs d'art (hors établissements scolaires)
 
 Données 2017";"atlas-culture,organisations"
 "635a0255905f648a9e90f68e";"Entreprises : Salariés des secteurs culturels par département";"Part des salariés des entreprises des secteurs culturels dans l'ensemble des actifs de la zone d'emploi. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants :   
-\- architecture  
-\- arts visuels   
-\- audiovisuel, multimédia  
-\- éducation, formation  
-\- livre et presse  
-\- patrimoine  
-\- publicité  
-\- spectacle vivant
+\\- architecture  
+\\- arts visuels   
+\\- audiovisuel, multimédia  
+\\- éducation, formation  
+\\- livre et presse  
+\\- patrimoine  
+\\- publicité  
+\\- spectacle vivant
 
 Données 2018";"atlas-culture,organisations"
-"635a02558c0544dea690f690";"Entreprises : Salariés des secteurs culturels par zone d'emploi";"Part des salariés des secteurs culturels dans l'ensemble des actifs de la zone d'emploi. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants : \- architecture \- arts visuels \- audiovisuel, multimédia \- éducation, formation \- livre et presse \- patrimoine \- publicité \- spectacle vivant
+"635a02558c0544dea690f690";"Entreprises : Salariés des secteurs culturels par zone d'emploi";"Part des salariés des secteurs culturels dans l'ensemble des actifs de la zone d'emploi. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants : \\- architecture \\- arts visuels \\- audiovisuel, multimédia \\- éducation, formation \\- livre et presse \\- patrimoine \\- publicité \\- spectacle vivant
 
 Données 2018";"atlas-culture,organisations"
 "635a0254f931c40e6390f690";"Entreprises : Nombre d'établissements culturels actifs par département";"Désigne la part des entreprises culturelles employeuses au sein de l'ensemble des entreprises employeuses de chaque département
@@ -777,12 +777,12 @@ Données 2018";"atlas-culture,organisations"
 La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. 
 
 Au sein de la nomenclature des professions et des catégories socioprofessionnelles de l'Insee, sont retenues comme professions culturelles :  
-\- architectes  
-\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
-\- professions des arts visuels et des métiers d'art  
-\- professions du spectacle  
-\- professions littéraires  
-\- professeurs d'art (hors établissements scolaires)
+\\- architectes  
+\\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
+\\- professions des arts visuels et des métiers d'art  
+\\- professions du spectacle  
+\\- professions littéraires  
+\\- professeurs d'art (hors établissements scolaires)
 
 Données 2017";"atlas-culture,organisations"
 "635a0251ae37fbcc1290f691";"Emploi : Professions culturelles par département";"Part des actifs exerçant une profession culturelle dans l’ensemble des actifs du département.
@@ -790,59 +790,59 @@ Données 2017";"atlas-culture,organisations"
 La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. 
 
 Au sein de la nomenclature des professions et des catégories socioprofessionnelles de l'Insee, sont retenues comme professions culturelles :  
-\- architectes  
-\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
-\- professions des arts visuels et des métiers d'art  
-\- professions du spectacle  
-\- professions littéraires  
-\- professeurs d'art (hors établissements scolaires)
+\\- architectes  
+\\- cadres et techniciens de l'archivage, de la conservation et de la documentation  
+\\- professions des arts visuels et des métiers d'art  
+\\- professions du spectacle  
+\\- professions littéraires  
+\\- professeurs d'art (hors établissements scolaires)
 
 Données 2017";"atlas-culture,organisations"
 "635a0251dc41dc073190f690";"Entreprises : Salariés des secteurs culturels par région";"Part des salariés des entreprises des secteurs culturels dans l'ensemble des actifs de la région. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants :  
-\- architecture  
-\- arts visuels  
-\- audiovisuel, multimédia  
-\- éducation, formation  
-\- livre et presse  
-\- patrimoine  
-\- publicité  
-\- spectacle vivant
+\\- architecture  
+\\- arts visuels  
+\\- audiovisuel, multimédia  
+\\- éducation, formation  
+\\- livre et presse  
+\\- patrimoine  
+\\- publicité  
+\\- spectacle vivant
 
 Données 2018";"atlas-culture,organisations"
 "635a0251dc41dc073190f68f";"Emploi : Actifs des secteurs culturels par zone d'emploi";"Part des actifs des secteurs culturels dans l'ensemble des actifs de la zone d'emploi. La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants :  
-\- architecture  
-\- arts visuels  
-\- audiovisuel, multimédia  
-\- éducation, formation  
-\- livre et presse  
-\- patrimoine  
-\- publicité  
-\- spectacle vivant
+\\- architecture  
+\\- arts visuels  
+\\- audiovisuel, multimédia  
+\\- éducation, formation  
+\\- livre et presse  
+\\- patrimoine  
+\\- publicité  
+\\- spectacle vivant
 
 Données 2017";"atlas-culture,organisations"
 "635a0251e708959bd890f68e";"Emploi : Actifs des secteurs culturels par département";"Part des actifs des secteurs culturels dans l'ensemble des actifs du département. La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants :   
-\- architecture  
-\- arts visuels   
-\- audiovisuel, multimédia  
-\- éducation, formation  
-\- livre et presse  
-\- patrimoine  
-\- publicité  
-\- spectacle vivant
+\\- architecture  
+\\- arts visuels   
+\\- audiovisuel, multimédia  
+\\- éducation, formation  
+\\- livre et presse  
+\\- patrimoine  
+\\- publicité  
+\\- spectacle vivant
 
 Données 2017";"atlas-culture,organisations"
 "6358b1077649e63c98487174";"Entreprises : Nombre d'établissements culturels actifs par région";"Désigne la part des entreprises culturelles au sein de l'ensemble des entreprises employeuses du secteur marchand de la région.";"atlas-culture,organisations"
 "6358b1057280fb6a2a90f68e";"Emploi : Actifs des secteurs culturels par région";"Part des actifs des secteurs culturels dans l'ensemble des actifs de la région.
 
 La population concernée rassemble les actifs en emploi, qu'ils soient salariés ou indépendants. Au sein de la nomenclature d'activités française de l'Insee, sont considérés comme culturels les secteurs suivants :  
-\- architecture  
-\- arts visuels  
-\- audiovisuel, multimédia  
-\- éducation, formation  
-\- livre et presse  
-\- patrimoine  
-\- publicité  
-\- spectacle vivant
+\\- architecture  
+\\- arts visuels  
+\\- audiovisuel, multimédia  
+\\- éducation, formation  
+\\- livre et presse  
+\\- patrimoine  
+\\- publicité  
+\\- spectacle vivant
 
 Données 2017";"atlas-culture,organisations"
 "6350c887ecad6abcaa90f690";"Entreprises : évolution du chiffres d'affaires 2020 des salles de cinémas";"Mesure de l'écart de chiffre d'affaires en 2020 par rapport à 2019 réalisé par les entreprises monorégionales de projection cinématographique (code Naf 59.14Z), ayant leur siège dans la région où elles exercent leur activité et pérennes entre 2018 et 2020. À l'échelle de la France métropolitaine, hors Corse, l'écart est de -65 %.";"atlas-culture,cinema"
@@ -855,7 +855,7 @@ Le label Terre de Jeux 2024 permet à toutes les collectivités territoriales et
   
 Source  
 terredejeux.paris2024.org";"atlas-culture,organisations"
-"6350c886dbe7e0f35f90f68e";"Entreprises : évolution du chiffre d'affaires 2020 des librairies";"Mesure de l'évolution du chiffre d'affaires des entreprises monorégionales de librairie (code Naf 47.61Z), pérennes entre 2018 et 2020\. À l'échelle métropolitaine, hors Corse, l'évolution a été de -7,1 %.";"atlas-culture,livre-lecture"
+"6350c886dbe7e0f35f90f68e";"Entreprises : évolution du chiffre d'affaires 2020 des librairies";"Mesure de l'évolution du chiffre d'affaires des entreprises monorégionales de librairie (code Naf 47.61Z), pérennes entre 2018 et 2020\\. À l'échelle métropolitaine, hors Corse, l'évolution a été de -7,1 %.";"atlas-culture,livre-lecture"
 "6350c885ecad6abcaa90f68f";"JO 2024 : EPCI labellisés Terres de jeux 2024";"Établissements publics de coopération intercommunale labellisés Terres de jeux 2024.
 
 Le label Terre de Jeux 2024 permet à toutes les collectivités territoriales et aux acteurs du mouvement sportif, qui partagent la conviction que le sport peut changer les vies, de se fédérer autour d'un projet commun.";"atlas-culture,organisations"
@@ -902,10 +902,10 @@ Source : département de l'analyse budgétaire et de la synthèse, service des r
 Source : comptes de gestion 2019 des régions, Direction générale des finances publiques, ministère chargé de l’Économie, traitement Deps-Doc, ministère de la Culture, 2023";"atlas-culture,depense-culturelle,organisations"
 "6308455a35e36b025049e2dc";"Nuits de la lecture 2022";"La 6e édition des Nuits de la lecture du 20 au 23 janvier 2022.";"evenement,livre-lecture"
 "62cf95993d99f22480f49334";"Liste des festivals en France";"Sont considérés comme festivals les événements qui répondent aux critères suivants :   
-\- avoir eu lieu en 2019  
-\- avoir connu au moins deux éditions en 2019  
-\- se dérouler sur plus d’une journée  
-\- compter au moins 5 spectacles, représentations, concerts ou projections  
+\\- avoir eu lieu en 2019  
+\\- avoir connu au moins deux éditions en 2019  
+\\- se dérouler sur plus d’une journée  
+\\- compter au moins 5 spectacles, représentations, concerts ou projections  
 Le choix a été fait de retenir l’année 2019 qui devient, dans le champ culturel, l’année-repère ante pandémie.
 
 Source : Cartographie nationale, Ministère de la Culture, Deps-doc / France festivals / Cepel, 2022
@@ -1037,12 +1037,12 @@ Les dossiers contiennent des correspondances entre préfectures et administratio
 **Le classement au titre des sites patrimoniaux remarquables** a pour objectif de protéger et mettre en valeur le patrimoine architectural, urbain et paysager de nos territoires. Les sites patrimoniaux remarquables sont des servitudes d’utilité publique c’est-à-dire instituées par une autorité publique dans un but d’intérêt général. Les sites patrimoniaux remarquables se substituent aux anciens dispositifs de protection : secteurs sauvegardés, zones de protection du patrimoine architectural, urbain et paysager (ZPPAUP) et aires de mise en valeur de l’architecture et du patrimoine (AVAP). On dénombre aujourd’hui plus de 940 sites patrimoniaux remarquables. 
 
 **Point d'attention sur la liste**. Le cas majoritaire est celui d'un SPR entièrement localisé dans une commune unique. Il existe toutefois deux autres cas :  
-\- Le territoire d’une commune peut comprendre plusieurs SPR : les numéros de SPR distincts localisés dans une même commune seront différents, et il y aura autant de lignes pour la commune que de SPR distincts sur son territoire ;  
-\- un SPR peut s’étendre sur le territoire de plusieurs communes : chacune des communes où ce SPR est localisé sera identifiée par une ligne propre mais le « numéro de SPR » sera identique dans les différentes lignes ; la colonne ""Nombre de SPR"" indiquera la valeur ""1"" pour une seule de ces communes afin de pouvoir comptabiliser facilement le nombre total de SPR distincts.  
+\\- Le territoire d’une commune peut comprendre plusieurs SPR : les numéros de SPR distincts localisés dans une même commune seront différents, et il y aura autant de lignes pour la commune que de SPR distincts sur son territoire ;  
+\\- un SPR peut s’étendre sur le territoire de plusieurs communes : chacune des communes où ce SPR est localisé sera identifiée par une ligne propre mais le « numéro de SPR » sera identique dans les différentes lignes ; la colonne ""Nombre de SPR"" indiquera la valeur ""1"" pour une seule de ces communes afin de pouvoir comptabiliser facilement le nombre total de SPR distincts.  
   
 **Les enjeux des sites patrimoniaux remarquables** sont retranscrits dans un plan de gestion qui peut prendre deux formes :  
-\- soit un plan de sauvegarde et de mise en valeur (document d’urbanisme)  
-\- soit un plan de valorisation de l’architecture et du patrimoine (servitude d’utilité publique)  
+\\- soit un plan de sauvegarde et de mise en valeur (document d’urbanisme)  
+\\- soit un plan de valorisation de l’architecture et du patrimoine (servitude d’utilité publique)  
 Chacun d’eux constitue un facteur de lisibilité pour les porteurs de projets et les habitants. 
 
 Pour en [savoir plus](https://www.culture.gouv.fr/Thematiques/Monuments-Sites/Monuments-historiques-sites-patrimoniaux/Les-sites-patrimoniaux-remarquables)...";"patrimoine"
@@ -1191,27 +1191,27 @@ Pour la définition des statuts (valide, invalide, invalidé, en instruction), v
 Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
 
 Pour chaque déclaration, le tableau comporte les données suivantes :  
-\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
-\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
-\- date de dépôt de déclaration ;  
-\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
-\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
-\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
-\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
-\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
-\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
-\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
-\- type de déclaration (première demande; renouvellement) ;  
-\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+\\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\\- date de dépôt de déclaration ;  
+\\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\\- type de déclaration (première demande; renouvellement) ;  
+\\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
   
 DEFINITION DES STATUTS :  
-\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+\\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
 Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
-\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
-\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
-\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+\\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
 L'exercice de la profession au titre de cette déclaration est interdit.  
-**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+**\\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
   
 **Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
 Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
@@ -1563,8 +1563,8 @@ Les Archives nationales ont numérisé et diffusent près de 5 millions d'images
 Ces archives sont accessibles en ligne sur la[ Salle des inventaires virtuelles](https://www.siv.archives-nationales.culture.gouv.fr/siv/) et sont décrites dans des inventaires d'archives.  
   
 Vous pouvez retrouver :   
-\- les inventaires d'archives qui décrivent ces archives numérisées et pointent vers elles. Ils sont classés par corpus ;  
-\- l'ensemble des inventaires d'archives des Archives nationales, télécharger les fichiers depuis [l'entrepôt OAI des archives nationales](https://www.siv.archives-nationales.culture.gouv.fr/oai/) (**consultez les modalités techniques de récupération de ces informations** avec le lien suivant:[ http://www.archives-nationales.culture.gouv.fr/fr/web/guest/recuperation-des-metadonnees-des-archives-nationales](http://www.archives-nationales.culture.gouv.fr/fr/web/guest/recuperation-des-metadonnees-des-archives-nationales)[ )]()";"archives"
+\\- les inventaires d'archives qui décrivent ces archives numérisées et pointent vers elles. Ils sont classés par corpus ;  
+\\- l'ensemble des inventaires d'archives des Archives nationales, télécharger les fichiers depuis [l'entrepôt OAI des archives nationales](https://www.siv.archives-nationales.culture.gouv.fr/oai/) (**consultez les modalités techniques de récupération de ces informations** avec le lien suivant:[ http://www.archives-nationales.culture.gouv.fr/fr/web/guest/recuperation-des-metadonnees-des-archives-nationales](http://www.archives-nationales.culture.gouv.fr/fr/web/guest/recuperation-des-metadonnees-des-archives-nationales)[ )]()";"archives"
 "5af120d9b595087cfabcde7a";"Aide à la distribution de la presse quotidienne nationale";"Liste des titres de presse bénéficiant de l'aide à la distribution de la presse nationale.
 
 L’aide à la distribution de la presse quotidienne nationale d’information politique et générale (décret n° 2002-629 du 25 avril 2002).
@@ -1670,13 +1670,13 @@ C’est un moteur de recherche qui donne accès, simplement et gratuitement, à 
 Ces ressources sont élaborées par les services des publics ou éducatifs des établissements culturels qui conservent, mettent en valeur, diffusent ces dernières. Cette base est mise à jour régulièrement par l'équipe en charge du portail ou par les institutions partenaires elles-mêmes.   
   
 Le jeu de données mis à disposition est constitué de l’ensemble des notices documentaires des ressources pédagogiques produites par les établissements culturels partenaires du site et comportent les informations suivantes :  
-\- Le titre de la ressource  
-\- La description  
-\- L’URL de la ressource  
-\- L’institution productrice  
-\- Le lien vers le site internet de l’institution  
-\- La localisation de l’œuvre  
-\- La liste des mots-clés (tags) associés à cette ressource   
+\\- Le titre de la ressource  
+\\- La description  
+\\- L’URL de la ressource  
+\\- L’institution productrice  
+\\- Le lien vers le site internet de l’institution  
+\\- La localisation de l’œuvre  
+\\- La liste des mots-clés (tags) associés à cette ressource   
 
 
 [Téléchargez](http://data.culture.fr/entrepot/HDA/export.tgz) le fichier en format .ttl";"education-artistique-et-culturelle,education-enseignement,histoire-des-arts"
@@ -1763,7 +1763,7 @@ Vous trouverez dans ce document des tableaux :
 - Programmation (Part des femmes dans la production et diffusion des spectacles ; Acquisitions des fonds d’art contemporain ; Expositions des fonds régionaux d’art contemporain et centres d’art ; Audiovisuel public)
 - Rémunérations
 ";"culture,culture-et-communication,egalite-homme-femme,egalite-hommes-femmes,homme-femme,hommes-femmes,postes-de-direction,remuneration,ressources-humaines"
-"536c47bfa3a72933d8d1b3a6";"Liste des Immeubles protégés au titre des Monuments Historiques (archives)";"/!\ La version à jour de ces données est disponible [ici](https://www.data.gouv.fr/fr/datasets/immeubles-proteges-au-titre-des-monuments-historiques-2/)
+"536c47bfa3a72933d8d1b3a6";"Liste des Immeubles protégés au titre des Monuments Historiques (archives)";"/!\\ La version à jour de ces données est disponible [ici](https://www.data.gouv.fr/fr/datasets/immeubles-proteges-au-titre-des-monuments-historiques-2/)
 
 Liste des Immeubles protégés au titre des Monuments Historiques.
 
