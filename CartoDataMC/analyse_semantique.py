@@ -4,37 +4,47 @@ import pandas as pd
 import openai
 import os
 
-# Assure-toi d’avoir défini OPENAI_API_KEY dans les secrets ou les variables d’environnement GitHub Actions
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
 INPUT = "CartoDataMC/cartographie_culture_properties.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
+# Clé API OpenAI depuis la variable d'environnement (cf. GitHub Secrets)
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 df = pd.read_csv(INPUT, sep=";").head(100)
 
-# Pour l’exemple, on ne traite que les noms de propriété
-property_names = df["property_name"].dropna().unique().tolist()
+# Préparation du contexte riche pour chaque propriété
+rows_context = []
+for _, row in df.iterrows():
+    context = (
+        f"dataset_title: {row.get('dataset_title','')}"
+        f" | tags: {row.get('tags','')}"
+        f" | property_name: {row.get('property_name','')}"
+        f" | property_type: {row.get('property_type','')}"
+    )
+    desc = row.get('description','')
+    if pd.notna(desc) and desc.strip():
+        context += f" | description: {desc}"
+    rows_context.append(context)
 
-# Préparer la requête (prompt) pour l’API OpenAI
+# Préparer le prompt pour OpenAI
 prompt = (
-    "Voici une liste de noms de propriétés issues de jeux de données culturels publics français :\n"
-    + "\n".join(property_names)
-    + "\n\nPropose 8 à 12 grandes classes (types/concepts) pour regrouper ces propriétés, avec un intitulé pour chaque classe, et liste les propriétés associées à chaque classe.\n"
+    "Voici une liste de propriétés extraites de jeux de données culturels publics français, chaque ligne comprenant leur contexte (titre du jeu, tags, nom et type de propriété, description si disponible) :\n"
+    + "\n".join(rows_context)
+    + "\n\nÀ partir de ces informations, propose 8 à 12 grandes classes conceptuelles (types, thèmes, concepts) pour regrouper ces propriétés. "
+      "Pour chaque classe, donne un intitulé explicite et liste les propriétés (par leur nom exact) que tu y regroupes.\n"
     + "Présente la réponse au format CSV avec deux colonnes : classe, property_name."
 )
 
-response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
+response = client.chat.completions.create(
+    model="gpt-4-1106-preview",  # modèle gpt-4.1 (OpenAI, juin 2024+)
     messages=[{"role": "user", "content": prompt}],
     temperature=0.2,
-    max_tokens=1500
+    max_tokens=1800
 )
 
-# Extraire le texte CSV de la réponse
-csv_result = response["choices"][0]["message"]["content"]
+csv_result = response.choices[0].message.content
 
-# Sauvegarder tel quel (pour contrôle)
 with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write(csv_result)
 
-print("✅ Analyse sémantique terminée et exportée dans", OUTPUT)
+print("✅ Analyse sémantique (contextuelle, gpt-4.1) terminée et exportée dans", OUTPUT)
