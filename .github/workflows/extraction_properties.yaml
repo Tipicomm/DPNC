@@ -23,12 +23,14 @@ jobs:
       - name: 🧩 Exécuter le script d’extraction
         run: python CartoDataMC/extraction_properties.py
 
-         - name: 💾 Ajouter le fichier généré au dépôt
+      - name: 💾 Ajouter le fichier généré au dépôt
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add CartoDataMC/cartographie_culture_properties.csv
+          # Supprimer l'ancien fichier avec la mauvaise casse s'il existe
           git rm -f CartoDataMC/Cartographie_Culture_properties.csv || true
+          # Ajouter le fichier avec la bonne casse
+          git add CartoDataMC/cartographie_culture_properties.csv
           git commit -m "🧩 Mise à jour des propriétés extraites"
           git push
-        continue-on-error: true
+        continue-on-error: true  # Évite l’échec si aucun changement
