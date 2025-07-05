@@ -1,4 +1,4 @@
-name: 🧾 Extraction des propriétés - CartoDataMC
+name: 🧩 Extraction des propriétés - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -8,28 +8,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Cloner le dépôt
-        uses: actions/checkout@v3
+    - name: 🔄 Cloner le dépôt
+      uses: actions/checkout@v3
 
-      - name: 🐍 Installer Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
+    - name: 🐍 Installer Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
 
-      - name: 📦 Installer les dépendances
-        run: |
-          pip install pandas requests pyyaml
+    - name: 📦 Installer les dépendances Python
+      run: |
+        pip install pandas requests pyyaml
 
-      - name: ▶️ Exécuter le script d’extraction
-        run: python CartoDataMC/extraction_properties.py
+    - name: ▶️ Exécuter le script d’extraction
+      run: python CartoDataMC/extraction_properties.py
 
-      - name: 📁 Vérifier les fichiers générés
-        run: ls -lh CartoDataMC/
+    - name: 📝 Vérification du fichier généré
+      run: ls -lh CartoDataMC/
 
-      - name: ✅ Commit & Push des fichiers (si modifiés)
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add CartoDataMC/*.csv || true
-          git diff --cached --quiet || git commit -m "🧾 Propriétés extraites automatiquement"
-          git push
+    - name: ✅ Commit et push du fichier généré
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add CartoDataMC/Cartographie_Culture_properties.csv
+        git commit -m "🧩 Update Cartographie_Culture_properties.csv"
+        git push
