@@ -6,17 +6,26 @@ on:
 jobs:
   import:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
 
-    - name: Installer Python
+    steps:
+    - name: 🔄 Cloner le dépôt
+      uses: actions/checkout@v3
+
+    - name: 🧾 Vérification des fichiers présents
+      run: |
+        echo "Contenu du dossier racine :"
+        ls -l
+        echo "Contenu de CartoDataMc :"
+        ls -l CartoDataMc
+
+    - name: 🐍 Installer Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
 
-    - name: Installer les dépendances
+    - name: 📦 Installer les dépendances
       run: |
         pip install pandas requests
 
-    - name: Exécuter le script
+    - name: 🚀 Exécuter le script
       run: python CartoDataMc/importsDataGouv.py
