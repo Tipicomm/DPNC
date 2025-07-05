@@ -4,28 +4,29 @@ on:
   workflow_dispatch:
 
 jobs:
-  extract-properties:
+  extraction:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - name: 🛎️ Récupérer le dépôt
+      uses: actions/checkout@v3
 
-      - name: Installer Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+    - name: 🐍 Configurer Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
 
-      - name: Installer les dépendances
-        run: |
-          pip install pandas requests pyyaml
+    - name: 📦 Installer les dépendances
+      run: |
+        pip install pandas requests pyyaml
 
-      - name: Lancer le script d'extraction
-        run: python CartoDataMC/extraction_properties.py
+    - name: 🧩 Exécuter le script d’extraction
+      run: python CartoDataMC/extraction_properties.py
 
-      - name: Commit des résultats
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add CartoDataMC/Cartographie_Culture_properties.csv
-          git commit -m "🧩 Extraction des propriétés CSV"
-          git push
+    - name: 💾 Commiter les résultats s’ils ont changé
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add CartoDataMC/Cartographie_Culture_properties.csv
+        git diff --cached --quiet || git commit -m "🧩 Update Cartographie_Culture_properties.csv"
+        git push
