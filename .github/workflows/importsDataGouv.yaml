@@ -1,4 +1,4 @@
-name: 📥 Importation des données - CartoDataMc
+name: 📥 Importation des données - CartoDataMC
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
         echo "Contenu du dossier racine :"
         ls -l
         echo "Contenu de CartoDataMc :"
-        ls -l CartoDataMc
+        ls -l CartoDataMC
 
     - name: 🐍 Installer Python
       uses: actions/setup-python@v4
@@ -28,4 +28,4 @@ jobs:
         pip install pandas requests
 
     - name: 🚀 Exécuter le script
-      run: python CartoDataMc/importsDataGouv.py
+      run: python CartoDataMC/importsDataGouv.py
