@@ -65,7 +65,18 @@ print("✅ datasets_culture.csv sauvegardé")
 
 ### 3️⃣ Fusionner ressources et jeux de données
 
-df_jointure = pd.merge(df_ressources, df_datasets, on="id.dataset", how="left")
+df_jointure = pd.merge(
+    df_ressources,
+    df_datasets,
+    on="id.dataset",
+    how="left",
+    suffixes=("", "_from_datasets")  # éviter _x/_y
+)
+
+# Correction en cas de doublon de colonne "title.dataset"
+if "title.dataset_from_datasets" in df_jointure.columns:
+    df_jointure.drop(columns=["title.dataset"], inplace=True)
+    df_jointure.rename(columns={"title.dataset_from_datasets": "title.dataset"}, inplace=True)
 
 # Info debug
 print(f"🔍 Colonnes du fichier fusionné : {df_jointure.columns.tolist()}")
