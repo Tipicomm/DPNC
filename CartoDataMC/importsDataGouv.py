@@ -45,3 +45,19 @@ df_datasets = df_datasets[[col for col in colonnes_datasets if col in df_dataset
 # Enregistrer le fichier final
 df_datasets.to_csv("datasets_culture.csv", index=False)
 print("✅ Fichier 'datasets_culture.csv' généré avec succès.")
+
+# 🔄 Fusion des ressources avec les jeux de données
+df_jointure = pd.merge(
+    df_ressources, df_datasets, how="left",
+    left_on="dataset.id", right_on="id",
+    suffixes=("_ressource", "_dataset")
+)
+
+# Vérification rapide
+print("🧩 Nombre de ressources associées à un dataset :", len(df_jointure))
+print(df_jointure[["dataset.id", "dataset.title", "title", "description"]].head())
+
+# Export du fichier final
+df_jointure.to_csv("cartographie_ressources_datasets.csv", index=False, sep=";")
+print("✅ Fichier 'cartographie_ressources_datasets.csv' généré avec succès.")
+
