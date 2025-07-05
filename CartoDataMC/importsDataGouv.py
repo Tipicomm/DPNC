@@ -2,7 +2,8 @@
 
 import pandas as pd
 import requests
-import io  # pour lire les CSV depuis la mémoire
+import io
+import csv  # Pour gérer les options de quoting
 
 # 📁 Dossier de destination
 DOSSIER = "CartoDataMC"
@@ -18,25 +19,26 @@ try:
 except Exception:
     df_ressources = pd.read_csv(io.StringIO(response_ressources.text), sep=",")
 
-# Filtrer les ressources CSV
 df_ressources = df_ressources[df_ressources["format"].str.lower() == "csv"]
 
 # Colonnes utiles
 colonnes_utiles_ressources = ["id", "dataset.id", "dataset.title"]
 df_ressources = df_ressources[[col for col in colonnes_utiles_ressources if col in df_ressources.columns]]
 
-# Renommer pour harmoniser
 df_ressources = df_ressources.rename(columns={
     "id": "id.ressource",
     "dataset.id": "id.dataset",
     "dataset.title": "title.dataset"
 })
 
-# Sauvegarde
-df_ressources.to_csv(f"{DOSSIER}/ressources_culture.csv", index=False)
+# Nettoyage des champs texte
+for col in df_ressources.select_dtypes(include="object").columns:
+    df_ressources[col] = df_ressources[col].astype(str).str.replace('"', "''")
+
+df_ressources.to_csv(f"{DOSSIER}/ressources_culture.csv", index=False, sep=";", quoting=csv.QUOTE_NONE)
 print("✅ ressources_culture.csv sauvegardé")
 
-### 2️⃣ Télécharger les datasets (datasets.csv)
+### 2️⃣ Télécharger les jeux de données (datasets.csv)
 
 url_datasets = "https://www.data.gouv.fr/api/1/organizations/ministere-de-la-culture-et-de-la-communication/datasets.csv"
 response_datasets = requests.get(url_datasets)
@@ -47,11 +49,9 @@ try:
 except Exception:
     df_datasets = pd.read_csv(io.StringIO(response_datasets.text), sep=",")
 
-# Colonnes utiles
 colonnes_utiles_datasets = ["id", "title", "description", "tags"]
 df_datasets = df_datasets[[col for col in colonnes_utiles_datasets if col in df_datasets.columns]]
 
-# Renommer pour harmonisation
 df_datasets = df_datasets.rename(columns={
     "id": "id.dataset",
     "title": "title.dataset",
@@ -59,29 +59,27 @@ df_datasets = df_datasets.rename(columns={
     "tags": "tags.dataset"
 })
 
-# Sauvegarde
-df_datasets.to_csv(f"{DOSSIER}/datasets_culture.csv", index=False)
+# Nettoyage des champs texte
+for col in df_datasets.select_dtypes(include="object").columns:
+    df_datasets[col] = df_datasets[col].astype(str).str.replace('"', "''")
+
+df_datasets.to_csv(f"{DOSSIER}/datasets_culture.csv", index=False, sep=";", quoting=csv.QUOTE_NONE)
 print("✅ datasets_culture.csv sauvegardé")
 
-### 3️⃣ Fusionner ressources et jeux de données
+### 3️⃣ Fusion
 
-df_jointure = pd.merge(
-    df_ressources,
-    df_datasets,
-    on="id.dataset",
-    how="left",
-    suffixes=("", "_from_datasets")  # éviter _x/_y
+df_jointure = pd.merge(df_ressources, df_datasets, on="id.dataset", how="left")
+
+# Nettoyage des champs texte
+for col in df_jointure.select_dtypes(include="object").columns:
+    df_jointure[col] = df_jointure[col].astype(str).str.replace('"', "''")
+
+# Export
+df_jointure.to_csv(
+    f"{DOSSIER}/cartographie_ressources_datasets.csv",
+    index=False,
+    sep=";",
+    quoting=csv.QUOTE_NONE
 )
 
-# Correction en cas de doublon de colonne "title.dataset"
-if "title.dataset_from_datasets" in df_jointure.columns:
-    df_jointure.drop(columns=["title.dataset"], inplace=True)
-    df_jointure.rename(columns={"title.dataset_from_datasets": "title.dataset"}, inplace=True)
-
-# Info debug
-print(f"🔍 Colonnes du fichier fusionné : {df_jointure.columns.tolist()}")
-print(f"🔢 Nombre total de lignes : {len(df_jointure)}")
-
-# Export final
-df_jointure.to_csv(f"{DOSSIER}/cartographie_ressources_datasets.csv", index=False, sep=";")
 print("✅ cartographie_ressources_datasets.csv généré avec succès")
