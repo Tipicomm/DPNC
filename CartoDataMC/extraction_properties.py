@@ -11,8 +11,8 @@ import csv
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
 OUTPUT = "CartoDataMC/Cartographie_Culture_properties.csv"
 
-# 📥 Charger les données
-df_csv = pd.read_csv(INPUT, sep=";", quoting=csv.QUOTE_ALL).head(200)
+# 📥 Chargement du fichier d’entrée
+df_csv = pd.read_csv(INPUT, sep=";").head(200)
 
 # 🔧 Normalisation dynamique des colonnes
 if "title.dataset" not in df_csv.columns:
@@ -102,5 +102,5 @@ for _, row in df_csv.iterrows():
 
 # 💾 Export final
 df_properties = pd.DataFrame(rows)
-df_properties.to_csv(OUTPUT, index=False, quoting=csv.QUOTE_ALL)
+df_properties.to_csv(OUTPUT, index=False, quoting=csv.QUOTE_ALL, sep=";")
 print("✅ Fichier d’extraction des propriétés généré :", OUTPUT)
