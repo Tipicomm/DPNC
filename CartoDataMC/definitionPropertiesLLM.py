@@ -1,16 +1,16 @@
-import openai
-import pandas as pd
-import time
 import os
+import time
+import pandas as pd
+from openai import OpenAI
 
-# Clé API OpenAI depuis la variable d'environnement 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Instancier le client OpenAI avec la clé depuis les variables d'environnement
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Chargement de ton fichier CSV
+# Charger le fichier CSV (chemin relatif depuis la racine du dépôt)
 df = pd.read_csv("CartoDataMC/cartographie_culture_properties_exemples.csv", sep=";")
 df_unique = df[['dataset_title', 'description', 'property_name', 'exemple_1', 'exemple_2', 'exemple_3']].drop_duplicates('property_name')
 
-# Prompt template
+# Construire le prompt pour chaque ligne
 def build_prompt(row):
     return f"""
 Tu es un expert en modélisation des données culturelles et en documentation des schémas de données.
@@ -36,31 +36,32 @@ En t’appuyant uniquement sur ces éléments, rédige une définition de cette 
 Définition : <phrase claire et autonome, 1 à 3 phrases maximum>
 """.strip()
 
-# Fonction d’appel à l’API OpenAI
-def get_definition(prompt, model="gpt-4"):
+# Fonction d'appel à l'API OpenAI avec nouvelle syntaxe
+def get_definition(prompt):
     try:
-        response = openai.ChatCompletion.create(
-            model=model,
+        response = client.chat.completions.create(
+            model="gpt-4",
             messages=[{"role": "user", "content": prompt}],
             temperature=0
         )
-        return response['choices'][0]['message']['content'].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         print("Erreur :", e)
         return "Erreur"
 
-# Application du traitement
+# Génération des définitions
 definitions = []
 for index, row in df_unique.iterrows():
     prompt = build_prompt(row)
     print(f"⏳ Traitement propriété : {row['property_name']}")
     definition = get_definition(prompt)
     definitions.append(definition)
-    time.sleep(1.5)  # Respect du quota OpenAI
+    time.sleep(1.5)  # pour respecter les limites d'usage
 
-# Ajout des résultats
-df_unique["définition"] = definitions
+# Ajouter les définitions dans le DataFrame
+df_unique["definition"] = definitions
 
 # Export CSV
-df_unique.to_csv("proprietes_avec_definitions.csv", index=False)
-print("✅ Fichier exporté avec définitions.")
+output_path = "CartoDataMC/proprietes_avec_definitions.csv"
+df_unique.to_csv(output_path, index=False)
+print(f"✅ Fichier exporté avec définitions : {output_path}")
