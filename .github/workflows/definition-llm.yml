@@ -1,0 +1,38 @@
+name: Génération des définitions LLM
+
+on:
+  workflow_dispatch:  # Permet de le lancer manuellement depuis GitHub
+  push:
+    paths:
+      - 'CartoDataMC/definitionPropertiesLLM.py'
+      - 'CartoDataMC/cartographie_culture_properties_exemples.csv'
+
+jobs:
+  generate-definitions:
+    runs-on: ubuntu-latest
+
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - name: 🔄 Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: 🐍 Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installer les dépendances Python
+        run: |
+          pip install --upgrade pip
+          pip install openai pandas python-dotenv
+
+      - name: 🚀 Exécuter le script Python
+        run: python CartoDataMC/definitionPropertiesLLM.py
+
+      - name: 📤 Sauvegarder le fichier de sortie
+        uses: actions/upload-artifact@v4
+        with:
+          name: proprietes_avec_definitions
+          path: CartoDataMC/proprietes_avec_definitions.csv
