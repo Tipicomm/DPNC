@@ -1,31 +1,32 @@
-name: 📝 Exemples propriétés CSV - CartoDataMC
+name: 📥 Exemples de valeurs - Cartographie Culture
 
 on:
   workflow_dispatch:
 
 jobs:
-  enrich-exemples:
+  exemples-valeurs:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: 🐍 Installer Python
+    steps:
+      - name: 🛎️ Récupération du dépôt
+        uses: actions/checkout@v3
+
+      - name: 🐍 Installation de Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
 
-      - name: 📦 Installer les dépendances
-        run: |
-          pip install pandas requests
+      - name: 📦 Installation des dépendances
+        run: pip install pandas requests
 
-      - name: 📝 Exécuter le script d’exemples de propriétés
+      - name: 🔍 Exécution du script d’extraction des exemples
         run: python CartoDataMC/exemples_proprietes.py
 
-      - name: 💾 Ajouter le fichier généré au dépôt
+      - name: 💾 Commit des résultats
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add CartoDataMC/cartographie_culture_properties_exemples.csv
-          git commit -m "📝 Ajout des exemples de valeurs pour chaque propriété"
+          git commit -m "📥 Ajout d’exemples de valeurs pour les propriétés"
           git push
         continue-on-error: true
