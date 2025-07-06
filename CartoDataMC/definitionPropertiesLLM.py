@@ -1,6 +1,7 @@
 import openai
 import pandas as pd
 import time
+import os
 
 # Clé API OpenAI depuis la variable d'environnement 
 openai.api_key = os.getenv("OPENAI_API_KEY")
