@@ -7,7 +7,7 @@ import os
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Chargement de ton fichier CSV
-df = pd.read_csv("cartographie_culture_properties_exemples.csv", sep=";")
+df = pd.read_csv("CartoDataMC/cartographie_culture_properties_exemples.csv", sep=";")
 df_unique = df[['dataset_title', 'description', 'property_name', 'exemple_1', 'exemple_2', 'exemple_3']].drop_duplicates('property_name')
 
 # Prompt template
