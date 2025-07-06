@@ -3,7 +3,7 @@ import pandas as pd
 import time
 
 # Clé API OpenAI depuis la variable d'environnement 
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Chargement de ton fichier CSV
 df = pd.read_csv("cartographie_culture_properties_exemples.csv", sep=";")
