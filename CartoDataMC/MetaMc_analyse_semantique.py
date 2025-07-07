@@ -17,7 +17,7 @@ FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-ROW_START, ROW_END = 0, 4
+ROW_START, ROW_END = 10, 20
 
 df_full = pd.read_csv(INPUT, sep=";")
 available_columns = df_full.columns.tolist()
