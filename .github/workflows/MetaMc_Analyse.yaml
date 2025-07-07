@@ -21,7 +21,7 @@ jobs:
       - name: 🔎 Exécuter le script d’analyse sémantique
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python CartoDataMC/analyse_semantique.py
+        run: python CartoDataMC/MetaMc_analyse_semantique.py
 
       - name: 💾 Ajouter le fichier généré au dépôt
         run: |
