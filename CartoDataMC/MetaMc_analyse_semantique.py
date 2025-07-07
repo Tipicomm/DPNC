@@ -22,9 +22,9 @@ ROW_START, ROW_END = 0, 4
 df_full = pd.read_csv(INPUT, sep=";")
 available_columns = df_full.columns.tolist()
 
-for col in ['exemple_1', 'exemple_2', 'exemple_3']:
-    if col not in df_full.columns:
-        df_full[col] = ""
+missing_example_cols = [col for col in ['exemple_1', 'exemple_2', 'exemple_3'] if col not in df_full.columns]
+for col in missing_example_cols:
+    df_full[col] = ""
 
 df = df_full.iloc[ROW_START:ROW_END].copy()
 axes_df = pd.read_csv(AXES_FILE, sep=";")
