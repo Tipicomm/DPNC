@@ -17,9 +17,12 @@ FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-ROW_START, ROW_END = 1, 3
+ROW_START, ROW_END = 60, 140
 
-df = pd.read_csv(INPUT, sep=";").iloc[ROW_START:ROW_END].copy()
+df_full = pd.read_csv(INPUT, sep=";")
+available_columns = df_full.columns.tolist()
+
+df = df_full.iloc[ROW_START:ROW_END].copy()
 axes_df = pd.read_csv(AXES_FILE, sep=";")
 
 axes_text = "\n".join(f"- {row['Axe']} : {row['Libellé']} — {row['Définition']}" for _, row in axes_df.iterrows())
@@ -79,7 +82,7 @@ for idx, batch in enumerate(batches):
         desc = row.get('description', '')
         if pd.notna(desc) and desc.strip():
             context += f" | description: {desc}"
-        exemples = [row.get(col, '') for col in ['exemple_1', 'exemple_2', 'exemple_3'] if pd.notna(row.get(col, '')) and row.get(col, '').strip()]
+        exemples = [row.get(col, '') for col in ['exemple_1', 'exemple_2', 'exemple_3'] if col in available_columns and pd.notna(row.get(col, '')) and row.get(col, '').strip()]
         if exemples:
             context += f" | valeurs_exemple: [{', '.join(exemples)}]"
         rows_context.append(context)
@@ -107,8 +110,11 @@ all_files = glob.glob(str(OUTPUT_DIR / "batch_*.csv"))
 df_enrich = pd.concat([pd.read_csv(f, sep=";") for f in all_files if Path(f).stat().st_size > 0], ignore_index=True)
 df_enrich.reset_index(drop=True, inplace=True)
 
-columns_to_keep = ['resource_id', 'dataset_id', 'property_name', 'description', 'tags', 'property_type', 'exemple_1', 'exemple_2', 'exemple_3']
-df_source = pd.read_csv(INPUT, sep=";").iloc[ROW_START:ROW_END][columns_to_keep].reset_index(drop=True)
+base_columns = ['resource_id', 'dataset_id', 'property_name', 'description', 'tags', 'property_type']
+example_columns = [col for col in ['exemple_1', 'exemple_2', 'exemple_3'] if col in available_columns]
+columns_to_keep = base_columns + example_columns
+
+df_source = df_full.iloc[ROW_START:ROW_END][columns_to_keep].reset_index(drop=True)
 df_final = pd.concat([df_source, df_enrich], axis=1)
 df_final.to_csv(FINAL_OUTPUT, sep=";", index=False)
 
