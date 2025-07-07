@@ -1,4 +1,4 @@
-name: 🔎 Analyse sémantique CSV - CartoDataMC
+name: 🔎 MetaMC Analyse sémantique CSV - CartoDataMC
 
 on:
   workflow_dispatch:
