@@ -18,7 +18,7 @@ FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Lecture des données sources (plage 60 à 140 pour test ciblé)
-df = pd.read_csv(INPUT, sep=";").iloc[60:140]
+df = pd.read_csv(INPUT, sep=";").iloc[1:10]
 axes_df = pd.read_csv(AXES_FILE, sep=";")
 
 axes_text = "\n".join(f"- {row['Axe']} : {row['Libellé']} — {row['Définition']}" for _, row in axes_df.iterrows())
