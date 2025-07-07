@@ -11,19 +11,23 @@ except ImportError:
     raise ImportError("Le module 'openai' est manquant. Installez-le via 'pip install openai'")
 
 INPUT = "CartoDataMC/cartographie_culture_properties.csv"
+AXES_FILE = "CartoDataMC/ModeleMetaMC_UTF8.csv"
 OUTPUT_DIR = Path("CartoDataMC/semantique_batches")
 FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Lecture des données sources (plage 60 à 140 pour test ciblé)
-df = pd.read_csv(INPUT, sep=";").iloc[1:20]
+df = pd.read_csv(INPUT, sep=";").iloc[60:140]
+axes_df = pd.read_csv(AXES_FILE, sep=";")
+
+axes_text = "\n".join(f"- {row['Axe']} : {row['Libellé']} — {row['Définition']}" for _, row in axes_df.iterrows())
 
 BATCH_SIZE = 10
 batches = [df[i:i + BATCH_SIZE] for i in range(0, len(df), BATCH_SIZE)]
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-PROMPT_TEMPLATE = """
+PROMPT_TEMPLATE = f"""
 Contexte :
 Dans le cadre de la cartographie des données du ministère de la Culture, nous cherchons à catégoriser les propriétés issues de jeux de données culturels selon des axes sémantiques de référence.
 
@@ -38,11 +42,13 @@ Les données sources sont décrites à travers les colonnes suivantes :
 - exemple_3
 
 Objectif :
-Analyser par lot un ensemble de propriétés afin d’identifier leur signification sémantique, et les aligner avec le métamodèle MetaMC (https://github.com/Tipicomm/DPNC/blob/main/CartoDataMC/ModeleMetaMC_UTF8.csv), qui comporte 10 axes thématiques principaux.
+Analyser par lot un ensemble de propriétés afin d’identifier leur signification sémantique, et les aligner avec le métamodèle MetaMC, qui comporte 10 axes thématiques principaux décrits ci-dessous :
+
+{axes_text}
 
 Consignes :
 Pour chaque propriété analysée, produis une ligne dans un tableau CSV respectant les colonnes suivantes :
-- resource_id : identifiant unique de la propriété, sous la forme “{dataset_id}_{property_name}”
+- resource_id : identifiant unique de la propriété, sous la forme “{{dataset_id}}_{{property_name}}”
 - dataset_id : identifiant du jeu de données source
 - property_name : nom exact de la propriété
 - définition : une reformulation claire et concise de la signification de la propriété (à partir du contexte fourni)
@@ -56,7 +62,7 @@ Important :
 - Si l’information est incertaine, propose une hypothèse plausible justifiée par le contexte.
 - Utilise uniquement les axes du modèle MetaMC comme regroupement de référence.
 
-{contexte}
+{{contexte}}
 """
 
 for idx, batch in enumerate(batches):
