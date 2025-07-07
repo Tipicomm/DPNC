@@ -17,7 +17,7 @@ FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Lecture des données sources (plage 60 à 140 pour test ciblé)
-df = pd.read_csv(INPUT, sep=";").iloc[60:140]
+df = pd.read_csv(INPUT, sep=";").iloc[1:20]
 
 BATCH_SIZE = 10
 batches = [df[i:i + BATCH_SIZE] for i in range(0, len(df), BATCH_SIZE)]
