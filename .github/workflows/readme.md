@@ -1,4 +1,4 @@
-Cartographie des données - MetaMc
+# Cartographie des données - MetaMc
 Le répertoire .github/workflows/ regroupe l’ensemble des pipelines d’automatisation utilisés pour la cartographie des jeux de données culturels. Ces workflows permettent de traiter, enrichir et structurer les données via des scripts Python, des appels à des LLMs ou des imports depuis des sources ouvertes.
 
 
