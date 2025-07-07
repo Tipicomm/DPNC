@@ -17,11 +17,9 @@ FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Plage à traiter (modifiable en un seul endroit)
-ROW_START, ROW_END = 1, 10
+ROW_START, ROW_END = 1, 6
 
-# Lecture des données sources
-df = pd.read_csv(INPUT, sep=";").iloc[ROW_START:ROW_END]
+df = pd.read_csv(INPUT, sep=";").iloc[ROW_START:ROW_END].copy()
 axes_df = pd.read_csv(AXES_FILE, sep=";")
 
 axes_text = "\n".join(f"- {row['Axe']} : {row['Libellé']} — {row['Définition']}" for _, row in axes_df.iterrows())
@@ -34,31 +32,30 @@ PROMPT_TEMPLATE = f"""
 Contexte :
 Dans le cadre de la cartographie des données du ministère de la Culture, nous cherchons à enrichir sémantiquement les propriétés extraites de jeux de données culturels publics français.
 
-Chaque propriété est décrite par les colonnes suivantes :
-- dataset_title : nom du jeu de données d’origine
-- tags : mots-clés thématiques
-- property_name : identifiant d’une propriété du jeu
-- property_type : type de donnée (string, integer, date, bool...)
-- description : description textuelle si disponible
-- exemple_1 / exemple_2 / exemple_3 : exemples de valeurs réelles rencontrées
+Chaque propriété est décrite par :
+- dataset_title : titre du jeu de données source
+- tags : mots-clés fournis
+- property_name : nom exact de la propriété
+- property_type : type de donnée (ex : string, integer, boolean...)
+- description : description éventuelle fournie
+- valeurs_exemple : exemples de valeurs rencontrées dans le jeu de données (format libre)
 
 Objectif :
 Pour chaque propriété analysée, produire les colonnes suivantes :
-- définition : une reformulation claire et concise de la signification de la propriété
-- Axe de référence : un des axes thématiques du modèle MetaMC ci-dessous
-- Type référentiel : OUI si la propriété peut s'aligner sur un référentiel externe connu, NON sinon
-- Référentiel alignement : nom du référentiel sémantique le plus pertinent (ex. INSEE, ISO 3166, GeoNames, RAMEAU, BNF, Europeana, schema.org...)
+- définition : une reformulation claire et concise du sens de la propriété, en s’appuyant sur les exemples si utiles
+- Axe de référence : l’un des axes MetaMC ci-dessous
+- Type référentiel : OUI si la propriété désigne une liste de valeurs fermées, un code ou une nomenclature normalisée (ex : statut, type, catégorie), NON sinon
+- Référentiel alignement : uniquement si reconnu dans schema.org ou les nomenclatures de l’INSEE (code commune, département, région, etc.). Laisser vide sinon.
 
-Voici les axes du modèle de référence MetaMC utilisables :
+Voici les axes du modèle de référence MetaMC :
 
 {axes_text}
 
 Important :
-- Ne modifie en aucun cas les noms de propriété (property_name), ni les identifiants de données.
-- Ne reformule pas les champs existants.
-- Présente STRICTEMENT la réponse au format CSV, avec en-têtes : definition;Axe de référence;Type référentiel;Référentiel alignement
-- Respecte l’ordre des propriétés reçues.
-- Si aucune information n’est possible, laisse une cellule vide sans texte de remplacement.
+- Ne modifie jamais les noms ou identifiants d’origine
+- N’invente pas de référentiels si aucun ne s’impose clairement
+- Présente uniquement le tableau CSV avec les 4 colonnes suivantes : definition;Axe de référence;Type référentiel;Référentiel alignement
+- Une ligne par propriété analysée, dans le même ordre qu’en entrée
 
 Voici les propriétés à enrichir :
 
@@ -82,10 +79,9 @@ for idx, batch in enumerate(batches):
         desc = row.get('description', '')
         if pd.notna(desc) and desc.strip():
             context += f" | description: {desc}"
-        for col in ['exemple_1', 'exemple_2', 'exemple_3']:
-            val = row.get(col, '')
-            if pd.notna(val) and val.strip():
-                context += f" | {col}: {val}"
+        exemples = [row.get(col, '') for col in ['exemple_1', 'exemple_2', 'exemple_3'] if pd.notna(row.get(col, '')) and row.get(col, '').strip()]
+        if exemples:
+            context += f" | valeurs_exemple: [{', '.join(exemples)}]"
         rows_context.append(context)
 
     full_prompt = PROMPT_TEMPLATE.replace("{contexte}", "\n".join(rows_context))
@@ -111,7 +107,6 @@ all_files = glob.glob(str(OUTPUT_DIR / "batch_*.csv"))
 df_enrich = pd.concat([pd.read_csv(f, sep=";") for f in all_files if Path(f).stat().st_size > 0], ignore_index=True)
 df_enrich.reset_index(drop=True, inplace=True)
 
-# Réintégration dans les données sources
 df_source = pd.read_csv(INPUT, sep=";").iloc[ROW_START:ROW_END].reset_index(drop=True)
 df_final = pd.concat([df_source, df_enrich], axis=1)
 df_final.to_csv(FINAL_OUTPUT, sep=";", index=False)
