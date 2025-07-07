@@ -1,10 +1,390 @@
-resource_id;dataset_id;property_name;définition;Axe de référence;Type référentiel;Référentiel alignement
-declarations_entrepreneurs_spectacles_categorie;declarations_entrepreneurs_spectacles;categorie;Catégorie de licence concernée par la déclaration d'entrepreneur de spectacles vivants.;AX09 - Cadre juridique;NON;
-declarations_entrepreneurs_spectacles_date_debut_activite;declarations_entrepreneurs_spectacles;date_debut_activite;Date de début de l'activité de l'entrepreneur de spectacles.;AX10 - Activité et production;NON;
-declarations_entrepreneurs_spectacles_date_fin_activite;declarations_entrepreneurs_spectacles;date_fin_activite;Date de fin de l'activité de l'entrepreneur de spectacles.;AX10 - Activité et production;NON;
-declarations_entrepreneurs_spectacles_demandeur;declarations_entrepreneurs_spectacles;demandeur;Nom ou raison sociale de l'entrepreneur de spectacles ayant fait la déclaration.;AX01 - Organisation;NON;
-declarations_entrepreneurs_spectacles_department_code;declarations_entrepreneurs_spectacles;department_code;Code du département où se situe l'établissement principal de l'entrepreneur de spectacles.;AX06 - Localisation, territoire;OUI;ISO 3166-2
-declarations_entrepreneurs_spectacles_pays;declarations_entrepreneurs_spectacles;pays;Pays où se situe l'établissement principal de l'entrepreneur de spectacles.;AX06 - Localisation, territoire;OUI;ISO 3166-1
-declarations_entrepreneurs_spectacles_status;declarations_entrepreneurs_spectacles;status;Statut de la déclaration de l'entrepreneur de spectacles (valide, invalide, invalidé, en instruction).;AX09 - Cadre juridique;NON;
-manuscrits_pieces_theatre_annee_1ere_representation;manuscrits_pieces_theatre;Année de la 1ère représentation;Année de la première représentation de la pièce de théâtre.;AX02 - Œuvre ou bien culturel;NON;
-manuscrits_pieces_theatre_auteurs;manuscrits_pieces_theatre;Auteurs;Noms des auteurs des pièces de théâtre conservées aux Archives nationales.;AX02 - Œuvre ou bien culturel;OUI;Wikidata
+resource_id;dataset_id;dataset_title;description;tags;property_name;property_type;definition;Axe de référence;Type référentiel;Référentiel alignement
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;categorie;integer;Catégorie de licence attribuée à un entrepreneur de spectacles vivants.;AX01;NON;
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;date_debut_activite;string;Date de début de l'activité déclarée par l'entrepreneur de spectacles.;AX01;NON;
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;date_fin_activite;string;Date de fin de l'activité déclarée par l'entrepreneur de spectacles.;AX01;NON;
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;demandeur;string;Nom ou raison sociale de l'entité ayant fait la demande de licence.;AX01;NON;
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;department_code;string;Code du département où l'activité est déclarée.;AX06;OUI;INSEE
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;pays;string;Pays où l'activité de spectacle vivant est déclarée.;AX06;OUI;ISO 3166
+e6a3517f-dac4-446f-bffd-02216be7bfb0;683e7360559798dcce88e12e;Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France;"_**Pour les entrepreneurs de spectacles**_
+
+Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
+**Une déclaration au statut valide vaut licence d’entrepreneur de spectacles vivants pour cinq ans (sauf retrait de licence en cas d’illégalité). Aucun document ne vous sera envoyé pour indiquer que votre déclaration est valide ; la DRAC ne vous enverra pas de justificatif, le code du travail ayant institué une attribution tacite de licence.**
+
+**Le numéro de licence est le numéro de déclaration. La catégorie de licence n’apparaît pas dans ce numéro mais dans le tableau.**  
+  
+Si la Direction générale des affaires cultures (DRAC) n'est pas revenue vers vous dans les 30 jours suivant votre déclaration, celle-ci apparaîtra sous le statut ""valide"" dans le tableau de la base de données.  
+Si la DRAC vous a demandé des documents complémentaires, la licence est valide 30 jours après que le dossier ait été reçu complet et conforme à la réglementation.   
+Si une déclaration que vous avez faite n’apparaît pas sur le tableau après plus d’un mois, veuillez contacter le _service technique des[démarches en lignes](https://mesdemarches.culture.gouv.fr/)_, il s’agit d’une erreur technique.
+
+**Pour toute question sur le contenu de votre déclaration** , il convient de contacter la DRAC de l'établissement principal de votre entreprise de spectacles _par courriel_.
+
+Pour la définition des statuts (valide, invalide, invalidé, en instruction), voir ci-dessous le paragraphe concernant la définition des statuts. 
+
+**La base de données comprend les déclarations d'activité d'entrepreneur de spectacles vivants déposées auprès des préfets de région depuis le 23 avril 2020** , et le statut de ces déclarations (en instruction, valide, invalide, invalidé).   
+Pour tout savoir sur la réglementation relative à ces licences, consulter la [plateforme des entrepreneurs de spectacles vivants](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV), et notamment ses fiches techniques. 
+
+Pour chaque déclaration, le tableau comporte les données suivantes :  
+\- numéro de déclaration (la lettre indiquant le type de déclaration : première demande de licence (D) ou renouvellement (R) ) ;  
+\- catégorie de licence concernée par la déclaration (pour les définitions juridiques et pratiques des catégories de licences, [voir fiches 2.1, 2.2., 2.3](https://www.culture.gouv.fr/Thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV#fiches)) ;   
+\- date de dépôt de déclaration ;  
+\- le cas échéant, date de validité de la déclaration (au cas général, date de dépôt + 30 jours ; au cas particulier, date de dépôt + une période supérieure à 30 jours si des compléments de dossiers ont été nécessaires) ;  
+\- raison sociale de l'organisme (personne morale) ou nom et prénom de l'entrepreneur de spectacles personne physique (en cas d'entreprise individuelle notamment) ;  
+\- code postal de l'établissement principal de l'organisme, ou de l'entrepreneur de spectacles personne physique ;  
+\- numéro de siret de l'organisme ou numéro de siren de l'entrepreneur de spectacles personne physique ;  
+\- code d'activité principale de l'entreprise, selon la nomenclature des activités françaises (APE-NAF) ;  
+\- pour les licences de catégorie 1 (exploitation de lieu de spectacles), nom du lieu de spectacles ;  
+\- pour les licences de catégorie 1, code postal du lieu de spectacles ;  
+\- type de déclaration (première demande; renouvellement) ;  
+\- géolocalisation : effectuée à partir du code postal de l'établissement principal de l'organisme, ou de l'adresse l'entrepreneur de spectacles personne physique.  
+  
+DEFINITION DES STATUTS :  
+\- **valide** : La déclaration vaut licence ; l'exercice de la profession est licite ;  
+Le tableau donne la date de dépôt de la déclaration et sa date de validité ;  
+\- **invalide** : l'exercice de la profession au titre de cette déclaration est interdit car la durée de validité de la licence est venue à expiration, ou bien parce que la licence a été refusée. Un refus peut être dû à des raisons de forme (dossier incomplet, doublon, erreur de manipulation dans l'envoi du dossier, etc), ou de fond (dettes sociales, non respect du droit de travail ou de la propriété littéraire et artistique, absence de personne dans l'entreprise justifiant des compétences requises, dossier incomplet, etc);  
+\- **invalidé** : la licence a été retirée après une période de validité. La date d'invalidation est précisée. L'exercice de la profession au titre de cette déclaration est désormais interdit. L’invalidation peut être due à une cessation d’activité ou un exercice de la profession qui n’a pas respecté le droit du travail, le droit social, la sécurité, la propriété intellectuelle. Une licence peut être invalidée quand un renouvellement est intervenu avec quelques mois d’anticipation, ce qui a entraîné un nouveau numéro de licence et l’invalidation du précédent.  
+\- **en instruction** : état d'une déclaration pendant le délai d'instruction du dossier.  
+L'exercice de la profession au titre de cette déclaration est interdit.  
+**\- expiré** : licence venue à expiration de sa durée de validité », qui correspondra à une colonne du tableau excel qui n’existe pas encore car les premières expirations de ces licences de 2019 interviendront à compter du 1er novembre 2024.  
+  
+**Ce délai est, de manière incompressible, de 30 jours après réception d’un dossier complet et conforme à la réglementation.**  
+Si un dossier est non conforme, et que le délai de mise en conformité donné par la DRAC à l’entrepreneur est dépassé, la déclaration devient invalide à expiration de ce délai.   
+Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
+Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
+
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant;status;string;Statut actuel de la déclaration de licence d'entrepreneur de spectacles vivants.;AX09;NON;
+851a8961-0c9c-48bc-9858-9a35ab820026;6811a04691e247a5e4622e11;Manuscrits de pièces de théâtre du 19e siècle conservés aux Archives nationales;"Les [Archives nationales](https://www.archives-nationales.culture.gouv.fr) conservent une collection de plus de 28 000 manuscrits de pièces de théâtre soumis au bureau de la censure théâtrale (ministère de l'Intérieur) au 19e siècle. Ces œuvres représentées dans les théâtres parisiens entre la fin du 18e siècle et 1906 n’ont pour la plupart jamais été éditées. 
+
+Les différents inventaires et bases de données internes, fruits notamment des travaux en partie publiés par Odile Krakovitch, sont désormais consultables en ligne sur le portail documentaire de l’institution. 
+
+Les données sont également accessibles via ce jeu de données structurées qui regroupe en un seul ensemble les notices descriptives de la collection. Sont indiquées pour chaque manuscrit les informations suivantes :
+
+  * Titre principal de la pièce ;
+  * Titre complet ou variante ;
+  * Théâtre de la représentation ;  
+
+  * Auteurs : d’après les éléments des bases internes des Archives nationales ;  
+
+  * Auteurs normalisés : harmonisation des auteurs lorsque possible et alignement avec Wikidata ;
+  * Année de la 1ère représentation ;  
+
+  * Date(s) de la 1ère représentation ;
+  * Date normalisée de la 1ère représentation ;  
+
+  * Genre théâtral ;
+  * Subdivision de la pièce ;
+  * Édition : existence d'une version publiée ;  
+
+  * URL de la notice descriptive sur le portail des Archives nationales.
+
+
+
+  
+
+
+Un jeu de données connexe rassemble plus spécifiquement les [pièces de théâtre écrites par des femmes](https://data.culture.gouv.fr/explore/dataset/pieces-de-theatre-ecrites-par-des-femmes-et-representees-a-paris-1809-1906).";19e-siecle,20e-siecle,archives,litterature,paris,spectacle-vivant,theatre;Année de la 1ère représentation;string;Année de la première représentation d'une pièce de théâtre.;AX02;NON;
+851a8961-0c9c-48bc-9858-9a35ab820026;6811a04691e247a5e4622e11;Manuscrits de pièces de théâtre du 19e siècle conservés aux Archives nationales;"Les [Archives nationales](https://www.archives-nationales.culture.gouv.fr) conservent une collection de plus de 28 000 manuscrits de pièces de théâtre soumis au bureau de la censure théâtrale (ministère de l'Intérieur) au 19e siècle. Ces œuvres représentées dans les théâtres parisiens entre la fin du 18e siècle et 1906 n’ont pour la plupart jamais été éditées. 
+
+Les différents inventaires et bases de données internes, fruits notamment des travaux en partie publiés par Odile Krakovitch, sont désormais consultables en ligne sur le portail documentaire de l’institution. 
+
+Les données sont également accessibles via ce jeu de données structurées qui regroupe en un seul ensemble les notices descriptives de la collection. Sont indiquées pour chaque manuscrit les informations suivantes :
+
+  * Titre principal de la pièce ;
+  * Titre complet ou variante ;
+  * Théâtre de la représentation ;  
+
+  * Auteurs : d’après les éléments des bases internes des Archives nationales ;  
+
+  * Auteurs normalisés : harmonisation des auteurs lorsque possible et alignement avec Wikidata ;
+  * Année de la 1ère représentation ;  
+
+  * Date(s) de la 1ère représentation ;
+  * Date normalisée de la 1ère représentation ;  
+
+  * Genre théâtral ;
+  * Subdivision de la pièce ;
+  * Édition : existence d'une version publiée ;  
+
+  * URL de la notice descriptive sur le portail des Archives nationales.
+
+
+
+  
+
+
+Un jeu de données connexe rassemble plus spécifiquement les [pièces de théâtre écrites par des femmes](https://data.culture.gouv.fr/explore/dataset/pieces-de-theatre-ecrites-par-des-femmes-et-representees-a-paris-1809-1906).";19e-siecle,20e-siecle,archives,litterature,paris,spectacle-vivant,theatre;Auteurs;string;Nom des auteurs d'une pièce de théâtre.;AX02;OUI;BNF
