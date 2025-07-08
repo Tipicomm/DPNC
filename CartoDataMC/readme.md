@@ -36,11 +36,11 @@ Créer un fichier unique cartographie_ressources_datasets.csv listant les ressou
         Résultat final : cartographie_ressources_datasets.csv
 
 Structure et propriétés du fichier cartographie_ressources_datasets.csv :
-id.ressource
-id.dataset
-title.dataset
-description.dataset
-tags.dataset
+- id.ressource
+- id.dataset
+- title.dataset
+- description.dataset
+- tags.dataset
 
 
 ### 2. `extraction_properties.py`  
