@@ -1,41 +1,52 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-from collections import Counter
+import csv
+from pathlib import Path
 
-INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
-OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
+DOSSIER = "CartoDataMC"
+FICHIER_ENTREE = f"{DOSSIER}/cartographie_ressources_datasets.csv"
+FICHIER_SORTIE = f"{DOSSIER}/cartographie_culture_properties.csv"
 
-df = pd.read_csv(INPUT, sep=";")
+# Chargement avec séparateur virgule
+df = pd.read_csv(FICHIER_ENTREE, sep=",", encoding="utf-8")
 
-# Correction du nom de colonne fusionné
-if "title.dataset_x" in df.columns and "title.dataset_y" in df.columns:
-    df["title.dataset"] = df["title.dataset_x"]
-elif "title.dataset_x" in df.columns:
-    df.rename(columns={"title.dataset_x": "title.dataset"}, inplace=True)
-elif "title.dataset_y" in df.columns:
-    df.rename(columns={"title.dataset_y": "title.dataset"}, inplace=True)
+# Colonnes attendues
+assert "id.ressource" in df.columns
+assert "id.dataset" in df.columns
+assert "title.dataset" in df.columns
 
-# Préparation d’une structure pour stocker les propriétés
-records = []
+# Liste pour les résultats
+proprietes = []
 
-for (rid, dataset_id), group in df.groupby(["resource_id", "dataset_id"]):
-    # Liste des en-têtes (properties)
+# Boucle sur chaque ressource
+for _, row in df.iterrows():
+    resource_id = row["id.ressource"]
+    dataset_id = row["id.dataset"]
+    dataset_title = row["title.dataset"]
+
     try:
-        headers = eval(group.iloc[0]["headers"])  # format ["col1", "col2", ...]
-        for col in headers:
-            records.append({
-                "property_name": col,
-                "resource_id": rid,
+        url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/profile/"
+        profil = pd.read_json(url)
+
+        if "columns" not in profil["profile"]:
+            continue
+
+        for prop, metadata in profil["profile"]["columns"].items():
+            propriete = {
+                "resource_id": resource_id,
                 "dataset_id": dataset_id,
-                "title.dataset": group.iloc[0].get("title.dataset", ""),
-                "title.resource": group.iloc[0].get("title.resource", "")
-            })
+                "dataset_title": dataset_title,
+                "property_name": prop,
+                "property_label": prop,  # on conserve la même pour l’instant
+                "property_type": metadata.get("python_type", ""),
+                "property_format": metadata.get("format", ""),
+            }
+            proprietes.append(propriete)
+
     except Exception as e:
-        print(f"Erreur parsing headers pour {rid} : {e}")
+        print(f"⚠️ Erreur pour {resource_id} : {e}")
 
-# Création du DataFrame de sortie
-out_df = pd.DataFrame(records)
-
-# Sauvegarde
-out_df.to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
-print("✅ Fichier des propriétés extrait :", OUTPUT)
+# Export
+df_props = pd.DataFrame(proprietes)
+df_props.to_csv(FICHIER_SORTIE, sep=";", index=False, encoding="utf-8")
+print(f"✅ Propriétés extraites et enregistrées dans : {FICHIER_SORTIE}")
