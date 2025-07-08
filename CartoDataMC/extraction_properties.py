@@ -1,52 +1,58 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
+import requests
 import csv
-from pathlib import Path
 
-DOSSIER = "CartoDataMC"
-FICHIER_ENTREE = f"{DOSSIER}/cartographie_ressources_datasets.csv"
-FICHIER_SORTIE = f"{DOSSIER}/cartographie_culture_properties.csv"
+INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
+OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-# Chargement avec séparateur virgule
-df = pd.read_csv(FICHIER_ENTREE, sep=",", encoding="utf-8")
+df = pd.read_csv(INPUT, sep=";", quoting=csv.QUOTE_ALL)
 
-# Colonnes attendues
-assert "id.ressource" in df.columns
-assert "id.dataset" in df.columns
-assert "title.dataset" in df.columns
+colonnes = [
+    "dataset_id",
+    "resource_id",
+    "dataset_title",
+    "tags",
+    "property_name",
+    "property_label",
+    "property_type",
+]
 
-# Liste pour les résultats
-proprietes = []
-
-# Boucle sur chaque ressource
-for _, row in df.iterrows():
-    resource_id = row["id.ressource"]
-    dataset_id = row["id.dataset"]
-    dataset_title = row["title.dataset"]
-
+rows = []
+for idx, row in df.iterrows():
+    rid = row["id.ressource"]
+    did = row["id.dataset"]
+    titre = row.get("title.dataset_y", row.get("title.dataset_x", ""))
+    tags = row.get("tags.dataset", "")
+    
+    url_profile = f"https://tabular-api.data.gouv.fr/api/resources/{rid}/profile/"
     try:
-        url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/profile/"
-        profil = pd.read_json(url)
-
-        if "columns" not in profil["profile"]:
+        r = requests.get(url_profile)
+        if r.status_code != 200:
+            print(f"❌ {rid} → HTTP {r.status_code}")
             continue
+        data = r.json()["profile"]
+        colonnes_data = data.get("columns_labels", data.get("columns", {}))
 
-        for prop, metadata in profil["profile"]["columns"].items():
-            propriete = {
-                "resource_id": resource_id,
-                "dataset_id": dataset_id,
-                "dataset_title": dataset_title,
+        for prop in data["header"]:
+            if prop not in colonnes_data:
+                print(f"⚠️ {prop} absent de {rid}")
+                continue
+
+            prop_info = colonnes_data[prop]
+            rows.append({
+                "dataset_id": did,
+                "resource_id": rid,
+                "dataset_title": titre,
+                "tags": tags,
                 "property_name": prop,
-                "property_label": prop,  # on conserve la même pour l’instant
-                "property_type": metadata.get("python_type", ""),
-                "property_format": metadata.get("format", ""),
-            }
-            proprietes.append(propriete)
+                "property_label": prop,
+                "property_type": prop_info.get("python_type", ""),
+            })
 
     except Exception as e:
-        print(f"⚠️ Erreur pour {resource_id} : {e}")
+        print(f"⚠️ Erreur {rid} → {e}")
 
-# Export
-df_props = pd.DataFrame(proprietes)
-df_props.to_csv(FICHIER_SORTIE, sep=";", index=False, encoding="utf-8")
-print(f"✅ Propriétés extraites et enregistrées dans : {FICHIER_SORTIE}")
+df_props = pd.DataFrame(rows, columns=colonnes)
+df_props.to_csv(OUTPUT, sep=";", index=False)
+print("✅ Fichier généré :", OUTPUT)
