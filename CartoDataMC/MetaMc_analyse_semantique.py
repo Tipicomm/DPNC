@@ -11,7 +11,7 @@ except ImportError:
     raise ImportError("Le module 'openai' est manquant. Installez-le via 'pip install openai'")
 
 INPUT = "CartoDataMC/cartographie_ressources_datasets_proprietes.csv"
-AXES_FILE = "/mnt/data/ModeleMetaMC_UTF8.csv"
+AXES_FILE = "CartoDataMC/ModeleMetaMC_UTF8.csv"
 OUTPUT_DIR = Path("CartoDataMC/semantique_batches")
 FINAL_OUTPUT = "CartoDataMC/cartographie_culture_semantique.csv"
 
