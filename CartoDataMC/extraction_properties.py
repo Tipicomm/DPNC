@@ -2,57 +2,71 @@
 import pandas as pd
 import requests
 import csv
+import os
 
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-df = pd.read_csv(INPUT, sep=";", quoting=csv.QUOTE_ALL)
+# Chargement du fichier source
+try:
+    df = pd.read_csv(INPUT, sep=";", quotechar='"', encoding="utf-8", dtype=str)
+except Exception as e:
+    print("❌ Erreur lors de la lecture du fichier :", e)
+    exit(1)
 
-colonnes = [
-    "dataset_id",
-    "resource_id",
-    "dataset_title",
-    "tags",
-    "property_name",
-    "property_label",
-    "property_type",
-]
+# Vérification et renommage des colonnes
+if "title.dataset" not in df.columns:
+    if "title.dataset_x" in df.columns:
+        df = df.rename(columns={"title.dataset_x": "title.dataset"})
+    elif "title" in df.columns:
+        df = df.rename(columns={"title": "title.dataset"})
+    else:
+        raise ValueError("⚠️ Colonne 'title.dataset' introuvable.")
 
-rows = []
-for idx, row in df.iterrows():
+if "id.ressource" not in df.columns:
+    raise ValueError("⚠️ Colonne 'id.ressource' introuvable.")
+
+# Filtrage des ressources
+df = df.dropna(subset=["id.ressource", "title.dataset"])
+df = df.drop_duplicates(subset=["id.ressource", "title.dataset"])
+
+# Création d’un tableau pour collecter les propriétés
+liste_props = []
+
+# Boucle sur les ressources uniques
+for _, row in df.iterrows():
     rid = row["id.ressource"]
-    did = row["id.dataset"]
-    titre = row.get("title.dataset_y", row.get("title.dataset_x", ""))
-    tags = row.get("tags.dataset", "")
-    
-    url_profile = f"https://tabular-api.data.gouv.fr/api/resources/{rid}/profile/"
+    titre = row["title.dataset"]
+
+    url = f"https://tabular-api.data.gouv.fr/api/resources/{rid}/profile/"
     try:
-        r = requests.get(url_profile)
+        r = requests.get(url)
         if r.status_code != 200:
-            print(f"❌ {rid} → HTTP {r.status_code}")
+            print(f"❌ Profil non disponible pour {rid} ({r.status_code})")
             continue
-        data = r.json()["profile"]
-        colonnes_data = data.get("columns_labels", data.get("columns", {}))
 
-        for prop in data["header"]:
-            if prop not in colonnes_data:
-                print(f"⚠️ {prop} absent de {rid}")
-                continue
+        profile = r.json()
+        colonnes = profile.get("columns", {})
 
-            prop_info = colonnes_data[prop]
-            rows.append({
-                "dataset_id": did,
+        for nom_col, infos in colonnes.items():
+            liste_props.append({
                 "resource_id": rid,
-                "dataset_title": titre,
-                "tags": tags,
-                "property_name": prop,
-                "property_label": prop,
-                "property_type": prop_info.get("python_type", ""),
+                "property_label": nom_col,
+                "property_name": nom_col.lower().replace(" ", "_"),
+                "python_type": infos.get("python_type", ""),
+                "format_inferé": infos.get("format", ""),
+                "dataset_title": titre
             })
 
     except Exception as e:
-        print(f"⚠️ Erreur {rid} → {e}")
+        print(f"⚠️ Erreur pour la ressource {rid} → {e}")
+        continue
 
-df_props = pd.DataFrame(rows, columns=colonnes)
-df_props.to_csv(OUTPUT, sep=";", index=False)
-print("✅ Fichier généré :", OUTPUT)
+# Construction du DataFrame final
+df_props = pd.DataFrame(liste_props)
+
+# Export CSV
+os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
+df_props.to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
+
+print(f"✅ Fichier des propriétés généré : {OUTPUT}")
