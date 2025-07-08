@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from pathlib import Path
 import glob
+import csv
 
 try:
     import openai
@@ -109,6 +110,7 @@ df_enrich = pd.concat([pd.read_csv(f, sep=";") for f in all_files if Path(f).sta
 df_enrich.reset_index(drop=True, inplace=True)
 
 df_final = pd.concat([df_full.iloc[ROW_START:ROW_END].reset_index(drop=True), df_enrich], axis=1)
-df_final.to_csv(FINAL_OUTPUT, sep=";", index=False)
+df_final = df_final.applymap(lambda x: str(x).replace('"', '""') if isinstance(x, str) else x)
+df_final.to_csv(FINAL_OUTPUT, sep=";", index=False, quoting=csv.QUOTE_ALL, quotechar='"', encoding="utf-8")
 
 print("✅ Enrichissement sémantique terminé. Fichier final disponible dans", FINAL_OUTPUT)
