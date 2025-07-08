@@ -43,11 +43,44 @@ Structure et propriétés du fichier cartographie_ressources_datasets.csv :
 - tags.dataset
 
 
-### 2. `extraction_properties.py`  
-Interroge l’API [`tabular.data.gouv.fr`](https://tabular.data.gouv.fr/) pour extraire dynamiquement les propriétés (colonnes) de chaque ressource CSV.
+### 2. Script `extraction_colonnes_tabular.py`
 
-- 📥 Entrée : `cartographie_ressources_datasets.csv`
-- 📤 Sortie : `Cartographie_Culture_properties.csv`
+Ce script extrait les **propriétés (colonnes)** de chaque ressource CSV publiée sur data.gouv.fr par le Ministère de la Culture, à l’aide de l’API [Tabular](https://tabular-api.data.gouv.fr). Il complète automatiquement les métadonnées issues des jeux de données en les enrichissant avec des statistiques descriptives.
+
+#### 📌 Objectif
+Préparer un fichier consolidé pour l’analyse sémantique des propriétés, en vue d’alignements avec des vocabulaires standardisés.
+
+#### ⚙️ Fonctionnement
+Pour chaque ressource CSV :
+- Récupère le profil tabulaire via l’API `https://tabular-api.data.gouv.fr/api/resources/<id.ressource>/profile/`
+- Extrait les colonnes et leurs métadonnées typologiques et statistiques
+- Génère une ligne par **colonne détectée**
+
+#### 📥 Fichier d’entrée
+**Nom** : `cartographie_ressources_datasets.csv`  
+**Format** : CSV (UTF-8, quotes forcées)
+#### 🧾 Fichier de sortie
+**Nom** : `cartographie_ressources_datasets_proprietes.csv`  
+**Format** : CSV (UTF-8, quotes forcées)
+
+#### 📑 Structure du fichier de sortie
+
+| Colonne               | Description                                         |
+|-----------------------|-----------------------------------------------------|
+| `id.ressource`        | Identifiant de la ressource (fichier CSV)          |
+| `id.dataset`          | Identifiant du jeu de données parent               |
+| `title.dataset`       | Titre du jeu de données                            |
+| `description.dataset` | Description du jeu de données                      |
+| `tags.dataset`        | Mots-clés associés                                 |
+| `column_name`         | Nom de la colonne extraite du fichier              |
+| `column_datatype`     | Type détecté (ex. : `string`, `float`, `year`)     |
+| `python_type`         | Type Python estimé (`string`, `float`, etc.)       |
+| `score`               | Score de confiance du typage                       |
+| `nb_distinct`         | Nombre de valeurs distinctes                       |
+| `nb_missing_values`   | Nombre de valeurs manquantes                       |
+| `top_1`               | Valeur la plus fréquente                           |
+| `top_2`               | 2e valeur la plus fréquente                        |
+| `top_3`               | 3e valeur la plus fréquente                        |
 
 ---
 
