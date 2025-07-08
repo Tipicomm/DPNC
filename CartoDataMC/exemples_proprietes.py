@@ -8,7 +8,7 @@ OUTPUT = "CartoDataMC/cartographie_culture_properties_exemples.csv"
 
 df = pd.read_csv(INPUT, sep=";")
 
-# Colonnes à créer si absentes
+# Ajout des colonnes enrichies si absentes
 for col in ["exemple_1", "exemple_2", "exemple_3", "format_inferé", "python_type", "nb_distinct", "nb_missing_values"]:
     if col not in df.columns:
         df[col] = ""
@@ -19,26 +19,37 @@ for rid, group in grouped:
     try:
         profile_url = f"https://tabular-api.data.gouv.fr/api/resources/{rid}/profile/"
         resp = requests.get(profile_url)
-        if resp.status_code == 200:
-            profile_data = resp.json()
-            colonnes = profile_data.get("columns", {})
-            profils = profile_data.get("profile", {})
-
-            for idx, row in group.iterrows():
-                prop = row["property_name"]
-                col_info = colonnes.get(prop, {})
-                prof_info = profils.get(prop, {})
-
-                top_vals = prof_info.get("tops", [])[:3]
-                for i, val in enumerate(top_vals):
-                    df.loc[idx, f"exemple_{i+1}"] = val["value"]
-
-                df.loc[idx, "format_inferé"] = col_info.get("format", "")
-                df.loc[idx, "python_type"] = col_info.get("python_type", "")
-                df.loc[idx, "nb_distinct"] = prof_info.get("nb_distinct", "")
-                df.loc[idx, "nb_missing_values"] = prof_info.get("nb_missing_values", "")
-        else:
+        if resp.status_code != 200:
             print(f"❌ Échec pour {rid} (code {resp.status_code})")
+            continue
+
+        profile_data = resp.json()
+        colonnes = profile_data.get("columns", {})
+        profils = profile_data.get("profile", {})
+
+        for idx, row in group.iterrows():
+            prop = str(row["property_name"])
+            if prop not in colonnes:
+                print(f"⚠️ Propriété '{prop}' non trouvée dans le profil de {rid}")
+                continue
+
+            col_info = colonnes[prop]
+            prof_info = profils.get(prop, {})
+
+            # Exemples de valeurs
+            top_vals = prof_info.get("tops", [])[:3]
+            for i in range(3):
+                if i < len(top_vals):
+                    df.at[idx, f"exemple_{i+1}"] = top_vals[i].get("value", "")
+                else:
+                    df.at[idx, f"exemple_{i+1}"] = ""
+
+            # Autres informations
+            df.at[idx, "format_inferé"] = col_info.get("format", "")
+            df.at[idx, "python_type"] = col_info.get("python_type", "")
+            df.at[idx, "nb_distinct"] = prof_info.get("nb_distinct", "")
+            df.at[idx, "nb_missing_values"] = prof_info.get("nb_missing_values", "")
+
     except Exception as e:
         print(f"⚠️ Erreur pour {rid} → {e}")
     time.sleep(0.5)
