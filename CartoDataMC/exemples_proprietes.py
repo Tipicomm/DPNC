@@ -2,12 +2,15 @@
 import pandas as pd
 import requests
 import time
-import unicodedata
 
 INPUT = "CartoDataMC/cartographie_culture_properties.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_properties_exemples.csv"
 
 df = pd.read_csv(INPUT, sep=";")
+
+# Vérification colonne 'property_label'
+if "property_label" not in df.columns:
+    raise ValueError("La colonne 'property_label' est requise pour identifier les noms exacts dans le profil Tabular.")
 
 # Ajout des colonnes enrichies si absentes
 for col in ["exemple_1", "exemple_2", "exemple_3", "format_inferé", "python_type", "nb_distinct", "nb_missing_values"]:
@@ -15,11 +18,6 @@ for col in ["exemple_1", "exemple_2", "exemple_3", "format_inferé", "python_typ
         df[col] = ""
 
 grouped = df.groupby("resource_id")
-
-def normalize(s):
-    if not isinstance(s, str):
-        return ""
-    return unicodedata.normalize('NFKD', s.strip().lower()).encode('ascii', 'ignore').decode()
 
 for rid, group in grouped:
     try:
@@ -33,24 +31,22 @@ for rid, group in grouped:
         colonnes = profile_data.get("columns", {})
         profils = profile_data.get("profile", {})
 
-        normalized_keys = {normalize(k): k for k in colonnes.keys()}
-
         for idx, row in group.iterrows():
-            prop = str(row["property_name"])
-            norm_prop = normalize(prop)
-
-            if norm_prop not in normalized_keys:
-                print(f"⚠️ Propriété '{prop}' non trouvée (normalisée : '{norm_prop}') dans le profil de {rid}")
+            label = str(row["property_label"]).strip()
+            if label not in colonnes:
+                print(f"⚠️ Libellé '{label}' non trouvé dans le profil de {rid}")
                 continue
 
-            col_name = normalized_keys[norm_prop]
-            col_info = colonnes[col_name]
-            prof_info = profils.get(col_name, {})
+            col_info = colonnes[label]
+            prof_info = profils.get(label, {})
 
             # Exemples de valeurs
             top_vals = prof_info.get("tops", [])[:3]
             for i in range(3):
-                df.at[idx, f"exemple_{i+1}"] = top_vals[i].get("value", "") if i < len(top_vals) else ""
+                if i < len(top_vals):
+                    df.at[idx, f"exemple_{i+1}"] = top_vals[i].get("value", "")
+                else:
+                    df.at[idx, f"exemple_{i+1}"] = ""
 
             # Autres informations
             df.at[idx, "format_inferé"] = col_info.get("format", "")
