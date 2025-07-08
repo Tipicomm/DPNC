@@ -20,7 +20,7 @@ client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 ROW_START, ROW_END = 0, 10  # ajuster selon besoin
 
-df_full = pd.read_csv(INPUT, sep=",")
+df_full = pd.read_csv(INPUT, sep=",", quoting=csv.QUOTE_MINIMAL)
 axes_df = pd.read_csv(AXES_FILE, sep=";")
 
 axes_text = "\n".join(f"- {row['Axe']} : {row['Libellé']} — {row['Définition']}" for _, row in axes_df.iterrows())
