@@ -92,7 +92,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"status";"string";"string";"1.0";"2.0";"19.0";"Transmis";"Transmis hors délais";"";"Statut de la déclaration d'activité d'entrepreneur de spectacles vivants, indiquant si elle a été transmise ou transmise hors délais.";"AX01";"NON";""
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"status";"string";"string";"1.0";"2.0";"19.0";"Transmis";"Transmis hors délais";"";"Statut de la déclaration d'activité, indiquant si elle a été transmise dans les délais.";"AX01";"OUI";""
 "e6a3517f-dac4-446f-bffd-02216be7bfb0";"683e7360559798dcce88e12e";"Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France";"_**Pour les entrepreneurs de spectacles**_
 
 Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
@@ -139,7 +139,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"categorie";"int";"int";"1.0";"3.0";"0.0";"2.0";"1.0";"3.0";"Catégorie de licence concernée par la déclaration, indiquée par un numéro.";"AX01";"OUI";""
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"categorie";"int";"int";"1.0";"3.0";"0.0";"2.0";"1.0";"3.0";"Catégorie de licence concernée par la déclaration.";"AX01";"OUI";""
 "e6a3517f-dac4-446f-bffd-02216be7bfb0";"683e7360559798dcce88e12e";"Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France";"_**Pour les entrepreneurs de spectacles**_
 
 Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
@@ -186,7 +186,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"demandeur";"string";"string";"1.0";"53.0";"0.0";"Laure Cottignies";"Gabin Monsallier";"Charlotte Bayle";"Nom ou raison sociale de l'entrepreneur de spectacles vivants, qu'il s'agisse d'une personne physique ou morale.";"AX01";"NON";""
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"demandeur";"string";"string";"1.0";"53.0";"0.0";"Laure Cottignies";"Gabin Monsallier";"Charlotte Bayle";"Nom ou raison sociale de l'entrepreneur de spectacles.";"AX01";"NON";""
 "e6a3517f-dac4-446f-bffd-02216be7bfb0";"683e7360559798dcce88e12e";"Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France";"_**Pour les entrepreneurs de spectacles**_
 
 Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
@@ -280,7 +280,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"department_code";"region";"string";"1.0";"10.0";"0.0";"Île-de-France";"Provence-Alpes-Côte d'Azur";"Grand-Est";"Code de la région où l'activité de spectacle vivant est déclarée.";"AX06";"OUI";"INSEE"
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"department_code";"region";"string";"1.0";"10.0";"0.0";"Île-de-France";"Provence-Alpes-Côte d'Azur";"Grand-Est";"Région administrative associée à la déclaration.";"AX06";"OUI";"INSEE"
 "e6a3517f-dac4-446f-bffd-02216be7bfb0";"683e7360559798dcce88e12e";"Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France";"_**Pour les entrepreneurs de spectacles**_
 
 Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
@@ -327,7 +327,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"date_debut_activite";"date";"date";"1.25";"40.0";"0.0";"2025-06-28";"2025-06-07";"2025-07-04";"Date de début de l'activité déclarée pour l'entrepreneur de spectacles vivants.";"AX01";"NON";""
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"date_debut_activite";"date";"date";"1.25";"40.0";"0.0";"2025-06-28";"2025-06-07";"2025-07-04";"Date de début de l'activité de spectacle vivant déclarée.";"AX01";"NON";""
 "e6a3517f-dac4-446f-bffd-02216be7bfb0";"683e7360559798dcce88e12e";"Déclarations des entrepreneurs de spectacles vivants - espace licence - hors de France";"_**Pour les entrepreneurs de spectacles**_
 
 Vous pouvez vérifier le statut de votre déclaration dans l’onglet « tableau » de cette base de données mise à jour quotidiennement.   
@@ -374,7 +374,7 @@ Si un dossier est non conforme, et que le délai de mise en conformité donné p
 Si la mise en conformité est faite avant l’expiration du délai, le dossier devient valide 30 jours après la mise en conformité.  
 Pour plus d'information sur les statuts et procédures : [consulter les points 5.3 et 5.4 de la fiche d'instruction numéro 5](https://www.culture.gouv.fr/Sites-thematiques/Theatre-spectacles/Pour-les-professionnels/Plateforme-des-entrepreneurs-de-spectacles-vivants-PLATESV/Fiche-5.-Comment-obtenir-le-recepisse-valant-licence-qui-permettra-d-exercer-L-administration-peut-elle-s-y-opposer).
 
-Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"date_fin_activite";"date";"date";"1.25";"44.0";"0.0";"2025-06-29";"2025-06-07";"2025-06-15";"Date de fin de l'activité déclarée pour l'entrepreneur de spectacles vivants.";"AX01";"NON";""
+Les enregistrements sont géolocalisés par rapport au code postal, et donc au centroïde de la commune.";"entrepreneur-de-spectacles,exploitant-de-lieu,licences,organisme-culturel,spectacle-vivant";"date_fin_activite";"date";"date";"1.25";"44.0";"0.0";"2025-06-29";"2025-06-07";"2025-06-15";"Date de fin de l'activité de spectacle vivant déclarée.";"AX01";"NON";""
 "851a8961-0c9c-48bc-9858-9a35ab820026";"6811a04691e247a5e4622e11";"Manuscrits de pièces de théâtre du 19e siècle conservés aux Archives nationales";"Les [Archives nationales](https://www.archives-nationales.culture.gouv.fr) conservent une collection de plus de 28 000 manuscrits de pièces de théâtre soumis au bureau de la censure théâtrale (ministère de l'Intérieur) au 19e siècle. Ces œuvres représentées dans les théâtres parisiens entre la fin du 18e siècle et 1906 n’ont pour la plupart jamais été éditées. 
 
 Les différents inventaires et bases de données internes, fruits notamment des travaux en partie publiés par Odile Krakovitch, sont désormais consultables en ligne sur le portail documentaire de l’institution. 
