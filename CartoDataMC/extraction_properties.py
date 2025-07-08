@@ -1,51 +1,48 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
+import requests
 import os
+import time
 
-# 📥 Entrée : fichier de jointure datasets + ressources
-FICHIER_CSV = "CartoDataMC/cartographie_ressources_datasets.csv"
+INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
+OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-# 📤 Sortie : propriétés extraites
-FICHIER_SORTIE = "CartoDataMC/cartographie_culture_properties.csv"
+if not os.path.exists(INPUT):
+    raise FileNotFoundError(f"Fichier introuvable : {INPUT}")
 
-# 🧪 Nombre de lignes à lire dans chaque fichier pour échantillon
-NB_LIGNES = 200
+df = pd.read_csv(INPUT, sep=";")
+properties = []
 
-# 📁 Création du dossier si nécessaire
-os.makedirs("CartoDataMC", exist_ok=True)
+for idx, row in df.iterrows():
+    resource_id = row.get("resource_id", "").strip()
+    dataset_id = row.get("dataset_id", "").strip()
+    titre = row.get("title.dataset", "") or row.get("title", "")
 
-# 🔁 Lecture du fichier principal
-df = pd.read_csv(FICHIER_CSV, sep=",", quotechar='"', encoding="utf-8")
-
-# 📄 Préparation d’un tableau pour collecter les propriétés
-liste_props = []
-
-# 🔍 Parcours des ressources CSV
-for i, row in df.iterrows():
-    if not row["id.ressource"]:
+    if not resource_id or pd.isna(resource_id):
         continue
-    ressource_id = row["id.ressource"]
-    dataset_id = row["id.dataset"]
-    titre = row["title.dataset"]
 
     try:
-        url = f"https://tabular-api.data.gouv.fr/api/resources/{ressource_id}/rows/?format=csv&page=1&page_size={NB_LIGNES}"
-        temp_df = pd.read_csv(url, sep=None, engine="python", nrows=NB_LIGNES)
+        profile_url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/profile/"
+        resp = requests.get(profile_url)
+        if resp.status_code != 200:
+            print(f"❌ Échec pour {resource_id} (code {resp.status_code})")
+            continue
 
-        for col in temp_df.columns:
-            liste_props.append({
-                "resource_id": ressource_id,
+        profile = resp.json().get("profile", {})
+        colonnes = profile.get("columns", {})
+
+        for prop in colonnes:
+            properties.append({
                 "dataset_id": dataset_id,
-                "property_label": col,
-                "property_name": col.lower().strip().replace(" ", "_"),
-                "title": titre
+                "resource_id": resource_id,
+                "title": titre,
+                "property_name": prop,
+                "property_label": prop  # utile si on veut distinguer le nom public
             })
 
     except Exception as e:
-        print(f"❌ Échec lecture {ressource_id} → {e}")
+        print(f"⚠️ Erreur pour {resource_id} → {e}")
+    time.sleep(0.5)
 
-# 📦 Sauvegarde des propriétés
-df_props = pd.DataFrame(liste_props)
-df_props = df_props.drop_duplicates()
-df_props.to_csv(FICHIER_SORTIE, sep=";", index=False, encoding="utf-8")
-print(f"✅ Propriétés extraites et sauvegardées dans : {FICHIER_SORTIE}")
+pd.DataFrame(properties).to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
+print("✅ Fichier exporté :", OUTPUT)
