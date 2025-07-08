@@ -20,7 +20,7 @@ jobs:
         run: pip install pandas requests
 
       - name: 🔍 Exécution du script enrichi
-        run: python CartoDataMC/exemples_proprietes_profile_enrichi.py
+        run: python CartoDataMC/exemples_proprietes.py
 
       - name: 💾 Commit des fichiers enrichis
         run: |
