@@ -13,32 +13,26 @@ Ce script automatise la génération d’une cartographie des ressources CSV pub
 📌 Objectif
 
 Créer un fichier unique cartographie_ressources_datasets.csv listant les ressources CSV disponibles, enrichies avec le titre, la description et les tags de leur jeu de données parent.
+
 📂 Étapes du traitement
 
     Téléchargement des ressources
 
         Fichier source : datasets-resources.csv
-
         Filtrage sur le format csv
-
         Colonnes extraites : id (ressource), dataset.id, dataset.title
-
         Résultat : ressources_culture.csv
 
     Téléchargement des jeux de données
 
         Fichier source : datasets.csv
-
         Colonnes extraites : id (dataset), title, description, tags
-
         Résultat : datasets_culture.csv
 
     Fusion et nettoyage
 
         Jointure sur id.dataset
-
         Nettoyage des doublons (title.dataset_x, title.dataset_y)
-
         Résultat final : cartographie_ressources_datasets.csv
 ---
 
