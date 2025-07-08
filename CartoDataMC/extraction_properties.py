@@ -7,11 +7,17 @@ import os
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-# Chargement du fichier source
-try:
-    df = pd.read_csv(INPUT, sep=";", quotechar='"', encoding="utf-8", dtype=str)
-except Exception as e:
-    print("❌ Erreur lors de la lecture du fichier :", e)
+# Tentative de lecture avec différents séparateurs
+separators = [";", ",", "\t"]
+for sep in separators:
+    try:
+        df = pd.read_csv(INPUT, sep=sep, quotechar='"', encoding="utf-8", dtype=str)
+        if df.shape[1] > 1:
+            break
+    except Exception:
+        continue
+else:
+    print("❌ Impossible de lire le fichier avec les séparateurs classiques (; , tabulation).")
     exit(1)
 
 # Vérification et renommage des colonnes
@@ -30,10 +36,9 @@ if "id.ressource" not in df.columns:
 df = df.dropna(subset=["id.ressource", "title.dataset"])
 df = df.drop_duplicates(subset=["id.ressource", "title.dataset"])
 
-# Création d’un tableau pour collecter les propriétés
+# Extraction des propriétés
 liste_props = []
 
-# Boucle sur les ressources uniques
 for _, row in df.iterrows():
     rid = row["id.ressource"]
     titre = row["title.dataset"]
@@ -62,11 +67,8 @@ for _, row in df.iterrows():
         print(f"⚠️ Erreur pour la ressource {rid} → {e}")
         continue
 
-# Construction du DataFrame final
+# Sauvegarde du résultat
 df_props = pd.DataFrame(liste_props)
-
-# Export CSV
 os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
 df_props.to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
-
 print(f"✅ Fichier des propriétés généré : {OUTPUT}")
