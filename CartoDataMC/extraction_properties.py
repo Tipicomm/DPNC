@@ -1,57 +1,51 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import requests
-import time
+import os
 
-# --- CONFIGURATION
-OUTPUT = "CartoDataMC/cartographie_culture_properties_exemples.csv"
-BASE_URL = "https://tabular-api.data.gouv.fr"
-PAUSE = 0.5  # en secondes entre appels API
+# 📥 Entrée : fichier de jointure datasets + ressources
+FICHIER_CSV = "CartoDataMC/cartographie_ressources_datasets.csv"
 
-# --- PARTIE 1 : extraction des propriétés (identifiant + libellé)
-# Supposons que tu as une fonction `get_resources()` qui renvoie la liste des resources.
-# Par exemple : [{"resource_id": "...", "property_name": "...", "property_label": "..."}]
-resources = get_resources()  # à adapter selon ton code existant
+# 📤 Sortie : propriétés extraites
+FICHIER_SORTIE = "CartoDataMC/cartographie_culture_properties.csv"
 
-df = pd.DataFrame(resources)
-for col in ["exemple_1", "exemple_2", "exemple_3", 
-            "format_inferé", "python_type", "nb_distinct", "nb_missing_values"]:
-    if col not in df.columns:
-        df[col] = ""
+# 🧪 Nombre de lignes à lire dans chaque fichier pour échantillon
+NB_LIGNES = 200
 
-# --- PARTIE 2 : enrichissement avec profile
-grouped = df.groupby("resource_id")
+# 📁 Création du dossier si nécessaire
+os.makedirs("CartoDataMC", exist_ok=True)
 
-for rid, group in grouped:
+# 🔁 Lecture du fichier principal
+df = pd.read_csv(FICHIER_CSV, sep=",", quotechar='"', encoding="utf-8")
+
+# 📄 Préparation d’un tableau pour collecter les propriétés
+liste_props = []
+
+# 🔍 Parcours des ressources CSV
+for i, row in df.iterrows():
+    if not row["id.ressource"]:
+        continue
+    ressource_id = row["id.ressource"]
+    dataset_id = row["id.dataset"]
+    titre = row["title.dataset"]
+
     try:
-        resp = requests.get(f"{BASE_URL}/api/resources/{rid}/profile/")
-        if resp.status_code != 200:
-            print(f"❌ Échec pour {rid} (code {resp.status_code})")
-            continue
-        pdata = resp.json()
-        cols = pdata.get("columns", {})
-        profs = pdata.get("profile", {})
+        url = f"https://tabular-api.data.gouv.fr/api/resources/{ressource_id}/rows/?format=csv&page=1&page_size={NB_LIGNES}"
+        temp_df = pd.read_csv(url, sep=None, engine="python", nrows=NB_LIGNES)
 
-        for idx, row in group.iterrows():
-            prop_label = row["property_label"]
-            if prop_label not in cols:
-                print(f"⚠️ Propriété label '{prop_label}' non trouvée pour {rid}")
-                continue
-            # top 3 valeurs
-            tops = profs.get(prop_label, {}).get("tops", [])[:3]
-            for i in range(3):
-                df.at[idx, f"exemple_{i+1}"] = tops[i]["value"] if i < len(tops) else ""
-            # typage et stats
-            col_info = cols[prop_label]
-            prof_info = profs.get(prop_label, {})
-            df.at[idx, "format_inferé"] = col_info.get("format", "")
-            df.at[idx, "python_type"] = col_info.get("python_type", "")
-            df.at[idx, "nb_distinct"] = prof_info.get("nb_distinct", "")
-            df.at[idx, "nb_missing_values"] = prof_info.get("nb_missing_values", "")
+        for col in temp_df.columns:
+            liste_props.append({
+                "resource_id": ressource_id,
+                "dataset_id": dataset_id,
+                "property_label": col,
+                "property_name": col.lower().strip().replace(" ", "_"),
+                "title": titre
+            })
 
     except Exception as e:
-        print(f"⚠️ Erreur sur {rid} → {e}")
-    time.sleep(PAUSE)
+        print(f"❌ Échec lecture {ressource_id} → {e}")
 
-df.to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
-print("✅ Enrichissement terminé :", OUTPUT)
+# 📦 Sauvegarde des propriétés
+df_props = pd.DataFrame(liste_props)
+df_props = df_props.drop_duplicates()
+df_props.to_csv(FICHIER_SORTIE, sep=";", index=False, encoding="utf-8")
+print(f"✅ Propriétés extraites et sauvegardées dans : {FICHIER_SORTIE}")
