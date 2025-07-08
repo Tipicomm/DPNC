@@ -61,6 +61,11 @@ print("✅ datasets_culture.csv sauvegardé")
 
 df_jointure = pd.merge(df_ressources, df_datasets, on="id.dataset", how="left")
 
+# Nettoyage du doublon de titre
+if "title.dataset_x" in df_jointure.columns and "title.dataset_y" in df_jointure.columns:
+    df_jointure = df_jointure.drop(columns=["title.dataset_y"])
+    df_jointure = df_jointure.rename(columns={"title.dataset_x": "title.dataset"})
+
 print(f"🔍 Colonnes du fichier fusionné : {df_jointure.columns.tolist()}")
 print(f"🔢 Nombre total de lignes : {len(df_jointure)}")
 
