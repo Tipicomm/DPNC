@@ -35,6 +35,13 @@ Créer un fichier unique cartographie_ressources_datasets.csv listant les ressou
         Nettoyage des doublons (title.dataset_x, title.dataset_y)
         Résultat final : cartographie_ressources_datasets.csv
 
+Structure et propriétés du fichier cartographie_ressources_datasets.csv :
+id.ressource
+id.dataset
+title.dataset
+description.dataset
+tags.dataset
+
 
 ### 2. `extraction_properties.py`  
 Interroge l’API [`tabular.data.gouv.fr`](https://tabular.data.gouv.fr/) pour extraire dynamiquement les propriétés (colonnes) de chaque ressource CSV.
