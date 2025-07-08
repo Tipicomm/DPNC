@@ -2,6 +2,7 @@
 import pandas as pd
 import requests
 import time
+import unicodedata
 
 INPUT = "CartoDataMC/cartographie_culture_properties.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_properties_exemples.csv"
@@ -15,6 +16,11 @@ for col in ["exemple_1", "exemple_2", "exemple_3", "format_inferé", "python_typ
 
 grouped = df.groupby("resource_id")
 
+def normalize(s):
+    if not isinstance(s, str):
+        return ""
+    return unicodedata.normalize('NFKD', s.strip().lower()).encode('ascii', 'ignore').decode()
+
 for rid, group in grouped:
     try:
         profile_url = f"https://tabular-api.data.gouv.fr/api/resources/{rid}/profile/"
@@ -27,22 +33,24 @@ for rid, group in grouped:
         colonnes = profile_data.get("columns", {})
         profils = profile_data.get("profile", {})
 
+        normalized_keys = {normalize(k): k for k in colonnes.keys()}
+
         for idx, row in group.iterrows():
             prop = str(row["property_name"])
-            if prop not in colonnes:
-                print(f"⚠️ Propriété '{prop}' non trouvée dans le profil de {rid}")
+            norm_prop = normalize(prop)
+
+            if norm_prop not in normalized_keys:
+                print(f"⚠️ Propriété '{prop}' non trouvée (normalisée : '{norm_prop}') dans le profil de {rid}")
                 continue
 
-            col_info = colonnes[prop]
-            prof_info = profils.get(prop, {})
+            col_name = normalized_keys[norm_prop]
+            col_info = colonnes[col_name]
+            prof_info = profils.get(col_name, {})
 
             # Exemples de valeurs
             top_vals = prof_info.get("tops", [])[:3]
             for i in range(3):
-                if i < len(top_vals):
-                    df.at[idx, f"exemple_{i+1}"] = top_vals[i].get("value", "")
-                else:
-                    df.at[idx, f"exemple_{i+1}"] = ""
+                df.at[idx, f"exemple_{i+1}"] = top_vals[i].get("value", "") if i < len(top_vals) else ""
 
             # Autres informations
             df.at[idx, "format_inferé"] = col_info.get("format", "")
