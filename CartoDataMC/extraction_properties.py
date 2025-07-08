@@ -1,48 +1,41 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import requests
-import os
-import time
+from collections import Counter
 
 INPUT = "CartoDataMC/cartographie_ressources_datasets.csv"
 OUTPUT = "CartoDataMC/cartographie_culture_properties.csv"
 
-if not os.path.exists(INPUT):
-    raise FileNotFoundError(f"Fichier introuvable : {INPUT}")
-
 df = pd.read_csv(INPUT, sep=";")
-properties = []
 
-for idx, row in df.iterrows():
-    resource_id = row.get("resource_id", "").strip()
-    dataset_id = row.get("dataset_id", "").strip()
-    titre = row.get("title.dataset", "") or row.get("title", "")
+# Correction du nom de colonne fusionné
+if "title.dataset_x" in df.columns and "title.dataset_y" in df.columns:
+    df["title.dataset"] = df["title.dataset_x"]
+elif "title.dataset_x" in df.columns:
+    df.rename(columns={"title.dataset_x": "title.dataset"}, inplace=True)
+elif "title.dataset_y" in df.columns:
+    df.rename(columns={"title.dataset_y": "title.dataset"}, inplace=True)
 
-    if not resource_id or pd.isna(resource_id):
-        continue
+# Préparation d’une structure pour stocker les propriétés
+records = []
 
+for (rid, dataset_id), group in df.groupby(["resource_id", "dataset_id"]):
+    # Liste des en-têtes (properties)
     try:
-        profile_url = f"https://tabular-api.data.gouv.fr/api/resources/{resource_id}/profile/"
-        resp = requests.get(profile_url)
-        if resp.status_code != 200:
-            print(f"❌ Échec pour {resource_id} (code {resp.status_code})")
-            continue
-
-        profile = resp.json().get("profile", {})
-        colonnes = profile.get("columns", {})
-
-        for prop in colonnes:
-            properties.append({
+        headers = eval(group.iloc[0]["headers"])  # format ["col1", "col2", ...]
+        for col in headers:
+            records.append({
+                "property_name": col,
+                "resource_id": rid,
                 "dataset_id": dataset_id,
-                "resource_id": resource_id,
-                "title": titre,
-                "property_name": prop,
-                "property_label": prop  # utile si on veut distinguer le nom public
+                "title.dataset": group.iloc[0].get("title.dataset", ""),
+                "title.resource": group.iloc[0].get("title.resource", "")
             })
-
     except Exception as e:
-        print(f"⚠️ Erreur pour {resource_id} → {e}")
-    time.sleep(0.5)
+        print(f"Erreur parsing headers pour {rid} : {e}")
 
-pd.DataFrame(properties).to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
-print("✅ Fichier exporté :", OUTPUT)
+# Création du DataFrame de sortie
+out_df = pd.DataFrame(records)
+
+# Sauvegarde
+out_df.to_csv(OUTPUT, sep=";", index=False, encoding="utf-8")
+print("✅ Fichier des propriétés extrait :", OUTPUT)
