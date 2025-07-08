@@ -1,32 +1,31 @@
-name: 📥 Exemples de valeurs - Cartographie Culture
+name: Enrichissement des propriétés (avec typage)
 
 on:
   workflow_dispatch:
 
 jobs:
-  exemples-valeurs:
+  enrichissement:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🛎️ Récupération du dépôt
+      - name: 📥 Cloner le dépôt
         uses: actions/checkout@v3
 
-      - name: 🐍 Installation de Python
+      - name: 🐍 Installer Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
-      - name: 📦 Installation des dépendances
+      - name: 📦 Installer les dépendances
         run: pip install pandas requests
 
-      - name: 🔍 Exécution du script d’extraction des exemples
-        run: python CartoDataMC/exemples_proprietes.py
+      - name: 🔍 Exécution du script enrichi
+        run: python CartoDataMC/exemples_proprietes_profile_enrichi.py
 
-      - name: 💾 Commit des résultats
+      - name: 💾 Commit des fichiers enrichis
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
           git add CartoDataMC/cartographie_culture_properties_exemples.csv
-          git commit -m "📥 Ajout d’exemples de valeurs pour les propriétés"
+          git commit -m 'Mise à jour des exemples de propriétés enrichis'
           git push
-        continue-on-error: true
