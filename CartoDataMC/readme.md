@@ -84,27 +84,51 @@ Pour chaque ressource CSV :
 
 ---
 
-### 3. `analyse_semantique.py`  
-Utilise l’API OpenAI pour analyser les propriétés et les regrouper par classes sémantiques (ex : date, structure, œuvre…).
+# Phase 3 – Alignement sémantique
 
-- 📥 Entrée : `Cartographie_Culture_properties.csv`
-- 📤 Sortie : `Cartographie_Culture_classes.csv`
-- 🧠 Modèle utilisé : `gpt-4` via `openai.ChatCompletion`
+## 🎯 Objectif
+Enrichir les propriétés extraites de jeux de données culturels français avec des métadonnées sémantiques : description, classification thématique, typage référentiel, et tentative d’alignement avec des vocabulaires standards comme `schema.org` ou les nomenclatures de l’INSEE.
 
----
+## 🗂️ Fichiers
 
+- **Entrée principale :**  
+  `CartoDataMC/cartographie_ressources_datasets_proprietes.csv`  
+  → Propriétés extraites automatiquement des métadonnées de jeux de données culturels.
 
+- **Modèle d’axes de référence :**  
+  `CartoDataMC/ModeleMetaMC_UTF8.csv`  
+  → Décrit les axes thématiques du référentiel MetaMC (axe, libellé, définition).
 
----
+- **Sortie intermédiaire par lot :**  
+  `CartoDataMC/semantique_batches/batch_*.csv`
 
-## 🚀 Exemple d’enchaînement
+- **Sortie finale :**  
+  `CartoDataMC/cartographie_culture_semantique.csv`  
+  → Fusion des données sources et de l’enrichissement sémantique.
 
-```bash
-# 1. Téléchargement et fusion des ressources
-python CartoDataMc/importsDataGouv.py
+## ⚙️ Workflow automatisé (`MetaMc_analyse_semantique.py`)
 
-# 2. Extraction des propriétés de colonnes via Swagger
-python CartoDataMc/extraction_properties.py
+1. **Chargement des fichiers sources**
+   - Lecture des propriétés (`cartographie_ressources_datasets_proprietes.csv`)
+   - Lecture du référentiel d’axes thématiques (`ModeleMetaMC_UTF8.csv`)
 
-# 3. Analyse sémantique des propriétés via OpenAI
-python CartoDataMc/analyse_semantique.py
+2. **Génération de prompts structurés**
+   - Pour chaque lot de 10 propriétés, construction d’un contexte détaillé (titre, description, type, exemples…)
+   - Injection des axes MetaMC comme référence dans le prompt
+
+3. **Appel à l’API OpenAI (GPT-4o)**
+   - Génère un tableau avec :
+     - `definition`
+     - `Axe de référence`
+     - `Type référentiel`
+     - `Référentiel alignement`
+
+4. **Fusion des enrichissements**
+   - Assemblage des résultats en sortie (`cartographie_culture_semantique.csv`)
+   - Export au format CSV avec encodage UTF-8 et guillemets normalisés
+
+## 📉 Limites actuelles
+
+- Les colonnes `Référentiel alignement` et `Type référentiel` contiennent des résultats partiels ou peu précis.
+- L’alignement automatique est sensible aux biais de formulation, aux noms ambigus ou mal typés.
+- Le script se limite à un nombre restreint de lignes (`ROW_END = 10` par défaut).
