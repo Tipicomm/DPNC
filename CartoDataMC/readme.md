@@ -3,11 +3,11 @@
 **CartoDataMc** est un projet porté par le Département des politiques numériques culturelles (DPNC) du ministère de la Culture.  
 Il a pour objectif de cartographier, documenter et structurer les jeux de données culturels ouverts publiés sur [data.gouv.fr](https://www.data.gouv.fr/), afin de faciliter leur gouvernance, leur réutilisation et leur valorisation.
 
----
+
 
 ## 🔧 Scripts disponibles
 
-### Script importsDataGouv.py
+###  1. Script importsDataGouv.py
 
 Ce script automatise la génération d’une cartographie des ressources CSV publiées sur data.gouv.fr par le Ministère de la Culture.
 📌 Objectif
@@ -34,7 +34,7 @@ Créer un fichier unique cartographie_ressources_datasets.csv listant les ressou
         Jointure sur id.dataset
         Nettoyage des doublons (title.dataset_x, title.dataset_y)
         Résultat final : cartographie_ressources_datasets.csv
----
+
 
 ### 2. `extraction_properties.py`  
 Interroge l’API [`tabular.data.gouv.fr`](https://tabular.data.gouv.fr/) pour extraire dynamiquement les propriétés (colonnes) de chaque ressource CSV.
