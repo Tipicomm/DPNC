@@ -1,7 +1,9 @@
 dataset.id,dataset.title,id
 683e7360559798dcce88e12e,Activité temporaire en France d’entrepreneurs de spectacles établis hors de France,e6a3517f-dac4-446f-bffd-02216be7bfb0
+683e7360559798dcce88e12e,Activité temporaire en France d’entrepreneurs de spectacles établis hors de France,ce1e5abf-71bf-47c3-b7b9-7179ad5423b1
 6811a04691e247a5e4622e11,Manuscrits de pièces de théâtre du 19e siècle conservés aux Archives nationales,851a8961-0c9c-48bc-9858-9a35ab820026
 67f7424b137aad8bcb9ac731,Données du système de déclaration de billetterie du spectacle vivant Sibil,cc51d662-d0e0-4a84-bca0-bd26c643b879
+67f7424b137aad8bcb9ac731,Données du système de déclaration de billetterie du spectacle vivant Sibil,d3825a6b-0b20-4db9-91cb-b6c8bc792028
 67e59fbaa773f001a9710519,Compar:IA,278fb12a-f75a-4891-add8-fff1d82f1622
 67b94bd15afb2aa0b8e26089,Données enquête utilisation des archives recherche universitaire,54e22221-840b-4b1b-afc8-530f93c908c4
 6691fbc4e33ff438151ff6b6,Journées européennes du patrimoine 2024,ca61c1fd-0344-4f8a-811f-885d38c2f9c1
@@ -103,12 +105,15 @@ dataset.id,dataset.title,id
 61b4226ca5919d3b718b8e9e,Catalogue des données du ministère de la Culture,a47a4634-b3e9-4d4d-a005-0f5b36237c0a
 61777ddaa9101d073e5506cd,Base des lieux et équipements culturels (Basilic),dced78ee-0823-4b61-86e6-57717308d4e4
 615bcdd729be9185b3b0681a,Liste des objets protégés au titre des Monuments historiques,3e8ed2dd-4052-4f93-ad19-ef71016ab7b4
+615bcdd729be9185b3b0681a,Liste des objets protégés au titre des Monuments historiques,226c64cb-abf1-4dc8-b9ce-c07c9e622015
 6125c059dc295c5407ef6a5b,Les activités culturelles et pédagogiques dans les services d’archives,190686bf-4d8c-40a2-9996-f85e4cee64a4
 60cc1a66b5b801fb222fcb3b,Les dénaturalisés de Vichy,e3b6d9ad-12c4-4e37-b787-f6a800744541
 60c03d2332fb81d6b12fcb3b,Les expositions itinérantes empruntables dans les services d’archives,0c59c867-dddd-422d-bbf8-4205f20cf31e
 60a48db81b21780934f75ba2,Les protocoles de remise des archives des cabinets présidentiels et ministériels 1976-2020,1c2cdfc8-cbd7-4fca-81de-21729bf07197
 6042fe6ba3ef9e914a7ce5a3,Liste des édifices labellisés « Architecture contemporaine remarquable » (ACR),80b6ac20-41b1-400c-8860-af201ff7dcb6
+6042fe6ba3ef9e914a7ce5a3,Liste des édifices labellisés « Architecture contemporaine remarquable » (ACR),da5d0ee3-bd1f-4ac1-af23-3626811a73b5
 5fc9b4729dbf684fecb13bae,Déclarations des entrepreneurs de spectacles vivants,fb6c3b2e-da8c-4e69-a719-6a96329e4cb2
+5fc9b4729dbf684fecb13bae,Déclarations des entrepreneurs de spectacles vivants,aa5abb1c-b6db-44e6-ae33-d69585bbf505
 5f7fe0822a00717c597ce91e,Activité des services d’archives en France,a7dee48e-6443-4a3f-89e6-4a7d30f97aca
 5f1bae655d1bd1ac4a6dcf10,Documentation d’architecture,b8ed20df-47db-49d6-bbab-80f287b0e5f9
 5efead8bb641831f9dadc547,Thésaurus de l’iconographie chrétienne,eeedadeb-f75b-4f83-a432-b127acdd0538
@@ -118,18 +123,22 @@ dataset.id,dataset.title,id
 5e27c8e2dee7e70ed425e8d6,Liste des Musées de France,29406189-15e9-4f2f-9e9d-d18649762198
 5d2d4e639ce2e74ea890b662,Données essentielles des conventions de subvention,403c9108-dd0a-443d-9ed5-bca5f056fa8f
 5d12ee8206e3e762c0c89a4c,Répertoire des Musées de France : base Muséofile,5ccd6238-4fb0-4b2c-b14a-581909489320
+5d12ee8206e3e762c0c89a4c,Répertoire des Musées de France : base Muséofile,8eb10a09-edcb-4d7f-9095-b0855447e4aa
 5c90a51306e3e731ee4d34ca,Liste des Maisons des illustres,bd705a3d-e13e-4388-a0a1-100ed47cc85f
 5c89d1f49ce2e742e0e27c29,Annuaire des services d'archives publiques en France,5288eeb3-286e-465d-948c-e60d0e8f2409
 5c67b11f06e3e727a17bb849,Fonds de soutien à l'émergence et à l'innovation dans la presse,4b2bb71b-4aa3-43fb-a50d-30c8652ae2cb
 5c5e558f06e3e7266c232bba,Aides à la presse : classement des titres de presse aides,c3a4b612-d227-43c3-8954-094ee6602005
+5c5e558f06e3e7266c232bba,Aides à la presse : classement des titres de presse aides,fdbf8702-28a8-44b9-9183-3bfdbfbd9d8b
 5c5e55799ce2e76ae9b7f491,Aides à la presse : classement des principaux groupes de presse aidés,cb9de9c9-775a-4b17-a3e7-69f16829329b
 5c3538da9ce2e7459c6d765a,Les bibliothèques des collectivités territoriales : adresses et données d’activité,806a8aa1-952f-404d-9857-3f27b7c0ca86
 5bc6cf3a9ce2e72581422d3f,Liste des services de presse en ligne reconnus,cb5799fb-adc9-41b0-99f1-c2a10b5e19ce
+5bc6cf3a9ce2e72581422d3f,Liste des services de presse en ligne reconnus,fbc79593-0012-4fb3-a80f-4426551728fa
 5bc6cf339ce2e72581422d3e,Liste des agences de presse agréées,be70cfa6-4501-46cd-907c-422556ceefc3
 5bb834e89ce2e7693d2456a5,Liste des publications de presse,a98cced2-babe-45b4-95dd-ce5336155dbc
 5b98ec1806e3e74b212ffd31,Établissements de l’enseignement supérieur artistique : les partenariats internationaux,bf042d92-fddc-4ed6-9248-4e813d01bd15
 5b51825fa3a72936dfe1c340,Panorama des festivals,4415a028-aa8e-447d-a2e9-d3917b9bd278
 5b448216a3a729752eb11d6f,Collections des musées de France : base Joconde,7e3307c2-f2ff-455c-bbca-bb6f11aec7bb
+5b448216a3a729752eb11d6f,Collections des musées de France : base Joconde,1c6feae5-edb3-462f-b125-0ad89b092b7b
 5af12110a3a7295e54c41a25,Rendez-vous Hip Hop 2018,d3332494-8006-4bf1-8591-73714348f602
 5af1210fb595080488bcde6e,Photographies série « Monuments historiques » de 1851 à 1914,cd0c6ee7-6611-47e1-90ff-a5ab1c17c3ed
 5af1210ab595080488bcde6b,Liste des établissements de l'enseignement supérieur culture,f930f3af-c709-41ba-a92a-71159ed9a903
@@ -147,6 +156,7 @@ dataset.id,dataset.title,id
 5af120e7b595087cfabcde82,Fréquentation des Musées de France,7708e380-e7f8-4b56-936a-5d2a262d852d
 5af120e5a3a7295e54c41a13,Pratiques culturelles des français - Evolution 1973-2008,7479572c-653f-4dc0-8472-6f9982a95196
 5af120e5b595087cfabcde81,Immeubles protégés au titre des Monuments Historiques,3a52af4a-f9da-4dcc-8110-b07774dfb3bc
+5af120e5b595087cfabcde81,Immeubles protégés au titre des Monuments Historiques,540005b2-f39d-48f8-a500-664f01982bd9
 5af120e3b595087cfabcde80,Institutions culturelles productrices de ressources pédagogiques en ligne,0ee48665-5ffd-4d3c-b5c6-3a4246aaa6f2
 5af120e2a3a7295e54c41a11,Aide au pluralisme de la presse périodique régionale et locale,bb5aba07-07a6-4968-9068-8d7b5a629297
 5af120e0b595087cfabcde7f,Corpus d'archives numérisées des Archives nationales,2f0e99e4-0587-429a-806f-6c836b8bafd8
