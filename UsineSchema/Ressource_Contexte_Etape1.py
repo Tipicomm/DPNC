@@ -2,11 +2,11 @@
 import requests
 import pandas as pd
 import csv
+import os
 
 # Paramètres
 DATASET_ID = "6842b8e772325215e9dbf196"
 RESOURCE_ID = "ad59533c-1c18-4eb4-a079-7e061ec5dbcd"
-DOSSIER = "CartoDataMC"
 
 # 1. Récupération des métadonnées du dataset
 url_dataset = f"https://demo.data.gouv.fr/api/1/datasets/{DATASET_ID}/"
@@ -55,6 +55,9 @@ for nom_col in header:
 df_props = pd.DataFrame(lignes)
 
 # 4. Export CSV
+# 👉 S'assurer que le dossier existe
+os.makedirs("UsineSchema", exist_ok=True)
+
 output_file = f"UsineSchema/schema_{DATASET_ID}_{RESOURCE_ID}.csv"
 df_props.to_csv(output_file, index=False, quoting=csv.QUOTE_ALL, quotechar='"', encoding="utf-8")
 
