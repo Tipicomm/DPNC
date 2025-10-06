@@ -1,0 +1,60 @@
+name: UsineSchema - Mistral
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "UsineSchema/Ressource_Contexte_Etape1.py"
+      - "UsineSchema/Add_Prompt_Definition_Etape2.py"
+      - "UsineSchema/Add_Definition_Mistral.py"
+      - ".github/workflows/usineschema-mistral.yml"
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Installer dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests mistralai
+
+      - name: ▶️ Étape 1 - Générer le contexte
+        run: python -m UsineSchema.Ressource_Contexte_Etape1
+
+      - name: ▶️ Étape 2 - Construire prompt + contexte
+        run: python -m UsineSchema.Add_Prompt_Definition_Etape2
+
+      - name: ▶️ Étape 3 - Générer définitions (Mistral)
+        env:
+          GithubMC: ${{ secrets.GithubMC }}
+        run: python -m UsineSchema.Add_Definition_Mistral
+
+      - name: 📂 Vérifier fichiers générés
+        run: ls -lh UsineSchema/
+
+      - name: 📤 Commit et push du fichier enrichi
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add UsineSchema/schema_enrichi_*_mistral.csv
+          git commit -m "Ajout auto du fichier enrichi (Mistral)" || echo "Aucun changement à commit"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: 📦 Sauvegarder résultats en artefacts (optionnel)
+        uses: actions/upload-artifact@v4
+        with:
+          name: schemas-mistral
+          path: UsineSchema/*_mistral.csv
