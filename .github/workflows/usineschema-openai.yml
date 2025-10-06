@@ -42,7 +42,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python UsineSchema/Add_Definition_OpenAI.py
+          python -m UsineSchema.Add_Definition_OpenAI
 
       - name: 📂 Vérifier fichiers générés
         run: ls -lh UsineSchema/
