@@ -4,28 +4,40 @@ import pandas as pd
 import csv
 import os
 
+# =======================
 # Paramètres
+# =======================
 DATASET_ID = "6842b8e772325215e9dbf196"
 RESOURCE_ID = "ad59533c-1c18-4eb4-a079-7e061ec5dbcd"
 
+# =======================
 # 1. Récupération des métadonnées du dataset
+# =======================
 url_dataset = f"https://demo.data.gouv.fr/api/1/datasets/{DATASET_ID}/"
 resp_ds = requests.get(url_dataset)
+resp_ds.raise_for_status()
 dataset = resp_ds.json()
+
 title_dataset = dataset.get("title", "")
 description_dataset = dataset.get("description", "")
-tags_dataset = dataset.get("tags", [])
+tags_dataset = dataset.get("tags", []) or []
+tags_dataset = [str(tag) for tag in tags_dataset]
 
+# =======================
 # 2. Récupération du profil tabulaire de la ressource
+# =======================
 url_profile = f"https://tabular-api.preprod.data.gouv.fr/api/resources/{RESOURCE_ID}/profile/"
 resp_profile = requests.get(url_profile)
+resp_profile.raise_for_status()
 profile = resp_profile.json().get("profile", {})
 
 header = profile.get("header", [])
 columns = profile.get("columns", {})
 stats = profile.get("profile", {})
 
+# =======================
 # 3. Extraction colonnes et stats
+# =======================
 lignes = []
 for nom_col in header:
     col_meta = columns.get(nom_col, {})
@@ -52,8 +64,9 @@ for nom_col in header:
 
 df_props = pd.DataFrame(lignes)
 
+# =======================
 # 4. Export CSV
-# 👉 S'assurer que le dossier existe
+# =======================
 os.makedirs("UsineSchema", exist_ok=True)
 
 output_file = f"UsineSchema/schema_{DATASET_ID}_{RESOURCE_ID}.csv"
