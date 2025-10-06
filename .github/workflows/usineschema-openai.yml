@@ -36,7 +36,7 @@ jobs:
 
       - name: ▶️ Étape 2 - Construire prompt + contexte
         run: |
-          python UsineSchema/Add_Prompt_Definition_Etape2.py
+          run: python -m UsineSchema.Add_Prompt_Definition_Etape2
 
       - name: ▶️ Étape 3 - Générer définitions (OpenAI)
         env:
