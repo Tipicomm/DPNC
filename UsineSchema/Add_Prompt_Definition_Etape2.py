@@ -10,10 +10,10 @@ DATASET_ID = "6842b8e772325215e9dbf196"
 RESOURCE_ID = "ad59533c-1c18-4eb4-a079-7e061ec5dbcd"
 
 # Fichier de contextualisation produit en étape 1 (à ajuster manuellement si besoin)
-RESOURCE_contexte = "TransversaleCulture/BlocData/UsineSchema/schema_6842b8e772325215e9dbf196_ad59533c-1c18-4eb4-a079-7e061ec5dbcd.csv"
+RESOURCE_contexte = f"schema_{DATASET_ID}_{RESOURCE_ID}.csv"
 
 # Fichier enrichi produit en étape 2
-OUTPUT = f"TransversaleCulture/BlocData/UsineSchema/schema_semantique_{DATASET_ID}_{RESOURCE_ID}.csv"
+OUTPUT = f"schema_semantique_{DATASET_ID}_{RESOURCE_ID}.csv"
 
 # Initialiser client OpenAI
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
