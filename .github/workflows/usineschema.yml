@@ -37,7 +37,8 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python UsineSchema/Add_Prompt_Definition_Etape2.py
+          python -m UsineSchema.Add_Prompt_Definition_Etape2
+
 
       - name: 📂 Vérifier fichiers générés
         run: ls -lh UsineSchema/
