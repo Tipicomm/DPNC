@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: 📥 Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # (v4 est la version stable actuelle)
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -30,7 +30,7 @@ jobs:
           python UsineSchema/Ressource_Contexte_Etape1.py
 
       - name: 📤 Sauvegarder résultats en artefacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: contexte-ressource
           path: |
