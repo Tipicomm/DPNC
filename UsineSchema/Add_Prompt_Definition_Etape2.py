@@ -9,11 +9,11 @@ import os
 DATASET_ID = "6842b8e772325215e9dbf196"
 RESOURCE_ID = "ad59533c-1c18-4eb4-a079-7e061ec5dbcd"
 
-# Fichier de contextualisation produit en étape 1 (à ajuster manuellement si besoin)
-RESOURCE_contexte = f"schema_{DATASET_ID}_{RESOURCE_ID}.csv"
+# Fichier de contextualisation produit en étape 1
+RESOURCE_contexte = f"UsineSchema/schema_{DATASET_ID}_{RESOURCE_ID}.csv"
 
 # Fichier enrichi produit en étape 2
-OUTPUT = f"schema_semantique_{DATASET_ID}_{RESOURCE_ID}.csv"
+OUTPUT = f"UsineSchema/schema_semantique_{DATASET_ID}_{RESOURCE_ID}.csv"
 
 # Initialiser client OpenAI
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -21,12 +21,15 @@ client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # =======================
 # Lecture du fichier de contextualisation
 # =======================
+if not os.path.exists(RESOURCE_contexte):
+    raise FileNotFoundError(f"Fichier introuvable: {RESOURCE_contexte} (as-tu exécuté l’étape 1 ?)")
+
 df = pd.read_csv(RESOURCE_contexte, sep=",")
 
 # Limiter le nombre de propriétés (par exemple 50 premières lignes)
 df = df.head(50)
 
-# Récupérer titre et description du dataset (mêmes valeurs pour toutes les lignes, on prend la première)
+# Récupérer titre et description du dataset
 dataset_title = df["title.dataset"].iloc[0] if "title.dataset" in df.columns else ""
 dataset_description = df["description.dataset"].iloc[0] if "description.dataset" in df.columns else ""
 
@@ -67,9 +70,9 @@ Ta tâche est la suivante pour CHAQUE propriété :
    Propose un alignement avec un référentiel standard si pertinent, parmi :
    - schema.org
    - Dublin Core (dcterms)
-   - INSEE (identifiants, codes géographiques…)
+   - INSEE (codes géographiques…)
    - IdRef / ISNI / VIAF
-   - CIDOC CRM (patrimoine, musées)
+   - CIDOC CRM
    - autres référentiels ouverts de confiance.
    Si aucun référentiel n’est pertinent, laisse la cellule vide.
 
@@ -97,6 +100,10 @@ csv_result = response.choices[0].message.content
 lines = csv_result.splitlines()
 csv_cleaned = "\n".join(line for line in lines if ";" in line)
 
+# =======================
+# Export
+# =======================
+os.makedirs("UsineSchema", exist_ok=True)
 with open(OUTPUT, "w", encoding="utf-8") as f:
     f.write(csv_cleaned)
 
