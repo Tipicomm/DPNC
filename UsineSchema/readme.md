@@ -1,4 +1,4 @@
-# Usine à schéma pour les ressources – Ministère de la Culture
+# Usine à schéma pour les ressources – ministère de la Culture
 
 Générer des définitions pour chaque champ/propriété et créer les schémas à partir d’une ressource et d’un jeu de données disponible sur [data.gouv.fr](https://data.gouv.fr) (API dataset + API tabulaire).
 
