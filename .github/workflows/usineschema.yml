@@ -1,0 +1,45 @@
+name: UsineSchema - Étapes 1 & 2
+
+on:
+  workflow_dispatch:   # lancement manuel
+  push:
+    paths:
+      - "UsineSchema/Ressource_Contexte_Etape1.py"
+      - "UsineSchema/Add_Prompt_Definition_Etape2.py"
+      - ".github/workflows/usineschema.yml"
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Installer dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests openai
+
+      - name: ▶️ Étape 1 - Générer le contexte
+        run: |
+          python UsineSchema/Ressource_Contexte_Etape1.py
+
+      - name: ▶️ Étape 2 - Ajouter définitions
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python UsineSchema/Add_Prompt_Definition_Etape2.py
+
+      - name: 📤 Sauvegarder résultats
+        uses: actions/upload-artifact@v4
+        with:
+          name: schemas-complets
+          path: |
+            schema_*.csv
+            schema_semantique_*.csv
