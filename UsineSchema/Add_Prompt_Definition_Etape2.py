@@ -3,20 +3,11 @@ import pandas as pd
 import openai
 import os
 import io
+from UsineSchema.config import DATASET_ID, RESOURCE_ID, RESOURCE_contexte, OUTPUT
 
 # =======================
-# Paramètres
-# =======================
-DATASET_ID = "6842b8e772325215e9dbf196"
-RESOURCE_ID = "ad59533c-1c18-4eb4-a079-7e061ec5dbcd"
-
-# Fichier de contextualisation produit en étape 1
-RESOURCE_contexte = f"UsineSchema/schema_{DATASET_ID}_{RESOURCE_ID}.csv"
-
-# Fichier enrichi produit en étape 2
-OUTPUT = f"UsineSchema/schema_enrichi_{DATASET_ID}_{RESOURCE_ID}.csv"
-
 # Initialiser client OpenAI
+# =======================
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # =======================
@@ -85,14 +76,21 @@ response = client.chat.completions.create(
 
 csv_result = response.choices[0].message.content or ""
 
-# Nettoyage : garder uniquement les lignes contenant ';'
-lines = [line for line in csv_result.splitlines() if ";" in line]
+# Nettoyage : enlever éventuels blocs markdown et garder les lignes valides
+lines = [line.strip("` ") for line in csv_result.splitlines() if ";" in line]
 csv_cleaned = "\n".join(lines)
 
-# Conversion en DataFrame (definition jointe aux colonnes)
+if not csv_cleaned.strip():
+    raise ValueError("❌ Aucun contenu CSV valide généré par le modèle.")
+
+# Conversion en DataFrame
 df_defs = pd.read_csv(io.StringIO(csv_cleaned), sep=";")
 
-# Fusion avec le dataframe d'origine (ajout de la colonne definition)
+# Vérifier que la colonne definition existe bien
+if "definition" not in df_defs.columns:
+    raise ValueError("❌ La sortie du modèle ne contient pas de colonne 'definition'.")
+
+# Fusion avec le dataframe d'origine
 df_merged = df.merge(df_defs, left_on="column_name", right_on="property_name", how="left")
 
 # Supprimer la colonne "property_name" qui est redondante
