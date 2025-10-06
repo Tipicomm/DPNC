@@ -31,14 +31,16 @@ df = pd.read_csv(RESOURCE_contexte, sep=",")
 dataset_title = df["title.dataset"].iloc[0] if "title.dataset" in df.columns else ""
 dataset_description = df["description.dataset"].iloc[0] if "description.dataset" in df.columns else ""
 
+# =======================
 # Préparation du contexte des propriétés
+# =======================
 rows_context = []
 for _, row in df.iterrows():
     context = (
         f"property_name: {row.get('column_name','')}"
         f" | property_type: {row.get('column_datatype','')}"
-        f" | dataset_title: {row.get('title.dataset','')}"
-        f" | dataset_description: {row.get('description.dataset','')}"
+        f" | dataset_title: {dataset_title}"
+        f" | dataset_description: {dataset_description}"
         f" | tags: {row.get('tags.dataset','')}"
         f" | top_values: {row.get('top_1','')}, {row.get('top_2','')}, {row.get('top_3','')}"
     )
@@ -59,7 +61,7 @@ Chaque ligne ci-dessous décrit le contexte d'une propriété :
 
 Ta tâche est la suivante pour CHAQUE propriété :
 
-1. Colonne "Definition" :
+1. Colonne "definition" :
    Propose une définition claire, précise et compréhensible en une phrase,
    adaptée à un public professionnel travaillant sur des données culturelles.
 
@@ -81,18 +83,21 @@ response = client.chat.completions.create(
     max_tokens=4000
 )
 
-csv_result = response.choices[0].message.content
+csv_result = response.choices[0].message.content or ""
 
 # Nettoyage : garder uniquement les lignes contenant ';'
-lines = csv_result.splitlines()
-csv_cleaned = "\n".join(line for line in lines if ";" in line)
+lines = [line for line in csv_result.splitlines() if ";" in line]
+csv_cleaned = "\n".join(lines)
 
-# Conversion en DataFrame
+# Conversion en DataFrame (definition jointe aux colonnes)
 df_defs = pd.read_csv(io.StringIO(csv_cleaned), sep=";")
 
-# Fusion avec le dataframe d'origine
+# Fusion avec le dataframe d'origine (ajout de la colonne definition)
 df_merged = df.merge(df_defs, left_on="column_name", right_on="property_name", how="left")
-df_merged = df_merged.drop(columns=["property_name"])  # déjà présent via column_name
+
+# Supprimer la colonne "property_name" qui est redondante
+if "property_name" in df_merged.columns:
+    df_merged = df_merged.drop(columns=["property_name"])
 
 # =======================
 # Export
