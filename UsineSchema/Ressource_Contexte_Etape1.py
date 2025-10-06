@@ -55,7 +55,7 @@ for nom_col in header:
 df_props = pd.DataFrame(lignes)
 
 # 4. Export CSV
-output_file = f"schema_{DATASET_ID}_{RESOURCE_ID}.csv"
+output_file = f"UsineSchema/schema_{DATASET_ID}_{RESOURCE_ID}.csv"
 df_props.to_csv(output_file, index=False, quoting=csv.QUOTE_ALL, quotechar='"', encoding="utf-8")
 
 print(f"✅ Fichier généré : {output_file}")
