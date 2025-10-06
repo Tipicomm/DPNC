@@ -1,0 +1,37 @@
+name: UsineSchema - Étape 1 (Contexte Ressource)
+
+on:
+  workflow_dispatch:   # lancement manuel depuis GitHub
+  push:
+    paths:
+      - "UsineSchema/Ressource_Contexte_Etape1.py"
+      - ".github/workflows/usineschema_etape1.yml"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Installer dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests
+
+      - name: ▶️ Lancer le script Ressource_Contexte_Etape1
+        run: |
+          python UsineSchema/Ressource_Contexte_Etape1.py
+
+      - name: 📤 Sauvegarder résultats en artefacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: contexte-ressource
+          path: |
+            UsineSchema/*.csv
