@@ -46,9 +46,7 @@ for nom_col in header:
         "nb_missing_values": col_stats.get("nb_missing_values", ""),
         "top_1": tops[0]["value"] if len(tops) > 0 else "",
         "top_2": tops[1]["value"] if len(tops) > 1 else "",
-        "top_3": tops[2]["value"] if len(tops) > 2 else "",
-        # Champ prévu pour enrichir la définition métier plus tard
-        "definition": ""
+        "top_3": tops[2]["value"] if len(tops) > 2 else ""
     }
     lignes.append(ligne)
 
