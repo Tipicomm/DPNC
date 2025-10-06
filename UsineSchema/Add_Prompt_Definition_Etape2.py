@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import openai
 import os
-import io
-from UsineSchema.config import DATASET_ID, RESOURCE_ID, RESOURCE_contexte, OUTPUT
-
-# =======================
-# Initialiser client OpenAI
-# =======================
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+from UsineSchema.config import DATASET_ID, RESOURCE_ID, RESOURCE_contexte
 
 # =======================
 # Lecture du fichier de contextualisation
@@ -25,20 +18,18 @@ dataset_description = df["description.dataset"].iloc[0] if "description.dataset"
 # =======================
 # Préparation du contexte des propriétés
 # =======================
-rows_context = []
-for _, row in df.iterrows():
-    context = (
-        f"property_name: {row.get('column_name','')}"
-        f" | property_type: {row.get('column_datatype','')}"
-        f" | dataset_title: {dataset_title}"
-        f" | dataset_description: {dataset_description}"
-        f" | tags: {row.get('tags.dataset','')}"
-        f" | top_values: {row.get('top_1','')}, {row.get('top_2','')}, {row.get('top_3','')}"
-    )
-    rows_context.append(context)
+rows_context = [
+    f"property_name: {row.get('column_name','')}"
+    f" | property_type: {row.get('column_datatype','')}"
+    f" | dataset_title: {dataset_title}"
+    f" | dataset_description: {dataset_description}"
+    f" | tags: {row.get('tags.dataset','')}"
+    f" | top_values: {row.get('top_1','')}, {row.get('top_2','')}, {row.get('top_3','')}"
+    for _, row in df.iterrows()
+]
 
 # =======================
-# Prompt pour définitions
+# Prompt commun
 # =======================
 prompt = f"""
 Voici une liste de propriétés issues du jeu : {dataset_title}
@@ -65,42 +56,13 @@ Ta tâche est la suivante pour CHAQUE propriété :
 """
 
 # =======================
-# Appel API OpenAI
+# Sauvegarde dans fichiers temporaires
 # =======================
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": prompt + "\n\n" + "\n".join(rows_context)}],
-    temperature=0.2,
-    max_tokens=4000
-)
+os.makedirs("UsineSchema/tmp", exist_ok=True)
+with open("UsineSchema/tmp/prompt.txt", "w", encoding="utf-8") as f:
+    f.write(prompt)
 
-csv_result = response.choices[0].message.content or ""
+with open("UsineSchema/tmp/context.txt", "w", encoding="utf-8") as f:
+    f.write("\n".join(rows_context))
 
-# Nettoyage : enlever éventuels blocs markdown et garder les lignes valides
-lines = [line.strip("` ") for line in csv_result.splitlines() if ";" in line]
-csv_cleaned = "\n".join(lines)
-
-if not csv_cleaned.strip():
-    raise ValueError("❌ Aucun contenu CSV valide généré par le modèle.")
-
-# Conversion en DataFrame
-df_defs = pd.read_csv(io.StringIO(csv_cleaned), sep=";")
-
-# Vérifier que la colonne definition existe bien
-if "definition" not in df_defs.columns:
-    raise ValueError("❌ La sortie du modèle ne contient pas de colonne 'definition'.")
-
-# Fusion avec le dataframe d'origine
-df_merged = df.merge(df_defs, left_on="column_name", right_on="property_name", how="left")
-
-# Supprimer la colonne "property_name" qui est redondante
-if "property_name" in df_merged.columns:
-    df_merged = df_merged.drop(columns=["property_name"])
-
-# =======================
-# Export
-# =======================
-os.makedirs("UsineSchema", exist_ok=True)
-df_merged.to_csv(OUTPUT, index=False, encoding="utf-8")
-
-print(f"✅ Fichier enrichi exporté dans {OUTPUT} ({len(df_merged)} propriétés)")
+print("✅ Prompt et contexte générés dans UsineSchema/tmp/")
