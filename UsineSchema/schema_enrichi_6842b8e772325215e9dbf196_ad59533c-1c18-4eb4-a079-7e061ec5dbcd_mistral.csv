@@ -1,0 +1,241 @@
+id.dataset,id.ressource,title.dataset,description.dataset,tags.dataset,column_name,column_datatype,python_type,score,nb_distinct,nb_missing_values,top_1,top_2,top_3,definition,llm_origin
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Reference_de_la_notice,string,string,1.0,597479,0,MHR43_00392987ZA,AP77LS01736,AP77LS02129,"Identifiant unique attribué à une notice documentaire pour référencer un phototype, un tirage ou un document dans le fonds MPP.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Modalite_d_entree,string,string,1.0,190,281659,Achat en 1950,Versement,"Photographie produite par la SPA, Section photographique de l'armée","Mode d'acquisition ou de dépôt du document dans les collections (achat, don, versement administratif, production interne, etc.).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Adresse_de_la_personne_photographiee,string,string,1.0,2,597467,pb,"33, Boulevard de Courcelles",,"Adresse postale ou indication géographique liée à la personne représentée sur la photographie, si disponible.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Adresse_non_normalisee,adresse,string,0.8019240906694781,19612,488733,place de l'Eglise,le Village,Jacques-Villon (rue) 2,"Adresse saisie sous sa forme brute, sans standardisation ni correction, telle qu’elle apparaît dans les sources originales.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Adresse_format_editorial,adresse,string,0.96015625,18459,501087,Eglise (place de l'),Village (le),2 rue Jacques-Villon,Adresse reformulée selon des règles éditoriales normalisées pour une présentation homogène et lisible.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Aire_d_etude,commune,string,0.9849397590361446,100,584454,Aube,Amiens,Marmoutier,"Zone géographique ou territoire faisant l’objet d’une étude spécifique, souvent une commune ou une région administrative.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Ancien_numero_de_l_original,string,string,1.0,11256,584454,3681,75Y1632,5887,Ancienne référence ou numéro d’inventaire attribué à l’original avant sa recatalogation dans le système actuel.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Ancien_numero_du_negatif,string,string,1.0,63253,532069,LVN1697VN,LVN1697PNR005,89L000010,Identifiant historique attribué à un négatif photographique avant sa réindexation dans la base de données.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Ancien_numero_du_tirage,string,string,1.0,9230,587936,4,J/83/38,493,"Numéro d’archivage initial d’un tirage photographique, antérieur à sa référence actuelle.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_du_phototype_ou_du_document,string,string,1.0,5,596485,"Comte, Yvon","Peiré, Jean-François",Agence Bruno Decrock,"Nom de la personne ou de l’entité responsable de la création du phototype (négatif, diapositive, etc.) ou du document reproduit.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_de_la_gravure,string,string,1.0,32,597358,Villain,"Bayot, Adolphe","Bayot, Adolphe;Freeman","Nom de l’artiste ou de l’artisan ayant réalisé une gravure, souvent mentionnée dans les documents graphiques ou imprimés.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_de_l_oeuvre_representee,string,string,1.0,8168,554730,"Carné, Marcel (1909-1996)",Christian-Jaque (1904-1994),"Autant-Lara, Claude (1901-2000)","Créateur de l’œuvre (film, pièce de théâtre, peinture, etc.) représentée ou documentée par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_de_l_oeuvre_original,string,string,1.0,864,590456,auteur inconnu,"Viollet-le-Duc, Eugène","Le Boyer, Noël","Auteur de l’œuvre originale (bâtiment, objet, etc.) dont une reproduction ou une photographie a été réalisée.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_de_la_photographie,string,string,1.0,3219,52646,Atelier Nadar (1855-1939),"Henrard, Roger (1900-1975)","Genestoux, Franck","Nom du photographe ayant réalisé la prise de vue, distinct de l’auteur de l’œuvre représentée.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Photographe,string,string,1.0,57,596269,Egger René;Jaulmes Philippe (architecte);Deshons Jean-Claude (architecte),Grégori Guy (architecte),Bernard Elie-Marcel (architecte),"Nom du professionnel ou de l’atelier ayant exécuté la photographie, incluant parfois des collaborateurs (architectes, etc.).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Auteur_du_tirage,string,string,1.0,87,588546,"Kenna, Michael (né en 1953)","Hudry, Hervé;Publimod","Batho, John (né en 1939)",Personne ou structure ayant réalisé le tirage photographique à partir d’un négatif ou d’un fichier numérique.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Chronologie,string,string,1.0,0,597479,,,,"Période ou date associée à l’œuvre, au document ou à l’événement représenté, si cette information est disponible.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Producteur_du_film,string,string,1.0,898,588823,Producteur : RIC-Geneva ; RAC,Fox Film Corporation (producteur) ; Fox Film Corporation (distributeur),Producteur : La Société des films Sirius ; Les films Ariane,Nom de la société ou de l’entité ayant produit un film documenté ou représenté dans les archives photographiques.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Commune_non_normalisee,string,string,1.0,21147,123259,Paris,Nice,Avignon,"Nom de la commune tel qu’indiqué dans les sources originales, sans harmonisation orthographique ou administrative.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Commune_format_editorial,string,string,1.0,20949,126126,Paris,Nice,Avignon,"Nom de la commune standardisé selon les règles officielles (orthographe, code postal, etc.) pour une utilisation normalisée.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Contact,string,string,1.0,0,597479,,,,"Coordonnées (email, téléphone, adresse) d’un responsable ou d’un service lié au document ou à la notice, si renseigné.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Copyright,string,string,1.0,0,597479,,,,Mentions légales relatives aux droits d’auteur ou de reproduction applicables à l’image ou au document archivé.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Cote_de_conservation_du_document_reproduit,string,string,1.0,9342,576567,2022/25,1999/044,Int,Localisation physique ou référence d’archivage du document original reproduit dans les collections.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Cote_de_conservation_du_phototype,string,string,1.0,0,597479,,,,"Emplacement ou référence interne permettant de retrouver le phototype (négatif, diapositive) dans les réserves.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Cote_de_conservation_du_tirage,string,string,1.0,2303,501864,J/80/352/1,J/1996/96/9,J/1996/96/7,Identifiant de classement ou de rangement attribué à un tirage photographique dans les fonds d’archives.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Couleur,string,string,1.0,15,110538,Non,OUI,Oui,"Indication sur le caractère chromatique de l’image (noir et blanc, couleur, etc.), souvent noté sous forme binaire (Oui/Non).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_dessin,year,string,1.0,3,597438,1989,1994,1993,Année ou période de réalisation d’un dessin ou d’un croquis documenté dans les archives.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_gravure,booleen,bool,1.0,1,597478,OUI,,,"Présence ou absence d’une date associée à une gravure, souvent validée par un booléen (Oui/Non) ou une année précise.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_immatriculation_de_la_notice,string,string,1.0,445,94203,2005,2019,2021,Date à laquelle la notice documentaire a été officiellement enregistrée dans la base de données.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_de_l_oeuvre_representee,string,string,1.0,2364,566783,1948,1946,1885,"Année ou intervalle de création de l’œuvre (film, bâtiment, objet) représentée par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_de_l_original,string,string,1.0,516,594873,1940,s.d.,1951,"Date de réalisation ou de production de l’original (document, objet, etc.) avant sa reproduction photographique.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_de_la_prise_de_vue,string,string,1.0,10686,149449,2003,1999,1990,Année ou date précise à laquelle la photographie a été prise.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_du_tirage,string,string,1.0,154,595528,2013,2011,1955 (avant),Date de production du tirage photographique à partir d’un négatif ou d’un fichier source.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Denomination_de_l_oeuvre,string,string,1.0,333,594873,maison,château,tribunal,"Nom ou titre officiel attribué à l’œuvre (bâtiment, objet, etc.) documentée par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Droits_de_diffusion,adresse,string,0.9886557005104936,16,498518,reproduction soumise à autorisation du titulaire des droits d'exploitation,reproduction soumise à autorisation du titulaire des droits d'exploitation du titulaire des droits d'exploitation,(c) Monuments historiques,"Conditions légales ou restrictions applicables à la reproduction ou à la diffusion de l’image (autorisations, copyright).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_de_mise_a_jour_de_la_notice,date,date,1.25,532,90649,2024-07-09,2023-09-12,2023-06-26,Date de la dernière modification ou actualisation apportée à la notice documentaire.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Date_de_creation_de_la_notice,string,string,1.0,1468,134425,2009-12-18,2008-11-28,2019-06-30,Date à laquelle la notice descriptive a été initialement créée dans le système d’information.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Technique_support_et_dimensions_du_document_reproduit,string,string,1.0,2,597474,Dessin,établissement administratif ; préfecture ; ministère,,"Description des matériaux, techniques et dimensions du document original reproduit (ex. : dessin sur papier, 30x40 cm).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Domaine,string,string,1.0,203,8380,Reportage,Architecture,architecture,"Thématique principale ou discipline associée au document (architecture, reportage, art, etc.).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Departement,string,string,1.0,205,195631,75,06,13,Numéro du département français (ex. : 75 pour Paris) où est localisé le sujet ou le document.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Departement_en_toutes_lettres,departement,string,1.2477764601245185,186,198339,Paris,Alpes-Maritimes,Bouches-du-Rhône,"Nom complet du département français (ex. : Paris, Alpes-Maritimes) associé à la localisation du document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Echelle_du_graphique,string,string,1.0,199,593977,[échelle non déterminable],1/100,0.1,"Rapport de réduction ou d’agrandissement d’un plan, d’une carte ou d’un graphique, si applicable.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Interpretation,string,string,1.0,0,597479,,,,"Commentaire ou analyse experte apportée sur le contenu ou la signification du document, si disponible.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Edifice,string,string,1.0,32368,261561,Eglise,Maison,Château,"Type ou nom du bâtiment (église, château, maison) représenté ou documenté par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Code_du_producteur,string,string,1.0,26,498943,MHR93,MHR91,OA010,Code alphanumérique identifiant le producteur ou le service responsable de la création du document (ex. : MHR93 pour un service des Monuments historiques).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Exposition,string,string,1.0,274,591766,"Musée Leblanc, Paris, 1917","« Exposition rétrospective de l'art français des origines à 1800 », Paris, 15 avril – 12 novembre 1900, Petit Palais","« Images de la République démocratique allemande », exposition itinérante commandée par l'association Échanges franco-allemands, présentée entre 1968 et 1974","Nom et détails d’une exposition (lieu, dates, thème) où le document ou l’œuvre a été présenté.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Format,string,string,1.0,1086,203904,Z,6x6,9x12,"Dimensions ou type de support de la photographie ou du document (ex. : 6x6 cm, Z pour format spécifique).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Format_de_l_original,string,string,1.0,5874,587306,FI,FII, ,"Format ou standard technique de l’original (ex. : FI pour Film Inversible, FII pour Film Inversible II).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Format_du_tirage,string,string,1.0,12592,494774,13x18 cm,18x24,18x24 cm,"Dimensions physiques du tirage photographique (ex. : 13x18 cm, 18x24 cm).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Nom_du_producteur,string,string,1.0,191,300,SAP01,Conservation régionale des Monuments historiques Provence-Alpes-Côte d'Azur,SAP04,"Nom de l’organisme ou de la structure (ex. : SAP01, CRMH) ayant produit ou archivé le document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lien_vers_l_image,string,string,1.0,587309,10169,memoire/sur_demande/sur_demande.jpg,memoire/MHR43_00392987ZA/mhr43_00392987za_p.jpg,memoire/AP11L00299/sap01_11l00299_p.jpg,URL ou chemin d’accès vers le fichier numérique de l’image dans la base de données ou le système d’archivage.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Code_Insee_de_la_commune,code_commune_insee,string,1.235213830755232,16159,206734,75056,06088,84007,Code officiel INSEE à 5 chiffres identifiant la commune française associée au document.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Justification_de_la_date_de_prise_de_vue,string,string,1.0,781,560800,Date d'enregistrement,récolement,Date estimée,"Source ou méthode utilisée pour déterminer la date de la photographie (estimation, archive, etc.).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Notice_biographique,string,string,1.0,171,468222,AW00195,AW00279,AW00159,Référence ou identifiant d’une notice biographique liée à une personne représentée ou mentionnée dans le document.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,References_Palissy_Merimee_lien_notice_en_cours,string,string,1.0,11178,575639,IM28000460,IA67007714;IA67007715;PA00084783,IM25999998,Identifiants des bases Palissy ou Mérimée associés à l’œuvre ou au document (ex. : IM28000460).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Legende,string,string,1.0,325965,15071,Vue générale,Vue d'ensemble,Vue générale.,Texte descriptif accompagnant l’image pour en expliquer le contenu ou le contexte (ex. : « Vue générale »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Mots_candidats,string,string,1.0,12,596844,Vue extérieure,Epoque 19ème,Décor floral,"Termes ou expressions proposés pour indexer ou décrire le document, en attente de validation (ex. : « Vue extérieure »).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Liens_externes,string,string,1.0,1,597460,PA00091951,,,"Références ou identifiants vers des ressources externes (bases de données, catalogues) liées au document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieudit,string,string,1.0,5222,563669,Rouzat,Bois de Boulogne,Washington Square Park,"Nom d’un lieu-dit, quartier ou espace géographique précis où a été prise la photographie ou localisé le sujet.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieu_de_conservation_du_document_reproduit_ou_de_l_objet,string,string,1.0,2574,539775,Île-de-France ; Yvelines ; Montigny-le-Bretonneux ; Médiathèque du patrimoine et de la photographie (fort de Saint-Cyr),Île-de-France ; Val-de-Marne ; Charenton-le-Pont ; Médiathèque du patrimoine et de la photographie,Conservation des antiquités et des objets d’art de l'Ardèche,"Localisation physique (institution, adresse) où est conservé l’original ou l’objet reproduit.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieu_de_conservation_de_la_photographie,string,string,1.0,0,597479,,,,"Emplacement des archives où est stockée la photographie originale (négatif, tirage).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieu_de_conservation_du_tirage,string,string,1.0,49,425761,Île-de-France ; Yvelines ; Montigny-le-Bretonneux ; Médiathèque du patrimoine et de la photographie (fort de Saint-Cyr),Île-de-France ; Val-de-Marne ; Charenton-le-Pont ; Médiathèque du patrimoine et de la photographie,Île-de-France ; Val-de-Marne ; Charenton-le-Pont ; Médiathèque du patrimoine et de la photographie,Institution ou service (ex. : Médiathèque du patrimoine) où est conservé le tirage photographique.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieu_de_conservation_de_l_original,string,string,1.0,2880,581880,Conservation régionale des monuments historiques,Direction Régionale des Affaires Culturelles d’Occitanie,Direction Régionale des Affaires Culturelles de Nouvelle-Aquitaine,"Lieu (musée, archives, collection privée) où est conservé l’original du document reproduit.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Localisation,string,string,1.0,23582,42917,France,France ; Île-de-France ; Paris ; Paris,France ; Provence-Alpes-Côte d'Azur ; Alpes-Maritimes ; Nice,"Indication géographique hiérarchisée (pays, région, département, commune) du sujet ou du document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Rang_d_affichage_de_l_image_dans_les_bases_Palissy_et_Merimee,string,string,1.0,84,589077,1,Oui,image,Position ou priorité de l’image dans l’affichage des notices des bases Palissy et Mérimée.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Mot_clef_geographique,string,string,1.0,3844,567978,Antilles,Seine (fleuve),Manche (mer),"Terme géographique (fleuve, montagne, région) utilisé pour indexer le document (ex. : « Seine », « Manche »).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Mot_clef,string,string,1.0,38285,445002,architecture religieuse,sculpture,Vitrail,"Termes thématiques (ex. : « architecture religieuse », « vitrail ») décrivant le contenu ou le sujet du document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Identitie_de_la_personne_photographiee,string,string,1.0,21033,532136,"Bernhardt, Sarah (1844-1923)","Antoine, Marthe;Antoine, Jean",Réjane (1856-1920),Nom et dates de vie (si connues) de la personne représentée sur la photographie.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Annotations_presentes_sur_le_negatif,string,string,1.0,13935,571063,Appareil utilisé : Leica,Appareil utilisé : Vérascope Richard,"Signé, daté, légendé","Mentions manuscrites, tampons ou inscriptions apparentes sur le support du négatif (ex. : date, signature).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Annotations_presentes_sur_l_original,string,string,1.0,2245,592335, ,R CHARTIER,SPERANZA,"Notes, signatures ou marques présentes sur l’original (document, objet) avant reproduction.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Annontations_presentes_sur_le_tirage,string,string,1.0,16808,561552,[Tampon] Committee on Public Information,"[Tampon] Leipziger Presse-Büro ; [Tampon] Section photographique de l'armée, 3 rue de Valois",[Tirage signé par l’auteur] ; [Tampon à sec de l’auteur],"Inscriptions, tampons ou annotations visibles sur le tirage photographique (ex. : cachet d’archives).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Precisions,string,string,1.0,1,338399,"Pour des raisons de lisibilité, le négatif est présenté en positif sur cette base",,,Informações complémentaires sur le document ou son traitement (ex. : « Numérisation à partir du tirage »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_support,string,string,1.0,25683,502100,0110,0113,0111,"Numéro d’identification attribué au support physique (CD, disque) contenant le document numérisé.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_donne_par_le_photographe,string,string,1.0,92191,452572,[K ss n°],2,D1,Référence ou numéro attribué par le photographe lui-même à sa prise de vue ou à son œuvre.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_CD,string,string,1.0,1334,503948,SAP01_000634_I_1,DOC_MH_dpt13_2010,DOC_MH_dpt84_2010,Identifiant unique d’un CD ou support numérique contenant des images ou données archivées.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_fonds,string,string,1.0,0,597479,,,,"Numéro de classement du fonds documentaire auquel appartient le document, si applicable.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_phototype,string,string,1.0,100058,497408,20103011531Z,04044129ZA,04130647ZA,"Référence alphanumérique attribuée à un phototype (négatif, diapositive) dans les collections.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_d_operation,string,string,1.0,0,597479,,,,"Numéro interne lié à une opération d’inventaire, de numérisation ou de traitement documentaire.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_de_l_original,string,string,1.0,9763,586379,07/03,07/02,95,"Identifiant attribué à l’original (document, objet) avant sa reproduction ou son archivage.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_negatif,string,string,1.0,383523,213778,80L044622,20217100371,DNX0187 LW,Référence unique d’un négatif photographique dans les fonds d’archives.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_site,string,string,1.0,2,597477,MHR42_DAR482B169_499,MHR42_DAR482B169_503,,"Code ou identifiant d’un site (monument, chantier) documenté par les photographies.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_tirage,string,string,1.0,135795,461567,MMF015537,3842,BNF Cl. N. CLXXIX,Numéro d’inventaire ou de classement attribué à un tirage photographique spécifique.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_du_versement,string,string,1.0,600,127090,J/80/490,L/80/547,M/80/206,Référence administrative d’un versement d’archives ou de documents aux collections.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Reference_du_videodisque,string,string,1.0,36246,561120, ,40584,51793,Identifiant ou code associé à un vidéodisque contenant des images ou données numérisées.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Objet,string,string,1.0,2861,588029,Ciboire,Calice,Patène,"Nom ou type d’objet (ex. : calice, patène) représenté ou documenté par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Observations,string,string,1.0,25521,413475,Numérisation à partir du tirage,photographie numérique native,Image numérique native,Remarques techniques ou contextuelles sur le document (ex. : « photographie numérique native »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Observations_sur_l_original,string,string,1.0,5354,568152,"Mathiotte, Olivier (photographe missionné par la Manufacture du patrimoine)","Sauvage, Frédéric (Conservateur des Antiquités et des Objets d’Art)","Sauvage, Frédéric (Conservateur des antiquités et des objets d'art)","Notes sur l’état, l’histoire ou les caractéristiques de l’original avant reproduction.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Observations_sur_le_tirage,string,string,1.0,2106,566674,image numérique provenant d'un vidéodisque (qualité médiocre),"Tirage monté sous passe-partout contrecollé sur carton 50,7x40,8 cm ; Fichier numérique remis par l'auteur",Tirage restauré en 2020-2021,"Informações sur l’état de conservation, la restauration ou les particularités d’un tirage photographique.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Pays,pays,string,1.4771893874029336,198,44949,France,États-Unis,Grèce,"Nom du pays où est localisé le sujet, l’œuvre ou le document archivé (ex. : France, États-Unis).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Precisions_sur_la_localisation,string,string,1.0,393,590811,Ancien département de Constantine,Ancienne République démocratique allemande (RDA),Ancien département d'Alger,Compléments géographiques ou historiques sur la localisation (ex. : « Ancien département d’Alger »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Precisions_sur_la_conservation_de_l_original,string,string,1.0,5108,576835,Île-de-France ; Val-de-Marne ; Charenton-le-Pont ; Médiathèque du patrimoine et de la photographie,Boîte 12,Boîte 14,Détails sur les conditions de stockage ou de classement de l’original (ex. : « Boîte 12 »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Producteur,string,string,1.0,4,0,MPP,CRMH,CAOA,Abréviation ou nom de l’organisme producteur du document (ex. : MPP pour Médiathèque du Patrimoine et de la Photographie).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Reference_de_publication_de_l_image,string,string,1.0,8616,577856, ,"Mounicq, Jean et Augé, Marc, « Paris Retraversé », Paris, Imprimerie nationale, 1992, [n.p.] (Prix Nadar)","Mounicq, Jean et Augé, Marc, « Paris Ouvert », Paris, Imprimerie nationale, 1995, [n.p.]","Source bibliographique (livre, article) où l’image a été publiée, avec auteurs et éditeur.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Reference_de_l_image,string,string,1.0,381804,215661,France,"MHR93_04062916ZA_P.JPG,DS1,,","SAP52_73L05366_P.JPG,DS1,,73l05366.jpg",Identifiant technique ou nom de fichier de l’image numérique dans les systèmes d’archivage.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Nom_de_l_image,string,string,1.0,391084,206381,24r000898.jpg,SAP52_1L002934D_P.JPG,SAP01_NA23813888N_T.JPG,Nom du fichier numérique correspondant à l’image (ex. : « 24r000898.jpg »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Region,string,string,1.0,1089,107487,Provence-Alpes-Côte d'Azur,Île-de-France,Auvergne-Rhône-Alpes,Nom de la région administrative française (ex. : Île-de-France) associée au document ou au sujet.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Phototypes_en_relation,string,string,1.0,29999,563170,Contretype,Positif de projection,76P022450,"Références à d’autres phototypes (contretypes, positifs) liés au document principal.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_de_reproduction,string,string,1.0,3996,593475,Alsace,ELR00266,CT001495,Identifiant attribué à une reproduction spécifique d’un document ou d’une œuvre.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Role_interprete,string,string,1.0,2676,589031,Barrault : Henri Dunant,Jeanne d'Arc,Tcherina : Isa,Nom du personnage ou rôle joué par une personne photographiée (ex. : « Barrault : Henri Dunant »).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Siecle_de_l_oeuvre,string,string,1.0,1065,538362,20e siècle,18e siècle,19e siècle,Période historique (ex. : 19e siècle) à laquelle appartient l’œuvre ou le sujet documenté.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Orientation_du_phototype,string,string,1.0,18,437151,H,V,O,"Orientation du support photographique (H pour horizontal, V pour vertical, O pour autre).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Titre_de_la_serie,string,string,1.0,7125,291286,1996/096 - Fonds photographique du Centre de Recherche des Monuments Historiques,Vues aériennes entre 1945 et 1975,Fonds des Monuments historiques photographiés après 1951,Nom ou description d’une série documentaire ou photographique à laquelle appartient le document.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Site,string,string,1.0,2,597475,H,V,,Indication sommaire de l’orientation ou du site (H/V) ou référence à un lieu documenté.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Structure,string,string,1.0,1,597475,Fonds Denkmalarchiv,,,Nom du fonds ou de la collection (ex. : « Fonds Denkmalarchiv ») auquel le document est rattaché.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Sujet_represente_par_la_photographie_ou_le_document,string,string,1.0,1478,501569,église,maison,église paroissiale,"Description du sujet principal (ex. : église, maison) capté par la photographie.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Support,string,string,1.0,12,597376,transparent synthétique,transparent végétal,fichier numérique .cdr ; fichier numérique .jpg,"Matériau ou medium du document (ex. : transparent synthétique, fichier numérique .jpg).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Description_technique_du_negatif,adresse,string,0.7745469030073691,8769,292971,Négatif noir et blanc ; Support souple ; Gélatino-argentique,image numérique native,Négatif noir et blanc ; support verre; gélatino-bromure,"Caractéristiques techniques du négatif (support, procédé chimique, dimensions).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Description_technique_de_l_original,string,string,1.0,495,559813,A,sculpture,orfèvrerie,"Nature et matériaux de l’original (ex. : sculpture en bois, orfèvrerie).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Description_technique_du_tirage,string,string,1.0,210,490282,Tirage noir et blanc ; Gélatino-argentique,Tirage gélatino-argentique,Tirage noir et blanc ; Gélatino-argentique,"Procédés et matériaux utilisés pour le tirage (ex. : gélatino-argentique, noir et blanc).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Lieu_de_representation,string,string,1.0,301,581347,Opéra National de Paris,"Paris, Théâtre National de l'Opéra-Comique","Paris, Ancien Théâtre du Vaudeville","Nom du lieu (théâtre, opéra) où une œuvre ou un événement représenté a été capté ou joué.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Titre_courant,string,string,1.0,7525,497229,maison,église paroissiale,monument aux morts de la guerre de 1914-1918,"Titre simplifié ou usuel de l’œuvre ou du sujet (ex. : « maison », « monument aux morts »).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Reference_bibliographique_ou_documentaire,string,string,1.0,6672,582110,Etude préalable,[Source indiquée sur le carton de montage mais non identifiée] SAF,[Source indiquée sur le carton de montage mais non identifiée] Arch. SAF,"Source ou référence (étude, archive) citée en appui à la notice ou au document.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Titre_de_la_piece_de_theatre_ou_du_film,string,string,1.0,2822,576036,Film non identifié,D'homme à hommes,L'Aigle à deux têtes,Titre de l’œuvre cinématographique ou théâtrale documentée par la photographie.,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Technique_du_releve,string,string,1.0,0,597479,,,,"Méthode utilisée pour réaliser un relevé (dessins, mesures) d’un monument ou d’un objet.",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Type,string,string,1.0,7,509473,A,E,YY,"Catégorie ou code typologique du document (ex. : A pour Architecture, E pour Épreuve).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Categorie_du_phototype,string,string,1.0,55,486,Négatif,Tirage photographique,phototype argentique,"Classification du phototype (négatif, tirage argentique, phototype numérique, etc.).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Type_d_image_numerique,string,string,1.0,7,293352,Oui,JPG ; Oui,JPG ; oui,"Indication sur la disponibilité d’une version numérique de l’image (ex. : « Oui », format JPG).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Type_du_support_numerique,string,string,1.0,3,218352,DS1,C01,document acquis par scan,"Type de support de stockage numérique (ex. : DS1 pour disque dur, document scanné).",mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Videodisque,string,string,1.0,383485,213985,mem/1205/sap52_73l05366_p.jpg;mem/1205/sap52_73l05366_v.jpg,mem/3201/sap83_15w01076_p.jpg;mem/3201/sap83_15w01076_v.jpg,mem/3201/sap83_15w01041_p.jpg;mem/3201/sap83_15w01041_v.jpg,Chemin ou référence vers les fichiers images stockés sur un vidéodisque (ex. : mem/1205/...).,mistral-large-latest
+6842b8e772325215e9dbf196,ad59533c-1c18-4eb4-a079-7e061ec5dbcd,MEMOIRE FONDS MPP,"TEST MEMOIRE
+",,Numero_de_la_vue_CD,string,string,1.0,142268,427350,0124,0169,0067,Numéro d’ordre d’une vue ou image spécifique sur un CD ou support numérique.,mistral-large-latest
