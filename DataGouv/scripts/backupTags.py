@@ -2,11 +2,12 @@ import json
 from datagouv import Client
 from datetime import datetime
 
-# Pas de clé API, uniquement lecture
-BASE_URL = "https://www.data.gouv.fr"
+# Organisation du ministère
 ORG_ID = "534fff91a3a7292c64a77f73"
 
-client = Client(base_url=BASE_URL)
+# Client en lecture seule (pas besoin de token)
+client = Client()
+
 organization = client.organization(ORG_ID)
 
 backup = {
