@@ -10,13 +10,11 @@ jobs:
     steps:
       - name: Checkout du repo
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dépendances
         run: |
@@ -26,14 +24,18 @@ jobs:
         run: |
           python DataGouv/scripts/backupTags.py
 
-      - name: Lire nombre de datasets
-        id: datasets
-        run: echo "count=$(cat datasets_count.txt)" >> $GITHUB_OUTPUT
-
       - name: Commit & push backup file
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Synchroniser la branche locale avec main
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main
+
+          # Ajouter le backup
           git add DataGouv/scripts/backup_tags.json
-          git commit -m "chore: update backup_tags.json (${{ steps.datasets.outputs.count }} datasets) [skip ci]" || echo "No changes to commit"
-          git push
+          git commit -m "chore: update backup_tags.json [skip ci]" || echo "No changes to commit"
+
+          git push origin main
