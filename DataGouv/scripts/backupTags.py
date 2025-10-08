@@ -1,12 +1,12 @@
-import os
 import json
 from datagouv import Client
 from datetime import datetime
 
-API_KEY = os.environ["DATAGOUV_API_KEY"]
+# Pas de clé API, uniquement lecture
+BASE_URL = "https://www.data.gouv.fr"
 ORG_ID = "534fff91a3a7292c64a77f73"
 
-client = Client(api_key=API_KEY)
+client = Client(base_url=BASE_URL)
 organization = client.organization(ORG_ID)
 
 backup = {
@@ -18,7 +18,7 @@ backup = {
 for dataset in organization.datasets:
     dataset_id = getattr(dataset, "id", None)
     dataset_slug = getattr(dataset, "slug", None)
-    current_tags = getattr(dataset, "tags", [])
+    current_tags = getattr(dataset, "tags", []) or []
     backup["datasets"][dataset_id] = {
         "slug": dataset_slug,
         "tags": current_tags
