@@ -1,7 +1,7 @@
 name: Backup DataGouv Tags
 
 on:
-  workflow_dispatch: # exécution manuelle uniquement
+  workflow_dispatch:
 
 jobs:
   backup:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout du repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # important pour avoir tout l’historique et éviter les conflits
+          fetch-depth: 0   # récupère tout l'historique
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -19,19 +19,17 @@ jobs:
           python-version: '3.11'
 
       - name: Install dépendances
-        run: |
-          pip install datagouv-client
+        run: pip install datagouv-client
 
       - name: Run backup script
-        run: |
-          python DataGouv/scripts/backupTags.py
+        run: python DataGouv/scripts/backupTags.py
 
       - name: Commit & push backup file
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # S’assurer que main est à jour
+          # mettre à jour la branche main avant commit
           git checkout main
           git pull --rebase origin main
 
