@@ -1,35 +1,28 @@
-name: Backup DataGouv Tags
+import os
+import json
+from datagouv import Client
 
-on:
-  workflow_dispatch: # exécution manuelle uniquement
+ORG_ID = "534fff91a3a7292c64a77f73"
+client = Client()
 
-jobs:
-  backup:
-    runs-on: ubuntu-latest
+backup = {
+    "organization": ORG_ID,
+    "datasets": {}
+}
 
-    steps:
-      - name: Checkout du repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+for dataset in client.organization(ORG_ID).datasets:
+    dataset_id = getattr(dataset, "id", None)
+    dataset_slug = getattr(dataset, "slug", None)
+    current_tags = getattr(dataset, "tags", []) or []
+    backup["datasets"][dataset_id] = {
+        "slug": dataset_slug,
+        "tags": current_tags
+    }
+    print(f"Backup {dataset_slug} ({dataset_id}) → {current_tags}")
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+# chemin explicite vers ton repo GitHub
+output_path = "DataGouv/scripts/backup_tags.json"
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(backup, f, indent=2, ensure_ascii=False)
 
-      - name: Install dépendances
-        run: |
-          pip install datagouv-client
-
-      - name: Run backup script
-        run: |
-          python DataGouv/scripts/backupTags.py
-
-      - name: Commit & push backup file
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add DataGouv/scripts/backup_tags.json
-          git commit -m "chore: update backup_tags.json [skip ci]" || echo "No changes to commit"
-          git push
+print(f"\n--- BACKUP TERMINÉ ---\nFichier sauvegardé : {output_path}")
