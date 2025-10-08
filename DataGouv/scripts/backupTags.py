@@ -1,11 +1,10 @@
-import os
 import json
 from datetime import datetime
 from datagouv import Client
 
 ORG_ID = "534fff91a3a7292c64a77f73"
 
-# Client public (pas besoin de clé API pour un GET)
+# Pas besoin de clé API pour lecture publique
 client = Client()
 
 organization = client.organization(ORG_ID)
@@ -17,9 +16,9 @@ backup = {
 }
 
 for dataset in organization.datasets:
-    dataset_id = getattr(dataset, "id", None)
-    dataset_slug = getattr(dataset, "slug", None)
-    current_tags = getattr(dataset, "tags", []) or []
+    dataset_id = getattr(dataset, "id", None) or dataset.__dict__.get("id")
+    dataset_slug = getattr(dataset, "slug", None) or dataset.__dict__.get("slug")
+    current_tags = getattr(dataset, "tags", []) or dataset.__dict__.get("tags", [])
 
     backup["datasets"][dataset_id] = {
         "slug": dataset_slug,
@@ -27,7 +26,7 @@ for dataset in organization.datasets:
     }
     print(f"Backup {dataset_slug} ({dataset_id}) → {current_tags}")
 
-# Ajouter aussi un compteur
+# Ajouter le compteur
 backup["count"] = len(backup["datasets"])
 
 with open("DataGouv/scripts/backup_tags.json", "w", encoding="utf-8") as f:
