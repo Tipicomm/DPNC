@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout du repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # important pour avoir tout l’historique et éviter les conflits
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -29,12 +31,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Synchroniser la branche locale avec main
-          git fetch origin main
+          # S’assurer que main est à jour
           git checkout main
           git pull --rebase origin main
 
-          # Ajouter le backup
           git add DataGouv/scripts/backup_tags.json
           git commit -m "chore: update backup_tags.json [skip ci]" || echo "No changes to commit"
 
