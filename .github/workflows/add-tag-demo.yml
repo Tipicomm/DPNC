@@ -1,14 +1,14 @@
-name: Add tag on demo dataset
+# .github/workflows/add-tag-demo.yml
+name: Add tag (demo)
 
 on:
-  workflow_dispatch: # exécution manuelle uniquement
+  workflow_dispatch:
 
 jobs:
-  add-tag-demo:
+  add-tag:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout du repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -16,12 +16,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dépendances
-        run: |
-          pip install datagouv-client requests
+      - name: Install dependencies
+        run: pip install datagouv-client
 
-      - name: Run addTagDemo script
+      - name: Run script
         env:
           DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
-        run: |
-          python DataGouv/scripts/addTagDemo.py
+        run: python DataGouv/scripts/addTagDemo.py
