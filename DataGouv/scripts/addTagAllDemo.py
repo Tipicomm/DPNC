@@ -6,7 +6,7 @@ from datagouv import Client
 # ------------------------------------------------------------
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture (démo)
-TAG = "hellodata"
+TAG = "culture"
 
 # ------------------------------------------------------------
 # Connexion au client Data.gouv (environnement démo)
