@@ -18,7 +18,7 @@ BASE_URL = "https://demo.data.gouv.fr/api/1"
 client = Client(environment="demo", api_key=API_KEY)
 print("🧩 Connexion à l'environnement DEMO")
 
-# Récupération du dataset avec le client (lecture)
+# Lecture du dataset via le client
 dataset = client.dataset(DATASET_ID)
 title = getattr(dataset, "title", None) or getattr(dataset, "name", None)
 tags = getattr(dataset, "tags", []) or []
@@ -27,7 +27,7 @@ print(f"🎭 Dataset : {title}")
 print(f"🔖 Tags actuels : {tags}")
 
 # ───────────────────────────────
-# Préparation des nouveaux tags
+# Si le tag n'existe pas, on l’ajoute
 # ───────────────────────────────
 if TAG in tags:
     print(f"ℹ️ Le tag '{TAG}' est déjà présent.")
@@ -38,27 +38,29 @@ else:
     if DRY_RUN:
         print("🧪 DRY-RUN activé : aucune modification envoyée.")
     else:
-        # On recharge le dataset complet (JSON brut)
+        # ⚙️ Récupération du JSON complet via API REST
         url = f"{BASE_URL}/datasets/{DATASET_ID}/"
         headers = {
             "X-API-KEY": API_KEY,
             "Accept": "application/json",
         }
-        full_dataset = requests.get(url, headers=headers).json()
+        dataset_json = requests.get(url, headers=headers).json()
 
-        # On met à jour les tags dans le JSON complet
-        full_dataset["tags"] = new_tags
+        # 🧩 Mise à jour des tags
+        dataset_json["tags"] = new_tags
 
-        # PUT avec authentification (et sans perdre les autres champs)
-        put_headers = {
-            "X-API-KEY": API_KEY,
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        }
+        # 🚀 Envoi du PUT (remplace .update() !)
+        response = requests.put(
+            url,
+            headers={
+                "X-API-KEY": API_KEY,
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+            data=json.dumps(dataset_json),
+        )
 
-        print("🚀 Envoi de la mise à jour...")
-        response = requests.put(url, headers=put_headers, data=json.dumps(full_dataset))
-
+        # ✅ Vérification
         if response.status_code in (200, 201):
             print("✅ Tag ajouté avec succès sans perte de données.")
         else:
