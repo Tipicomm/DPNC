@@ -13,22 +13,26 @@ client = Client(api_key=API_KEY, base_url=BASE_URL)
 print(f"🧩 Connexion à {BASE_URL}")
 print(f"Traitement du dataset : {DATASET_ID}")
 
-# === Récupération du dataset ===
+# === Récupération complète du dataset ===
 dataset = client.dataset(DATASET_ID)
+dataset_info = dataset.as_dict() if hasattr(dataset, "as_dict") else dataset.__dict__
 
-# Récupération des tags existants
-current_tags = getattr(dataset, "tags", []) or []
+# Récupération des tags actuels (préconisation dev)
+current_tags = getattr(dataset, "tags", []) or dataset_info.get("tags", []) or []
+
 print(f"Tags actuels : {current_tags}")
 
 # Ajout du tag s’il n’existe pas déjà
 if TAG not in current_tags:
     new_tags = current_tags + [TAG]
+    print(f"Ajout du tag '{TAG}'…")
     dataset.update({"tags": new_tags})
     print(f"✅ Tag '{TAG}' ajouté avec succès au dataset {DATASET_ID}")
 else:
     print(f"ℹ️ Le tag '{TAG}' est déjà présent, aucune modification effectuée.")
 
-# Vérification finale
+# Vérification finale après mise à jour
 updated = client.dataset(DATASET_ID)
-print(f"Tags finaux : {getattr(updated, 'tags', [])}")
+updated_tags = getattr(updated, "tags", []) or []
+print(f"Tags finaux : {updated_tags}")
 print("✔️ Fin du traitement sur le dataset de démonstration.")
