@@ -8,7 +8,7 @@ from datagouv import Client
 # ───────────────────────────────
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
 DATASET_ID = "67fe79efd6a64f5bb533e454"  # "Hello Lido"
-TAG = "culture"
+TAG = "ministère de la Culture"
 DRY_RUN = False
 BASE_URL = "https://demo.data.gouv.fr/api/1"
 
