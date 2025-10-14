@@ -13,18 +13,19 @@ DRY_RUN = False
 BASE_URL = "https://demo.data.gouv.fr/api/1"
 
 # ───────────────────────────────
-# Connexion via le client
+# Connexion via le client (lecture uniquement)
 # ───────────────────────────────
 client = Client(environment="demo", api_key=API_KEY)
 print("🧩 Connexion à l'environnement DEMO")
+print(f"Traitement du dataset : {DATASET_ID}")
 
 # Lecture du dataset via le client
 dataset = client.dataset(DATASET_ID)
 title = getattr(dataset, "title", None) or getattr(dataset, "name", None)
 tags = getattr(dataset, "tags", []) or []
 
-print(f"🎭 Dataset : {title}")
-print(f"🔖 Tags actuels : {tags}")
+print(f"Titre : {title}")
+print(f"Tags actuels : {tags}")
 
 # ───────────────────────────────
 # Si le tag n'existe pas, on l’ajoute
@@ -38,7 +39,7 @@ else:
     if DRY_RUN:
         print("🧪 DRY-RUN activé : aucune modification envoyée.")
     else:
-        # ⚙️ Récupération du JSON complet via API REST
+        # ⚙️ Récupération du dataset complet (JSON brut)
         url = f"{BASE_URL}/datasets/{DATASET_ID}/"
         headers = {
             "X-API-KEY": API_KEY,
@@ -49,7 +50,7 @@ else:
         # 🧩 Mise à jour des tags
         dataset_json["tags"] = new_tags
 
-        # 🚀 Envoi du PUT (remplace .update() !)
+        # 🚀 Envoi de la mise à jour complète (PUT)
         response = requests.put(
             url,
             headers={
@@ -60,7 +61,6 @@ else:
             data=json.dumps(dataset_json),
         )
 
-        # ✅ Vérification
         if response.status_code in (200, 201):
             print("✅ Tag ajouté avec succès sans perte de données.")
         else:
