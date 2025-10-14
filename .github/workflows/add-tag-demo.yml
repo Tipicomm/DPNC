@@ -1,10 +1,10 @@
-name: Add Tag to Demo Dataset
+name: Add tag on demo dataset
 
 on:
   workflow_dispatch: # exécution manuelle uniquement
 
 jobs:
-  add_tag_demo:
+  add-tag-demo:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,10 +18,10 @@ jobs:
 
       - name: Install dépendances
         run: |
-          pip install datagouv-client
+          pip install datagouv-client requests
 
-      - name: Add 'Culture' tag to demo dataset
+      - name: Run addTagDemo script
         env:
-          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
         run: |
           python DataGouv/scripts/addTagDemo.py
