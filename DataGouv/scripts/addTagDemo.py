@@ -3,14 +3,16 @@ from datagouv import Client
 
 # === Configuration ===
 API_KEY = os.environ["DATAGOUV_API_KEY"]
-BASE_URL = "https://demo.data.gouv.fr"
 DATASET_ID = "68c3019f59e15e4d36e65f9b"
 TAG = "Culture"
 
 # === Initialisation du client ===
-client = Client(api_key=API_KEY, base_url=BASE_URL)
+client = Client(api_key=API_KEY)
 
-print(f"🧩 Connexion à {BASE_URL}")
+# 🧩 Forçage manuel du domaine vers demo.data.gouv.fr
+client.base_url = "https://demo.data.gouv.fr/api/1/"
+
+print(f"🧩 Connexion à {client.base_url}")
 print(f"Traitement du dataset : {DATASET_ID}")
 
 # === Récupération complète du dataset ===
@@ -19,7 +21,6 @@ dataset_info = dataset.as_dict() if hasattr(dataset, "as_dict") else dataset.__d
 
 # Récupération des tags actuels (préconisation dev)
 current_tags = getattr(dataset, "tags", []) or dataset_info.get("tags", []) or []
-
 print(f"Tags actuels : {current_tags}")
 
 # Ajout du tag s’il n’existe pas déjà
