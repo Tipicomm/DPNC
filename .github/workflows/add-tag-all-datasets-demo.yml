@@ -1,0 +1,25 @@
+# .github/workflows/add-tag-all-datasets-demo.yml
+name: addTagAllDatasetsDemo.py (demo)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install datagouv-client
+
+      - name: Run script
+        env:
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+        run: python DataGouv/scripts/addTagAllDemo.py
