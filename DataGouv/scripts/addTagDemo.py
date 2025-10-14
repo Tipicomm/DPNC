@@ -7,21 +7,18 @@ from datagouv import Client
 # Configuration
 # ───────────────────────────────
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
-DATASET_ID = "67fe79efd6a64f5bb533e454"  # Dataset "Hello Lido"
+DATASET_ID = "67fe79efd6a64f5bb533e454"  # "Hello Lido"
 TAG = "culture"
-SAFE_BACKUP = True  # Crée un fichier de sauvegarde avant modification
-DRY_RUN = False     # True = test sans écriture
+DRY_RUN = False
 BASE_URL = "https://demo.data.gouv.fr/api/1"
 
 # ───────────────────────────────
-# Connexion au client DataGouv (environnement DEMO)
+# Connexion via le client
 # ───────────────────────────────
 client = Client(environment="demo", api_key=API_KEY)
 print("🧩 Connexion à l'environnement DEMO")
 
-# ───────────────────────────────
-# Récupération du dataset via le client
-# ───────────────────────────────
+# Récupération du dataset avec le client (lecture)
 dataset = client.dataset(DATASET_ID)
 title = getattr(dataset, "title", None) or getattr(dataset, "name", None)
 tags = getattr(dataset, "tags", []) or []
@@ -30,16 +27,7 @@ print(f"🎭 Dataset : {title}")
 print(f"🔖 Tags actuels : {tags}")
 
 # ───────────────────────────────
-# Sauvegarde de sécurité avant écriture
-# ───────────────────────────────
-if SAFE_BACKUP:
-    backup_path = f"DataGouv/scripts/backup_{DATASET_ID}.json"
-    with open(backup_path, "w", encoding="utf-8") as f:
-        json.dump(dataset.to_dict(), f, indent=2, ensure_ascii=False)
-    print(f"💾 Sauvegarde de sécurité créée : {backup_path}")
-
-# ───────────────────────────────
-# Ajout du tag sans perte de données
+# Préparation des nouveaux tags
 # ───────────────────────────────
 if TAG in tags:
     print(f"ℹ️ Le tag '{TAG}' est déjà présent.")
@@ -50,24 +38,26 @@ else:
     if DRY_RUN:
         print("🧪 DRY-RUN activé : aucune modification envoyée.")
     else:
-        # 1️⃣ Récupérer le dataset complet pour ne rien perdre
+        # On recharge le dataset complet (JSON brut)
         url = f"{BASE_URL}/datasets/{DATASET_ID}/"
         headers = {
             "X-API-KEY": API_KEY,
             "Accept": "application/json",
         }
-        full = requests.get(url, headers=headers).json()
+        full_dataset = requests.get(url, headers=headers).json()
 
-        # 2️⃣ Modifier uniquement les tags
-        full["tags"] = new_tags
+        # On met à jour les tags dans le JSON complet
+        full_dataset["tags"] = new_tags
 
-        # 3️⃣ Envoyer l’objet complet en PUT (authentifié)
+        # PUT avec authentification (et sans perdre les autres champs)
         put_headers = {
             "X-API-KEY": API_KEY,
             "Content-Type": "application/json",
             "Accept": "application/json",
         }
-        response = requests.put(url, headers=put_headers, data=json.dumps(full))
+
+        print("🚀 Envoi de la mise à jour...")
+        response = requests.put(url, headers=put_headers, data=json.dumps(full_dataset))
 
         if response.status_code in (200, 201):
             print("✅ Tag ajouté avec succès sans perte de données.")
