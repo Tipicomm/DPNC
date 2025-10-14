@@ -1,79 +1,22 @@
 import os
-import json
-import requests
 from datagouv import Client
 
-# ------------------------------------------------------------
-# Configuration
-# ------------------------------------------------------------
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
-DATASET_ID = "67fe79efd6a64f5bb533e454"  # Jeu de données "Hello Lido"
-TAG = "schema"
-DRY_RUN = False
-BASE_URL = "https://demo.data.gouv.fr/api/1"
+DATASET_ID = "67fe79efd6a64f5bb533e454"  # "Hello Lido" (démo)
+TAG = "hellodata"
 
-# ------------------------------------------------------------
-# Connexion via le client (lecture uniquement)
-# ------------------------------------------------------------
+# Client authentifié sur l'environnement de démo
 client = Client(environment="demo", api_key=API_KEY)
-print("Connexion à l'environnement DEMO")
-print(f"Traitement du dataset : {DATASET_ID}")
 
-# Lecture du dataset via le client
+# Récupération du dataset
 dataset = client.dataset(DATASET_ID)
-title = getattr(dataset, "title", None) or getattr(dataset, "name", None)
-tags = getattr(dataset, "tags", []) or []
 
-print(f"Titre : {title}")
-print(f"Tags actuels : {tags}")
-
-# ------------------------------------------------------------
-# Ajout du tag si non présent
-# ------------------------------------------------------------
-if TAG in tags:
-    print(f"Le tag '{TAG}' est déjà présent.")
+# Ajout du tag s'il n'est pas déjà présent (exactement comme préconisé)
+if TAG not in dataset.tags:
+    dataset.update({"tags": dataset.tags + [TAG]})
+    print(f"Tag ajouté: {TAG}")
 else:
-    new_tags = tags + [TAG]
-    print(f"Ajout du tag '{TAG}' → {new_tags}")
+    print(f"Tag déjà présent: {TAG}")
 
-    if DRY_RUN:
-        print("Mode simulation activé : aucune modification envoyée.")
-    else:
-        # Récupération du dataset complet au format JSON
-        url = f"{BASE_URL}/datasets/{DATASET_ID}/"
-        headers = {
-            "X-API-KEY": API_KEY,
-            "Accept": "application/json",
-        }
-        dataset_json = requests.get(url, headers=headers).json()
-
-        # Mise à jour des tags
-        dataset_json["tags"] = new_tags
-
-        # Envoi de la mise à jour complète (méthode PUT)
-        response = requests.put(
-            url,
-            headers={
-                "X-API-KEY": API_KEY,
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            data=json.dumps(dataset_json),
-        )
-
-        if response.status_code in (200, 201):
-            print("Tag ajouté avec succès sans perte de données.")
-        else:
-            print(f"Erreur PUT {response.status_code}: {response.text}")
-            raise SystemExit(1)
-
-# ------------------------------------------------------------
-# Vérification finale
-# ------------------------------------------------------------
-check = requests.get(f"{BASE_URL}/datasets/{DATASET_ID}/", headers={"Accept": "application/json"})
-if check.ok:
-    print(f"Tags finaux : {check.json().get('tags', [])}")
-else:
-    print(f"Erreur de vérification ({check.status_code})")
-
-print("Fin du script avec succès.")
+# Contrôle simple
+print("Tags finaux:", dataset.tags)
