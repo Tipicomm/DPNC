@@ -1,49 +1,36 @@
 import os
 from datagouv import Client
 
-# ------------------------------------------------------------
 # Configuration
-# ------------------------------------------------------------
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
-ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture (démo)
+ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TAG = "culture"
 
-# ------------------------------------------------------------
-# Connexion au client Data.gouv (environnement démo)
-# ------------------------------------------------------------
+# Client authentifié sur la démo
 client = Client(environment="demo", api_key=API_KEY)
 print("Connexion à l'environnement DEMO")
 print(f"Organisation ciblée : {ORG_ID}")
 
-# ------------------------------------------------------------
-# Récupération de l'organisation et de ses jeux de données
-# ------------------------------------------------------------
+# Récupération de tous les jeux de données de l'organisation
 organization = client.organization(ORG_ID)
-datasets = organization.datasets
-print(f"{len(datasets)} jeux de données détectés pour l'organisation.")
+datasets = list(organization.datasets)  # 👈 Conversion du générateur en liste
 
-# ------------------------------------------------------------
-# Parcours de tous les jeux de données
-# ------------------------------------------------------------
-for dataset in datasets:
-    title = getattr(dataset, "title", None) or getattr(dataset, "name", None)
-    tags = getattr(dataset, "tags", []) or []
+print(f"{len(datasets)} jeux de données détectés pour l'organisation.\n")
 
-    print(f"\n---")
-    print(f"Titre : {title}")
-    print(f"Tags actuels : {tags}")
+# Boucle sur chaque dataset
+for ds in datasets:
+    ds_id = getattr(ds, "id", None)
+    title = getattr(ds, "title", None) or getattr(ds, "name", None)
+    tags = getattr(ds, "tags", []) or []
+
+    print(f"→ {title} ({ds_id})")
+    print(f"   Tags actuels : {tags}")
 
     if TAG not in tags:
-        print(f"Ajout du tag '{TAG}'...")
-        try:
-            dataset.update({"tags": tags + [TAG]})
-            print(f"Tag ajouté avec succès au dataset '{title}'.")
-        except Exception as e:
-            print(f"Erreur lors de la mise à jour du dataset '{title}': {e}")
+        new_tags = tags + [TAG]
+        ds.update({"tags": new_tags})
+        print(f"   ✅ Tag ajouté : {TAG}")
     else:
-        print(f"Le tag '{TAG}' est déjà présent dans '{title}'.")
+        print(f"   ℹ️ Tag déjà présent : {TAG}")
 
-# ------------------------------------------------------------
-# Fin du traitement
-# ------------------------------------------------------------
-print("\nMise à jour terminée pour l'ensemble des jeux de données.")
+print("\nTraitement terminé avec succès.")
