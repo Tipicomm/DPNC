@@ -9,8 +9,8 @@ TAG = "Culture"
 # === Initialisation du client ===
 client = Client(api_key=API_KEY)
 
-# Forçage du endpoint vers l’instance de démonstration
-client.base_url = "https://demo.data.gouv.fr/api/1/"
+# ⚙️ Important : ne pas inclure /api/1/ dans le base_url
+client.base_url = "https://demo.data.gouv.fr"
 
 print(f"🧩 Connexion à {client.base_url}")
 print(f"Traitement du dataset : {DATASET_ID}")
@@ -22,7 +22,7 @@ dataset_info = dataset.as_dict() if hasattr(dataset, "as_dict") else dataset.__d
 title = getattr(dataset, "title", None) or dataset_info.get("title", "Sans titre")
 print(f"Titre du dataset : {title}")
 
-# Récupération des tags actuels (préconisation dev)
+# Récupération des tags actuels
 current_tags = getattr(dataset, "tags", []) or dataset_info.get("tags", []) or []
 print(f"Tags actuels : {current_tags}")
 
