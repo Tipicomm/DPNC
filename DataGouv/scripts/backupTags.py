@@ -5,26 +5,26 @@ from datetime import datetime
 # ID de l'organisation
 ORG_ID = "534fff91a3a7292c64a77f73"
 
-# Initialisation du client (lecture publique, pas besoin de clé)
+# Initialisation du client (GET public)
 client = Client()
 
-# Initialisation du dictionnaire de sauvegarde
+# Structure de sauvegarde
 backup = {
     "organization": ORG_ID,
-    "date": datetime.now().isoformat(),  # Ajout d’un horodatage
+    "date": datetime.now().isoformat(),
     "datasets": {}
 }
 
-# Récupération des jeux de données de l'organisation
 organization = client.organization(ORG_ID)
 
 for dataset in organization.datasets:
     dataset_id = getattr(dataset, "id", None)
-    dataset_slug = getattr(dataset, "slug", None)
+    # certains environnements n’ont pas `.slug`, on fallback sur `.name`
+    dataset_slug = getattr(dataset, "slug", getattr(dataset, "name", None))
     current_tags = getattr(dataset, "tags", []) or []
 
     if not dataset_id:
-        print("⚠️ Dataset sans identifiant détecté, ignoré.")
+        print("⚠️ Dataset sans identifiant, ignoré.")
         continue
 
     backup["datasets"][dataset_id] = {
@@ -37,7 +37,7 @@ for dataset in organization.datasets:
 # Ajout du nombre total de datasets
 backup["count"] = len(backup["datasets"])
 
-# Sauvegarde dans le dépôt
+# Sauvegarde du JSON dans le dépôt
 output_path = "DataGouv/scripts/backup_tags.json"
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(backup, f, indent=2, ensure_ascii=False)
