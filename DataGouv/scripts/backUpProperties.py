@@ -5,7 +5,7 @@ from datetime import datetime
 # ⚙️ Configuration
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 PROPERTIES_TO_BACKUP = ["id", "title", "description", "tags", "frequency", "license"]  # Personnalisable
-OUTPUT_PATH = "DataGouv/scripts/backup_datasets.json"
+OUTPUT_PATH = "DataGouv/scripts/backup_datasets_properties.json"
 
 # 🧭 Initialisation du client
 client = Client()  # accès public, pas besoin d'API key pour lecture
