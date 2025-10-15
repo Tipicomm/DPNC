@@ -1,4 +1,4 @@
-name: Backup DataGouv Properties
+name: Backup DataGouv Properties demo
 
 on:
   workflow_dispatch: # exécution manuelle uniquement
