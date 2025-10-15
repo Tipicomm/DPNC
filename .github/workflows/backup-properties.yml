@@ -1,0 +1,43 @@
+name: Backup DataGouv Properties
+
+on:
+  workflow_dispatch: # exécution manuelle uniquement
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # nécessaire pour pousser ensuite sans conflit
+
+      - name: Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installation des dépendances
+        run: |
+          pip install datagouv-client
+
+      - name: Exécution du script de sauvegarde
+        run: |
+          python DataGouv/scripts/backUpProperties.py
+
+      - name: Commit et push du fichier de sauvegarde
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Vérifie et se place sur main
+          git fetch origin main
+          git checkout main
+
+          # Ajout du fichier généré
+          git add DataGouv/scripts/backup_datasets.json
+          git commit -m "chore: update backup_datasets.json [skip ci]" || echo "Aucune modification à commettre"
+
+          # Push sans rebase ni merge
+          git push origin main --force
