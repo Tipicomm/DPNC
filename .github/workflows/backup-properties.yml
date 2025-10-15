@@ -37,7 +37,8 @@ jobs:
 
           # Ajout du fichier généré
           git add DataGouv/scripts/backup_datasets_properties.json
-          git commit -m "chore: update backup_datasets.json [skip ci]" || echo "Aucune modification à commettre"
+          git commit -m "chore: update backup_datasets_properties.json [skip ci]" || echo "Aucune modification à commettre"
+
 
           # Push sans rebase ni merge
           git push origin main --force
