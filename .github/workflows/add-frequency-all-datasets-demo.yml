@@ -5,11 +5,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  add-tag:
+  add-frequency:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # important pour éviter les conflits de push
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -17,9 +19,27 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install datagouv-client
+        run: pip install datagouv-client httpx
 
-      - name: Run script
+      - name: Run frequency fix script
         env:
           DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
-        run: python DataGouv/scripts/addFrequencyAllDatasets.py
+        run: python DataGouv/scripts/fixFrequenciesSafe.py
+
+      - name: Commit & push backup file
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          # Vérifie si le fichier de backup existe
+          if [ -f "DataGouv/scripts/backup_frequencies.json" ]; then
+            echo "✅ Fichier trouvé, on le commit."
+            git add DataGouv/scripts/backup_frequencies.json
+            git commit -m "chore: update backup_frequencies.json [skip ci]" || echo "Aucune modification à commettre"
+            git push origin main
+          else
+            echo "⚠️ Aucun fichier backup_frequencies.json trouvé, rien à commettre."
+          fi
