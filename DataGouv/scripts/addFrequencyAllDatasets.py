@@ -4,7 +4,7 @@ import httpx
 
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
-DEFAULT_FREQUENCY = "unknown"
+DEFAULT_FREQUENCY = "punctual"
 
 client = Client(environment="demo", api_key=API_KEY)
 print("Connexion à l'environnement DEMO")
