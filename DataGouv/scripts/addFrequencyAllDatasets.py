@@ -10,7 +10,7 @@ from datetime import datetime
 API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 DEFAULT_FREQUENCY = "punctual"
-UPDATE_MODE = True  # ⚠️ False = simulation / True = écriture réelle
+UPDATE_MODE = False  # ⚠️ False = simulation / True = écriture réelle
 BACKUP_PATH = "DataGouv/scripts/backup_frequencies.json"
 
 # ───────────────────────────────
