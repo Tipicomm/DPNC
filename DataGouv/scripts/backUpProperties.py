@@ -25,10 +25,10 @@ ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 ENVIRONMENT = os.getenv("DATAGOUV_ENV", "www").lower()
 
 BASE_URL = {
-    "www": "https://www.data.gouv.fr",
+    "prod": "https://data.gouv.fr",
     "demo": "https://demo.data.gouv.fr",
     "dev": "https://dev.data.gouv.fr"
-}.get(ENVIRONMENT, "https://demo.data.gouv.fr")
+}.get(ENVIRONMENT, "https://data.gouv.fr")
 
 # Nom dynamique du fichier
 DATE_STR = datetime.utcnow().strftime("%Y_%m_%d")
