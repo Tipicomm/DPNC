@@ -1,7 +1,7 @@
 {
   "organization": "534fff91a3a7292c64a77f73",
   "environment": "demo",
-  "date": "2025-10-20T13:31:16.683035",
+  "date": "2025-10-20T16:35:58.756153",
   "datasets": {
     "53698edca3a729239d2035ac": {
       "acronym": null,
@@ -1819,16 +1819,18 @@
           "created_at": "2014-05-09T04:32:38.626000+00:00",
           "description": "Le catalogue en ligne du patrimoine culturel numérisé décrit les collections numérisées et les productions multimédia associées (site internet, dévédérom, cédérom...). Il recense les institutions à l'origine de projets de numérisation en France. Le catalogue est le volet national du projet européen Michael.\nLes collections couvrent la période allant de la préhistoire à nos jours. \nCette sélection de collections concerne l'Afrique subsaharienne.",
           "extras": {
+            "analysis:check_id": 21820257,
+            "analysis:checksum": "aaa0fe6b8703b12a2a05fe29dc5afe4645a6bc57",
+            "analysis:content-length": 42852,
             "analysis:last-modified-at": "2014-01-06T08:41:54+00:00",
             "analysis:last-modified-detection": "last-modified-header",
-            "check:available": false,
+            "analysis:mime-type": "text/xml",
+            "check:available": true,
             "check:count-availability": 98,
-            "check:date": "2025-10-18T22:18:52.068908+00:00",
-            "check:error": "Not Found",
-            "check:headers:content-length": 146,
-            "check:headers:content-type": "text/html",
-            "check:id": 21738908,
-            "check:status": 404,
+            "check:date": "2025-10-20T13:44:29.086809+00:00",
+            "check:headers:content-type": "text/xml",
+            "check:id": 21820257,
+            "check:status": 200,
             "check:timeout": false,
             "check:url": "http://static.data.gouv.fr/f3/14ed632bdd59d14ddeae892fee06ab83c34e1f1689272627085892bf9143c9.xml"
           },
@@ -3610,7 +3612,7 @@
         "last_modified_internal": "2025-10-20T13:26:09.356000+00:00"
       },
       "last_modified": "2025-10-20T13:26:09.356000+00:00",
-      "last_update": "2025-10-19T04:15:25.660000+00:00",
+      "last_update": "2025-10-20T15:04:59.669000+00:00",
       "license": "fr-lo",
       "metrics": {
         "dataservices": 0,
@@ -3683,10 +3685,10 @@
           "created_at": "2017-03-01T17:45:09.020000+00:00",
           "description": "A partir de 2016, l'historique n'est plus conservé.",
           "extras": {
-            "analysis:check_id": 21751139,
-            "analysis:checksum": "afbdb64996a51b98d8fe71f53180ea407f3037d5",
-            "analysis:content-length": 107910,
-            "analysis:last-modified-at": "2025-10-19T04:15:25.660769+00:00",
+            "analysis:check_id": 21822877,
+            "analysis:checksum": "5635474ab090e288e4d344cf3318624b8ce9d04c",
+            "analysis:content-length": 107898,
+            "analysis:last-modified-at": "2025-10-20T15:04:59.669709+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "text/html",
             "check:available": true,
@@ -3704,7 +3706,7 @@
             "created_at_internal": "2017-03-01T17:45:09.020000+00:00",
             "last_modified_internal": "2024-11-19T15:14:57.419000+00:00"
           },
-          "last_modified": "2025-10-19T04:15:25.660769+00:00",
+          "last_modified": "2025-10-20T15:04:59.669709+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/86a7f194-182e-4be3-ac5a-082d612082fe",
           "metrics": {
             "nb_hits": 0,
@@ -5086,7 +5088,7 @@
         "last_modified_internal": "2025-10-20T13:26:18.477000+00:00"
       },
       "last_modified": "2025-10-20T13:26:18.477000+00:00",
-      "last_update": "2025-10-20T12:56:27.326000+00:00",
+      "last_update": "2025-10-20T14:58:26.131000+00:00",
       "license": "fr-lo",
       "metrics": {
         "dataservices": 0,
@@ -5418,10 +5420,10 @@
           "created_at": "2015-12-18T17:39:49.999000+00:00",
           "description": "aide au pluralisme de la presse périodique régionale et locale",
           "extras": {
-            "analysis:check_id": 21740074,
-            "analysis:checksum": "b54102a1e4b6c883baa0f2a8b53fd9ea1e95f668",
-            "analysis:content-length": 97280,
-            "analysis:last-modified-at": "2025-10-18T22:53:14.538991+00:00",
+            "analysis:check_id": 21822592,
+            "analysis:checksum": "f2260c833aef265d4ba5a5c28fe24e3d259b4fd0",
+            "analysis:content-length": 97273,
+            "analysis:last-modified-at": "2025-10-20T14:58:26.131284+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "text/html",
             "check:available": true,
@@ -5439,7 +5441,7 @@
             "created_at_internal": "2015-12-18T17:39:49.999000+00:00",
             "last_modified_internal": "2023-09-13T13:42:09.759000+00:00"
           },
-          "last_modified": "2025-10-18T22:53:14.538991+00:00",
+          "last_modified": "2025-10-20T14:58:26.131284+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/8ee44e0b-9b31-41fe-99c6-89192147ef1f",
           "metrics": {
             "nb_hits": 0,
@@ -6315,7 +6317,7 @@
         "last_modified_internal": "2025-10-15T17:52:44.997000+00:00"
       },
       "last_modified": "2025-10-15T17:52:44.997000+00:00",
-      "last_update": "2025-10-18T16:26:15.252000+00:00",
+      "last_update": "2025-10-20T14:04:34.948000+00:00",
       "license": "fr-lo",
       "metrics": {
         "dataservices": 0,
@@ -6571,18 +6573,19 @@
           "created_at": "2018-03-16T05:00:52.022000+00:00",
           "description": "- *Régions*: regions[text]\n- *Domaines*: domaines[text]\n- *Établissements \n(Sièges et Sites)*: etablissements_sieges_et_sites[text]\n- *Adresse 1*: adresse_1[text]\n- *Adresse 2*: adresse_2[text]\n- *CP*: cp[int]\n- *Villes*: villes[text]\n- *Coordonnées Tel*: coordonnees_tel[text]\n- *Sites internet*: sites_internet[text]\n- *geoloc*: geoloc[text]\n- *coordonnees_cp*: coordonnees_cp[text]\n- *coordonnees_finales*: coordonnees_finales[geo_point_2d]\n",
           "extras": {
-            "analysis:checksum": "3f0709953f827172c95a69bfc1d374823573d645",
+            "analysis:check_id": 21820750,
+            "analysis:checksum": "b500cab9bbdbedcc1f5d6ce7510694695ce9783f",
             "analysis:content-length": 27101,
-            "analysis:last-modified-at": "2025-08-14T08:37:47.811739+00:00",
+            "analysis:last-modified-at": "2025-10-20T14:04:34.948408+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "text/plain",
-            "analysis:parsing:finished_at": "2025-08-14T08:37:51.437142+00:00",
+            "analysis:parsing:finished_at": "2025-10-20T14:04:42.818871+00:00",
             "analysis:parsing:geojson_size": 95017,
             "analysis:parsing:geojson_url": "https://object.files.data.gouv.fr/demo-hydra-geojson/hydra-geojson/430202f3-df68-486e-8a65-2f1eb62dab5f.geojson",
             "analysis:parsing:parsing_table": "1891d844423164c787e6e690286bb39d",
-            "analysis:parsing:pmtiles_size": 37266,
+            "analysis:parsing:pmtiles_size": 37269,
             "analysis:parsing:pmtiles_url": "https://object.files.data.gouv.fr/demo-hydra-pmtiles/hydra-pmtiles/430202f3-df68-486e-8a65-2f1eb62dab5f.pmtiles",
-            "analysis:parsing:started_at": "2025-08-14T08:37:50.490380+00:00",
+            "analysis:parsing:started_at": "2025-10-20T14:04:37.964116+00:00",
             "check:available": true,
             "check:count-availability": 66,
             "check:date": "2025-06-28T17:04:43.823913+00:00",
@@ -6602,7 +6605,7 @@
             "created_at_internal": "2018-03-16T05:00:52.022000+00:00",
             "last_modified_internal": "2016-10-04T10:48:51+00:00"
           },
-          "last_modified": "2025-08-14T08:37:47.811739+00:00",
+          "last_modified": "2025-10-20T14:04:34.948408+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/430202f3-df68-486e-8a65-2f1eb62dab5f",
           "metrics": {
             "nb_hits": 0,
@@ -12427,13 +12430,13 @@
       },
       "private": false,
       "quality": {
-        "all_resources_available": true,
+        "all_resources_available": false,
         "dataset_description_quality": true,
         "has_open_format": true,
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
@@ -12456,14 +12459,13 @@
             "analysis:parsing:parquet_url": "https://object.files.data.gouv.fr/demo-hydra-parquet/hydra-parquet/6e796075-b2f8-4b28-a459-cba4e1d19799.parquet",
             "analysis:parsing:parsing_table": "371fb307c0648c64e99f60905a9db6bc",
             "analysis:parsing:started_at": "2025-10-18T03:00:43.972119+00:00",
-            "check:available": true,
+            "check:available": false,
             "check:count-availability": 23,
-            "check:date": "2025-07-07T12:01:42.656303+00:00",
+            "check:date": "2025-10-20T14:04:20.974441+00:00",
             "check:headers:charset": "utf-8",
             "check:headers:content-disposition": "attachment; filename=\"grands-documents-et-images-de-lhistoire-de-france-conserves-par-les-archives-.csv\"",
-            "check:headers:content-type": "application/csv",
-            "check:status": 200,
-            "check:timeout": false,
+            "check:id": 21820959,
+            "check:timeout": true,
             "check:url": "https://data.culturecommunication.gouv.fr//explore/dataset/grands-documents-et-images-de-lhistoire-de-france-conserves-par-les-archives-/download?format=csv&timezone=Europe/Berlin&use_labels_for_header=false"
           },
           "filesize": null,
@@ -31505,10 +31507,10 @@
       "id": "5d12ee8206e3e762c0c89a4c",
       "internal": {
         "created_at_internal": "2019-06-26T06:03:14.828000+00:00",
-        "last_modified_internal": "2025-10-20T13:31:37.250000+00:00"
+        "last_modified_internal": "2025-10-20T16:19:01.801000+00:00"
       },
-      "last_modified": "2025-10-20T13:31:37.250000+00:00",
-      "last_update": "2025-10-20T13:28:54+00:00",
+      "last_modified": "2025-10-20T16:19:01.801000+00:00",
+      "last_update": "2025-10-20T16:19:01+00:00",
       "license": "lov2",
       "metrics": {
         "dataservices": 0,
@@ -31581,21 +31583,21 @@
           "created_at": "2025-07-09T07:33:04.515000+00:00",
           "description": null,
           "extras": {
-            "analysis:check_id": 21819720,
-            "analysis:checksum": "0a52a9585f41a217345f0312c0462463394b1986",
-            "analysis:content-length": 3389646,
-            "analysis:last-modified-at": "2025-10-20T13:28:54+00:00",
+            "analysis:check_id": 21825600,
+            "analysis:checksum": "9e913aa9738d1c545cab02175424b8c6048e128e",
+            "analysis:content-length": 3397032,
+            "analysis:last-modified-at": "2025-10-20T16:19:01+00:00",
             "analysis:last-modified-detection": "last-modified-header",
             "analysis:mime-type": "text/plain",
-            "analysis:parsing:finished_at": "2025-10-20T13:29:40.863671+00:00",
-            "analysis:parsing:geojson_size": 4616423,
+            "analysis:parsing:finished_at": "2025-10-20T16:20:55.238575+00:00",
+            "analysis:parsing:geojson_size": 4623437,
             "analysis:parsing:geojson_url": "https://object.files.data.gouv.fr/demo-hydra-geojson/hydra-geojson/8e9379d1-b783-4dae-9352-2804fea54bfb.geojson",
-            "analysis:parsing:parquet_size": 1246525,
+            "analysis:parsing:parquet_size": 1245135,
             "analysis:parsing:parquet_url": "https://object.files.data.gouv.fr/demo-hydra-parquet/hydra-parquet/8e9379d1-b783-4dae-9352-2804fea54bfb.parquet",
             "analysis:parsing:parsing_table": "32257605bc85f5af0d6e92b7b0eb45d5",
-            "analysis:parsing:pmtiles_size": 2986029,
+            "analysis:parsing:pmtiles_size": 3040828,
             "analysis:parsing:pmtiles_url": "https://object.files.data.gouv.fr/demo-hydra-pmtiles/hydra-pmtiles/8e9379d1-b783-4dae-9352-2804fea54bfb.pmtiles",
-            "analysis:parsing:started_at": "2025-10-20T13:29:32.766907+00:00",
+            "analysis:parsing:started_at": "2025-10-20T16:20:33.817584+00:00",
             "check:available": true,
             "check:date": "2025-08-12T13:25:51.482400+00:00",
             "check:headers:content-type": "text/csv",
@@ -31609,9 +31611,9 @@
           "id": "8e9379d1-b783-4dae-9352-2804fea54bfb",
           "internal": {
             "created_at_internal": "2025-07-09T07:33:04.515000+00:00",
-            "last_modified_internal": "2025-10-20T13:31:37.249000+00:00"
+            "last_modified_internal": "2025-10-20T16:19:01.800000+00:00"
           },
-          "last_modified": "2025-10-20T13:28:54+00:00",
+          "last_modified": "2025-10-20T16:19:01+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/8e9379d1-b783-4dae-9352-2804fea54bfb",
           "metrics": {},
           "mime": "text/csv",
@@ -31646,7 +31648,7 @@
           "id": "72979696-3bc9-4802-89f8-f4afd2a3a732",
           "internal": {
             "created_at_internal": "2025-06-24T16:22:00.377000+00:00",
-            "last_modified_internal": "2025-10-20T13:20:10.946000+00:00"
+            "last_modified_internal": "2025-10-20T13:37:01.318000+00:00"
           },
           "last_modified": "2025-06-25T09:59:47+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/72979696-3bc9-4802-89f8-f4afd2a3a732",
@@ -68414,10 +68416,10 @@
       "id": "67f7424b137aad8bcb9ac731",
       "internal": {
         "created_at_internal": "2025-04-10T04:00:11.071000+00:00",
-        "last_modified_internal": "2025-10-19T15:04:48.666000+00:00"
+        "last_modified_internal": "2025-10-20T15:05:09.257000+00:00"
       },
-      "last_modified": "2025-10-19T15:04:48.666000+00:00",
-      "last_update": "2025-10-19T15:04:48+00:00",
+      "last_modified": "2025-10-20T15:05:09.257000+00:00",
+      "last_update": "2025-10-20T15:05:08+00:00",
       "license": "lov2",
       "metrics": {
         "dataservices": 2,
@@ -68490,9 +68492,9 @@
           "created_at": "2025-07-09T07:26:50.344000+00:00",
           "description": null,
           "extras": {
-            "analysis:check_id": 21773539,
+            "analysis:check_id": 21823041,
             "analysis:error": "File too large to download",
-            "analysis:last-modified-at": "2025-10-19T15:04:48+00:00",
+            "analysis:last-modified-at": "2025-10-20T15:05:08+00:00",
             "analysis:last-modified-detection": "last-modified-header",
             "analysis:parsing:finished_at": "2025-08-13T14:54:10.866151+00:00",
             "analysis:parsing:parsing_table": "3fa2ff5e226ae7817faeae8ba1a9f67c",
@@ -68510,9 +68512,9 @@
           "id": "8a545aad-efab-479e-b109-b00677303ff0",
           "internal": {
             "created_at_internal": "2025-07-09T07:26:50.344000+00:00",
-            "last_modified_internal": "2025-10-19T15:04:48.665000+00:00"
+            "last_modified_internal": "2025-10-20T15:05:09.256000+00:00"
           },
-          "last_modified": "2025-10-19T15:04:48+00:00",
+          "last_modified": "2025-10-20T15:05:08+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/8a545aad-efab-479e-b109-b00677303ff0",
           "metrics": {},
           "mime": null,
@@ -70837,7 +70839,7 @@
         "last_modified_internal": "2025-10-15T17:55:19.250000+00:00"
       },
       "last_modified": "2025-10-15T17:55:19.250000+00:00",
-      "last_update": "2025-08-13T09:14:19+00:00",
+      "last_update": "2025-10-16T13:12:15+00:00",
       "license": "cc-by",
       "metrics": {
         "dataservices": 0,
@@ -70943,8 +70945,9 @@
           "created_at": "2025-05-19T10:54:29.530000+00:00",
           "description": null,
           "extras": {
+            "analysis:check_id": 21825465,
             "analysis:error": "File too large to download",
-            "analysis:last-modified-at": "2025-08-13T09:12:31+00:00",
+            "analysis:last-modified-at": "2025-10-16T13:12:15+00:00",
             "analysis:last-modified-detection": "last-modified-header",
             "check:available": true,
             "check:date": "2025-08-15T02:50:01.906796+00:00",
@@ -70961,7 +70964,7 @@
             "created_at_internal": "2025-05-19T10:54:29.530000+00:00",
             "last_modified_internal": "2025-05-19T10:55:44.751000+00:00"
           },
-          "last_modified": "2025-08-13T09:12:31+00:00",
+          "last_modified": "2025-10-16T13:12:15+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/9b57cada-4d18-49eb-9bc2-36ed856519fb",
           "metrics": {},
           "mime": null,
