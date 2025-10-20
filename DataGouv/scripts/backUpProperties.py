@@ -1,8 +1,7 @@
 """
 But : Sauvegarder le JSON complet de tous les jeux de données d'une organisation DataGouv (API /api/1/datasets/{id}/).
 
-Ce script interroge directement l’API REST publique (aucune clé API requise)
-et sauvegarde le contenu complet de chaque dataset dans un fichier JSON global.
+Ce script interroge directement l’API REST publique (aucune clé API requise) et sauvegarde le contenu complet de chaque dataset dans un fichier JSON global.
 
 Remarque importante :
 Le client officiel `datagouv-client` n’expose qu’une partie des champs (voir `Dataset._attributes`).
@@ -30,19 +29,21 @@ args = parser.parse_args()
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 OUTPUT_PATH = args.output
 
-# Environnement (demo, data.gouv.fr, dev)
+# Environnement (www, demo, dev)
 ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo")
 
-BASE_URL = {
-    "data": "https://data.gouv.fr",   # pas de www
+BASE_URLS = {
+    "www": "https://www.data.gouv.fr",
     "demo": "https://demo.data.gouv.fr",
     "dev": "https://dev.data.gouv.fr"
-}.get(ENVIRONMENT, "https://demo.data.gouv.fr")
+}
+BASE_URL = BASE_URLS.get(ENVIRONMENT, "https://demo.data.gouv.fr")
 
 print("───────────────────────────────")
 print(f"🟢 Environnement : {ENVIRONMENT.upper()}")
 print("🔓 Mode : public (aucune clé API requise)")
 print(f"🏛️ Organisation ciblée : {ORG_ID}")
+print(f"🌐 Base URL utilisée : {BASE_URL}")
 print("───────────────────────────────\n")
 
 # ───────────────────────────────
