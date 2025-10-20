@@ -64,4 +64,59 @@ for ds in datasets:
     if not ds_id:
         continue
 
-    try
+    try:
+        full_ds = client.dataset(ds_id)
+        metadata = full_ds.refresh()  # ← renvoie le JSON complet
+        freq = (metadata.get("frequency") or "").strip().lower()
+
+        backup["datasets"][ds_id] = {
+            "title": title,
+            "frequency": freq
+        }
+
+        print(f"→ {title} ({ds_id}) — fréquence actuelle : {freq or '∅'}")
+
+        if freq == "unknown":
+            if UPDATE_MODE:
+                try:
+                    full_ds.update({"frequency": "punctual"})
+                    print("   ✅ Fréquence mise à jour → 'punctual'")
+                    fixed_count += 1
+                except httpx.HTTPStatusError as e:
+                    print(f"   ❌ Erreur HTTP {e.response.status_code} : {e.response.text[:120]}…")
+                    errors.append({"id": ds_id, "title": title, "error": str(e)})
+                except Exception as e:
+                    print(f"   ⚠️ Erreur inattendue : {e}")
+                    errors.append({"id": ds_id, "title": title, "error": str(e)})
+            else:
+                print("   (Simulation) Fréquence serait mise à jour → 'punctual'")
+                fixed_count += 1
+        else:
+            print("   ⏭️ Aucune modification (fréquence différente de 'unknown').")
+            skipped_count += 1
+
+    except Exception as e:
+        print(f"❌ Erreur lors du traitement du dataset {ds_id}: {e}")
+        errors.append({"id": ds_id, "title": title, "error": str(e)})
+
+# ───────────────────────────────
+# Sauvegarde
+# ───────────────────────────────
+backup["count"] = len(backup["datasets"])
+with open(BACKUP_PATH, "w", encoding="utf-8") as f:
+    json.dump(backup, f, indent=2, ensure_ascii=False)
+
+print(f"\n💾 Backup sauvegardé dans {BACKUP_PATH}")
+
+# ───────────────────────────────
+# Bilan
+# ───────────────────────────────
+print("\n───────────────────────────────")
+print("Bilan du traitement des fréquences 'unknown' (DEMO)")
+print("───────────────────────────────")
+print(f"📊 Total jeux de données analysés : {total_datasets}")
+print(f"🛠️  Fréquences corrigées          : {fixed_count}")
+print(f"⏭️  Fréquences ignorées           : {skipped_count}")
+print(f"⚠️  Erreurs rencontrées            : {len(errors)}")
+print(f"🧩 Mode appliqué : {'ÉCRITURE RÉELLE' if UPDATE_MODE else 'SIMULATION'}")
+print("───────────────────────────────")
