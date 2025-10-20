@@ -1,0 +1,79 @@
+name: 🔁 Mettre à jour les fréquences depuis la liste
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choisir l'environnement cible (prod ou demo)"
+        required: true
+        default: "prod"
+
+jobs:
+  update_frequencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install datagouv-client httpx requests
+
+      - name: 🔑 Vérification de la clé API
+        env:
+          DATAGOUV_ENV: ${{ github.event.inputs.environment }}
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+        run: |
+          echo "🌍 Environnement sélectionné : $DATAGOUV_ENV"
+          if [ "$DATAGOUV_ENV" = "prod" ]; then
+            if [ -z "$DATAGOUV_API_KEY" ]; then
+              echo "❌ Clé API PROD manquante. Ajoute 'DATAGOUV_API_KEY' dans les secrets GitHub."
+              exit 1
+            else
+              echo "✅ Clé API PROD détectée."
+            fi
+          else
+            if [ -z "$DEMO_DATA_GOUV_KEY" ]; then
+              echo "❌ Clé API DEMO manquante. Ajoute 'DEMO_DATA_GOUV_KEY' dans les secrets GitHub."
+              exit 1
+            else
+              echo "✅ Clé API DEMO détectée."
+            fi
+          fi
+
+      - name: 🔁 Exécution du script de mise à jour
+        env:
+          DATAGOUV_ENV: ${{ github.event.inputs.environment }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+        run: |
+          echo "🚀 Lancement du script de mise à jour des fréquences..."
+          python DataGouv/scripts/update_frequencies_from_list.py
+
+      - name: 🧾 Vérification du rapport
+        run: |
+          echo "📁 Contenu du dossier DataGouv/scripts/backup/"
+          ls -lh DataGouv/scripts/backup/ || echo "⚠️ Aucun fichier trouvé."
+          echo "🔍 Aperçu du rapport :"
+          head -n 40 DataGouv/scripts/backup/backup_update_frequencies.json || echo "⚠️ Fichier introuvable."
+
+      - name: 🪣 Commit et push du rapport
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          git add DataGouv/scripts/backup/backup_update_frequencies.json
+          git commit -m "🔁 Update des fréquences depuis la liste ($(date -u +"%Y-%m-%d %H:%M:%S"))" || echo "Aucun changement à committer"
+          git push origin main
