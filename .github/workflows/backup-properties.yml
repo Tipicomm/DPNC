@@ -1,9 +1,9 @@
 name: 🔄 Backup Properties Datasets DataGouv MC
 
 on:
-  workflow_dispatch:   # Exécution manuelle
+  workflow_dispatch:
   schedule:
-    - cron: "0 5 1 * *"  # Exécution automatique le 1er de chaque mois à 05h00 UTC
+    - cron: "0 5 1 * *"  # Exécution le 1er de chaque mois à 05h00 UTC
 
 jobs:
   backup:
@@ -28,20 +28,14 @@ jobs:
         env:
           DATAGOUV_ENV: demo   # 🔁 Modifier ici : www / demo / dev
         run: |
-          mkdir -p DataGouv/scripts/backup/
-          DATE=$(date -u +'%Y_%m_%d')
-          BACKUP_FILENAME="backup_datasets_full_${DATAGOUV_ENV}_${DATE}.json"
-
-          echo "🗓️ Nom du fichier de sauvegarde : $BACKUP_FILENAME"
-          python DataGouv/scripts/backUpProperties.py --output "DataGouv/scripts/backup/$BACKUP_FILENAME"
+          python DataGouv/scripts/backUpProperties.py
 
       - name: 🧾 Vérification du fichier généré
         run: |
           echo "📁 Contenu du dossier DataGouv/scripts/backup/"
           ls -lh DataGouv/scripts/backup/
-          echo "🔍 Aperçu du fichier de sauvegarde :"
-          DATE=$(date -u +'%Y_%m_%d')
-          head -n 40 DataGouv/scripts/backup/backup_datasets_full_demo_${DATE}.json || echo "⚠️ Fichier introuvable"
+          echo "🔍 Aperçu du dernier fichier de sauvegarde :"
+          ls -t DataGouv/scripts/backup/ | head -n 1 | xargs -I {} head -n 40 "DataGouv/scripts/backup/{}"
 
       - name: 🪣 Commit et push du fichier de sauvegarde
         run: |
