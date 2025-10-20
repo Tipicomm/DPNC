@@ -24,7 +24,7 @@ jobs:
 
       - name: 🔑 Vérification de la clé API
         env:
-          PROD_DATA_GOUV_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
         run: |
           if [ -z "$DATAGOUV_API_KEY" ]; then
             echo "❌ Erreur : clé API manquante. Ajoute 'DATAGOUV_API_KEY' dans les secrets GitHub."
@@ -35,7 +35,7 @@ jobs:
 
       - name: 🩺 Exécution du script de correction des fréquences PROD
         env:
-          PROD_DATA_GOUV_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
         run: |
           echo "🚀 Lancement du script de correction des fréquences 'unknown'..."
           python DataGouv/scripts/fix_unknown_frequencies_prod.py
