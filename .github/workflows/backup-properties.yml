@@ -1,7 +1,7 @@
 name: 🔄 Backup complet DataGouv (demo)
 
 on:
-  workflow_dispatch:   # exécution manuelle possible depuis l’interface GitHub
+  workflow_dispatch:   # exécution manuelle possible
   schedule:
     - cron: "0 5 1 * *"  # exécution automatique le 1er de chaque mois à 05h00 UTC
 
@@ -13,7 +13,7 @@ jobs:
       - name: 📥 Checkout du dépôt
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # nécessaire pour pouvoir pousser ensuite
+          fetch-depth: 0
 
       - name: 🐍 Configuration de Python
         uses: actions/setup-python@v5
@@ -26,11 +26,11 @@ jobs:
 
       - name: 💾 Exécution du script de sauvegarde complète
         env:
-          DATAGOUV_ENV: demo  # 🔁 Modifier en 'data' (prod) ou 'dev' si besoin
-          BACKUP_FILENAME: "backup_datasets_full_$(date -u +'%Y_%m_%d').json"
+          DATAGOUV_ENV: demo
         run: |
           mkdir -p DataGouv/scripts/backup/
-          echo "Nom du fichier de sauvegarde : $BACKUP_FILENAME"
+          BACKUP_FILENAME="backup_datasets_full_$(date -u +'%Y_%m_%d').json"
+          echo "🗓️ Nom du fichier de sauvegarde : $BACKUP_FILENAME"
           python DataGouv/scripts/backUpProperties.py --output "DataGouv/scripts/backup/$BACKUP_FILENAME"
 
       - name: 🧾 Vérification du fichier généré
@@ -40,18 +40,15 @@ jobs:
           echo "🔍 Aperçu du fichier de sauvegarde :"
           head -n 40 DataGouv/scripts/backup/backup_datasets_full_$(date -u +'%Y_%m_%d').json || echo "⚠️ Fichier introuvable"
 
-      - name: 🪣 Commit et push du fichier de sauvegarde 
+      - name: 🪣 Commit et push du fichier de sauvegarde
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Vérifie et se place sur main
           git fetch origin main
           git checkout main
 
-          # Ajout du fichier généré (horodaté)
           git add DataGouv/scripts/backup/
           git commit -m "🧾 Backup DataGouv $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
 
-          # Push sans rebase ni merge
           git push origin main --force
