@@ -1,30 +1,45 @@
+```
+But : Sauvegarder le JSON complet de tous les jeux de données d’une organisation DataGouv (API /api/1/datasets/{id}/).
+
+Remarque importante :
+Le client officiel `datagouv-client` n’expose qu’une partie des champs (voir `Dataset._attributes`).
+Certaines propriétés du JSON complet (ex. frequency, license, private, quality, etc.)
+ne sont pas disponibles via le client Python.
+
+--> Ce script interroge directement l’API REST pour obtenir les métadonnées complètes.
+
+Référence API :
+    https://{environnement}.data.gouv.fr/api/1/datasets/{id}/
+    ou https://data.gouv.fr/api/1/datasets/{id}/ pour la production.
+
+Ce choix est validé par l’équipe DataGouv :
+« en effet on a fait le choix de n'inclure que certains champs dans les attributs des objets,
+et la fréquence de maj des datasets n'en fait pas partie actuellement. »
+```
+
 import os
 import json
+import requests
 from datagouv import Client
 from datetime import datetime
 
 # ───────────────────────────────
-# Configuration de base
+# Configuration
 # ───────────────────────────────
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
-PROPERTIES_TO_BACKUP = [
-    "id",
-    "title",
-    "description",
-    "tags",
-    "frequency",
-    "license"
-]
-OUTPUT_PATH = "DataGouv/scripts/backup_datasets_properties.json"
+OUTPUT_PATH = "DataGouv/scripts/backup_datasets_full.json"
 
-# ───────────────────────────────
-# Contexte d’environnement
-# ───────────────────────────────
-# On conserve le contexte (utile pour logs et traçabilité)
-ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo")  # demo par défaut
+# Environnement (demo, data.gouv.fr, dev)
+ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo")
+
+BASE_URL = {
+    "prod": "https://data.gouv.fr",
+    "demo": "https://demo.data.gouv.fr",
+    "dev": "https://dev.data.gouv.fr"
+}.get(ENVIRONMENT, "https://demo.data.gouv.fr")
 
 print("───────────────────────────────")
-print(f"🟢 Environnement : {ENVIRONMENT.upper()} (lecture seule)")
+print(f"🟢 Environnement : {ENVIRONMENT.upper()}")
 print("🔓 Mode : public (aucune clé API requise)")
 print(f"🏛️ Organisation ciblée : {ORG_ID}")
 print("───────────────────────────────\n")
@@ -33,65 +48,58 @@ print("────────────────────────�
 # Initialisation du client
 # ───────────────────────────────
 print(f"Connexion à l’environnement {ENVIRONMENT.upper()} (accès public)...")
-client = Client(environment=ENVIRONMENT)  # Lecture seule sans clé
+client = Client(environment=ENVIRONMENT)
 organization = client.organization(ORG_ID)
 
 # ───────────────────────────────
-# Structure du fichier de sauvegarde
+# Préparation du fichier de sauvegarde
 # ───────────────────────────────
 backup = {
     "organization": ORG_ID,
     "environment": ENVIRONMENT,
     "date": datetime.now().isoformat(),
-    "properties": PROPERTIES_TO_BACKUP,
     "datasets": {}
 }
 
-print(f"Propriétés sauvegardées : {', '.join(PROPERTIES_TO_BACKUP)}\n")
+session = requests.Session()
 
 # ───────────────────────────────
-# Boucle sur les jeux de données
+# Boucle principale
 # ───────────────────────────────
 for ds in organization.datasets:
     ds_id = getattr(ds, "id", None) or getattr(ds, "dataset_id", None)
     if not ds_id:
-        print("⚠️  Avertissement : dataset sans identifiant, ignoré.")
+        print("⚠️  Dataset sans identifiant, ignoré.")
         continue
 
-    title = getattr(ds, "title", None) or getattr(ds, "name", None)
-
     try:
-        full_ds = client.dataset(ds_id)
+        url = f"{BASE_URL}/api/1/datasets/{ds_id}/"
+        response = session.get(url, timeout=10)
+        response.raise_for_status()
+        metadata = response.json()
     except Exception as e:
         print(f"❌ Erreur lors de la récupération du dataset {ds_id}: {e}")
         continue
 
-    saved_props = {prop: getattr(full_ds, prop, None) for prop in PROPERTIES_TO_BACKUP}
-
-    backup["datasets"][ds_id] = {
-        "title": title,
-        **saved_props
-    }
-
-    print(f"💾 Sauvegarde du dataset : {title or 'inconnu'} ({ds_id})")
+    backup["datasets"][ds_id] = metadata
+    print(f"💾 Sauvegarde complète du dataset : {metadata.get('title', 'inconnu')} ({ds_id})")
 
 # ───────────────────────────────
-# Écriture du fichier de sauvegarde
+# Écriture du fichier
 # ───────────────────────────────
 backup["count"] = len(backup["datasets"])
-
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
 try:
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(backup, f, indent=2, ensure_ascii=False)
-    print(f"\n✅ Fichier de sauvegarde créé avec succès : {OUTPUT_PATH}")
+    print(f"\n✅ Sauvegarde complète créée : {OUTPUT_PATH}")
 except Exception as e:
     print(f"❌ Erreur lors de l’écriture du fichier : {e}")
     raise
 
 # ───────────────────────────────
-# Bilan final
+# Bilan
 # ───────────────────────────────
 print("\n───────────── BILAN FINAL ─────────────")
 print(f"📦 {backup['count']} jeux de données sauvegardés.")
