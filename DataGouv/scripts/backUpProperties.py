@@ -1,21 +1,14 @@
-```
-But : Sauvegarder le JSON complet de tous les jeux de données d’une organisation DataGouv (API /api/1/datasets/{id}/).
+"""
+But : Sauvegarder le JSON complet de tous les jeux de données d'une organisation DataGouv (API /api/1/datasets/{id}/).
 
+Ce script interroge directement l’API REST publique (aucune clé API requise)
+et sauvegarde le contenu complet de chaque dataset dans un fichier JSON global.
 Remarque importante :
 Le client officiel `datagouv-client` n’expose qu’une partie des champs (voir `Dataset._attributes`).
 Certaines propriétés du JSON complet (ex. frequency, license, private, quality, etc.)
 ne sont pas disponibles via le client Python.
 
---> Ce script interroge directement l’API REST pour obtenir les métadonnées complètes.
-
-Référence API :
-    https://{environnement}.data.gouv.fr/api/1/datasets/{id}/
-    ou https://data.gouv.fr/api/1/datasets/{id}/ pour la production.
-
-Ce choix est validé par l’équipe DataGouv :
-« en effet on a fait le choix de n'inclure que certains champs dans les attributs des objets,
-et la fréquence de maj des datasets n'en fait pas partie actuellement. »
-```
+"""
 
 import os
 import json
