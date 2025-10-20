@@ -1,7 +1,7 @@
 {
   "organization": "534fff91a3a7292c64a77f73",
   "environment": "demo",
-  "date": "2025-10-20T09:48:18.962428",
+  "date": "2025-10-20T13:31:16.683035",
   "datasets": {
     "53698edca3a729239d2035ac": {
       "acronym": null,
@@ -19,15 +19,15 @@
         "datagouv_ckan_last_sync": "2014-09-17T03:40:09.632000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "53698edca3a729239d2035ac",
       "internal": {
         "created_at_internal": "2013-07-08T18:09:52.878000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:32.761000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:50.531000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:32.761000+00:00",
+      "last_modified": "2025-10-20T13:27:50.531000+00:00",
       "last_update": "2014-01-06T08:51:29.281000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -89,11 +89,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": false,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -129,7 +129,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 49
+            "views": 50
           },
           "mime": null,
           "preview_url": null,
@@ -170,15 +170,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:22:04.705000"
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5369978fa3a729239d204d11",
       "internal": {
         "created_at_internal": "2013-07-08T15:31:36.978000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:33.466000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:58.112000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:33.466000+00:00",
+      "last_modified": "2025-10-20T13:25:58.112000+00:00",
       "last_update": "2019-09-16T06:15:58.031000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -240,11 +240,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.8888888888888888,
+        "score": 0.7777777777777778,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -662,7 +662,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 81
+            "views": 82
           },
           "mime": null,
           "preview_url": null,
@@ -703,15 +703,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:31:41.940000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "536998f0a3a729239d2050d1",
       "internal": {
         "created_at_internal": "2013-07-08T11:03:52.665000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:34.171000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:05.880000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:34.171000+00:00",
+      "last_modified": "2025-10-20T13:27:05.880000+00:00",
       "last_update": "2014-01-06T10:35:07.526000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -773,11 +773,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": false,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -813,7 +813,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 44
+            "views": 45
           },
           "mime": null,
           "preview_url": null,
@@ -853,15 +853,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:32:27.730000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "53699915a3a729239d20514a",
       "internal": {
         "created_at_internal": "2013-07-08T18:08:28.316000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:34.891000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:10.152000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:34.891000+00:00",
+      "last_modified": "2025-10-20T13:26:10.152000+00:00",
       "last_update": "2014-01-06T09:21:56.758000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -923,11 +923,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": false,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -961,7 +961,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 162
+            "views": 163
           },
           "mime": null,
           "preview_url": null,
@@ -1001,15 +1001,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:33:07.180000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2022-01-27T00:00:00+00:00",
       "harvest": null,
       "id": "53699934a3a729239d2051a1",
       "internal": {
         "created_at_internal": "2013-07-08T18:07:53.060000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:35.655000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:26.571000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:35.655000+00:00",
+      "last_modified": "2025-10-20T13:26:26.571000+00:00",
       "last_update": "2022-01-31T15:37:09.946000+00:00",
       "license": "lov2",
       "metrics": {
@@ -1071,11 +1071,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.8888888888888888,
+        "score": 0.7777777777777778,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -1349,15 +1349,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:33:59.955000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2016-03-16T00:00:00+00:00",
       "harvest": null,
       "id": "5369995fa3a729239d20522b",
       "internal": {
         "created_at_internal": "2013-11-28T16:12:54.276000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:36.362000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:00.618000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:36.362000+00:00",
+      "last_modified": "2025-10-20T13:27:00.618000+00:00",
       "last_update": "2016-03-16T12:24:01.240000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -1419,11 +1419,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.8888888888888888,
+        "score": 0.7777777777777778,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -1656,15 +1656,15 @@
         "datagouv_ckan_last_sync": "2014-09-17T03:49:56.470000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "quarterly",
       "frequency_date": null,
       "harvest": null,
       "id": "536c3e46a3a72933d8d1b394",
       "internal": {
         "created_at_internal": "2013-10-20T22:31:56.748000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:37.118000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:32.345000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:37.118000+00:00",
+      "last_modified": "2025-10-20T13:25:32.345000+00:00",
       "last_update": "2014-01-06T08:41:56.223000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -1726,11 +1726,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -1763,7 +1763,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 70
+            "views": 71
           },
           "mime": null,
           "preview_url": null,
@@ -1805,7 +1805,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 62
+            "views": 63
           },
           "mime": null,
           "preview_url": null,
@@ -1847,7 +1847,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 63
+            "views": 64
           },
           "mime": null,
           "preview_url": null,
@@ -1889,7 +1889,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 88
+            "views": 89
           },
           "mime": null,
           "preview_url": null,
@@ -1931,7 +1931,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 80
+            "views": 81
           },
           "mime": null,
           "preview_url": null,
@@ -1976,7 +1976,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 70
+            "views": 71
           },
           "mime": null,
           "preview_url": null,
@@ -2018,7 +2018,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 41
+            "views": 42
           },
           "mime": null,
           "preview_url": null,
@@ -2057,7 +2057,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 61
+            "views": 63
           },
           "mime": null,
           "preview_url": null,
@@ -2096,7 +2096,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 48
+            "views": 49
           },
           "mime": null,
           "preview_url": null,
@@ -2135,7 +2135,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 45
+            "views": 47
           },
           "mime": null,
           "preview_url": null,
@@ -2177,7 +2177,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 38
+            "views": 39
           },
           "mime": null,
           "preview_url": null,
@@ -2222,7 +2222,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 40
+            "views": 41
           },
           "mime": null,
           "preview_url": null,
@@ -2266,7 +2266,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 38
+            "views": 39
           },
           "mime": null,
           "preview_url": null,
@@ -2305,7 +2305,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 50
+            "views": 51
           },
           "mime": null,
           "preview_url": null,
@@ -2347,7 +2347,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 55
+            "views": 56
           },
           "mime": null,
           "preview_url": null,
@@ -2389,7 +2389,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 54
+            "views": 55
           },
           "mime": null,
           "preview_url": null,
@@ -2431,7 +2431,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 43
+            "views": 44
           },
           "mime": null,
           "preview_url": null,
@@ -2470,7 +2470,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 42
+            "views": 43
           },
           "mime": null,
           "preview_url": null,
@@ -2512,7 +2512,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 41
+            "views": 42
           },
           "mime": null,
           "preview_url": null,
@@ -2551,7 +2551,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 42
+            "views": 43
           },
           "mime": null,
           "preview_url": null,
@@ -2593,7 +2593,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 43
+            "views": 44
           },
           "mime": null,
           "preview_url": null,
@@ -2632,7 +2632,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 41
+            "views": 42
           },
           "mime": null,
           "preview_url": null,
@@ -2671,7 +2671,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 42
+            "views": 43
           },
           "mime": null,
           "preview_url": null,
@@ -2713,7 +2713,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 38
+            "views": 39
           },
           "mime": null,
           "preview_url": null,
@@ -2755,7 +2755,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 43
+            "views": 44
           },
           "mime": null,
           "preview_url": null,
@@ -2797,7 +2797,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 34
+            "views": 35
           },
           "mime": null,
           "preview_url": null,
@@ -2832,15 +2832,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:27:19.638000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "536c46d6a3a72933d8d1b3a1",
       "internal": {
         "created_at_internal": "2013-10-13T02:17:53.288000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:37.907000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:32.478000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:37.907000+00:00",
+      "last_modified": "2025-10-20T13:26:32.478000+00:00",
       "last_update": "2013-12-20T16:19:13.828000+00:00",
       "license": "cc-by-sa",
       "metrics": {
@@ -2902,11 +2902,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -3601,15 +3601,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:32:38.550000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2021-11-02T01:00:00+00:00",
       "harvest": null,
       "id": "536c47bfa3a72933d8d1b3a6",
       "internal": {
         "created_at_internal": "2013-11-06T21:37:21.348000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:38.609000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:09.356000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:38.609000+00:00",
+      "last_modified": "2025-10-20T13:26:09.356000+00:00",
       "last_update": "2025-10-19T04:15:25.660000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -4020,7 +4020,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 93
+            "views": 94
           },
           "mime": null,
           "preview_url": null,
@@ -4060,7 +4060,7 @@
             "nb_hits": 0,
             "nb_uniq_visitors": 0,
             "nb_visits": 0,
-            "views": 102
+            "views": 104
           },
           "mime": null,
           "preview_url": null,
@@ -4101,15 +4101,15 @@
         "datagouv_ckan_last_sync": "2014-09-16T09:33:10.105000"
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "536c47d9a3a72933d8d1b3b2",
       "internal": {
         "created_at_internal": "2013-10-13T14:37:42.068000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:39.282000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:08.445000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:39.282000+00:00",
+      "last_modified": "2025-10-20T13:26:08.445000+00:00",
       "last_update": "2020-07-15T11:29:20.209000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -4171,11 +4171,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -4698,15 +4698,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "549946f4c751df6a78048060",
       "internal": {
         "created_at_internal": "2014-12-23T11:41:56.520000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:41.308000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:25.723000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:41.308000+00:00",
+      "last_modified": "2025-10-20T13:26:25.723000+00:00",
       "last_update": "2025-07-01T13:46:24+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -4890,15 +4890,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5550cfd9c751df388e190c78",
       "internal": {
         "created_at_internal": "2015-05-11T17:50:49.654000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:42.066000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:14.708000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:42.066000+00:00",
+      "last_modified": "2025-10-20T13:26:14.708000+00:00",
       "last_update": "2015-05-18T15:34:53.261000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -4960,11 +4960,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.8888888888888888,
+        "score": 0.7777777777777778,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -5077,16 +5077,16 @@
       "description_short": null,
       "extras": {},
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2022-09-02T16:00:00+00:00",
       "harvest": null,
       "id": "565db6f2c751df2d32aad370",
       "internal": {
         "created_at_internal": "2015-12-01T16:04:18.896000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:42.793000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:18.477000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:42.793000+00:00",
-      "last_update": "2025-10-20T07:18:39.672000+00:00",
+      "last_modified": "2025-10-20T13:26:18.477000+00:00",
+      "last_update": "2025-10-20T12:56:27.326000+00:00",
       "license": "fr-lo",
       "metrics": {
         "dataservices": 0,
@@ -5373,10 +5373,10 @@
           "created_at": "2015-12-18T17:39:49.999000+00:00",
           "description": "Aide à la distribution de la presse quotidienne nationale",
           "extras": {
-            "analysis:check_id": 21737748,
-            "analysis:checksum": "e7a9b64376158805e77f719f2523b85c79a686f5",
-            "analysis:content-length": 103804,
-            "analysis:last-modified-at": "2025-10-18T21:43:08.213914+00:00",
+            "analysis:check_id": 21817707,
+            "analysis:checksum": "93d711c8bc73603958233ccc3d764ad0fdd10895",
+            "analysis:content-length": 103836,
+            "analysis:last-modified-at": "2025-10-20T12:34:40.124802+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "text/html",
             "check:available": true,
@@ -5394,7 +5394,7 @@
             "created_at_internal": "2015-12-18T17:39:49.999000+00:00",
             "last_modified_internal": "2023-09-13T13:43:39.875000+00:00"
           },
-          "last_modified": "2025-10-18T21:43:08.213914+00:00",
+          "last_modified": "2025-10-20T12:34:40.124802+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/f65cd323-8597-4aaa-860b-3f57a0f3e31f",
           "metrics": {
             "nb_hits": 0,
@@ -5508,10 +5508,10 @@
           "created_at": "2015-12-18T17:39:50.001000+00:00",
           "description": ".",
           "extras": {
-            "analysis:check_id": 21654301,
-            "analysis:checksum": "3bee824a3c4398174b55668b5757ff150a92df1b",
-            "analysis:content-length": 98383,
-            "analysis:last-modified-at": "2025-10-17T05:36:09.605182+00:00",
+            "analysis:check_id": 21818348,
+            "analysis:checksum": "14b394d5b20f7c49dc2d4c13fe581106e5136f16",
+            "analysis:content-length": 97444,
+            "analysis:last-modified-at": "2025-10-20T12:56:27.326146+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "text/html",
             "check:available": true,
@@ -5529,7 +5529,7 @@
             "created_at_internal": "2015-12-18T17:39:50.001000+00:00",
             "last_modified_internal": "2023-09-13T13:45:22.590000+00:00"
           },
-          "last_modified": "2025-10-17T05:36:09.605182+00:00",
+          "last_modified": "2025-10-20T12:56:27.326146+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/6b5b1f0c-75ba-4f7c-9dd6-f3fbdc48deb1",
           "metrics": {
             "nb_hits": 0,
@@ -9953,15 +9953,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2020-02-11T11:55:22+00:00",
       "harvest": null,
       "id": "5890bf78a3a72974cbf0dc94",
       "internal": {
         "created_at_internal": "2017-01-31T17:46:48.250000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:53.185000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:17.447000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:53.185000+00:00",
+      "last_modified": "2025-10-20T13:26:17.447000+00:00",
       "last_update": "2025-08-27T08:40:38.508000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -10309,7 +10309,7 @@
         "last_modified_internal": "2025-10-15T17:52:53.887000+00:00"
       },
       "last_modified": "2025-10-15T17:52:53.887000+00:00",
-      "last_update": "2025-10-20T04:51:01.460000+00:00",
+      "last_update": "2025-10-20T12:55:35.284000+00:00",
       "license": "fr-lo",
       "metrics": {
         "dataservices": 0,
@@ -10432,10 +10432,10 @@
           "created_at": "2018-03-14T05:00:32.226000+00:00",
           "description": "- *Propriete_17_id*: Propriete_17_id[text]\n- *Propriete_18_id*: Propriete_18_id[text]\n- *Propriete_41*: Propriete_41[text]\n- *Circulaires_xmlns:rdf*: Circulaires_xmlns:rdf[text]\n- *Propriete_19_id*: Propriete_19_id[text]\n- *Propriete_2*: Propriete_2[text]\n- *Propriete_6*: Propriete_6[text]\n- *Propriete_7*: Propriete_7[text]\n- *Propriete_8*: Propriete_8[text]\n- *Propriete_9*: Propriete_9[text]\n- *Circulaires_xmlns:skos*: Circulaires_xmlns:skos[text]\n- *Propriete_14*: Propriete_14[text]\n- *Propriete_15*: Propriete_15[text]\n- *Propriete_17*: Propriete_17[text]\n- *Propriete_10*: Propriete_10[text]\n- *Propriete_12*: Propriete_12[text]\n- *Propriete_18*: Propriete_18[text]\n- *Propriete_19*: Propriete_19[text]\n- *Circulaires_xmlns:xsi*: Circulaires_xmlns:xsi[text]\n",
           "extras": {
-            "analysis:check_id": 21540162,
-            "analysis:checksum": "db958fadd09d71b4887feb4b7a840d0a055e1c0c",
+            "analysis:check_id": 21818313,
+            "analysis:checksum": "34e97b414f99aff6b0c96649ff6d7451c60a3832",
             "analysis:content-length": 754496,
-            "analysis:last-modified-at": "2025-10-14T21:38:25.803084+00:00",
+            "analysis:last-modified-at": "2025-10-20T12:55:35.284754+00:00",
             "analysis:last-modified-detection": "computed-checksum",
             "analysis:mime-type": "application/json",
             "check:available": true,
@@ -10457,7 +10457,7 @@
             "created_at_internal": "2018-03-14T05:00:32.226000+00:00",
             "last_modified_internal": "2016-10-04T10:50:16+00:00"
           },
-          "last_modified": "2025-10-14T21:38:25.803084+00:00",
+          "last_modified": "2025-10-20T12:55:35.284754+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/8f6c5d33-c08d-4a38-8d6c-f9aff378b845",
           "metrics": {
             "nb_hits": 0,
@@ -11466,15 +11466,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "continuous",
       "frequency_date": null,
       "harvest": null,
       "id": "591c039988ee3851bec4cbf0",
       "internal": {
         "created_at_internal": "2017-05-17T10:02:33.843000+00:00",
-        "last_modified_internal": "2025-10-15T17:52:56.850000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:28.738000+00:00"
       },
-      "last_modified": "2025-10-15T17:52:56.850000+00:00",
+      "last_modified": "2025-10-20T13:25:28.738000+00:00",
       "last_update": "2017-05-17T10:03:46.976000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -15652,15 +15652,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2020-02-11T10:53:52+00:00",
       "harvest": null,
       "id": "5af120d9b595087cfabcde7a",
       "internal": {
         "created_at_internal": "2018-05-08T06:00:25.683000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:06.815000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:57.308000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:06.815000+00:00",
+      "last_modified": "2025-10-20T13:25:57.308000+00:00",
       "last_update": "2025-08-27T08:40:47.555000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -16510,15 +16510,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5af120e2a3a7295e54c41a11",
       "internal": {
         "created_at_internal": "2018-05-08T06:00:34.014000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:09.047000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:33.351000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:09.047000+00:00",
+      "last_modified": "2025-10-20T13:26:33.351000+00:00",
       "last_update": "2025-08-27T08:41:20.976000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -17484,15 +17484,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "weekly",
       "frequency_date": "2021-11-02T00:00:00+00:00",
       "harvest": null,
       "id": "5af120e5b595087cfabcde81",
       "internal": {
         "created_at_internal": "2018-05-08T06:00:36.996000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:11.175000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:13.789000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:11.175000+00:00",
+      "last_modified": "2025-10-20T13:26:13.789000+00:00",
       "last_update": "2025-08-27T08:47:07.087000+00:00",
       "license": "lov2",
       "metrics": {
@@ -17554,11 +17554,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -17858,15 +17858,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5af120e7b595087cfabcde82",
       "internal": {
         "created_at_internal": "2018-05-08T06:00:38.918000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:11.818000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:06.522000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:11.818000+00:00",
+      "last_modified": "2025-10-20T13:26:06.522000+00:00",
       "last_update": "2025-10-13T17:02:13+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -18669,15 +18669,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2020-02-11T10:48:19+00:00",
       "harvest": null,
       "id": "5af120f1a3a7295e54c41a17",
       "internal": {
         "created_at_internal": "2018-05-08T06:00:49.009000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:13.587000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:02.527000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:13.587000+00:00",
+      "last_modified": "2025-10-20T13:27:02.527000+00:00",
       "last_update": "2025-08-27T08:47:28.976000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -22396,15 +22396,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": "2020-02-11T10:45:06+00:00",
       "harvest": null,
       "id": "5af12104b595087cfabcde8e",
       "internal": {
         "created_at_internal": "2018-05-08T06:01:07.436000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:23.338000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:11.039000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:23.338000+00:00",
+      "last_modified": "2025-10-20T13:26:11.039000+00:00",
       "last_update": "2025-08-27T08:48:42.471000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -22771,15 +22771,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5af12105a3a7295e54c41a1f",
       "internal": {
         "created_at_internal": "2018-05-08T06:01:09.008000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:24.115000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:27.803000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:24.115000+00:00",
+      "last_modified": "2025-10-20T13:25:27.803000+00:00",
       "last_update": "2025-08-27T08:48:46.372000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -26314,15 +26314,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "weekly",
       "frequency_date": null,
       "harvest": null,
       "id": "5b448216a3a729752eb11d6f",
       "internal": {
         "created_at_internal": "2018-07-10T11:53:26.972000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:32.188000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:26.776000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:32.188000+00:00",
+      "last_modified": "2025-10-20T13:25:26.776000+00:00",
       "last_update": "2025-08-27T09:20:39.914000+00:00",
       "license": "lov2",
       "metrics": {
@@ -26384,11 +26384,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -27409,15 +27409,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "monthly",
       "frequency_date": null,
       "harvest": null,
       "id": "5bb834e89ce2e7693d2456a5",
       "internal": {
         "created_at_internal": "2018-10-06T06:07:03.545000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:34.204000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:11.935000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:34.204000+00:00",
+      "last_modified": "2025-10-20T13:26:11.935000+00:00",
       "last_update": "2025-08-27T09:21:39.644000+00:00",
       "license": "lov2",
       "metrics": {
@@ -27479,11 +27479,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -27969,15 +27969,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "monthly",
       "frequency_date": null,
       "harvest": null,
       "id": "5bc6cf3a9ce2e72581422d3f",
       "internal": {
         "created_at_internal": "2018-10-17T07:57:14.811000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:35.589000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:52.481000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:35.589000+00:00",
+      "last_modified": "2025-10-20T13:27:52.481000+00:00",
       "last_update": "2025-08-27T09:21:45.249000+00:00",
       "license": "lov2",
       "metrics": {
@@ -28039,11 +28039,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -28203,15 +28203,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5c3538da9ce2e7459c6d765a",
       "internal": {
         "created_at_internal": "2019-01-09T00:57:14.305000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:36.227000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:34.155000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:36.227000+00:00",
+      "last_modified": "2025-10-20T13:26:34.155000+00:00",
       "last_update": "2025-08-27T09:22:18.216000+00:00",
       "license": "lov2",
       "metrics": {
@@ -29971,15 +29971,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5c67b11f06e3e727a17bb849",
       "internal": {
         "created_at_internal": "2019-02-16T07:43:42.536000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:38.944000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:29.937000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:38.944000+00:00",
+      "last_modified": "2025-10-20T13:26:29.937000+00:00",
       "last_update": "2025-08-27T09:22:47.040000+00:00",
       "license": "lov2",
       "metrics": {
@@ -30295,15 +30295,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "continuous",
       "frequency_date": null,
       "harvest": null,
       "id": "5c89d1f49ce2e742e0e27c29",
       "internal": {
         "created_at_internal": "2019-03-14T05:00:52.254000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:39.611000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:07.537000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:39.611000+00:00",
+      "last_modified": "2025-10-20T13:26:07.537000+00:00",
       "last_update": "2025-08-27T09:22:53.763000+00:00",
       "license": "lov2",
       "metrics": {
@@ -31499,16 +31499,16 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "weekly",
       "frequency_date": null,
       "harvest": null,
       "id": "5d12ee8206e3e762c0c89a4c",
       "internal": {
         "created_at_internal": "2019-06-26T06:03:14.828000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:42.370000+00:00"
+        "last_modified_internal": "2025-10-20T13:31:37.250000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:42.370000+00:00",
-      "last_update": "2025-08-27T09:23:15.796000+00:00",
+      "last_modified": "2025-10-20T13:31:37.250000+00:00",
+      "last_update": "2025-10-20T13:28:54+00:00",
       "license": "lov2",
       "metrics": {
         "dataservices": 0,
@@ -31581,20 +31581,21 @@
           "created_at": "2025-07-09T07:33:04.515000+00:00",
           "description": null,
           "extras": {
-            "analysis:checksum": "2d3801c50bca66fcff6e28e1e31605dde7fbda18",
-            "analysis:content-length": 3384134,
-            "analysis:last-modified-at": "2025-08-12T14:54:09+00:00",
+            "analysis:check_id": 21819720,
+            "analysis:checksum": "0a52a9585f41a217345f0312c0462463394b1986",
+            "analysis:content-length": 3389646,
+            "analysis:last-modified-at": "2025-10-20T13:28:54+00:00",
             "analysis:last-modified-detection": "last-modified-header",
             "analysis:mime-type": "text/plain",
-            "analysis:parsing:finished_at": "2025-08-12T14:55:13.074802+00:00",
-            "analysis:parsing:geojson_size": 4584896,
+            "analysis:parsing:finished_at": "2025-10-20T13:29:40.863671+00:00",
+            "analysis:parsing:geojson_size": 4616423,
             "analysis:parsing:geojson_url": "https://object.files.data.gouv.fr/demo-hydra-geojson/hydra-geojson/8e9379d1-b783-4dae-9352-2804fea54bfb.geojson",
-            "analysis:parsing:parquet_size": 1245338,
+            "analysis:parsing:parquet_size": 1246525,
             "analysis:parsing:parquet_url": "https://object.files.data.gouv.fr/demo-hydra-parquet/hydra-parquet/8e9379d1-b783-4dae-9352-2804fea54bfb.parquet",
             "analysis:parsing:parsing_table": "32257605bc85f5af0d6e92b7b0eb45d5",
-            "analysis:parsing:pmtiles_size": 2985928,
+            "analysis:parsing:pmtiles_size": 2986029,
             "analysis:parsing:pmtiles_url": "https://object.files.data.gouv.fr/demo-hydra-pmtiles/hydra-pmtiles/8e9379d1-b783-4dae-9352-2804fea54bfb.pmtiles",
-            "analysis:parsing:started_at": "2025-08-12T14:55:11.049990+00:00",
+            "analysis:parsing:started_at": "2025-10-20T13:29:32.766907+00:00",
             "check:available": true,
             "check:date": "2025-08-12T13:25:51.482400+00:00",
             "check:headers:content-type": "text/csv",
@@ -31608,9 +31609,9 @@
           "id": "8e9379d1-b783-4dae-9352-2804fea54bfb",
           "internal": {
             "created_at_internal": "2025-07-09T07:33:04.515000+00:00",
-            "last_modified_internal": "2025-09-03T10:14:48.260000+00:00"
+            "last_modified_internal": "2025-10-20T13:31:37.249000+00:00"
           },
-          "last_modified": "2025-08-12T14:54:09+00:00",
+          "last_modified": "2025-10-20T13:28:54+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/8e9379d1-b783-4dae-9352-2804fea54bfb",
           "metrics": {},
           "mime": "text/csv",
@@ -31645,7 +31646,7 @@
           "id": "72979696-3bc9-4802-89f8-f4afd2a3a732",
           "internal": {
             "created_at_internal": "2025-06-24T16:22:00.377000+00:00",
-            "last_modified_internal": "2025-07-08T13:06:46.683000+00:00"
+            "last_modified_internal": "2025-10-20T13:20:10.946000+00:00"
           },
           "last_modified": "2025-06-25T09:59:47+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/72979696-3bc9-4802-89f8-f4afd2a3a732",
@@ -34112,15 +34113,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "daily",
       "frequency_date": null,
       "harvest": null,
       "id": "5ee2fe1cba88d5c5a1179ef2",
       "internal": {
         "created_at_internal": "2020-06-12T06:01:32.763000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:48.661000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:27.359000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:48.661000+00:00",
+      "last_modified": "2025-10-20T13:26:27.359000+00:00",
       "last_update": "2025-10-06T16:51:20.380000+00:00",
       "license": "lov2",
       "metrics": {
@@ -34182,11 +34183,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -36012,15 +36013,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "5f7fe0822a00717c597ce91e",
       "internal": {
         "created_at_internal": "2020-10-09T06:01:06.736000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:53.838000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:51.476000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:53.838000+00:00",
+      "last_modified": "2025-10-20T13:27:51.476000+00:00",
       "last_update": "2025-08-27T09:27:04.873000+00:00",
       "license": "lov2",
       "metrics": {
@@ -36380,15 +36381,15 @@
         ]
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "daily",
       "frequency_date": null,
       "harvest": null,
       "id": "5fc9b4729dbf684fecb13bae",
       "internal": {
         "created_at_internal": "2020-12-04T05:00:50.243000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:54.507000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:30.767000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:54.507000+00:00",
+      "last_modified": "2025-10-20T13:26:30.767000+00:00",
       "last_update": "2025-09-25T13:40:45+00:00",
       "license": "lov2",
       "metrics": {
@@ -36450,11 +36451,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.8888888888888888,
+        "score": 0.7777777777777778,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -36729,15 +36730,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "weekly",
       "frequency_date": null,
       "harvest": null,
       "id": "6042fe6ba3ef9e914a7ce5a3",
       "internal": {
         "created_at_internal": "2021-03-06T05:00:43.242000+00:00",
-        "last_modified_internal": "2025-10-15T17:53:55.190000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:22.176000+00:00"
       },
-      "last_modified": "2025-10-15T17:53:55.190000+00:00",
+      "last_modified": "2025-10-20T13:26:22.176000+00:00",
       "last_update": "2025-08-27T09:28:44.478000+00:00",
       "license": "lov2",
       "metrics": {
@@ -36799,11 +36800,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -38985,15 +38986,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "weekly",
       "frequency_date": null,
       "harvest": null,
       "id": "615bcdd729be9185b3b0681a",
       "internal": {
         "created_at_internal": "2021-10-05T06:00:23.448000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:01.560000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:33.161000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:01.560000+00:00",
+      "last_modified": "2025-10-20T13:25:33.161000+00:00",
       "last_update": "2025-08-27T09:44:02.860000+00:00",
       "license": "fr-lo",
       "metrics": {
@@ -39055,11 +39056,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -40590,15 +40591,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "61f4bbdba5c031406f952887",
       "internal": {
         "created_at_internal": "2022-01-29T05:00:27.832000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:04.407000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:00.057000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:04.407000+00:00",
+      "last_modified": "2025-10-20T13:26:00.057000+00:00",
       "last_update": "2025-08-27T09:50:53.224000+00:00",
       "license": "lov2",
       "metrics": {
@@ -41644,15 +41645,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "never",
       "frequency_date": null,
       "harvest": null,
       "id": "628da9fdef366eb8a2c7fd48",
       "internal": {
         "created_at_internal": "2022-05-25T06:01:01.801000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:06.592000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:01.556000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:06.592000+00:00",
+      "last_modified": "2025-10-20T13:27:01.556000+00:00",
       "last_update": "2025-08-27T09:51:20.164000+00:00",
       "license": "lov2",
       "metrics": {
@@ -41878,15 +41879,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "628da9ffef366eb8a2c7fd49",
       "internal": {
         "created_at_internal": "2022-05-25T06:01:03.056000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:07.243000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:58.953000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:07.243000+00:00",
+      "last_modified": "2025-10-20T13:26:58.953000+00:00",
       "last_update": "2025-08-27T09:51:42.090000+00:00",
       "license": "lov2",
       "metrics": {
@@ -42221,15 +42222,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "628da9ff836d8bf454c7fd48",
       "internal": {
         "created_at_internal": "2022-05-25T06:01:03.578000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:07.917000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:15.634000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:07.917000+00:00",
+      "last_modified": "2025-10-20T13:26:15.634000+00:00",
       "last_update": "2025-08-27T09:51:44.276000+00:00",
       "license": "lov2",
       "metrics": {
@@ -43614,15 +43615,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "62ba7ce5f275fa925aa1f848",
       "internal": {
         "created_at_internal": "2022-06-28T06:00:37.543000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:10.905000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:30.525000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:10.905000+00:00",
+      "last_modified": "2025-10-20T13:25:30.525000+00:00",
       "last_update": "2025-08-27T09:53:25.728000+00:00",
       "license": "lov2",
       "metrics": {
@@ -43950,15 +43951,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "62cf95993d99f22480f49334",
       "internal": {
         "created_at_internal": "2022-07-14T06:03:37.681000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:11.485000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:31.705000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:11.485000+00:00",
+      "last_modified": "2025-10-20T13:26:31.705000+00:00",
       "last_update": "2025-08-27T09:53:42.110000+00:00",
       "license": "lov2",
       "metrics": {
@@ -48549,15 +48550,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "6348dfd167b474a8a5eacfa4",
       "internal": {
         "created_at_internal": "2022-10-14T06:04:33.910000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:22.618000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:23.128000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:22.618000+00:00",
+      "last_modified": "2025-10-20T13:26:23.128000+00:00",
       "last_update": "2025-08-27T09:55:43.464000+00:00",
       "license": "lov2",
       "metrics": {
@@ -53500,15 +53501,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "63994ae99eefb363aec8cd1d",
       "internal": {
         "created_at_internal": "2022-12-14T05:02:49.942000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:36.062000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:24.865000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:36.062000+00:00",
+      "last_modified": "2025-10-20T13:26:24.865000+00:00",
       "last_update": "2025-08-27T09:57:26.417000+00:00",
       "license": "lov2",
       "metrics": {
@@ -53968,15 +53969,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "63c61dcb633c6fe129f0b7db",
       "internal": {
         "created_at_internal": "2023-01-17T05:02:19.212000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:37.399000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:24.082000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:37.399000+00:00",
+      "last_modified": "2025-10-20T13:26:24.082000+00:00",
       "last_update": "2025-08-27T09:58:34.735000+00:00",
       "license": "lov2",
       "metrics": {
@@ -55001,15 +55002,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "642e445d0d25370b8c538672",
       "internal": {
         "created_at_internal": "2023-04-06T06:02:37.071000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:39.587000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:03.749000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:39.587000+00:00",
+      "last_modified": "2025-10-20T13:26:03.749000+00:00",
       "last_update": "2025-08-27T09:58:57.034000+00:00",
       "license": "lov2",
       "metrics": {
@@ -55916,15 +55917,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "64420a8318228ca8eb2ca03c",
       "internal": {
         "created_at_internal": "2023-04-21T06:01:07.663000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:41.514000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:29.689000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:41.514000+00:00",
+      "last_modified": "2025-10-20T13:25:29.689000+00:00",
       "last_update": "2025-08-27T09:59:33.326000+00:00",
       "license": "lov2",
       "metrics": {
@@ -56245,15 +56246,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "645b17000fe2ea7c74a08435",
       "internal": {
         "created_at_internal": "2023-05-10T06:01:04.089000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:42.255000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:01.022000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:42.255000+00:00",
+      "last_modified": "2025-10-20T13:26:01.022000+00:00",
       "last_update": "2025-08-27T10:05:09.149000+00:00",
       "license": "lov2",
       "metrics": {
@@ -56474,15 +56475,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "semiannual",
       "frequency_date": null,
       "harvest": null,
       "id": "645dba566328c14734f10162",
       "internal": {
         "created_at_internal": "2023-05-12T06:02:30.820000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:42.968000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:36.727000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:42.968000+00:00",
+      "last_modified": "2025-10-20T13:26:36.727000+00:00",
       "last_update": "2025-08-27T10:09:43.209000+00:00",
       "license": "lov2",
       "metrics": {
@@ -56700,15 +56701,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "semiannual",
       "frequency_date": null,
       "harvest": null,
       "id": "645dba5e689c8bd47ea0842c",
       "internal": {
         "created_at_internal": "2023-05-12T06:02:38.599000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:43.637000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:31.315000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:43.637000+00:00",
+      "last_modified": "2025-10-20T13:25:31.315000+00:00",
       "last_update": "2025-08-27T10:11:05.012000+00:00",
       "license": "lov2",
       "metrics": {
@@ -56929,15 +56930,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "semiannual",
       "frequency_date": null,
       "harvest": null,
       "id": "645dba61b96d7efc86f10162",
       "internal": {
         "created_at_internal": "2023-05-12T06:02:41.361000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:44.350000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:06.736000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:44.350000+00:00",
+      "last_modified": "2025-10-20T13:27:06.736000+00:00",
       "last_update": "2025-08-27T10:11:57.188000+00:00",
       "license": "lov2",
       "metrics": {
@@ -58075,15 +58076,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "monthly",
       "frequency_date": null,
       "harvest": null,
       "id": "64d30fc7a4b93f07e39f7201",
       "internal": {
         "created_at_internal": "2023-08-09T04:02:15.097000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:47.173000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:35.025000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:47.173000+00:00",
+      "last_modified": "2025-10-20T13:26:35.025000+00:00",
       "last_update": "2025-08-27T10:23:19.138000+00:00",
       "license": "lov2",
       "metrics": {
@@ -58145,11 +58146,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.7777777777777778,
+        "score": 0.6666666666666666,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -58406,15 +58407,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "64f94bd6fe99708f22ae9bff",
       "internal": {
         "created_at_internal": "2023-09-07T04:04:38.094000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:47.856000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:12.801000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:47.856000+00:00",
+      "last_modified": "2025-10-20T13:26:12.801000+00:00",
       "last_update": "2025-08-27T10:23:20.695000+00:00",
       "license": "lov2",
       "metrics": {
@@ -58638,15 +58639,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "64ffe26548c71b35f5bedb7a",
       "internal": {
         "created_at_internal": "2023-09-12T04:00:37.954000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:48.597000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:19.366000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:48.597000+00:00",
+      "last_modified": "2025-10-20T13:26:19.366000+00:00",
       "last_update": "2025-08-27T10:23:23.214000+00:00",
       "license": "lov2",
       "metrics": {
@@ -59170,15 +59171,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "64ffe268165699ecb9ae9bff",
       "internal": {
         "created_at_internal": "2023-09-12T04:00:40.744000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:49.260000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:02.875000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:49.260000+00:00",
+      "last_modified": "2025-10-20T13:26:02.875000+00:00",
       "last_update": "2025-08-27T10:23:25.473000+00:00",
       "license": "lov2",
       "metrics": {
@@ -60354,15 +60355,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "656021161c89036d00a6435b",
       "internal": {
         "created_at_internal": "2023-11-24T04:05:42.238000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:52.803000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:20.305000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:52.803000+00:00",
+      "last_modified": "2025-10-20T13:26:20.305000+00:00",
       "last_update": "2025-08-27T10:23:34.238000+00:00",
       "license": "lov2",
       "metrics": {
@@ -61378,15 +61379,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "6573e6765c8fb12f7a16f252",
       "internal": {
         "created_at_internal": "2023-12-09T04:00:54.421000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:55.021000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:35.856000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:55.021000+00:00",
+      "last_modified": "2025-10-20T13:26:35.856000+00:00",
       "last_update": "2023-11-27T10:34:56+00:00",
       "license": "lov2",
       "metrics": {
@@ -61434,11 +61435,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": true,
-        "score": 0.6666666666666666,
+        "score": 0.5555555555555556,
         "spatial": false,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -63199,15 +63200,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "658509e59db812017fac1832",
       "internal": {
         "created_at_internal": "2023-12-22T04:00:37.019000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:58.639000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:05.069000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:58.639000+00:00",
+      "last_modified": "2025-10-20T13:27:05.069000+00:00",
       "last_update": "2025-08-27T10:23:53.833000+00:00",
       "license": "lov2",
       "metrics": {
@@ -63431,15 +63432,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "65962d7b574fe6e46fac1833",
       "internal": {
         "created_at_internal": "2024-01-04T04:00:59.939000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:59.242000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:16.598000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:59.242000+00:00",
+      "last_modified": "2025-10-20T13:26:16.598000+00:00",
       "last_update": "2025-08-27T10:23:56.183000+00:00",
       "license": "lov2",
       "metrics": {
@@ -63663,15 +63664,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "continuous",
       "frequency_date": null,
       "harvest": null,
       "id": "659d7d8e9a5ff8cfcbdf109a",
       "internal": {
         "created_at_internal": "2024-01-09T17:08:30.823000+00:00",
-        "last_modified_internal": "2025-10-15T17:54:59.960000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:01.896000+00:00"
       },
-      "last_modified": "2025-10-15T17:54:59.960000+00:00",
+      "last_modified": "2025-10-20T13:26:01.896000+00:00",
       "last_update": "2025-08-27T10:23:58.019000+00:00",
       "license": "lov2",
       "metrics": {
@@ -64599,15 +64600,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "65e002188f1681146bd981d7",
       "internal": {
         "created_at_internal": "2024-02-29T04:03:36.648000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:02.737000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:56.380000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:02.737000+00:00",
+      "last_modified": "2025-10-20T13:25:56.380000+00:00",
       "last_update": "2025-08-27T10:24:18.741000+00:00",
       "license": "lov2",
       "metrics": {
@@ -64950,15 +64951,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "65ea8dae877eed738c924b51",
       "internal": {
         "created_at_internal": "2024-03-08T04:01:50.272000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:03.481000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:28.261000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:03.481000+00:00",
+      "last_modified": "2025-10-20T13:26:28.261000+00:00",
       "last_update": "2025-08-27T10:24:20.708000+00:00",
       "license": "lov2",
       "metrics": {
@@ -65562,15 +65563,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "never",
       "frequency_date": null,
       "harvest": null,
       "id": "664433610b97fe15b6003fc4",
       "internal": {
         "created_at_internal": "2024-05-15T04:00:33.903000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:04.983000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:29.112000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:04.983000+00:00",
+      "last_modified": "2025-10-20T13:26:29.112000+00:00",
       "last_update": "2025-08-27T10:25:27.333000+00:00",
       "license": "lov2",
       "metrics": {
@@ -66107,15 +66108,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "6646d7b175de9daf204c46b1",
       "internal": {
         "created_at_internal": "2024-05-17T04:06:09.415000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:06.338000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:21.244000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:06.338000+00:00",
+      "last_modified": "2025-10-20T13:26:21.244000+00:00",
       "last_update": "2025-08-27T10:25:30.272000+00:00",
       "license": "lov2",
       "metrics": {
@@ -66567,15 +66568,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "6688c176f39a615a6b1cbe7e",
       "internal": {
         "created_at_internal": "2024-07-06T04:00:54.986000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:07.767000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:05.673000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:07.767000+00:00",
+      "last_modified": "2025-10-20T13:26:05.673000+00:00",
       "last_update": "2025-08-27T10:25:35.404000+00:00",
       "license": "lov2",
       "metrics": {
@@ -66939,15 +66940,15 @@
         }
       },
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "annual",
       "frequency_date": null,
       "harvest": null,
       "id": "6688c177f39a615a6b1cbe7f",
       "internal": {
         "created_at_internal": "2024-07-06T04:00:55.743000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:08.484000+00:00"
+        "last_modified_internal": "2025-10-20T13:27:04.242000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:08.484000+00:00",
+      "last_modified": "2025-10-20T13:27:04.242000+00:00",
       "last_update": "2025-08-27T10:25:37.276000+00:00",
       "license": "lov2",
       "metrics": {
@@ -67848,15 +67849,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "67b94bd15afb2aa0b8e26089",
       "internal": {
         "created_at_internal": "2025-02-22T04:00:17.243000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:10.640000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:04.673000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:10.640000+00:00",
+      "last_modified": "2025-10-20T13:26:04.673000+00:00",
       "last_update": "2025-08-27T10:27:26.719000+00:00",
       "license": "notspecified",
       "metrics": {
@@ -68085,15 +68086,15 @@
       "description_short": null,
       "extras": {},
       "featured": false,
-      "frequency": "punctual",
+      "frequency": "monthly",
       "frequency_date": null,
       "harvest": null,
       "id": "67e59fbaa773f001a9710519",
       "internal": {
         "created_at_internal": "2025-03-27T18:58:02.464000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:11.348000+00:00"
+        "last_modified_internal": "2025-10-20T13:25:59.079000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:11.348000+00:00",
+      "last_modified": "2025-10-20T13:25:59.079000+00:00",
       "last_update": "2025-03-27T19:01:32.020000+00:00",
       "license": "lov2",
       "metrics": {
@@ -68155,11 +68156,11 @@
         "has_resources": true,
         "license": true,
         "resources_documentation": false,
-        "score": 0.5555555555555556,
+        "score": 0.4444444444444444,
         "spatial": true,
         "temporal_coverage": false,
         "update_frequency": true,
-        "update_fulfilled_in_time": true
+        "update_fulfilled_in_time": false
       },
       "resources": [
         {
@@ -68698,15 +68699,15 @@
         }
       },
       "featured": true,
-      "frequency": "punctual",
+      "frequency": "irregular",
       "frequency_date": null,
       "harvest": null,
       "id": "6811a04691e247a5e4622e11",
       "internal": {
         "created_at_internal": "2025-04-30T04:00:06.744000+00:00",
-        "last_modified_internal": "2025-10-15T17:55:13.404000+00:00"
+        "last_modified_internal": "2025-10-20T13:26:59.704000+00:00"
       },
-      "last_modified": "2025-10-15T17:55:13.404000+00:00",
+      "last_modified": "2025-10-20T13:26:59.704000+00:00",
       "last_update": "2025-08-27T10:30:03.667000+00:00",
       "license": "fr-lo",
       "metrics": {
