@@ -1,0 +1,47 @@
+name: 🔍 Comparaison des backups DataGouv (prod vs demo)
+
+on:
+  workflow_dispatch:   # 🚀 Exécution manuelle uniquement
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install datagouv-client requests
+
+      - name: 🔄 Exécution de la comparaison (prod vs demo)
+        run: |
+          echo "🔍 Lancement du script de comparaison..."
+          python DataGouv/scripts/compare_backups_datasets_prod_vs_demo.py
+
+      - name: 🧾 Vérification du fichier généré
+        run: |
+          echo "📂 Contenu du dossier DataGouv/scripts/backup/"
+          ls -lh DataGouv/scripts/backup/ || echo "⚠️ Aucun fichier trouvé"
+          echo "🔍 Aperçu du CSV généré :"
+          head -n 20 DataGouv/scripts/backup/datasets_common.csv || echo "⚠️ Fichier introuvable"
+
+      - name: 🪣 Commit et push du rapport
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          git add DataGouv/scripts/backup/datasets_common.csv
+          git commit -m "🔍 Rapport comparaison backups DataGouv (prod vs demo) $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
+          git push origin main
