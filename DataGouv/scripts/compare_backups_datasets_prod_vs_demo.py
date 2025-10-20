@@ -6,7 +6,7 @@ en se basant sur l'identifiant du dataset.
 
 Résultat :
 - Un fichier CSV "datasets_common.csv" contenant :
-  id ; title_prod ; title_demo ; frequency_prod ; frequency_demo
+  id , title_prod , title_demo , frequency_prod , frequency_demo
 - Affiche également le nombre total de jeux communs.
 
 Convention :
