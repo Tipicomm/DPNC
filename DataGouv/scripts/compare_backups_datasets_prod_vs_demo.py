@@ -6,15 +6,15 @@ en se basant sur l'identifiant du dataset.
 
 Résultat :
 - Un fichier CSV "datasets_common.csv" contenant :
-  id , title_prod , title_demo , frequency_prod , frequency_demo
+  id , title_www , title_demo , frequency_www , frequency_demo
 - Affiche également le nombre total de jeux communs.
 
 Convention :
-X = prod / www → référence principale
+X = www (prod) → référence principale
 Y = demo → environnement de test / comparaison
 
 ⚙️ Exemple d’utilisation :
-python DataGouv/scripts/compare_backups.py
+python DataGouv/scripts/compare_backups_datasets_prod_vs_demo.py
 """
 
 import json
@@ -25,7 +25,7 @@ import os
 # 🧩 Configuration
 # ───────────────────────────────
 # Chemins des deux sauvegardes à comparer
-BACKUP_PROD = "DataGouv/scripts/backup/backup_datasets_full_prod_2025_10_20.json"
+BACKUP_WWW = "DataGouv/scripts/backup/backup_datasets_full_www_2025_10_20.json"
 BACKUP_DEMO = "DataGouv/scripts/backup/backup_datasets_full_demo_2025_10_20.json"
 
 # Fichier de sortie
@@ -46,16 +46,16 @@ def load_backup(path):
 
 print("───────────────────────────────")
 print("📦 Chargement des sauvegardes...")
-prod_datasets = load_backup(BACKUP_PROD)
+www_datasets = load_backup(BACKUP_WWW)
 demo_datasets = load_backup(BACKUP_DEMO)
 
-print(f"📁 Prod : {len(prod_datasets)} jeux de données")
-print(f"📁 Demo : {len(demo_datasets)} jeux de données")
+print(f"📁 WWW (prod) : {len(www_datasets)} jeux de données")
+print(f"📁 Demo       : {len(demo_datasets)} jeux de données")
 
 # ───────────────────────────────
 # 🔍 Recherche des jeux communs
 # ───────────────────────────────
-common_ids = set(prod_datasets.keys()) & set(demo_datasets.keys())
+common_ids = set(www_datasets.keys()) & set(demo_datasets.keys())
 print(f"🤝 Jeux de données communs : {len(common_ids)} trouvés\n")
 
 # ───────────────────────────────
@@ -65,17 +65,17 @@ os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
 
 with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile, delimiter=",")
-    writer.writerow(["id", "title_prod", "title_demo", "frequency_prod", "frequency_demo"])
+    writer.writerow(["id", "title_www", "title_demo", "frequency_www", "frequency_demo"])
 
     for ds_id in sorted(common_ids):
-        ds_prod = prod_datasets.get(ds_id, {})
+        ds_www = www_datasets.get(ds_id, {})
         ds_demo = demo_datasets.get(ds_id, {})
 
         writer.writerow([
             ds_id,
-            ds_prod.get("title", ""),
+            ds_www.get("title", ""),
             ds_demo.get("title", ""),
-            ds_prod.get("frequency", ""),
+            ds_www.get("frequency", ""),
             ds_demo.get("frequency", "")
         ])
 
@@ -90,7 +90,7 @@ print("────────────────────────�
 print("🔍 Exemples de jeux communs :")
 for ds_id in list(sorted(common_ids))[:5]:
     print(f" - {ds_id}")
-    print(f"   • title_prod : {prod_datasets[ds_id].get('title')}")
+    print(f"   • title_www : {www_datasets[ds_id].get('title')}")
     print(f"   • title_demo : {demo_datasets[ds_id].get('title')}")
-    print(f"   • frequency  : {prod_datasets[ds_id].get('frequency')} / {demo_datasets[ds_id].get('frequency')}")
+    print(f"   • frequency  : {www_datasets[ds_id].get('frequency')} / {demo_datasets[ds_id].get('frequency')}")
 print("───────────────────────────────")
