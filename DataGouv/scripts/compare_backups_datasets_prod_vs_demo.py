@@ -64,7 +64,7 @@ print(f"🤝 Jeux de données communs : {len(common_ids)} trouvés\n")
 os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
 
 with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as csvfile:
-    writer = csv.writer(csvfile, delimiter=";")
+    writer = csv.writer(csvfile, delimiter=",")
     writer.writerow(["id", "title_prod", "title_demo", "frequency_prod", "frequency_demo"])
 
     for ds_id in sorted(common_ids):
