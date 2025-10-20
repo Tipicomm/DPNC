@@ -1,4 +1,4 @@
-name: 🔄 Backup Properties Datasets (demo)
+name: 🔄 Backup Properties Datasets DataGouv MC
 
 on:
   workflow_dispatch:   # Exécution manuelle
