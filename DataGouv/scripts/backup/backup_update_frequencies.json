@@ -1,0 +1,1101 @@
+{
+  "environment": "www",
+  "date": "2025-10-20T16:22:59.183058",
+  "new_frequency": "punctual",
+  "update_mode": "REAL",
+  "datasets": [
+    {
+      "id": "53789930a3a7295dd332d9e7",
+      "title": "Photographies série « Monuments historiques » de 1851 à 1914",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf72a3a72974c1f0dc82",
+      "title": "Ressources pédagogiques du portail histoire des arts",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf72a3a72974c1f0dc83",
+      "title": "Pratiques culturelles des français - Evolution 1973-2008",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf72a3a72974cbf0dc88",
+      "title": "Liste des établissements de l'enseignement supérieur culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf73a3a72974c1f0dc85",
+      "title": "Liste des organismes publics culturels géolocalisés",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf73a3a72974cbf0dc89",
+      "title": "Structures de la création artistique",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf74a3a72974cbf0dc8c",
+      "title": "Galaxie des offres éditoriales de culture.fr",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf75a3a72974cbf0dc8e",
+      "title": "Nuit des musées 2016",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf76a3a72974c1f0dc8b",
+      "title": "Photographies : Fonds de la guerre 14-18",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf76a3a72974cbf0dc8f",
+      "title": "Institutions culturelles productrices de ressources pédagogiques en ligne",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf77a3a72974c1f0dc8e",
+      "title": "Fréquentation dans les salles de cinéma",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf77a3a72974cbf0dc92",
+      "title": "Etablissements cinématographiques en 2016",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf77a3a72974cbf0dc93",
+      "title": "Photographies série « Monuments historiques » de 1851 à 1914",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf78a3a72974c1f0dc8f",
+      "title": "Adresses des bibliothèques publiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf79a3a72974c1f0dc91",
+      "title": "Recensement des circulaires de tri et de sélection des archives publiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf79a3a72974cbf0dc96",
+      "title": "Images du Palais-Royal ",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5890bf79a3a72974cbf0dc97",
+      "title": "Principales structures culturelles dans la région Pays de la Loire",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59592252a3a7291dcf9c81d7",
+      "title": "Littoral Occitanie : liste des immeubles protégés",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59592252a3a7291dd09c8176",
+      "title": "Nuit des musées 2017",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59592252a3a7291dd09c8177",
+      "title": "Les entrées d'archives en 2016 aux Archives nationales",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59592254a3a7291dd09c8178",
+      "title": "Grands documents et images de l'histoire de France conservés par les Archives nationales",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59855033a3a729783d0f577f",
+      "title": "Répertoire des ressources documentaires du ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "59a78bf4a3a7294680fd9dc2",
+      "title": "Etablissements cinématographiques en 2016",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5a66b359b595080259223e22",
+      "title": "Lieux culturels en Normandie",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5aab4167a3a7291ed12c89f7",
+      "title": "Les entrées d'archives aux Archives nationales",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5ac44defb5950877d5c04a3c",
+      "title": "Semaine de la langue française et de la francophonie 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5ac44dfdb5950877d5c04a3d",
+      "title": "Nuit de la lecture 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5ac44e05b5950877d5c04a3e",
+      "title": "Année européenne du patrimoine culturel 2018 (1e édition)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5adfa98ca3a7295f0ef135a9",
+      "title": "Rendez-vous aux Jardins 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5adfa98ea3a7295f0ef135aa",
+      "title": "Rendez-vous aux Jardins 2017",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120ddb595087cfabcde7c",
+      "title": "Liste des objets mobiliers propriété publique classés au titre des Monuments Historiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120e0b595087cfabcde7f",
+      "title": "Corpus d'archives numérisées des Archives nationales",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120e3b595087cfabcde80",
+      "title": "Institutions culturelles productrices de ressources pédagogiques en ligne",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120e5a3a7295e54c41a13",
+      "title": "Pratiques culturelles des français - Evolution 1973-2008",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120e8a3a7295e54c41a14",
+      "title": "Fête de la musique 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120e9b595087cfabcde83",
+      "title": "Nuit des musées 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f2b595087cfabcde86",
+      "title": "Base FranceTerme : Termes scientifiques et techniques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f4b595087cfabcde87",
+      "title": "Structures de la création artistique",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f6a3a7295e54c41a19",
+      "title": "Principales structures culturelles dans la région Pays de la Loire",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f6b595087cfabcde88",
+      "title": "Fréquentation dans les salles de cinéma",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f7a3a7295e54c41a1a",
+      "title": "Fête de la musique 2017",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120f8b595087cfabcde89",
+      "title": "Grands documents et images de l'histoire de France conservés par les Archives nationales",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120faa3a7295e54c41a1b",
+      "title": "Etablissements cinématographiques en 2017",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120fab595087cfabcde8a",
+      "title": "Rendez-vous aux Jardins 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120fca3a7295e54c41a1c",
+      "title": "Photographies : Fonds de la guerre 14-18",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120fcb595087cfabcde8b",
+      "title": "Semaine de la langue française et de la francophonie 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120fdb595087cfabcde8c",
+      "title": "Liste des organismes publics culturels géolocalisés",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af120ffa3a7295e54c41a1d",
+      "title": "Images du Palais-Royal ",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12101b595087cfabcde8d",
+      "title": "Recensement des circulaires de tri et de sélection des archives publiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12107a3a7295e54c41a20",
+      "title": "Vocabulaires du ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12108a3a7295e54c41a21",
+      "title": "Répertoire des ressources documentaires du ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12108b595080488bcde6a",
+      "title": "Opérations archéologiques dans la région Pays de la Loire",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af1210ab595080488bcde6b",
+      "title": "Liste des établissements de l'enseignement supérieur culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af1210da3a7295e54c41a23",
+      "title": "Archives publiques en France : données statistiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af1210fb595080488bcde6e",
+      "title": "Photographies série « Monuments historiques » de 1851 à 1914",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12110a3a7295e54c41a25",
+      "title": "Rendez-vous Hip Hop 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5af12112b595080488bcde6f",
+      "title": "Année européenne du patrimoine culturel 2018 (1e édition)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5b175c59b59508473e15c490",
+      "title": "Financements de travaux sur les immeubles protégés dans la région Pays de la Loire (2014-2017)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5b51825fa3a72936dfe1c340",
+      "title": "Panorama des festivals",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5b98ec1806e3e74b212ffd31",
+      "title": "Établissements de l’enseignement supérieur artistique : les partenariats internationaux",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5bc6cf339ce2e72581422d3e",
+      "title": "Liste des agences de presse agréées",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5c3ece5906e3e726e94cc62c",
+      "title": "Nuit de la Lecture 2019",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5c5e55799ce2e76ae9b7f491",
+      "title": "Aides à la presse : classement des principaux groupes de presse aidés",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5c5e558f06e3e7266c232bba",
+      "title": "Aides à la presse : classement des titres de presse aides",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5c90a51306e3e731ee4d34ca",
+      "title": "Liste des Maisons des illustres",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5cdf85489ce2e771b4bdb17c",
+      "title": "Nuit des musées 2019",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5cf891869ce2e70a5346d3fc",
+      "title": "Fête de la musique 2019",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5d2d4e639ce2e74ea890b662",
+      "title": "Données essentielles des conventions de subvention",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5d64ab839ce2e74ef0d00585",
+      "title": "Journées Européenes du Patrimoine - JEP 2019",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5d805a9a06e3e71a790e40e2",
+      "title": "Journées Européenes du Patrimoine - JEP 2018",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5df8541b06e3e708c2fac9cf",
+      "title": "Nuit de la lecture 2020",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5dfd9aa3dee7e743bf8c3ede",
+      "title": "Nuit de la lecture 2020",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5e27c8e2dee7e70ed425e8d6",
+      "title": "Liste des Musées de France",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5ed720621bca55ea7d179ef6",
+      "title": "Somme des dix plus hautes rémunérations directement versées par le ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5eed8a0711125060874fc1c2",
+      "title": "#Culturecheznous",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5efd5bedac178b708badc549",
+      "title": "Bibliographie d’architecture contemporaine",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5efead8bb641831f9dadc547",
+      "title": "Thésaurus de l’iconographie chrétienne",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5f1bae655d1bd1ac4a6dcf10",
+      "title": "Documentation d’architecture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5f3f46ed5216ff1fa758be26",
+      "title": "Nuit des musées 2020",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "5f40987a71906fe72c58be26",
+      "title": "Journées européenes du patrimoine - JEP 2020",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "60a48db81b21780934f75ba2",
+      "title": "Les protocoles de remise des archives des cabinets présidentiels et ministériels 1976-2020",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "60c03d2332fb81d6b12fcb3b",
+      "title": "Les expositions itinérantes empruntables dans les services d’archives",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "60c82683c235ca0dca2fcb3b",
+      "title": "Nuit des musées 2021",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "60cc1a66b5b801fb222fcb3b",
+      "title": "Les dénaturalisés de Vichy",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6125c059dc295c5407ef6a5b",
+      "title": "Les activités culturelles et pédagogiques dans les services d’archives",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "613835ed50587f0e7d2bd965",
+      "title": "Journées européenes du patrimoine - JEP 2021",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "61777ddaa9101d073e5506cd",
+      "title": "Base des lieux et équipements culturels (Basilic)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "61b4226ca5919d3b718b8e9e",
+      "title": "Catalogue des données du ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "61bd5cf2183f79b0098b8e9e",
+      "title": "Les usagers en ligne des services : données des enquêtes 2014 et 2021",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "62676ea6a33822fcdcf11a3b",
+      "title": "Nuit européenne des musées 2022",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "628da9fd2d1c0c5b031c1aae",
+      "title": "Indicateurs socio-économiques régionaux",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "62d237d5b09788e8dcf49334",
+      "title": "Test-ra JEP 2021 copie",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "62da21021d3f7025e69ef260",
+      "title": "Dépenses culturelles des communes",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "62da21042f59d0160d9ef260",
+      "title": "Journées européennes du patrimoine - JEP 2022",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6308455a35e36b025049e2dc",
+      "title": "Nuits de la lecture 2022",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633518ec7d88ad6fb4eacfa4",
+      "title": "Dépenses culturelles des régions par secteur",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633518ecb5deca30cdeacfa4",
+      "title": "Dépenses du ministère de la Culture en région",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633518ec6b559831b7eacfa4",
+      "title": "Dépenses du ministère de la Culture par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633518ec7d88ad6fb4eacfa5",
+      "title": "Dépenses culturelles des régions (total)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633669cc67e8653a40eacfa6",
+      "title": "Dispositif Premières pages par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633669cd02685f4c8beacfa5",
+      "title": "Contrats départementaux lecture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633bafd227f49e4e8f8c0d3f",
+      "title": "Dispositif Premières pages par commune",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633bafd4a3f5260a3ceacfa6",
+      "title": "Plan de relance : projets soutenus par le ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "633bafd527f49e4e8f8c0d40",
+      "title": "Dispositif Premières pages par intercommunalité",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6340f6052cbb8188ebeacfa4",
+      "title": "Dépenses culturelles des départements par secteur",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6340f606d04658a4a4eacfa4",
+      "title": "Dépenses culturelles des intercommunalités par secteur",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6340f606a6550b8bf4eacfa4",
+      "title": "Dépenses culturelles des départements",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6340f607d04658a4a4eacfa5",
+      "title": "Dépenses culturelles des communes (2019-2020)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6340f607b1c7e116b5eacfa4",
+      "title": "Dépenses culturelles des intercommunalités",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c885ecad6abcaa90f68f",
+      "title": "JO 2024 : EPCI labellisés Terres de jeux 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c886dbe7e0f35f90f68e",
+      "title": "Entreprises : évolution du chiffre d'affaires 2020 des librairies",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c887cec32b14bc90f68e",
+      "title": "JO 2024 : régions labellisées Terres de jeux 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c887210de3789f90f68e",
+      "title": "Entreprises : évolution du chiffre d'affaires 2020 du spectacle vivant",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c887d95d644f9c487174",
+      "title": "JO 2024 : communes labellisées Terres de jeux 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c8872ca4725b1d90f68e",
+      "title": "JO 2024 : départements labellisés Terres de jeux 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6350c887ecad6abcaa90f690",
+      "title": "Entreprises : évolution du chiffres d'affaires 2020 des salles de cinémas",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6358b1057280fb6a2a90f68e",
+      "title": "Emploi : Actifs des secteurs culturels par région",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6358b1077649e63c98487174",
+      "title": "Entreprises : Nombre d'établissements culturels actifs par région",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0251e708959bd890f68e",
+      "title": "Emploi : Actifs des secteurs culturels par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0251dc41dc073190f68f",
+      "title": "Emploi : Actifs des secteurs culturels par zone d'emploi",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0251dc41dc073190f690",
+      "title": "Entreprises : Salariés des secteurs culturels par région",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0251ae37fbcc1290f691",
+      "title": "Emploi : Professions culturelles par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0252f931c40e6390f68f",
+      "title": "Emploi : Professions culturelles par zone d'emploi",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0254f931c40e6390f690",
+      "title": "Entreprises : Nombre d'établissements culturels actifs par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a02558c0544dea690f690",
+      "title": "Entreprises : Salariés des secteurs culturels par zone d'emploi",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0255905f648a9e90f68e",
+      "title": "Entreprises : Salariés des secteurs culturels par département",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a0255ae37fbcc1290f692",
+      "title": "Emploi : Professions culturelles par région",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "635a02568c0544dea690f691",
+      "title": "Entreprises : Nombre d'établissements culturels actifs par zone d'emploi",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6369d49e0096a79ab7f64c85",
+      "title": "Revendications et restitutions d’archives publiques",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "63a5287d98eba18a5da80dc8",
+      "title": "Base Autor, ressources biographiques et identification des auteurs",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "63ec58db86b5c1d12a1a2e1c",
+      "title": "Label \"patrimoine européen\"",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "63ec58de3c8c492d2d1a2e1b",
+      "title": "Itinéraires culturels du Conseil de l’Europe",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "643e1636a4d39d1a7a538672",
+      "title": "Rendez-vous aux jardins 2023",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "643e163ba4d39d1a7a538673",
+      "title": "Nuit européenne des musées 2023",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6476c67db705583749613674",
+      "title": "Liste des organismes bénéficiant de l'exception au droit d’auteur en faveur des personnes en situation de handicap",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "64ae255bbc600d7a3468ee64",
+      "title": "Dépenses culturelles des régions",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "64bf48ef0f6336d5979f7201",
+      "title": "Journées européennes du patrimoine 2023",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "651e3557c5f0fe7fee6e33b0",
+      "title": "Dépenses culturelles des communes",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "651e35587d7cd2bd756e33b0",
+      "title": "Les publications scientifiques dans les services d’archives",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6545c1e0bcab951e5a4090dd",
+      "title": "Fréquentation des monuments nationaux",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "654efe0576333b96fdf2beac",
+      "title": "La circulation des archives en Europe et hors Europe : suivi mensuel des ventes aux enchères",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "656565de619420d81ca3e3dc",
+      "title": "Les aides déconcentrées au spectacle vivant (ADSV)",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "657294f9cb30bf6cab745388",
+      "title": "Vocabulaires du ministère de la Culture",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6573e67e5c8fb12f7a16f253",
+      "title": "Aide à l'itinérance des cirques de création",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6573e67f33c6a8a6ffd630ac",
+      "title": "Aides au Compagnonnage Plateau et Auteur",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6573e67f509cbbd22ed630ac",
+      "title": "Aides à l'itinérance des cirques de famille",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6573e67f05ed2c02b4d630ac",
+      "title": "Aides nationales à la création pour les arts du cirque et pour les arts de la rue",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "659d7d919a5ff8cfcbdf109b",
+      "title": "francearchives.fr - Les lieux des archives",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "659d7da1a28b115513e756ff",
+      "title": "francearchives.fr - Inventaires des archives françaises",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "659d7da2cedd8b3455e75703",
+      "title": "Notices des fonds de la bibliothèque des Archives nationales du monde du travail",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "66063d22592637d8f57263d5",
+      "title": "Nuit européenne des musées 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6646d7a92cfb143b25b34ed8",
+      "title": "La circulation des archives en Europe et hors Europe : suivi des demandes de sortie au sein du territoire communautaire",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "664d6e7bcd0d879232e5a98b",
+      "title": "Rendez-vous aux jardins 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6691fbc3e33ff438151ff6b5",
+      "title": "Eté culturel 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "6691fbc4e33ff438151ff6b6",
+      "title": "Journées européennes du patrimoine 2024",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    },
+    {
+      "id": "67f7424b137aad8bcb9ac731",
+      "title": "Données du système de déclaration de billetterie du spectacle vivant Sibil",
+      "old_frequency": null,
+      "new_frequency": "punctual",
+      "status": "updated"
+    }
+  ],
+  "errors": []
+}
