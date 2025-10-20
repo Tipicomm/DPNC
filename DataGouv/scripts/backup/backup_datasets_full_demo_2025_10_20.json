@@ -1,7 +1,7 @@
 {
   "organization": "534fff91a3a7292c64a77f73",
   "environment": "demo",
-  "date": "2025-10-20T09:46:19.762028",
+  "date": "2025-10-20T09:48:18.962428",
   "datasets": {
     "53698edca3a729239d2035ac": {
       "acronym": null,
@@ -10271,7 +10271,7 @@
           "last_modified": "2025-08-27T08:40:38.508000+00:00",
           "latest": "https://demo.data.gouv.fr/api/1/datasets/r/25e1dd49-0f0f-49c1-aaab-d21c3bd6c945",
           "metrics": {
-            "views": 133
+            "views": 134
           },
           "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
           "preview_url": null,
