@@ -22,7 +22,7 @@ from datetime import datetime
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 
 # Environnement (demo, www, dev)
-ENVIRONMENT = os.getenv("DATAGOUV_ENV", "www").lower()
+ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo").lower()
 
 BASE_URL = {
     "www": "https://data.gouv.fr",
