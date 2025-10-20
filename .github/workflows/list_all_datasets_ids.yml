@@ -1,0 +1,48 @@
+name: 📋 Lister tous les IDs de datasets (prod + demo)
+
+on:
+  workflow_dispatch:  # Exécution manuelle uniquement depuis GitHub Actions
+
+jobs:
+  list_ids:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install datagouv-client requests
+
+      - name: 🧮 Exécution du script de génération des IDs
+        run: |
+          echo "🚀 Lancement du script list_all_datasets_ids_with_source.py"
+          python DataGouv/scripts/list_all_datasets_ids_with_source.py
+
+      - name: 🧾 Vérification du fichier généré
+        run: |
+          echo "📁 Contenu du dossier DataGouv/scripts/backup/"
+          ls -lh DataGouv/scripts/backup/
+          echo "🔍 Aperçu du fichier généré :"
+          head -n 20 DataGouv/scripts/backup/datasets_ids_all.csv || echo "⚠️ Fichier introuvable"
+
+      - name: 🪣 Commit et push du fichier CSV
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          git add DataGouv/scripts/backup/datasets_ids_all.csv
+          git commit -m "🧾 Liste des IDs de datasets (prod + demo) - $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
+
+          git push origin main
