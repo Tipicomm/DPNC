@@ -11,7 +11,7 @@ en la remplaçant par 'punctual'.
  - Mode simulation possible (UPDATE_MODE = False)
 
 ⚙️ Nécessite :
- - Clé API de production (PROD_DATA_GOUV_KEY)
+ - Clé API de production (DATAGOUV_API_KEY)
 """
 
 import os
@@ -23,7 +23,7 @@ from datetime import datetime
 # ───────────────────────────────
 # Configuration
 # ───────────────────────────────
-API_KEY = os.getenv("PROD_DATA_GOUV_KEY")
+API_KEY = os.getenv("DATAGOUV_API_KEY")
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TARGET_FREQUENCY = "punctual"
 UPDATE_MODE = True  # ⚠️ False = simulation / True = écriture réelle
