@@ -30,7 +30,7 @@ ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 OUTPUT_PATH = args.output
 
 # Environnement (www, demo, dev)
-ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo")
+ENVIRONMENT = os.getenv("DATAGOUV_ENV", "www")
 
 BASE_URLS = {
     "www": "https://www.data.gouv.fr",
