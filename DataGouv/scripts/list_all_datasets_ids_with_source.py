@@ -1,13 +1,13 @@
 """
 But :
 Lister tous les identifiants (id) de datasets présents dans deux sauvegardes DataGouv
-(production et démo), indiquer leur provenance (prod, demo ou les deux),
+(production et démo), indiquer leur provenance (www, demo ou les deux),
 et générer un fichier CSV dédoublonné.
 
 Résultat :
 - Un fichier CSV `datasets_ids_all.csv` contenant :
   id , source
-  (où source ∈ {"prod", "demo", "both"})
+  (où source ∈ {"www", "demo", "both"})
 - Affiche également les statistiques de répartition.
 """
 
@@ -18,7 +18,8 @@ import os
 # ───────────────────────────────
 # 🧩 Configuration
 # ───────────────────────────────
-BACKUP_PROD = "DataGouv/scripts/backup/backup_datasets_full_prod_2025_10_20.json"
+# ⚠️ Utilise bien les fichiers existants dans ton dépôt
+BACKUP_WWW = "DataGouv/scripts/backup/backup_datasets_full_www_2025_10_20.json"
 BACKUP_DEMO = "DataGouv/scripts/backup/backup_datasets_full_demo_2025_10_20.json"
 OUTPUT_CSV = "DataGouv/scripts/backup/datasets_ids_all.csv"
 
@@ -40,13 +41,13 @@ def load_backup_ids(path):
 # ───────────────────────────────
 print("───────────────────────────────")
 print("📦 Extraction des IDs de datasets...")
-prod_ids = load_backup_ids(BACKUP_PROD)
+www_ids = load_backup_ids(BACKUP_WWW)
 demo_ids = load_backup_ids(BACKUP_DEMO)
 
-print(f"📁 Prod : {len(prod_ids)} IDs")
-print(f"📁 Demo : {len(demo_ids)} IDs")
+print(f"📁 WWW (prod) : {len(www_ids)} IDs")
+print(f"📁 Demo       : {len(demo_ids)} IDs")
 
-all_ids = sorted(prod_ids | demo_ids)
+all_ids = sorted(www_ids | demo_ids)
 print(f"🧩 Total unique : {len(all_ids)} IDs distincts trouvés\n")
 
 # ───────────────────────────────
@@ -54,17 +55,17 @@ print(f"🧩 Total unique : {len(all_ids)} IDs distincts trouvés\n")
 # ───────────────────────────────
 rows = []
 for ds_id in all_ids:
-    if ds_id in prod_ids and ds_id in demo_ids:
+    if ds_id in www_ids and ds_id in demo_ids:
         source = "both"
-    elif ds_id in prod_ids:
-        source = "prod"
+    elif ds_id in www_ids:
+        source = "www"
     else:
         source = "demo"
     rows.append((ds_id, source))
 
 # Statistiques simples
 count_both = sum(1 for _, s in rows if s == "both")
-count_prod = sum(1 for _, s in rows if s == "prod")
+count_www = sum(1 for _, s in rows if s == "www")
 count_demo = sum(1 for _, s in rows if s == "demo")
 
 # ───────────────────────────────
@@ -84,6 +85,6 @@ print("────────────────────────�
 print(f"✅ Fichier généré : {OUTPUT_CSV}")
 print(f"📊 Nombre total d’IDs uniques : {len(all_ids)}")
 print(f"   • Présents dans les deux  : {count_both}")
-print(f"   • Uniquement en PROD       : {count_prod}")
-print(f"   • Uniquement en DEMO       : {count_demo}")
+print(f"   • Uniquement sur WWW      : {count_www}")
+print(f"   • Uniquement sur DEMO     : {count_demo}")
 print("───────────────────────────────")
