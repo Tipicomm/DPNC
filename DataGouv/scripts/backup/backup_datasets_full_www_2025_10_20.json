@@ -1,7 +1,7 @@
 {
   "organization": "534fff91a3a7292c64a77f73",
   "environment": "www",
-  "date": "2025-10-20T10:40:42.616321",
+  "date": "2025-10-20T10:47:28.801195",
   "datasets": {
     "53698edca3a729239d2035ac": {
       "acronym": null,
@@ -2391,14 +2391,12 @@
           "extras": {
             "analysis:last-modified-at": "2014-01-06T08:41:55+00:00",
             "analysis:last-modified-detection": "last-modified-header",
-            "check:available": false,
+            "check:available": true,
             "check:count-availability": 11,
-            "check:date": "2025-10-18T22:42:46.098220+00:00",
-            "check:error": "Not Found",
-            "check:headers:content-length": 146,
-            "check:headers:content-type": "text/html",
-            "check:id": 35094081,
-            "check:status": 404,
+            "check:date": "2025-10-20T10:42:53.217604+00:00",
+            "check:headers:content-type": "text/xml",
+            "check:id": 35177054,
+            "check:status": 200,
             "check:timeout": false,
             "check:url": "http://static.data.gouv.fr/5a/1d7d8627da5adac1e9836e1831554f777b12a4479004255a30b9004ea60177.xml"
           },
