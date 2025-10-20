@@ -1,0 +1,47 @@
+name: 🕵️ Lister les fréquences 'unknown' (PROD)
+
+on:
+  workflow_dispatch:  # ⚙️ Exécution manuelle uniquement
+
+jobs:
+  list_unknown_frequencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # nécessaire pour avoir tout l’historique
+
+      - name: 🐍 Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install datagouv-client requests
+
+      - name: 🔍 Exécution du script de détection des 'unknown'
+        run: |
+          echo "🚀 Lancement de l’analyse des fréquences 'unknown' dans le backup PROD..."
+          python DataGouv/scripts/list_unknown_frequencies.py
+
+      - name: 🧾 Vérification du fichier généré
+        run: |
+          echo "📁 Contenu du dossier DataGouv/scripts/backup/"
+          ls -lh DataGouv/scripts/backup/ || echo "⚠️ Aucun fichier trouvé."
+          echo "🔍 Aperçu du fichier :"
+          head -n 20 DataGouv/scripts/backup/datasets_to_fix.csv || echo "⚠️ Fichier introuvable."
+
+      - name: 🪣 Commit et push du fichier CSV
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          git add DataGouv/scripts/backup/datasets_to_fix.csv
+          git commit -m "🕵️ Liste des datasets avec frequency='unknown' $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
+          git push origin main
