@@ -1,32 +1,41 @@
-name: Backup DataGouv Properties demo
+name: 🔄 Backup complet DataGouv (demo)
 
 on:
-  workflow_dispatch: # exécution manuelle uniquement
+  workflow_dispatch:  # exécution manuelle uniquement
 
 jobs:
   backup:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout du dépôt
+      - name: 📥 Checkout du dépôt
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # nécessaire pour pousser ensuite sans conflit
+          fetch-depth: 0  # nécessaire pour pouvoir pousser ensuite
 
-      - name: Configuration de Python
+      - name: 🐍 Configuration de Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Installation des dépendances
+      - name: 📦 Installation des dépendances
         run: |
-          pip install datagouv-client
+          pip install datagouv-client requests
 
-      - name: Exécution du script de sauvegarde
+      - name: 💾 Exécution du script de sauvegarde complète
+        env:
+          DATAGOUV_ENV: demo  # 🔁 Modifier en 'prod' ou 'dev' si besoin
         run: |
           python DataGouv/scripts/backUpProperties.py
 
-      - name: Commit et push du fichier de sauvegarde
+      - name: 🧾 Vérification du fichier généré
+        run: |
+          echo "📁 Contenu du dossier DataGouv/scripts/"
+          ls -lh DataGouv/scripts/
+          echo "🔍 Aperçu du fichier de sauvegarde :"
+          head -n 40 DataGouv/scripts/backup_datasets_full.json || echo "⚠️ Fichier introuvable"
+
+      - name: 🪣 Commit et push du fichier de sauvegarde
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -36,9 +45,8 @@ jobs:
           git checkout main
 
           # Ajout du fichier généré
-          git add DataGouv/scripts/backup_datasets_properties.json
-          git commit -m "chore: update backup_datasets_properties.json [skip ci]" || echo "Aucune modification à commettre"
-
+          git add DataGouv/scripts/backup_datasets_full.json
+          git commit -m "🧾 Backup DataGouv $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
 
           # Push sans rebase ni merge
           git push origin main --force
