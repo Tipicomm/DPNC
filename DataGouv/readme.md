@@ -2,8 +2,8 @@
 
 Lors de la comparaison des sauvegardes DataGouv, on applique la convention suivante :
 
-| Variable | Environnement | Rôle logique | Recommandation |
-|-----------|----------------|---------------|----------------|
+| Variable | Environnement | Rôle logique | 
+|-----------|----------------|---------------|
 | **X = prod / www** | Production : [`https://data.gouv.fr`](https://data.gouv.fr) | Référence officielle, source de vérité
 | **Y = demo** | Démonstration : [`https://demo.data.gouv.fr`](https://demo.data.gouv.fr) | Environnement de test / comparaison
 
