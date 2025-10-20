@@ -32,10 +32,10 @@ BACKUP_PATH = "DataGouv/scripts/backup/backup_update_frequencies.json"
 
 NEW_FREQUENCY = "punctual"  # valeur appliquée
 UPDATE_MODE = True           # False = simulation
-ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo").lower()
+ENVIRONMENT = os.getenv("DATAGOUV_ENV", "www").lower()
 
 # Clé API selon environnement
-if ENVIRONMENT == "prod":
+if ENVIRONMENT == "www":
     API_KEY = os.getenv("DATAGOUV_API_KEY")
 else:
     API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")
