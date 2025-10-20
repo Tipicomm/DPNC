@@ -1,4 +1,4 @@
-name: 🔄 Backup complet DataGouv (demo)
+name: 🔄 Backup Properties Datasets (demo)
 
 on:
   workflow_dispatch:   # exécution manuelle possible
