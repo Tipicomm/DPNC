@@ -1,0 +1,60 @@
+name: 🧪 Corriger les fréquences 'unknown' sur DEMO
+
+on:
+  workflow_dispatch:  # ⚙️ Exécution manuelle uniquement
+
+jobs:
+  fix_demo_frequencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Configuration de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install datagouv-client httpx requests
+
+      - name: 🔑 Vérification de la clé API (DEMO)
+        env:
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+        run: |
+          if [ -z "$DEMO_DATA_GOUV_KEY" ]; then
+            echo "❌ Erreur : clé API manquante. Ajoute 'DEMO_DATA_GOUV_KEY' dans les secrets GitHub."
+            exit 1
+          else
+            echo "✅ Clé API détectée pour DEMO."
+          fi
+
+      - name: 🧪 Exécution du script de correction des fréquences DEMO
+        env:
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+        run: |
+          echo "🚀 Lancement du script de correction des fréquences 'unknown' sur DEMO..."
+          python DataGouv/scripts/fix_unknown_frequencies_demo.py
+
+      - name: 🧾 Vérification du fichier de sauvegarde
+        run: |
+          echo "📁 Contenu du dossier DataGouv/scripts/backup/"
+          ls -lh DataGouv/scripts/backup/ || echo "⚠️ Aucun fichier trouvé."
+          echo "🔍 Aperçu du fichier de backup :"
+          head -n 40 DataGouv/scripts/backup/backup_demo_fix_unknown_frequency.json || echo "⚠️ Fichier introuvable."
+
+      - name: 🪣 Commit et push du fichier de sauvegarde
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+
+          git add DataGouv/scripts/backup/backup_demo_fix_unknown_frequency.json
+          git commit -m "🧪 Fix 'unknown' frequencies on DEMO $(date -u +"%Y-%m-%d %H:%M:%S")" || echo "Aucun changement à committer"
+          git push origin main
