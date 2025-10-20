@@ -3,30 +3,38 @@ But : Sauvegarder le JSON complet de tous les jeux de données d'une organisatio
 
 Ce script interroge directement l’API REST publique (aucune clé API requise)
 et sauvegarde le contenu complet de chaque dataset dans un fichier JSON global.
+
 Remarque importante :
 Le client officiel `datagouv-client` n’expose qu’une partie des champs (voir `Dataset._attributes`).
 Certaines propriétés du JSON complet (ex. frequency, license, private, quality, etc.)
-ne sont pas disponibles via le client Python.
-
+ne sont pas disponibles via le client Python, d’où l’usage direct de l’API REST.
 """
 
 import os
 import json
+import argparse
 import requests
 from datagouv import Client
 from datetime import datetime
 
 # ───────────────────────────────
+# Arguments (permet de spécifier un nom de fichier via le workflow)
+# ───────────────────────────────
+parser = argparse.ArgumentParser(description="Backup complet des datasets DataGouv")
+parser.add_argument("--output", default="DataGouv/scripts/backup_datasets_full.json", help="Chemin du fichier de sortie")
+args = parser.parse_args()
+
+# ───────────────────────────────
 # Configuration
 # ───────────────────────────────
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
-OUTPUT_PATH = "DataGouv/scripts/backup_datasets_full.json"
+OUTPUT_PATH = args.output
 
 # Environnement (demo, data.gouv.fr, dev)
 ENVIRONMENT = os.getenv("DATAGOUV_ENV", "demo")
 
 BASE_URL = {
-    "prod": "https://data.gouv.fr",
+    "data": "https://data.gouv.fr",   # pas de www
     "demo": "https://demo.data.gouv.fr",
     "dev": "https://dev.data.gouv.fr"
 }.get(ENVIRONMENT, "https://demo.data.gouv.fr")
