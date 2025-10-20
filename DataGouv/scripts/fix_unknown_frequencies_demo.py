@@ -4,11 +4,13 @@ Corriger les jeux de données sur DEMO (https://demo.data.gouv.fr)
 dont la fréquence est strictement 'unknown', en la remplaçant par 'punctual'.
 
 ⚙️ Fonctionnement :
-- Se connecte à l’organisation via la clé API (secrète)
-- Parcourt tous les datasets de l’organisation
-- Si la fréquence = 'unknown', met à jour en 'punctual'
-- Sinon, ne modifie rien
-- Enregistre un backup des fréquences initiales
+- Se connecte à l’organisation via la clé API
+- Parcourt tous les datasets
+- Si frequency == "unknown", met à jour uniquement ce champ
+- Vérifie ensuite que rien d’autre n’a changé
+- Sauvegarde un backup complet
+
+⚠️ Nécessite la clé API dans le secret GitHub : DEMO_DATA_GOUV_KEY
 """
 
 import os
@@ -24,6 +26,24 @@ API_KEY = os.getenv("DEMO_DATA_GOUV_KEY")  # clé API DEMO
 ORG_ID = "534fff91a3a7292c64a77f73"        # Ministère de la Culture
 UPDATE_MODE = True                          # ⚠️ False = simulation / True = écriture réelle
 BACKUP_PATH = "DataGouv/scripts/backup/backup_demo_fix_unknown_frequency.json"
+
+# ───────────────────────────────
+# Fonctions utilitaires
+# ───────────────────────────────
+VOLATILE_KEYS = {
+    "last_modified", "last_update", "internal", "metrics", "quality",
+}
+
+def diff_keys(before: dict, after: dict) -> set[str]:
+    """Retourne les clés modifiées hors champs volatils."""
+    keys = set(before.keys()) | set(after.keys())
+    changed = set()
+    for k in keys:
+        if k in VOLATILE_KEYS:
+            continue
+        if before.get(k) != after.get(k):
+            changed.add(k)
+    return changed
 
 # ───────────────────────────────
 # Initialisation
@@ -66,8 +86,9 @@ for ds in datasets:
 
     try:
         full_ds = client.dataset(ds_id)
-        metadata = full_ds.refresh()  # ← renvoie le JSON complet
-        freq = (metadata.get("frequency") or "").strip().lower()
+        full_ds.refresh()
+        freq = getattr(full_ds, "frequency", None)
+        freq = (freq or "").strip().lower()
 
         backup["datasets"][ds_id] = {
             "title": title,
@@ -79,18 +100,40 @@ for ds in datasets:
         if freq == "unknown":
             if UPDATE_MODE:
                 try:
+                    # 1️⃣ Snapshot avant
+                    before = client._client.session.get(full_ds.uri).json()
+
+                    # 2️⃣ Update minimal
+                    print("   Payload envoyé :", {"frequency": "punctual"})
                     full_ds.update({"frequency": "punctual"})
-                    print("   ✅ Fréquence mise à jour → 'punctual'")
+
+                    # 3️⃣ Snapshot après
+                    after = client._client.session.get(full_ds.uri).json()
+
+                    # 4️⃣ Vérification des différences
+                    allowed_changes = {"frequency"} | VOLATILE_KEYS
+                    changed = diff_keys(before, after)
+                    unexpected = changed - allowed_changes
+
+                    if unexpected:
+                        print(f"   ⚠️ Attention : changements inattendus détectés : {sorted(unexpected)}")
+                    else:
+                        print("   ✅ Vérifié : seule la fréquence (et champs volatils) a changé.")
+
                     fixed_count += 1
+
                 except httpx.HTTPStatusError as e:
                     print(f"   ❌ Erreur HTTP {e.response.status_code} : {e.response.text[:120]}…")
                     errors.append({"id": ds_id, "title": title, "error": str(e)})
+
                 except Exception as e:
                     print(f"   ⚠️ Erreur inattendue : {e}")
                     errors.append({"id": ds_id, "title": title, "error": str(e)})
+
             else:
                 print("   (Simulation) Fréquence serait mise à jour → 'punctual'")
                 fixed_count += 1
+
         else:
             print("   ⏭️ Aucune modification (fréquence différente de 'unknown').")
             skipped_count += 1
