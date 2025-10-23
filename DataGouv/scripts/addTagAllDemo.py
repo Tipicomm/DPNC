@@ -1,10 +1,10 @@
 """
 But :
-Ajouter le tag "Culture" à tous les jeux de données d'une organisation DataGouv
+Ajouter le tag "culture" à tous les jeux de données d'une organisation DataGouv
 (via l’API officielle /api/1/datasets/{id}/).
 
 Ce script utilise le client Python officiel `datagouv-client` pour parcourir
-tous les jeux de données d’une organisation et ajouter le tag "Culture"
+tous les jeux de données d’une organisation et ajouter le tag "culture"
 s’il n’est pas déjà présent.
 
 Fonctionne sur les environnements :
@@ -46,7 +46,7 @@ from datagouv import Client
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TAG = "culture"                      # Tag à ajouter (sensible à la casse)
 UPDATE_MODE = False                  # ⚠️ Simulation si False (aucune écriture)
-DEFAULT_ENV = "www"                 # Environnement par défaut si non précisé
+DEFAULT_ENV = "www"                  # Environnement par défaut si non précisé
 
 # ───────────────────────────────
 # Environnement et clé API
@@ -108,7 +108,15 @@ for ds in datasets:
     total += 1
     ds_id = getattr(ds, "id", None)
     title = getattr(ds, "title", None) or getattr(ds, "name", None)
-    tags = getattr(ds, "tags", []) or []
+
+    # Charger le dataset complet (le modèle simplifié ne contient pas tous les champs)
+    try:
+        full_ds = client.dataset(ds_id)
+        tags = getattr(full_ds, "tags", []) or []
+    except Exception as e:
+        print(f"⚠️ Impossible de charger le dataset complet {ds_id}: {e}")
+        errors.append({"id": ds_id, "title": title, "error": str(e)})
+        continue
 
     print(f"→ {title} ({ds_id})")
     print(f"   Tags actuels : {tags}")
@@ -119,7 +127,7 @@ for ds in datasets:
 
         if UPDATE_MODE:
             try:
-                ds.update({"tags": new_tags})
+                full_ds.update({"tags": new_tags})
                 print(f"   ✅ Tag ajouté : {TAG}")
                 added += 1
             except httpx.HTTPStatusError as e:
@@ -141,5 +149,6 @@ print(f"❌ Erreurs : {len(errors)}")
 print("───────────────────────────────")
 
 if errors:
+    print("\n🧾 Détails des erreurs :")
     for e in errors:
         print(f" - {e['title']} ({e['id']}) → {e['error']}")
