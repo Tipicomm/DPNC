@@ -29,7 +29,7 @@ Fonctionne sur les environnements :
 - `DATAGOUV_ENV` : "demo" ou "www" (défaut = demo)
 - `UPDATE_MODE` : "True" (écriture) ou "False" (simulation)
 - `DEMO_DATA_GOUV_KEY` : clé API pour l’environnement de test
-- `DATA_GOUV_KEY` : clé API pour la production (www)
+- `DATAGOUV_API_KEY` : clé API pour la production (www)
 
 ───────────────────────────────
 🧩  Bonnes pratiques :
@@ -58,8 +58,7 @@ UPDATE_MODE = os.getenv("UPDATE_MODE", "False").lower() == "true"
 
 API_KEYS = {
     "demo": os.getenv("DEMO_DATA_GOUV_KEY"),
-    "www": os.getenv("DATA_GOUV_KEY"),
-    "prod": os.getenv("DATA_GOUV_KEY"),
+    "www": os.getenv("DATAGOUV_API_KEY"),
 }
 API_KEY = API_KEYS.get(ENVIRONMENT)
 
@@ -70,7 +69,7 @@ if not API_KEY and UPDATE_MODE:
     raise EnvironmentError(
         f"Aucune clé API détectée pour l'environnement '{ENVIRONMENT}'.\n"
         f"⚠️ Vérifie que la variable "
-        f"{'DEMO_DATA_GOUV_KEY' if ENVIRONMENT == 'demo' else 'DATA_GOUV_KEY'} "
+        f"{'DEMO_DATA_GOUV_KEY' if ENVIRONMENT == 'demo' else 'DATAGOUV_API_KEY'} "
         f"est bien définie."
     )
 
