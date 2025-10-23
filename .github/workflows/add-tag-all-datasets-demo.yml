@@ -8,7 +8,7 @@
 #
 # 🔐 Secrets requis :
 #   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
-#   - DATA_GOUV_KEY : clé API pour https://data.gouv.fr
+#   - DATAGOUV_API_KEY : clé API pour https://data.gouv.fr
 #
 # 💡 Paramètres configurables à l’exécution :
 #   - environment : "demo" ou "www"
@@ -59,7 +59,7 @@ jobs:
           DATAGOUV_ENV: ${{ github.event.inputs.environment }}
           UPDATE_MODE: ${{ github.event.inputs.update_mode }}
           DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
-          DATA_GOUV_KEY: ${{ secrets.DATA_GOUV_KEY }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
         run: |
           echo "───────────────────────────────"
           echo "Lancement du script addTagAllDemo.py"
