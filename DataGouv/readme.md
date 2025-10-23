@@ -13,7 +13,6 @@ Lors de la comparaison des sauvegardes DataGouv, on applique la convention suiva
 
 
 ## Ajouter un tag aux datasets ; 📘 Workflow : addTagAll
- ─────────────────────────────────────────────────────────────
 
 🎯 Objectif :
 Ajouter le tag "culture" (ou "ministeredelaculture") à tous les jeux
@@ -37,5 +36,4 @@ de données d'une organisation DataGouv (ici le Ministère de la Culture).
    * Liste des jeux de données modifiés ou déjà tagués.
    * Résumé du traitement dans les logs GitHub Actions.
    * Optionnellement, un fichier "backup_tags.json" est commité.
- ─────────────────────────────────────────────────────────────
 
