@@ -8,6 +8,7 @@
 #
 # 🔐 Secrets requis :
 #   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
+#   - DATA_GOUV_KEY : clé API pour https://data.gouv.fr
 #
 # 💡 Remarques :
 # - Le script lit la variable d’environnement DATAGOUV_ENV
@@ -47,8 +48,8 @@ jobs:
 
       - name: 🚀 Exécution du script addTagAllDemo.py (DEMO)
         env:
-          DATAGOUV_ENV: demo
-          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+          DATAGOUV_ENV: www
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DATA_GOUV_KEY }}
         run: |
           echo "───────────────────────────────"
           echo "Lancement du script addTagAllDemo.py sur DEMO..."
