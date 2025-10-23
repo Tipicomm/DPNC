@@ -14,6 +14,8 @@ Fonctionne sur les environnements :
 ───────────────────────────────
 ⚙️  Fonctionnement :
 ───────────────────────────────
+- Le comportement du script est entièrement contrôlé par les **variables
+  d’environnement**, définies dans le workflow YAML ou le terminal.
 - Par défaut, le script fonctionne en **mode simulation** (`UPDATE_MODE=False`),
   donc aucune écriture réelle n’est effectuée.
 - Si `UPDATE_MODE=True`, les modifications sont envoyées à l’API (clé API requise).
@@ -25,6 +27,7 @@ Fonctionne sur les environnements :
 🔐  Variables d’environnement attendues :
 ───────────────────────────────
 - `DATAGOUV_ENV` : "demo" ou "www" (défaut = demo)
+- `UPDATE_MODE` : "True" (écriture) ou "False" (simulation)
 - `DEMO_DATA_GOUV_KEY` : clé API pour l’environnement de test
 - `DATA_GOUV_KEY` : clé API pour la production (www)
 
@@ -41,24 +44,23 @@ import httpx
 from datagouv import Client
 
 # ───────────────────────────────
-# Configuration utilisateur
+# Configuration
 # ───────────────────────────────
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TAG = "culture"                      # Tag à ajouter (sensible à la casse)
-UPDATE_MODE = False                  # ⚠️ Simulation si False (aucune écriture)
-DEFAULT_ENV = "www"                  # Environnement par défaut si non précisé
+DEFAULT_ENV = "demo"                 # Sécurité : DEMO par défaut
 
 # ───────────────────────────────
-# Environnement et clé API
+# Lecture des variables d’environnement
 # ───────────────────────────────
 ENVIRONMENT = os.getenv("DATAGOUV_ENV", DEFAULT_ENV).lower()
+UPDATE_MODE = os.getenv("UPDATE_MODE", "False").lower() == "true"
 
 API_KEYS = {
     "demo": os.getenv("DEMO_DATA_GOUV_KEY"),
-    "www": os.getenv("DATA_GOUV_KEY"),  # ✅ Clé API production
+    "www": os.getenv("DATA_GOUV_KEY"),
     "prod": os.getenv("DATA_GOUV_KEY"),
 }
-
 API_KEY = API_KEYS.get(ENVIRONMENT)
 
 if ENVIRONMENT not in ("demo", "www", "prod"):
@@ -74,7 +76,7 @@ if not API_KEY and UPDATE_MODE:
 
 print("───────────────────────────────")
 print(f"🟢 Environnement : {ENVIRONMENT.upper()}")
-print(f"🔓 Mode : {'écriture réelle' if UPDATE_MODE else 'simulation (aucune écriture)'}")
+print(f"🔓 Mode : {'ÉCRITURE RÉELLE' if UPDATE_MODE else 'SIMULATION (aucune écriture)'}")
 print(f"🏛️ Organisation ciblée : {ORG_ID}")
 print(f"🏷️ Tag à ajouter : {TAG}")
 print("───────────────────────────────\n")
@@ -99,7 +101,7 @@ already_present = 0
 total = 0
 
 # ───────────────────────────────
-# Parcours des datasets
+# Parcours des jeux de données
 # ───────────────────────────────
 datasets = list(organization.datasets)
 print(f"📦 {len(datasets)} jeux de données détectés.\n")
@@ -109,7 +111,6 @@ for ds in datasets:
     ds_id = getattr(ds, "id", None)
     title = getattr(ds, "title", None) or getattr(ds, "name", None)
 
-    # Charger le dataset complet (le modèle simplifié ne contient pas tous les champs)
     try:
         full_ds = client.dataset(ds_id)
         tags = getattr(full_ds, "tags", []) or []
