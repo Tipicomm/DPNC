@@ -12,4 +12,45 @@ Lors de la comparaison des sauvegardes DataGouv, on applique la convention suiva
 > Les fichiers et colonnes suivent donc l’ordre : `X → Y` (ex. `title_prod`, `title_demo`).
 
 
+### Ajouter un tag aux datasets 
+
+# ─────────────────────────────────────────────────────────────
+# 📘 Workflow : addTagAll
+#
+# 🎯 Objectif :
+# Ajouter le tag "culture" (ou "ministeredelaculture") à tous les jeux
+# de données d'une organisation DataGouv (ici le Ministère de la Culture).
+#
+# ⚙️ Fonctionnement :
+# - Ce workflow exécute le script Python :
+#       DataGouv/scripts/addTagAllDemo.py
+# - Le script ajoute le tag à chaque dataset via l’API DataGouv.
+# - Les tags existants sont conservés.
+#
+# 🧠 Contrôle via paramètres (lors du lancement) :
+#   - environment : "demo" ou "www" (production)
+#   - update_mode : "True" (écriture) ou "False" (simulation)
+#
+# 🔐 Secrets requis :
+#   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
+#   - DATAGOUV_API_KEY   : clé API pour https://data.gouv.fr
+#
+# 🗂️ Fichiers utilisés :
+#   - Script principal : DataGouv/scripts/addTagAllDemo.py
+#   - Fichier YAML : .github/workflows/add-tag-all-datasets-demo.yml
+#   - Fichier backup (optionnel) : DataGouv/scripts/backup_tags.json
+#
+# 🧩 Exemples d’exécution :
+#   - Simulation sur démo :
+#       environment = demo
+#       update_mode = False
+#   - Écriture réelle sur prod :
+#       environment = www
+#       update_mode = True
+#
+# 🏁 Sortie :
+#   - Liste des jeux de données modifiés ou déjà tagués.
+#   - Résumé du traitement dans les logs GitHub Actions.
+#   - Optionnellement, un fichier "backup_tags.json" est commité.
+# ─────────────────────────────────────────────────────────────
 
