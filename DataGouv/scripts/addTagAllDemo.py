@@ -1,26 +1,39 @@
 """
 But :
-Ajouter le tag "Culture" à tous les jeux de données d'une organisation DataGouv (via l’API /api/1/datasets/{id}/).
+Ajouter le tag "Culture" à tous les jeux de données d'une organisation DataGouv
+(via l’API officielle /api/1/datasets/{id}/).
 
-Ce script utilise le client officiel `datagouv-client` pour parcourir tous les jeux de données
-d’une organisation et ajouter le tag "Culture" si celui-ci n’est pas déjà présent.
+Ce script utilise le client Python officiel `datagouv-client` pour parcourir
+tous les jeux de données d’une organisation et ajouter le tag "Culture"
+s’il n’est pas déjà présent.
 
-Le script fonctionne à la fois sur les environnements :
-  - DEMO  → https://demo.data.gouv.fr
-  - WWW (production) → https://www.data.gouv.fr
+Fonctionne sur les environnements :
+  - DEMO (https://demo.data.gouv.fr)
+  - WWW (production, https://www.data.gouv.fr)
 
-Remarques importantes :
-- Le mode par défaut est la SIMULATION : aucune écriture n’est faite tant que `UPDATE_MODE` reste à False.
-- Le script concatène les tags existants avant mise à jour, il n’écrase donc jamais les tags déjà présents.
-- Une clé API est requise uniquement si `UPDATE_MODE=True` (écriture réelle).
-- Les variables d’environnement attendues sont :
-    - `DATAGOUV_ENV` = "demo" ou "www"
-    - `DEMO_DATA_GOUV_KEY` pour l’environnement de test
-    - `DATA_GOUV_KEY` pour la production
+───────────────────────────────
+⚙️  Fonctionnement :
+───────────────────────────────
+- Par défaut, le script fonctionne en **mode simulation** (`UPDATE_MODE=False`),
+  donc aucune écriture réelle n’est effectuée.
+- Si `UPDATE_MODE=True`, les modifications sont envoyées à l’API (clé API requise).
+- Les tags existants sont **conservés et concaténés** : le script n’écrase jamais
+  la liste complète des tags.
+- Chaque modification est enregistrée dataset par dataset via la méthode `update()`.
 
-Bonnes pratiques :
-- Toujours tester d’abord en mode simulation sur DEMO avant d’activer l’écriture.
+───────────────────────────────
+🔐  Variables d’environnement attendues :
+───────────────────────────────
+- `DATAGOUV_ENV` : "demo" ou "www" (défaut = demo)
+- `DEMO_DATA_GOUV_KEY` : clé API pour l’environnement de test
+- `DATA_GOUV_KEY` : clé API pour la production (www)
+
+───────────────────────────────
+🧩  Bonnes pratiques :
+───────────────────────────────
+- Tester d’abord en simulation sur DEMO avant de passer en écriture réelle.
 - Sauvegarder les métadonnées avant toute mise à jour importante.
+- Utiliser un utilisateur membre de l’organisation pour les accès authentifiés.
 """
 
 import os
@@ -61,7 +74,7 @@ if not API_KEY and UPDATE_MODE:
 
 print("───────────────────────────────")
 print(f"🟢 Environnement : {ENVIRONMENT.upper()}")
-print(f"🔓 Mode : {'écriture' if UPDATE_MODE else 'simulation (aucune écriture)'}")
+print(f"🔓 Mode : {'écriture réelle' if UPDATE_MODE else 'simulation (aucune écriture)'}")
 print(f"🏛️ Organisation ciblée : {ORG_ID}")
 print(f"🏷️ Tag à ajouter : {TAG}")
 print("───────────────────────────────\n")
@@ -73,7 +86,12 @@ client = Client(environment=ENVIRONMENT, api_key=API_KEY)
 print(f"Connexion à l’environnement {ENVIRONMENT.upper()}...")
 
 organization = client.organization(ORG_ID)
-print(f"Organisation : {organization.title}\n")
+org_label = getattr(organization, "name", getattr(organization, "slug", organization.id))
+print("───────────────────────────────")
+print(f"🏛️ Organisation : {org_label}")
+print(f"🔗 Page : {getattr(organization, 'page', 'Non disponible')}")
+print(f"📚 Chargement des jeux de données en cours…")
+print("───────────────────────────────\n")
 
 errors = []
 added = 0
@@ -83,7 +101,10 @@ total = 0
 # ───────────────────────────────
 # Parcours des datasets
 # ───────────────────────────────
-for ds in organization.datasets:
+datasets = list(organization.datasets)
+print(f"📦 {len(datasets)} jeux de données détectés.\n")
+
+for ds in datasets:
     total += 1
     ds_id = getattr(ds, "id", None)
     title = getattr(ds, "title", None) or getattr(ds, "name", None)
