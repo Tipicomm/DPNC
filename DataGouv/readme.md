@@ -29,10 +29,6 @@ de données d'une organisation DataGouv (ici le Ministère de la Culture).
    * environment : "demo" ou "www" (production)
    * update_mode : "True" (écriture) ou "False" (simulation)
 
-#### 🔐 Secrets requis :
-   * DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
-   * DATAGOUV_API_KEY   : clé API pour https://data.gouv.fr
-
 #### 🗂️ Fichiers utilisés :
  * Script principal : DataGouv/scripts/addTagAllDemo.py
    - Fichier YAML : .github/workflows/add-tag-all-datasets-demo.yml
