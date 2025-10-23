@@ -12,7 +12,7 @@ Lors de la comparaison des sauvegardes DataGouv, on applique la convention suiva
 > Les fichiers et colonnes suivent donc l’ordre : `X → Y` (ex. `title_prod`, `title_demo`).
 
 
-### Ajouter un tag aux datasets ; 📘 Workflow : addTagAll
+## Ajouter un tag aux datasets ; 📘 Workflow : addTagAll
  ─────────────────────────────────────────────────────────────
 
 🎯 Objectif :
