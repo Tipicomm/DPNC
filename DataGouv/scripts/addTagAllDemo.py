@@ -9,7 +9,7 @@ s’il n’est pas déjà présent.
 
 Fonctionne sur les environnements :
   - DEMO (https://demo.data.gouv.fr)
-  - WWW (production, https://www.data.gouv.fr)
+  - WWW (production, https://data.gouv.fr)
 
 ───────────────────────────────
 ⚙️  Fonctionnement :
