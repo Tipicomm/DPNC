@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────────────
-# Workflow : addTagAllDemo (demo)
-# But : Ajouter le tag "Culture" à tous les jeux de données
-#       d’une organisation DataGouv (environnement DEMO)
+# Workflow : addTagAll
+# But : Ajouter le tag "culture" à tous les jeux de données
+#       d’une organisation DataGouv (DEMO ou PROD selon choix)
 #
 # ⚙️ Ce workflow exécute le script Python :
 #     DataGouv/scripts/addTagAllDemo.py
@@ -10,21 +10,29 @@
 #   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
 #   - DATA_GOUV_KEY : clé API pour https://data.gouv.fr
 #
-# 💡 Remarques :
-# - Le script lit la variable d’environnement DATAGOUV_ENV
-#   pour choisir l’environnement (ici "demo").
-# - Aucun changement réel n’est effectué tant que UPDATE_MODE=False
-#   dans le script Python.
-# - Un fichier de backup (backup_tags.json) peut être commité automatiquement.
+# 💡 Paramètres configurables à l’exécution :
+#   - environment : "demo" ou "www"
+#   - update_mode : "True" (écriture) ou "False" (simulation)
+#
+# ✅ Le script lit DATAGOUV_ENV et UPDATE_MODE depuis ces entrées.
 # ─────────────────────────────────────────────────────────────
 
-name: addTagAllDemo (demo)
+name: addTagAll
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environnement cible (demo ou www)"
+        required: true
+        default: "demo"
+      update_mode:
+        description: "Mode de mise à jour (True = écriture réelle, False = simulation)"
+        required: true
+        default: "False"
 
 permissions:
-  contents: write  # nécessaire pour le git push
+  contents: write  # nécessaire pour le git push du backup
 
 jobs:
   add-tag-culture:
@@ -46,31 +54,34 @@ jobs:
           pip install --upgrade pip
           pip install datagouv-client httpx
 
-      - name: 🚀 Exécution du script addTagAllDemo.py (DEMO)
+      - name: 🚀 Exécution du script addTagAllDemo.py
         env:
-          DATAGOUV_ENV: www
-          DEMO_DATA_GOUV_KEY: ${{ secrets.DATA_GOUV_KEY }}
+          DATAGOUV_ENV: ${{ github.event.inputs.environment }}
+          UPDATE_MODE: ${{ github.event.inputs.update_mode }}
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+          DATA_GOUV_KEY: ${{ secrets.DATA_GOUV_KEY }}
         run: |
           echo "───────────────────────────────"
-          echo "Lancement du script addTagAllDemo.py sur DEMO..."
+          echo "Lancement du script addTagAllDemo.py"
+          echo "Environnement : $DATAGOUV_ENV"
+          echo "Mode : $UPDATE_MODE"
           echo "───────────────────────────────"
           python DataGouv/scripts/addTagAllDemo.py
 
       - name: 🗂️ Commit & push backup file (si présent)
-        if: success()  # n'exécuter cette étape que si le script a réussi
+        if: success()  # seulement si le script s’est bien exécuté
         run: |
           set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          echo "🔍 Vérification du fichier de backup..."
           BACKUP_PATH="DataGouv/scripts/backup_tags.json"
+          echo "🔍 Vérification du fichier de backup..."
 
           if [ -f "$BACKUP_PATH" ]; then
             echo "✅ Fichier de backup détecté : $BACKUP_PATH"
             git fetch origin main
             git checkout main
-
             git add "$BACKUP_PATH"
             git commit -m "chore: update backup_tags.json [skip ci]" || echo "Aucune modification à commettre"
             git push origin main
@@ -82,5 +93,5 @@ jobs:
       - name: ✅ Fin du workflow
         run: |
           echo "───────────────────────────────"
-          echo "Workflow addTagAllDemo (demo) terminé."
+          echo "Workflow addTagAll terminé."
           echo "───────────────────────────────"
