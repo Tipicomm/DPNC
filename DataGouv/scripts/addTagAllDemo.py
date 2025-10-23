@@ -8,8 +8,8 @@ tous les jeux de données d’une organisation et ajouter le tag "culture"
 s’il n’est pas déjà présent.
 
 Fonctionne sur les environnements :
-  - DEMO (https://demo.data.gouv.fr)
-  - WWW (production, https://data.gouv.fr)
+  - demo (https://demo.data.gouv.fr)
+  - www (production, https://data.gouv.fr)
 
 ───────────────────────────────
 ⚙️  Fonctionnement :
@@ -46,7 +46,7 @@ from datagouv import Client
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TAG = "culture"                      # Tag à ajouter (sensible à la casse)
 UPDATE_MODE = False                  # ⚠️ Simulation si False (aucune écriture)
-DEFAULT_ENV = "demo"                  # Environnement par défaut si non précisé
+DEFAULT_ENV = "www"                  # Environnement par défaut si non précisé
 
 # ───────────────────────────────
 # Environnement et clé API
@@ -124,6 +124,7 @@ for ds in datasets:
     if TAG not in tags:
         new_tags = tags + [TAG]
         print(f"   [Prévu] Ajout du tag : {TAG}")
+        print(f"   [Liste Prévue] Tags après ajout : {new_tags}")
 
         if UPDATE_MODE:
             try:
