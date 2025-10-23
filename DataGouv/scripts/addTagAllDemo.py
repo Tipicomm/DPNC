@@ -44,7 +44,7 @@ from datagouv import Client
 # Configuration utilisateur
 # ───────────────────────────────
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
-TAG = "Culture"                      # Tag à ajouter (sensible à la casse)
+TAG = "culture"                      # Tag à ajouter (sensible à la casse)
 UPDATE_MODE = False                  # ⚠️ Simulation si False (aucune écriture)
 DEFAULT_ENV = "demo"                 # Environnement par défaut si non précisé
 
