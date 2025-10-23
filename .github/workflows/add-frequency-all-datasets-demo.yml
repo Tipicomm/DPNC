@@ -1,23 +1,23 @@
 # ─────────────────────────────────────────────────────────────
-# Workflow : addTagCulture (demo)
+# Workflow : addTagAllDemo (demo)
 # But : Ajouter le tag "Culture" à tous les jeux de données
 #       d’une organisation DataGouv (environnement DEMO)
 #
 # ⚙️ Ce workflow exécute le script Python :
-#     DataGouv/scripts/add_tag_culture.py
+#     DataGouv/scripts/addTagAllDemo.py
 #
 # 🔐 Secrets requis :
 #   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
 #
 # 💡 Remarques :
-# - Le script utilise la variable d’environnement DATAGOUV_ENV
+# - Le script lit la variable d’environnement DATAGOUV_ENV
 #   pour choisir l’environnement (ici "demo").
 # - Aucun changement réel n’est effectué tant que UPDATE_MODE=False
 #   dans le script Python.
 # - Un fichier de backup (backup_tags.json) peut être commité automatiquement.
 # ─────────────────────────────────────────────────────────────
 
-name: addTagCulture (demo)
+name: addTagAllDemo (demo)
 
 on:
   workflow_dispatch:
@@ -45,15 +45,15 @@ jobs:
           pip install --upgrade pip
           pip install datagouv-client httpx
 
-      - name: 🚀 Exécution du script d’ajout de tag (DEMO)
+      - name: 🚀 Exécution du script addTagAllDemo.py (DEMO)
         env:
           DATAGOUV_ENV: demo
           DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
         run: |
           echo "───────────────────────────────"
-          echo "Lancement du script add_tag_culture.py sur DEMO..."
+          echo "Lancement du script addTagAllDemo.py sur DEMO..."
           echo "───────────────────────────────"
-          python DataGouv/scripts/add_tag_culture.py
+          python DataGouv/scripts/addTagAllDemo.py
 
       - name: 🗂️ Commit & push backup file (si présent)
         if: success()  # n'exécuter cette étape que si le script a réussi
@@ -81,5 +81,5 @@ jobs:
       - name: ✅ Fin du workflow
         run: |
           echo "───────────────────────────────"
-          echo "Workflow addTagCulture (demo) terminé."
+          echo "Workflow addTagAllDemo (demo) terminé."
           echo "───────────────────────────────"
