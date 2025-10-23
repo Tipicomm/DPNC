@@ -1,45 +1,85 @@
-# .github/workflows/add-frequency-all-datasets-demo.yml
-name: addFrequencyAllDatasets (demo)
+# ─────────────────────────────────────────────────────────────
+# Workflow : addTagCulture (demo)
+# But : Ajouter le tag "Culture" à tous les jeux de données
+#       d’une organisation DataGouv (environnement DEMO)
+#
+# ⚙️ Ce workflow exécute le script Python :
+#     DataGouv/scripts/add_tag_culture.py
+#
+# 🔐 Secrets requis :
+#   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
+#
+# 💡 Remarques :
+# - Le script utilise la variable d’environnement DATAGOUV_ENV
+#   pour choisir l’environnement (ici "demo").
+# - Aucun changement réel n’est effectué tant que UPDATE_MODE=False
+#   dans le script Python.
+# - Un fichier de backup (backup_tags.json) peut être commité automatiquement.
+# ─────────────────────────────────────────────────────────────
+
+name: addTagCulture (demo)
 
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write  # nécessaire pour le git push
+
 jobs:
-  add-frequency:
+  add-tag-culture:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: 🧩 Checkout du dépôt
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # important pour éviter les conflits de push
+          fetch-depth: 0  # évite les problèmes lors du push
 
-      - name: Setup Python
+      - name: 🐍 Installation de Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install datagouv-client httpx
-
-      - name: Run frequency fix script
-        env:
-          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
-        run: python DataGouv/scripts/fixFrequenciesSafe.py
-
-      - name: Commit & push backup file
+      - name: 📦 Installation des dépendances
         run: |
+          pip install --upgrade pip
+          pip install datagouv-client httpx
+
+      - name: 🚀 Exécution du script d’ajout de tag (DEMO)
+        env:
+          DATAGOUV_ENV: demo
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+        run: |
+          echo "───────────────────────────────"
+          echo "Lancement du script add_tag_culture.py sur DEMO..."
+          echo "───────────────────────────────"
+          python DataGouv/scripts/add_tag_culture.py
+
+      - name: 🗂️ Commit & push backup file (si présent)
+        if: success()  # n'exécuter cette étape que si le script a réussi
+        run: |
+          set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin main
-          git checkout main
+          echo "🔍 Vérification du fichier de backup..."
+          BACKUP_PATH="DataGouv/scripts/backup_tags.json"
 
-          # Vérifie si le fichier de backup existe
-          if [ -f "DataGouv/scripts/backup_frequencies.json" ]; then
-            echo "✅ Fichier trouvé, on le commit."
-            git add DataGouv/scripts/backup_frequencies.json
-            git commit -m "chore: update backup_frequencies.json [skip ci]" || echo "Aucune modification à commettre"
+          if [ -f "$BACKUP_PATH" ]; then
+            echo "✅ Fichier de backup détecté : $BACKUP_PATH"
+            git fetch origin main
+            git checkout main
+
+            git add "$BACKUP_PATH"
+            git commit -m "chore: update backup_tags.json [skip ci]" || echo "Aucune modification à commettre"
             git push origin main
+            echo "📤 Backup commité et poussé avec succès."
           else
-            echo "⚠️ Aucun fichier backup_frequencies.json trouvé, rien à commettre."
+            echo "ℹ️ Aucun fichier de backup trouvé, rien à commettre."
           fi
+
+      - name: ✅ Fin du workflow
+        run: |
+          echo "───────────────────────────────"
+          echo "Workflow addTagCulture (demo) terminé."
+          echo "───────────────────────────────"
