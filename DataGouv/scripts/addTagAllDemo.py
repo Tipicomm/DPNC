@@ -46,7 +46,7 @@ from datagouv import Client
 ORG_ID = "534fff91a3a7292c64a77f73"  # Ministère de la Culture
 TAG = "culture"                      # Tag à ajouter (sensible à la casse)
 UPDATE_MODE = False                  # ⚠️ Simulation si False (aucune écriture)
-DEFAULT_ENV = "www"                  # Environnement par défaut si non précisé
+DEFAULT_ENV = "demo"                  # Environnement par défaut si non précisé
 
 # ───────────────────────────────
 # Environnement et clé API
