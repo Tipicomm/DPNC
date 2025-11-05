@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────
+# Workflow : removeTagSelected
+# But : Supprimer le tag "deps" d’une liste spécifique de jeux
+#       de données sur DataGouv (DEMO ou PROD selon choix)
+#
+# ⚙️ Ce workflow exécute le script Python :
+#     DataGouv/scripts/remove_tag_selected_datasets.py
+#
+# 🔐 Secrets requis :
+#   - DEMO_DATA_GOUV_KEY : clé API pour https://demo.data.gouv.fr
+#   - DATAGOUV_API_KEY   : clé API pour https://data.gouv.fr
+#
+# 💡 Paramètres configurables à l’exécution :
+#   - environment : "demo" ou "www"
+#   - update_mode : "True" (écriture réelle) ou "False" (simulation)
+#
+# ✅ Le script lit DATAGOUV_ENV et UPDATE_MODE depuis ces entrées.
+# ─────────────────────────────────────────────────────────────
+
+name: removeTagSelected
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environnement cible (demo ou www)"
+        required: true
+        default: "demo"
+      update_mode:
+        description: "Mode de mise à jour (True = écriture réelle, False = simulation)"
+        required: true
+        default: "False"
+
+permissions:
+  contents: write  # nécessaire pour le git push du log
+
+jobs:
+  remove-tag-deps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧩 Checkout du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # évite les erreurs lors du push
+
+      - name: 🐍 Installation de Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Installation des dépendances
+        run: |
+          pip install --upgrade pip
+          pip install datagouv-client httpx
+
+      - name: 🚀 Exécution du script remove_tag_selected_datasets.py
+        env:
+          DATAGOUV_ENV: ${{ github.event.inputs.environment }}
+          UPDATE_MODE: ${{ github.event.inputs.update_mode }}
+          DEMO_DATA_GOUV_KEY: ${{ secrets.DEMO_DATA_GOUV_KEY }}
+          DATAGOUV_API_KEY: ${{ secrets.DATAGOUV_API_KEY }}
+        run: |
+          echo "───────────────────────────────"
+          echo "Lancement du script remove_tag_selected_datasets.py"
+          echo "Environnement : $DATAGOUV_ENV"
+          echo "Mode : $UPDATE_MODE"
+          echo "───────────────────────────────"
+          mkdir -p DataGouv/logs
+          python DataGouv/scripts/remove_tag_selected_datasets.py | tee DataGouv/logs/remove_tag_selected_$(date +'%Y%m%d_%H%M%S').log
+
+      - name: 🗂️ Commit & push du log (si présent)
+        if: success()
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          LOG_PATH=$(ls -t DataGouv/logs/remove_tag_selected_*.log | head -n 1)
+          echo "🔍 Vérification du fichier de log..."
+
+          if [ -f "$LOG_PATH" ]; then
+            echo "✅ Fichier de log détecté : $LOG_PATH"
+            git fetch origin main
+            git checkout main
+            git add "$LOG_PATH"
+            git commit -m "chore: log suppression tag DEPS [skip ci]" || echo "Aucune modification à commettre"
+            git push origin main
+            echo "📤 Log commité et poussé avec succès."
+          else
+            echo "ℹ️ Aucun fichier de log trouvé, rien à commettre."
+          fi
+
+      - name: ✅ Fin du workflow
+        run: |
+          echo "───────────────────────────────"
+          echo "Workflow removeTagSelected terminé."
+          echo "───────────────────────────────"
