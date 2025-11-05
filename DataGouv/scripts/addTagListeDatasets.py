@@ -27,7 +27,7 @@ from datagouv import Client
 # ───────────────────────────────
 # Configuration
 # ───────────────────────────────
-TAG = "DEPS"
+TAG = "deps-doc"
 DEFAULT_ENV = "demo"
 
 # Liste fournie (datasets à traiter uniquement)
