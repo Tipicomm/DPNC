@@ -1,0 +1,155 @@
+───────────────────────────────
+🟢 Environnement : WWW
+🔓 Mode : SIMULATION
+🏷️ Tag à supprimer : deps
+📋 Nombre de datasets ciblés : 35
+───────────────────────────────
+
+→ Données du système de déclaration de billetterie du spectacle vivant Sibil (67f7424b137aad8bcb9ac731)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Fréquentation des monuments nationaux (6545c1e0bcab951e5a4090dd)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses culturelles des communes (651e3557c5f0fe7fee6e33b0)
+   Tags actuels : ['administration', 'budget-culturel', 'commune', 'culture', 'depenses-publiques', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['administration', 'budget-culturel', 'commune', 'culture', 'depenses-publiques', 'ministeredelaculture']
+→ Dépenses culturelles des régions (64ae255bbc600d7a3468ee64)
+   Tags actuels : ['collectivite-territoriale', 'culture-locale', 'depenses-publiques', 'deps', 'financement-public', 'politique-culturelle']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['collectivite-territoriale', 'culture-locale', 'depenses-publiques', 'financement-public', 'politique-culturelle']
+→ Entreprises : Nombre d'établissements culturels actifs par zone d'emploi (635a02568c0544dea690f691)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Professions culturelles par région (635a0255ae37fbcc1290f692)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : Salariés des secteurs culturels par département (635a0255905f648a9e90f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : Salariés des secteurs culturels par zone d'emploi (635a02558c0544dea690f690)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : Nombre d'établissements culturels actifs par département (635a0254f931c40e6390f690)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Professions culturelles par zone d'emploi (635a0252f931c40e6390f68f)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Professions culturelles par département (635a0251ae37fbcc1290f691)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : Salariés des secteurs culturels par région (635a0251dc41dc073190f690)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Actifs des secteurs culturels par zone d'emploi (635a0251dc41dc073190f68f)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Actifs des secteurs culturels par département (635a0251e708959bd890f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : Nombre d'établissements culturels actifs par région (6358b1077649e63c98487174)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Emploi : Actifs des secteurs culturels par région (6358b1057280fb6a2a90f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : évolution du chiffres d'affaires 2020 des salles de cinémas (6350c887ecad6abcaa90f690)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ JO 2024 : communes labellisées Terres de jeux 2024 (6350c887d95d644f9c487174)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : évolution du chiffre d'affaires 2020 du spectacle vivant (6350c887210de3789f90f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ JO 2024 : régions labellisées Terres de jeux 2024 (6350c887cec32b14bc90f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Entreprises : évolution du chiffre d'affaires 2020 des librairies (6350c886dbe7e0f35f90f68e)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ JO 2024 : EPCI labellisés Terres de jeux 2024 (6350c885ecad6abcaa90f68f)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses culturelles des intercommunalités (6340f607b1c7e116b5eacfa4)
+   Tags actuels : ['budget-culturel', 'culture', 'depenses-fonctionnement', 'depenses-investissement', 'deps', 'intercommunalite', 'ministeredelaculture', 'politique-culturelle']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['budget-culturel', 'culture', 'depenses-fonctionnement', 'depenses-investissement', 'intercommunalite', 'ministeredelaculture', 'politique-culturelle']
+→ Dépenses culturelles des intercommunalités par secteur (6340f606d04658a4a4eacfa4)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses culturelles des départements (6340f606a6550b8bf4eacfa4)
+   Tags actuels : ['budget', 'collectivite', 'culture', 'deps', 'ministeredelaculture', 'politique-culturelle', 'subvention']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['budget', 'collectivite', 'culture', 'ministeredelaculture', 'politique-culturelle', 'subvention']
+→ Dépenses culturelles des départements par secteur (6340f6052cbb8188ebeacfa4)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Plan de relance : projets soutenus par le ministère de la Culture (633bafd4a3f5260a3ceacfa6)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Contrats départementaux lecture (633669cd02685f4c8beacfa5)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses du ministère de la Culture par département (633518ec6b559831b7eacfa4)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses du ministère de la Culture en région (633518ecb5deca30cdeacfa4)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Dépenses culturelles des régions par secteur (633518ec7d88ad6fb4eacfa4)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Liste des festivals en France (62cf95993d99f22480f49334)
+   Tags actuels : ['arts-plastiques', 'cinema', 'culture', 'deps', 'festival', 'livre-lecture', 'ministeredelaculture', 'musique', 'spectacle-vivant']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['arts-plastiques', 'cinema', 'culture', 'festival', 'livre-lecture', 'ministeredelaculture', 'musique', 'spectacle-vivant']
+→ Base des lieux et équipements culturels (Basilic) (61777ddaa9101d073e5506cd)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+→ Fréquentation des Musées de France (5af120e7b595087cfabcde82)
+   Tags actuels : ['culture', 'deps', 'frequentation', 'ministeredelaculture', 'musees']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'frequentation', 'ministeredelaculture', 'musees']
+→ Pratiques culturelles des français - Evolution 1973-2008 (5af120e5a3a7295e54c41a13)
+   Tags actuels : ['culture', 'deps', 'ministeredelaculture']
+   [Prévu] Suppression du tag : deps
+   [Liste Prévue] Tags après suppression : ['culture', 'ministeredelaculture']
+
+───────────────────────────────
+✅ Traitement terminé (WWW)
+📊 Jeux de données traités : 35
+🗑️ Tags supprimés : 0
+ℹ️ Non concernés (tag absent) : 0
+❌ Erreurs : 0
+───────────────────────────────
