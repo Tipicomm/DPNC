@@ -1,6 +1,6 @@
 """
 But :
-Ajouter le tag "DEPS" uniquement à une liste spécifique de jeux de données
+Ajouter le tag "deps-doc" uniquement à une liste spécifique de jeux de données
 sur data.gouv.fr (ou demo.data.gouv.fr).
 
 ───────────────────────────────
