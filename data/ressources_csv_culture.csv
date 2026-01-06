@@ -146,6 +146,7 @@ dataset.id,dataset.title,id
 5af12108a3a7295e54c41a21,Répertoire des ressources documentaires du ministère de la Culture,4893426d-7b41-411b-9230-1de8b32af4d3
 5af12105a3a7295e54c41a1f,Aide à l’exemplaire des titres de presse portés,86d3a31d-1132-45d6-97a1-1d74df9cf492
 5af12104b595087cfabcde8e,"Aide aux quotidiens régionaux, départementaux et locaux à faibles ressources de petites annonces",871cbb48-1f2e-452c-bd82-18adb55fc8ff
+5af12101b595087cfabcde8d,Recensement des circulaires de tri et de sélection des archives publiques,bb30237b-307d-4f36-8387-a421f46a4659
 5af12101b595087cfabcde8d,Recensement des circulaires de tri et de sélection des archives publiques,041bec1a-2941-4b05-8423-4f586a3aca5c
 5af120ffa3a7295e54c41a1d,Images du Palais-Royal ,46ff0faf-3ffb-49a0-92d9-a95a571621f5
 5af120fcb595087cfabcde8b,Semaine de la langue française et de la francophonie 2018,995dfb5c-98a9-4599-bc08-3ddc78f77e21
@@ -162,8 +163,13 @@ dataset.id,dataset.title,id
 5af120e2a3a7295e54c41a11,Aide au pluralisme de la presse périodique régionale et locale,bb5aba07-07a6-4968-9068-8d7b5a629297
 5af120d9b595087cfabcde7a,Aide à la distribution de la presse quotidienne nationale,d4323e0c-608c-414d-8e65-badfbe718fa9
 5ac44defb5950877d5c04a3c,Semaine de la langue française et de la francophonie 2018,0856bf5f-c225-44d3-ba58-785527b3501f
-5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales,1c3200cd-ceaf-4eea-8e0a-5644735f8bc6
-5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales,97ad7c26-13e7-47a3-89ac-a66997c1d3a1
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,80f1fce2-0215-431a-ad51-77ae6a826be4
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,2b21033a-a255-4866-aea6-c6f9888ff778
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,b0ee8f0b-133d-4ab4-a8ac-8e5ff1ef2dfc
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,48fe09ba-d731-473e-8984-85228bfbb8cf
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,3d372229-2efa-49bb-b382-4516fcf2895a
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,2f65f85f-50c0-43d6-91f3-b5579aa2bf59
+5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,21188df9-7528-4009-b0e2-d1acc59dd8f8
 59855033a3a729783d0f577f,Répertoire des ressources documentaires du ministère de la Culture,ca90ff77-b706-4fb2-9727-2044c82552f0
 59855033a3a729783d0f577f,Répertoire des ressources documentaires du ministère de la Culture,9f67087a-7724-452a-b5a6-92dd9083e54d
 59592254a3a7291dd09c8178,Grands documents et images de l'histoire de France conservés par les Archives nationales,6e796075-b2f8-4b28-a459-cba4e1d19799
