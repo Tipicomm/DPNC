@@ -112,13 +112,11 @@ dataset.id,dataset.title,id
 61b4226ca5919d3b718b8e9e,Catalogue des données du ministère de la Culture,a47a4634-b3e9-4d4d-a005-0f5b36237c0a
 61777ddaa9101d073e5506cd,Base des lieux et équipements culturels (Basilic),dced78ee-0823-4b61-86e6-57717308d4e4
 615bcdd729be9185b3b0681a,Liste des objets protégés au titre des Monuments historiques,3e8ed2dd-4052-4f93-ad19-ef71016ab7b4
-615bcdd729be9185b3b0681a,Liste des objets protégés au titre des Monuments historiques,226c64cb-abf1-4dc8-b9ce-c07c9e622015
 6125c059dc295c5407ef6a5b,Les activités culturelles et pédagogiques dans les services d’archives,190686bf-4d8c-40a2-9996-f85e4cee64a4
 60cc1a66b5b801fb222fcb3b,Les dénaturalisés de Vichy,e3b6d9ad-12c4-4e37-b787-f6a800744541
 60c03d2332fb81d6b12fcb3b,Les expositions itinérantes empruntables dans les services d’archives,0c59c867-dddd-422d-bbf8-4205f20cf31e
 60a48db81b21780934f75ba2,Les protocoles de remise des archives des cabinets présidentiels et ministériels 1976-2020,1c2cdfc8-cbd7-4fca-81de-21729bf07197
 6042fe6ba3ef9e914a7ce5a3,Liste des édifices labellisés « Architecture contemporaine remarquable » (ACR),80b6ac20-41b1-400c-8860-af201ff7dcb6
-6042fe6ba3ef9e914a7ce5a3,Liste des édifices labellisés « Architecture contemporaine remarquable » (ACR),da5d0ee3-bd1f-4ac1-af23-3626811a73b5
 5fc9b4729dbf684fecb13bae,Licences et demandes de licences d'entrepreneurs de spectacles vivants,fb6c3b2e-da8c-4e69-a719-6a96329e4cb2
 5f7fe0822a00717c597ce91e,Activité des services d’archives en France,aa0ba7de-925d-4dc7-abfb-3cdbba1f8fcb
 5f7fe0822a00717c597ce91e,Activité des services d’archives en France,a7dee48e-6443-4a3f-89e6-4a7d30f97aca
@@ -163,7 +161,6 @@ dataset.id,dataset.title,id
 5af120e7b595087cfabcde82,Fréquentation des Musées de France,7708e380-e7f8-4b56-936a-5d2a262d852d
 5af120e5a3a7295e54c41a13,Pratiques culturelles des français - Evolution 1973-2008,7479572c-653f-4dc0-8472-6f9982a95196
 5af120e5b595087cfabcde81,Immeubles protégés au titre des Monuments Historiques,3a52af4a-f9da-4dcc-8110-b07774dfb3bc
-5af120e5b595087cfabcde81,Immeubles protégés au titre des Monuments Historiques,540005b2-f39d-48f8-a500-664f01982bd9
 5af120e3b595087cfabcde80,Institutions culturelles productrices de ressources pédagogiques en ligne,0ee48665-5ffd-4d3c-b5c6-3a4246aaa6f2
 5af120e2a3a7295e54c41a11,Aide au pluralisme de la presse périodique régionale et locale,bb5aba07-07a6-4968-9068-8d7b5a629297
 5af120d9b595087cfabcde7a,Aide à la distribution de la presse quotidienne nationale,d4323e0c-608c-414d-8e65-badfbe718fa9
