@@ -4,6 +4,8 @@ dataset.id,dataset.title,id
 695b8b6f6bf16db672fa28df,Festivals financés au titre du programme 131 : Création,e4761b32-c601-4ec9-b361-658315d07389
 693a8ab3b1eb82dec8ffd5d0,La commande publique d'oeuvres d'art (1800-1969) : base ARCADE,c8315bad-58b5-409a-9933-615fb5b72840
 68f89f4286ea08466bdef24a,Base des lieux culturels ouverts,4bd1a20e-4dfd-40ff-bd4d-c714f7085de8
+68e8bbfa16a41347e37c821c,Mémoire – illustration Mérimée et Palissy (Monuments historiques),a99781f1-f760-4dbb-9c83-e1524ef1aff5
+68e8b8a4ca89b8efcd6bf154,Mémoire – fonds photographiques de la MPP,fa4c3df7-7900-4094-97ff-4b0764adc506
 68e3b8f62e94755428f0270a,Corpus de documents numérisés des Archives nationales ,944d7b79-46a6-437d-8af4-24cc99484ba9
 68be9c274be3f141b3470701,Contrôle de la presse française en langue étrangère (1890-1940),02543ec8-dbb0-4e54-8f48-5cf3aa13feb0
 683e7360559798dcce88e12e,Activité temporaire en France d’entrepreneurs de spectacles établis hors de France,e6a3517f-dac4-446f-bffd-02216be7bfb0
@@ -43,7 +45,7 @@ dataset.id,dataset.title,id
 64f94bd6fe99708f22ae9bff,Cartographie des démarches du ministère de la Culture accessibles en ligne,a6a6a5cc-5c7f-4539-ac84-7f17abe32192
 64d30fc7a4b93f07e39f7201,Veille internationale du ministère de la Culture,18a0c6fc-0ad3-4091-a51a-d8e8f3194482
 64bf48ef0f6336d5979f7201,Journées européennes du patrimoine 2023,8d8394d5-3be0-46ab-973e-0ada35dfe223
-64ae255bbc600d7a3468ee64,Dépenses culturelles des régions,ac46400b-7e41-416e-84a0-a60d4c566210
+64ae255bbc600d7a3468ee64,Dépenses culturelles des régions,4dfccc0d-962c-4800-8599-b47730823a33
 6476c67db705583749613674,Liste des organismes bénéficiant de l'exception au droit d’auteur en faveur des personnes en situation de handicap,191f90e8-a390-4d40-8150-7b3c36b76b06
 645dba61b96d7efc86f10162,Notices d'oeuvres du Centre de recherche et de restauration des musées de France (C2RMF),922c5dd5-48c0-415b-a2f6-cabfd7bf1832
 645dba5e689c8bd47ea0842c,Notices de documents du Centre de recherche et de restauration des musées de France (C2RMF),d0f336f8-7592-4dc1-a881-4dc93c9c9fbc
@@ -91,6 +93,7 @@ dataset.id,dataset.title,id
 633518ecb5deca30cdeacfa4,Dépenses du ministère de la Culture en région,70a59c37-bc10-4d85-add0-fe4123f55232
 633518ec7d88ad6fb4eacfa4,Dépenses culturelles des régions par secteur,4abb95e9-cea3-4f81-aa32-355fa22d48ff
 6308455a35e36b025049e2dc,Nuits de la lecture 2022,e0b0cf12-bb0d-401c-90f2-9c66273e62a8
+62da21021d3f7025e69ef260,Dépenses culturelles des communes,f27f0329-1a0c-487c-9186-cc6f387fe155
 62cf95993d99f22480f49334,Liste des festivals en France,47ac11c2-8a00-46a7-9fa8-9b802643f975
 62ba7ce5f275fa925aa1f848,Déplacements des présidents de la République et des premiers ministres depuis 1945,d6df4e06-d55c-4616-a974-2b53d0d4e025
 62b6885976485f1b15a1f84a,Tombes militaires de 1870-1871,732b6eae-f13d-442c-9ce4-e8a9edbef2cd
