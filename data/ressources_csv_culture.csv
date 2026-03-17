@@ -30,7 +30,7 @@ dataset.id,dataset.title,id
 659d7d919a5ff8cfcbdf109b,francearchives.fr - Les lieux des archives,82ffb75f-8081-4627-9a03-6c45f579fd9f
 659d7d8e9a5ff8cfcbdf109a,Règles juridiques d’accès aux documents publics,381dd737-9e74-44b0-877d-d6dc6772205a
 65962d7b574fe6e46fac1833,Les aides déconcentrées pour l’Eté Culturel,872361c7-fc90-4257-b96f-64422c0036ea
-658509e59db812017fac1832,Plans cadastraux des immeubles de Paris 1809-1856,b060eb57-1f33-4462-8b8e-781bf7a735f8
+658509e59db812017fac1832,Plans cadastraux des immeubles de Paris 1809-1856,1db291e7-5f05-430b-a1f7-61b2f29166dd
 6573e67f05ed2c02b4d630ac,Aides nationales à la création pour les arts du cirque et pour les arts de la rue,434bbf5b-3a1b-46e1-9028-8201c399482b
 6573e67f509cbbd22ed630ac,Aides à l'itinérance des cirques de famille,00a7ad0e-89fb-47e7-96a9-4906b4bed66d
 6573e67f33c6a8a6ffd630ac,Aides au Compagnonnage Plateau et Auteur,2dcd3ae4-9f59-465d-beff-7800713c55aa
@@ -43,6 +43,7 @@ dataset.id,dataset.title,id
 64ffe268165699ecb9ae9bff,Aide au pluralisme des titres ultramarins,ea9eab5e-6a34-4afb-b6b6-e7e0d89a3538
 64ffe26548c71b35f5bedb7a,Aide au pluralisme des services de presse tout en ligne,90207bad-994d-4998-8cac-531842a709f8
 64f94bd6fe99708f22ae9bff,Cartographie des démarches du ministère de la Culture accessibles en ligne,a6a6a5cc-5c7f-4539-ac84-7f17abe32192
+64d30fc7a4b93f07e39f7201,Veille internationale du ministère de la Culture,1fc3004e-2696-4c6e-a364-cba782fd0a09
 64d30fc7a4b93f07e39f7201,Veille internationale du ministère de la Culture,18a0c6fc-0ad3-4091-a51a-d8e8f3194482
 64bf48ef0f6336d5979f7201,Journées européennes du patrimoine 2023,8d8394d5-3be0-46ab-973e-0ada35dfe223
 64ae255bbc600d7a3468ee64,Dépenses culturelles des régions,4dfccc0d-962c-4800-8599-b47730823a33
