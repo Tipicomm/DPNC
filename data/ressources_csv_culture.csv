@@ -27,8 +27,8 @@ dataset.id,dataset.title,id
 65ea8dae877eed738c924b51,La circulation des archives en Europe et hors Europe : suivi mensuel des ventes aux enchères,31674339-3306-4072-9865-baba695bf287
 65e002188f1681146bd981d7,Les chômeurs artistiques de Paris et sa petite couronne de 1930 à 1962,bdda6a37-7f40-4988-aeb9-c573f656631b
 659d7da2cedd8b3455e75703,Notices des fonds de la bibliothèque des Archives nationales du monde du travail,8c92ca38-585e-4711-9ea2-2051375f6695
-659d7da1a28b115513e756ff,francearchives.fr - Inventaires des archives françaises,8d16f13d-b29a-43a6-a407-f072eef051df
-659d7d919a5ff8cfcbdf109b,francearchives.fr - Les lieux des archives,82ffb75f-8081-4627-9a03-6c45f579fd9f
+659d7da1a28b115513e756ff,Portail FranceArchives - Inventaires des archives françaises,8d16f13d-b29a-43a6-a407-f072eef051df
+659d7d919a5ff8cfcbdf109b,Portail FranceArchives - Les lieux des archives,82ffb75f-8081-4627-9a03-6c45f579fd9f
 659d7d8e9a5ff8cfcbdf109a,Règles juridiques d’accès aux documents publics,381dd737-9e74-44b0-877d-d6dc6772205a
 65962d7b574fe6e46fac1833,Les aides déconcentrées pour l’Eté Culturel,872361c7-fc90-4257-b96f-64422c0036ea
 658509e59db812017fac1832,Plans cadastraux des immeubles de Paris 1809-1856,1db291e7-5f05-430b-a1f7-61b2f29166dd
@@ -135,7 +135,7 @@ dataset.id,dataset.title,id
 5d2d4e639ce2e74ea890b662,Données essentielles des conventions de subvention,bd069434-e9da-4667-8152-f63a64d0945d
 5d12ee8206e3e762c0c89a4c,Répertoire des Musées de France : base Muséofile,5ccd6238-4fb0-4b2c-b14a-581909489320
 5c90a51306e3e731ee4d34ca,Liste des Maisons des illustres,bd705a3d-e13e-4388-a0a1-100ed47cc85f
-5c89d1f49ce2e742e0e27c29,Annuaire des services d'archives publiques en France,5288eeb3-286e-465d-948c-e60d0e8f2409
+5c89d1f49ce2e742e0e27c29,Portail FranceArchives - Annuaire des services d'archives publiques en France,5288eeb3-286e-465d-948c-e60d0e8f2409
 5c67b11f06e3e727a17bb849,Fonds de soutien à l'émergence et à l'innovation dans la presse,4b2bb71b-4aa3-43fb-a50d-30c8652ae2cb
 5c5e558f06e3e7266c232bba,Aides à la presse : classement des titres de presse aides,c3a4b612-d227-43c3-8954-094ee6602005
 5c5e558f06e3e7266c232bba,Aides à la presse : classement des titres de presse aides,fdbf8702-28a8-44b9-9183-3bfdbfbd9d8b
@@ -153,7 +153,7 @@ dataset.id,dataset.title,id
 5af12108a3a7295e54c41a21,Répertoire des ressources documentaires du ministère de la Culture,4893426d-7b41-411b-9230-1de8b32af4d3
 5af12105a3a7295e54c41a1f,Aide à l’exemplaire des titres de presse portés,86d3a31d-1132-45d6-97a1-1d74df9cf492
 5af12104b595087cfabcde8e,"Aide aux quotidiens régionaux, départementaux et locaux à faibles ressources de petites annonces",871cbb48-1f2e-452c-bd82-18adb55fc8ff
-5af12101b595087cfabcde8d,Recensement des circulaires de tri et de sélection des archives publiques,041bec1a-2941-4b05-8423-4f586a3aca5c
+5af12101b595087cfabcde8d,Portail FranceArchives - Circulaires de tri et de sélection des archives publiques,041bec1a-2941-4b05-8423-4f586a3aca5c
 5af120ffa3a7295e54c41a1d,Images du Palais-Royal ,46ff0faf-3ffb-49a0-92d9-a95a571621f5
 5af120fcb595087cfabcde8b,Semaine de la langue française et de la francophonie 2018,995dfb5c-98a9-4599-bc08-3ddc78f77e21
 5af120fca3a7295e54c41a1c,Photographies : Fonds de la guerre 14-18,b14a6c83-caca-4571-aec4-2420642cb5f7
