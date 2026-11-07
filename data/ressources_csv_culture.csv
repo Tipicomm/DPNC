@@ -23,6 +23,7 @@ dataset.id,dataset.title,id
 67b94bd15afb2aa0b8e26089,Données enquête utilisation des archives recherche universitaire,54e22221-840b-4b1b-afc8-530f93c908c4
 6691fbc4e33ff438151ff6b6,Journées européennes du patrimoine 2024,ca61c1fd-0344-4f8a-811f-885d38c2f9c1
 6691fbc3e33ff438151ff6b5,Eté culturel 2024,affd17b7-a8a6-4603-859a-1c20603a0889
+6688c177f39a615a6b1cbe7f,Aide à l'exemplaire des titres de presse postés,dba1f9a9-843b-4407-88a8-8c902796c300
 6688c177f39a615a6b1cbe7f,Aide à l'exemplaire des titres de presse postés,126591d3-a0cd-4b99-b898-dc99c0215102
 6688c176f39a615a6b1cbe7e,Label 100% EAC,1a7b5747-eac6-44ee-a50d-0f01ac70e2f8
 6646d7b175de9daf204c46b1,La circulation des archives en Europe et hors Europe : suivi des demandes de sortie hors du territoire communautaire,b85655b6-028a-48b8-9d3f-4c147c35afb6
@@ -47,7 +48,9 @@ dataset.id,dataset.title,id
 656021161c89036d00a6435b,Mentions d’événements climatiques et naturels dans les archives depuis la fin du XVIIIe siècle,1ef5c857-2185-4c06-a928-5e4c5603754a
 6545c1e0bcab951e5a4090dd,Fréquentation des monuments nationaux,4b6182c9-1989-456f-925c-d98bd363cee7
 651e35587d7cd2bd756e33b0,Les publications scientifiques dans les services d’archives,007514be-2f82-4cf8-bd34-ac7a551aafef
+64ffe268165699ecb9ae9bff,Aide au pluralisme des titres ultramarins,64ad7473-57ca-4412-a318-5ddf144afe99
 64ffe268165699ecb9ae9bff,Aide au pluralisme des titres ultramarins,ea9eab5e-6a34-4afb-b6b6-e7e0d89a3538
+64ffe26548c71b35f5bedb7a,Aide au pluralisme des services de presse tout en ligne,58300293-3f3e-43ea-8196-61b74e0f9459
 64ffe26548c71b35f5bedb7a,Aide au pluralisme des services de presse tout en ligne,90207bad-994d-4998-8cac-531842a709f8
 64f94bd6fe99708f22ae9bff,Cartographie des démarches du ministère de la Culture accessibles en ligne,a6a6a5cc-5c7f-4539-ac84-7f17abe32192
 64d30fc7a4b93f07e39f7201,Veille internationale du ministère de la Culture,1fc3004e-2696-4c6e-a364-cba782fd0a09
@@ -139,6 +142,7 @@ dataset.id,dataset.title,id
 5d12ee8206e3e762c0c89a4c,Répertoire des Musées de France : base Muséofile,5ccd6238-4fb0-4b2c-b14a-581909489320
 5c90a51306e3e731ee4d34ca,Liste des Maisons des illustres,bd705a3d-e13e-4388-a0a1-100ed47cc85f
 5c89d1f49ce2e742e0e27c29,Portail FranceArchives - Annuaire des services d'archives publiques en France,5288eeb3-286e-465d-948c-e60d0e8f2409
+5c67b11f06e3e727a17bb849,Fonds de soutien à l'émergence et à l'innovation dans la presse,b4c8722e-1caf-4c2b-addc-a501c0b5a064
 5c67b11f06e3e727a17bb849,Fonds de soutien à l'émergence et à l'innovation dans la presse,4b2bb71b-4aa3-43fb-a50d-30c8652ae2cb
 5c5e558f06e3e7266c232bba,Aides à la presse : classement des titres de presse aides,fdbf8702-28a8-44b9-9183-3bfdbfbd9d8b
 5c5e55799ce2e76ae9b7f491,Aides à la presse : classement des principaux groupes de presse aidés,cb9de9c9-775a-4b17-a3e7-69f16829329b
@@ -152,7 +156,9 @@ dataset.id,dataset.title,id
 5af1210fb595080488bcde6e,Photographies série « Monuments historiques » de 1851 à 1914,cd0c6ee7-6611-47e1-90ff-a5ab1c17c3ed
 5af1210ab595080488bcde6b,Liste des établissements de l'enseignement supérieur culture,f930f3af-c709-41ba-a92a-71159ed9a903
 5af12108a3a7295e54c41a21,Répertoire des ressources documentaires du ministère de la Culture,4893426d-7b41-411b-9230-1de8b32af4d3
+5af12105a3a7295e54c41a1f,Aide à l’exemplaire des titres de presse portés,81de0b56-0d97-43dc-9e2d-59fa2832ba38
 5af12105a3a7295e54c41a1f,Aide à l’exemplaire des titres de presse portés,86d3a31d-1132-45d6-97a1-1d74df9cf492
+5af12104b595087cfabcde8e,"Aide aux quotidiens régionaux, départementaux et locaux à faibles ressources de petites annonces",7ba8071d-3df0-47d0-9fb7-f8a6c14a9123
 5af12104b595087cfabcde8e,"Aide aux quotidiens régionaux, départementaux et locaux à faibles ressources de petites annonces",871cbb48-1f2e-452c-bd82-18adb55fc8ff
 5af12101b595087cfabcde8d,Portail FranceArchives - Circulaires de tri et de sélection des archives publiques,041bec1a-2941-4b05-8423-4f586a3aca5c
 5af120ffa3a7295e54c41a1d,Images du Palais-Royal ,46ff0faf-3ffb-49a0-92d9-a95a571621f5
@@ -160,12 +166,15 @@ dataset.id,dataset.title,id
 5af120fca3a7295e54c41a1c,Photographies : Fonds de la guerre 14-18,b14a6c83-caca-4571-aec4-2420642cb5f7
 5af120f8b595087cfabcde89,Grands documents et images de l'histoire de France conservés par les Archives nationales,f64b051b-8535-4426-bc76-0cd6d5c13ab5
 5af120f4b595087cfabcde87,Structures de la création artistique,c20d1d42-f99f-44c8-952b-5ef3bc548461
+5af120f1a3a7295e54c41a17,Aides aux publications nationales à faibles ressources publicitaires,3be0c144-65cb-4a32-b25c-5d083da4204f
 5af120f1a3a7295e54c41a17,Aides aux publications nationales à faibles ressources publicitaires,66112811-e9a7-49ac-959d-7ea929fe4508
 5af120e7b595087cfabcde82,Fréquentation des Musées de France,7708e380-e7f8-4b56-936a-5d2a262d852d
 5af120e5a3a7295e54c41a13,Pratiques culturelles des français - Evolution 1973-2008,7479572c-653f-4dc0-8472-6f9982a95196
 5af120e5b595087cfabcde81,Immeubles protégés au titre des Monuments Historiques,3a52af4a-f9da-4dcc-8110-b07774dfb3bc
 5af120e3b595087cfabcde80,Institutions culturelles productrices de ressources pédagogiques en ligne,0ee48665-5ffd-4d3c-b5c6-3a4246aaa6f2
+5af120e2a3a7295e54c41a11,Aide au pluralisme de la presse périodique régionale et locale,9af88bf7-f197-4c13-83c0-cd8c34e7d5e5
 5af120e2a3a7295e54c41a11,Aide au pluralisme de la presse périodique régionale et locale,bb5aba07-07a6-4968-9068-8d7b5a629297
+5af120d9b595087cfabcde7a,Aide à la distribution de la presse quotidienne nationale,58065ce0-fec7-424b-9b72-1a214a8bf753
 5af120d9b595087cfabcde7a,Aide à la distribution de la presse quotidienne nationale,d4323e0c-608c-414d-8e65-badfbe718fa9
 5ac44defb5950877d5c04a3c,Semaine de la langue française et de la francophonie 2018,0856bf5f-c225-44d3-ba58-785527b3501f
 5aab4167a3a7291ed12c89f7,Les entrées d'archives aux Archives nationales depuis 2014,f012799e-acb4-41be-9cf5-461b1e8faca9
@@ -184,6 +193,7 @@ dataset.id,dataset.title,id
 59592254a3a7291dd09c8178,Grands documents et images de l'histoire de France conservés par les Archives nationales,5159d38c-66b6-4cfb-aab9-1d87b8a36f9e
 5890bf79a3a72974cbf0dc96,Images du Palais-Royal ,04bba040-b4eb-4628-a934-00e21792869f
 5890bf79a3a72974cbf0dc96,Images du Palais-Royal ,96c9709d-3325-4bce-90cc-8718e9fb942b
+5890bf78a3a72974cbf0dc94,Fonds stratégique pour le développement de la presse (FSDP),801735a1-04bd-43dd-9866-f07e5a89e32c
 5890bf78a3a72974cbf0dc94,Fonds stratégique pour le développement de la presse (FSDP),72c2ebd3-f7c4-4b03-8fcd-d6ec96e03b07
 5890bf76a3a72974cbf0dc8f,Institutions culturelles productrices de ressources pédagogiques en ligne,849b40f7-7d60-4cd3-a671-d9ef6af74a54
 5890bf76a3a72974cbf0dc8f,Institutions culturelles productrices de ressources pédagogiques en ligne,71a64084-acf0-4a7d-874e-1494bed98faf
